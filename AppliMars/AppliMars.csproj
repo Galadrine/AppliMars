@@ -50,6 +50,7 @@
     <Compile Include="Classes\Journee.cs" />
     <Compile Include="Classes\Lieu.cs" />
     <Compile Include="Classes\Map.cs" />
+    <Compile Include="Classes\Mission.cs" />
     <Compile Include="Classes\TempsMartien.cs" />
     <Compile Include="Classes\Planning.cs" />
     <Compile Include="Find.cs">
@@ -103,6 +104,8 @@
     <Content Include="Images\nanediValles.jpg" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
+    <Content Include="XML\General.xml" />
+    <Content Include="XML\Planning.xml" />
     <None Include="Images\space.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

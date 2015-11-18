@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Mission>
+  <NomMission></NomMission>
+  <DateDebut></DateDebut>
+  <Duree></Duree>
+	<Map></Map>
+	<Home></Home>
+	<NbAstronautes></NbAstronautes>
+	<Astronautes>
+		<Astronaute> </Astronaute>
+	</Astronautes>
+	<Activities>
+		<Category id = "Living">
+			<Activity>Eating</Activity>
+			<Activity>Sleeping</Activity>
+			<Activity>Entertrainment</Activity>
+			<Activity>Private</Activity>
+			<Activity>Health control</Activity>
+			<Activity>Medical act</Activity>
+		</Category>
+		<Category id = "Science">
+			<Category id = "Exploration">
+				<Activity>Space suit</Activity>
+				<Activity>Vehicle</Activity>
+			</Category>
+			<Activity>Briefing</Activity>
+			<Activity>Debriefing</Activity>
+			<Activity>Inside experiment</Activity>
+			<Activity>Outside experiment</Activity>
+		</Category>
+		<Category id = "Maintenance">
+			<Activity>Cleaning</Activity>
+			<Activity>LSS air system</Activity>
+			<Activity>LSS water system</Activity>
+			<Activity>LSS food system</Activity>
+			<Activity>Power systems</Activity>
+			<Activity>Space suit</Activity>
+			<Activity>Other</Activity>
+		</Category>
+		<Category id = "Communication">
+			<Activity>Sending message</Activity>
+			<Activity>Receiving message</Activity>
+		</Communication>
+		<Category id = "Repair">
+			<Activity>LSS</Activity>
+			<Activity>Power systems</Activity>
+			<Activity>Communication systems</Activity>
+			<Activity>Habitat</Activity>
+			<Activity>Space suit</Activity>
+			<Activity>Vehicle</Activity>
+		</Category>
+		<Category id = "Other">
+			<Activity>Emergency</Activity>
+		</Category>
+	</Activities>
+	<Default day>
+		<Timetable>
+			<Activity>
+				<HeureDeb>0:00:00</HeureDeb>
+				<HeureFin>7:00:00</HeureFin>
+				<Nom>Sleeping</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>7:00:00</HeureDeb>
+				<HeureFin>8:00:00</HeureFin>
+				<Nom>Eating</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>0:00:00</HeureDeb>
+				<HeureFin>7:00:00</HeureFin>
+				<Nom>Sleeping</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>8:00:00</HeureDeb>
+				<HeureFin>14:00:00</HeureFin>
+				<Nom>Private</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>12:00:00</HeureDeb>
+				<HeureFin>14:00:00</HeureFin>
+				<Nom>Eating</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>14:00:00</HeureDeb>
+				<HeureFin>19:00:00</HeureFin>
+				<Nom>Private</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>19:00:00</HeureDeb>
+				<HeureFin>21:00:00</HeureFin>
+				<Nom>Eating</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>21:00:00</HeureDeb>
+				<HeureFin>23:00:00</HeureFin>
+				<Nom>Private</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+			<Activity>
+				<HeureDeb>23:00:00</HeureDeb>
+				<HeureFin>24:40:00</HeureFin>
+				<Nom>Sleeping</Nom>
+				<Description></Description>
+				<ExtBool>false</ExtBool>				
+			</Activity>
+		</Timetable>
+	</Default day>
+</Mission>
+
+		
