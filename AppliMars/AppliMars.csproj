@@ -51,6 +51,7 @@
     <Compile Include="Classes\Lieu.cs" />
     <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Mission.cs" />
+    <Compile Include="Classes\TempsMartien.cs" />
     <Compile Include="Classes\Planning.cs" />
     <Compile Include="Find.cs">
       <SubType>Form</SubType>
