@@ -38,7 +38,7 @@ namespace AppliMars {
 
             string imagefilename = "";
             if (nbIllustrationDone == 0) {
-                imagefilename = @"nanedi.jpg";
+                imagefilename = @"../../Images/nanediValles.jpg";
             } 
 
             img = Image.FromFile(imagefilename);

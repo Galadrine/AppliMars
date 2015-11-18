@@ -37,6 +37,9 @@ namespace AppliMars {
         }
 
         private void trackBarCalendrier_Scroll(object sender, EventArgs e) {
+
+            Console.WriteLine("Valeur trackbar : " + trackBarCalendrier.Value);
+
             for (int i = 0; i < groupBoxCalendrier.Controls.Count; i++) {
                 if (groupBoxCalendrier.Controls[i].Name.Contains("buttonDay")) {
                     groupBoxCalendrier.Controls[i].Text = Convert.ToString((50 * trackBarCalendrier.Value) + i - 1);
