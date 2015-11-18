@@ -67,6 +67,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowLevel3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowLevel3.Designer.cs">
+      <DependentUpon>WindowLevel3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>

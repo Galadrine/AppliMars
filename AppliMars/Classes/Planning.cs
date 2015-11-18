@@ -30,6 +30,7 @@ public class Planning
 
 	public Planning()
 	{
+
 	}
 
 }
