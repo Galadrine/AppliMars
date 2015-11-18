@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 public class Planning
 {
@@ -28,9 +29,22 @@ public class Planning
 		throw new System.NotImplementedException();
 	}
 
-	public Planning()
+	public Planning(string nomPlanning, List<Journee> listJournees)
 	{
+        // ??
 	}
+
+    // Création de l'instance Planning à partir d'un fichier XML 
+    public Planning (int DureeMission, string cheminXMLPlanning)
+    {
+        XDocument _planningXML = XDocument.Load(cheminXMLPlanning);
+        //var jour = from jour in _planningXML.Descendants("Planning") select jour;
+        //foreach (XElement j in planning.Elements("Jour"))
+        //{
+        //    string nomAstronaute = a.Value;
+        //    _astronautes.Add(new Astronaute(nomAstronaute));
+        //}
+    }
 
 }
 
