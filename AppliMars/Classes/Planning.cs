@@ -16,11 +16,6 @@ public class Planning
         set;
     }
 
-	public virtual int _compteJour
-	{
-		get;
-		set;
-	}
 
 	public virtual string _nomPlanning
 	{
@@ -28,7 +23,7 @@ public class Planning
 		set;
 	}
 
-	public virtual void majCompteur()
+	public virtual void majJourJXML(int nouveauJour)
 	{
 		throw new System.NotImplementedException();
 	}

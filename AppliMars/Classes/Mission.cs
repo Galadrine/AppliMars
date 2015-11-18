@@ -90,6 +90,10 @@ namespace AppliMartienneTest
                 _nbAstronautes++;
             }
             // Création du planning
+
+
+
+
         }
     }
 }

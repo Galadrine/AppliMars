@@ -23,8 +23,12 @@
         /// le contenu de cette méthode avec l'éditeur de code.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel1));
             this.groupBoxCalendrier = new System.Windows.Forms.GroupBox();
+            this.trackBarCalendrier = new System.Windows.Forms.TrackBar();
+            this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLeftArrow = new System.Windows.Forms.PictureBox();
             this.buttonDay41 = new System.Windows.Forms.Button();
             this.buttonDay31 = new System.Windows.Forms.Button();
             this.buttonDay21 = new System.Windows.Forms.Button();
@@ -34,11 +38,13 @@
             this.buttonDay13 = new System.Windows.Forms.Button();
             this.buttonDay40 = new System.Windows.Forms.Button();
             this.buttonDay48 = new System.Windows.Forms.Button();
+            this.buttonDay19 = new System.Windows.Forms.Button();
             this.buttonDay38 = new System.Windows.Forms.Button();
             this.buttonDay30 = new System.Windows.Forms.Button();
             this.buttonDay28 = new System.Windows.Forms.Button();
             this.buttonDay7 = new System.Windows.Forms.Button();
             this.buttonDay49 = new System.Windows.Forms.Button();
+            this.buttonDay12 = new System.Windows.Forms.Button();
             this.buttonDay39 = new System.Windows.Forms.Button();
             this.buttonDay47 = new System.Windows.Forms.Button();
             this.buttonDay18 = new System.Windows.Forms.Button();
@@ -67,6 +73,7 @@
             this.buttonDay3 = new System.Windows.Forms.Button();
             this.buttonDay33 = new System.Windows.Forms.Button();
             this.buttonDay8 = new System.Windows.Forms.Button();
+            this.buttonDay42 = new System.Windows.Forms.Button();
             this.buttonDay23 = new System.Windows.Forms.Button();
             this.buttonDay32 = new System.Windows.Forms.Button();
             this.buttonDay2 = new System.Windows.Forms.Button();
@@ -83,18 +90,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.trackBarCalendrier = new System.Windows.Forms.TrackBar();
-            this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLeftArrow = new System.Windows.Forms.PictureBox();
-            this.buttonDay19 = new System.Windows.Forms.Button();
-            this.buttonDay12 = new System.Windows.Forms.Button();
-            this.buttonDay42 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBoxCalendrier.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxCalendrier
@@ -158,6 +160,36 @@
             this.groupBoxCalendrier.TabIndex = 0;
             this.groupBoxCalendrier.TabStop = false;
             this.groupBoxCalendrier.Text = "Calendrier";
+            // 
+            // trackBarCalendrier
+            // 
+            this.trackBarCalendrier.Location = new System.Drawing.Point(95, 326);
+            this.trackBarCalendrier.Name = "trackBarCalendrier";
+            this.trackBarCalendrier.Size = new System.Drawing.Size(554, 45);
+            this.trackBarCalendrier.TabIndex = 59;
+            this.trackBarCalendrier.Scroll += new System.EventHandler(this.trackBarCalendrier_Scroll);
+            // 
+            // pictureBoxRightArrow
+            // 
+            this.pictureBoxRightArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRightArrow.Image")));
+            this.pictureBoxRightArrow.Location = new System.Drawing.Point(655, 140);
+            this.pictureBoxRightArrow.Name = "pictureBoxRightArrow";
+            this.pictureBoxRightArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxRightArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRightArrow.TabIndex = 1;
+            this.pictureBoxRightArrow.TabStop = false;
+            this.pictureBoxRightArrow.Click += new System.EventHandler(this.pictureBoxRightArrow_Click);
+            // 
+            // pictureBoxLeftArrow
+            // 
+            this.pictureBoxLeftArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeftArrow.Image")));
+            this.pictureBoxLeftArrow.Location = new System.Drawing.Point(42, 140);
+            this.pictureBoxLeftArrow.Name = "pictureBoxLeftArrow";
+            this.pictureBoxLeftArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxLeftArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLeftArrow.TabIndex = 1;
+            this.pictureBoxLeftArrow.TabStop = false;
+            this.pictureBoxLeftArrow.Click += new System.EventHandler(this.pictureBoxLeftArrow_Click);
             // 
             // buttonDay41
             // 
@@ -276,6 +308,20 @@
             this.buttonDay48.UseVisualStyleBackColor = false;
             this.buttonDay48.Click += new System.EventHandler(this.journee_Click);
             // 
+            // buttonDay19
+            // 
+            this.buttonDay19.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay19.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay19.Image = global::AppliMars.Properties.Resources.space;
+            this.buttonDay19.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay19.Location = new System.Drawing.Point(543, 84);
+            this.buttonDay19.Name = "buttonDay19";
+            this.buttonDay19.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay19.TabIndex = 0;
+            this.buttonDay19.Text = "19";
+            this.buttonDay19.UseVisualStyleBackColor = false;
+            this.buttonDay19.Click += new System.EventHandler(this.journee_Click);
+            // 
             // buttonDay38
             // 
             this.buttonDay38.BackColor = System.Drawing.Color.PaleGreen;
@@ -340,6 +386,20 @@
             this.buttonDay49.Text = "49";
             this.buttonDay49.UseVisualStyleBackColor = false;
             this.buttonDay49.Click += new System.EventHandler(this.journee_Click);
+            // 
+            // buttonDay12
+            // 
+            this.buttonDay12.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay12.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay12.Image = global::AppliMars.Properties.Resources.space;
+            this.buttonDay12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay12.Location = new System.Drawing.Point(151, 84);
+            this.buttonDay12.Name = "buttonDay12";
+            this.buttonDay12.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay12.TabIndex = 0;
+            this.buttonDay12.Text = "12";
+            this.buttonDay12.UseVisualStyleBackColor = false;
+            this.buttonDay12.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay39
             // 
@@ -705,6 +765,20 @@
             this.buttonDay8.UseVisualStyleBackColor = false;
             this.buttonDay8.Click += new System.EventHandler(this.journee_Click);
             // 
+            // buttonDay42
+            // 
+            this.buttonDay42.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay42.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay42.Image = global::AppliMars.Properties.Resources.space;
+            this.buttonDay42.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay42.Location = new System.Drawing.Point(151, 252);
+            this.buttonDay42.Name = "buttonDay42";
+            this.buttonDay42.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay42.TabIndex = 0;
+            this.buttonDay42.Text = "42";
+            this.buttonDay42.UseVisualStyleBackColor = false;
+            this.buttonDay42.Click += new System.EventHandler(this.journee_Click);
+            // 
             // buttonDay23
             // 
             this.buttonDay23.BackColor = System.Drawing.Color.PaleGreen;
@@ -876,77 +950,9 @@
             this.buttonSearch.Text = "Rechercher";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
-            // trackBarCalendrier
+            // timer1
             // 
-            this.trackBarCalendrier.Location = new System.Drawing.Point(95, 326);
-            this.trackBarCalendrier.Name = "trackBarCalendrier";
-            this.trackBarCalendrier.Size = new System.Drawing.Size(554, 45);
-            this.trackBarCalendrier.TabIndex = 59;
-            this.trackBarCalendrier.Scroll += new System.EventHandler(this.trackBarCalendrier_Scroll);
-            // 
-            // pictureBoxRightArrow
-            // 
-            this.pictureBoxRightArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRightArrow.Image")));
-            this.pictureBoxRightArrow.Location = new System.Drawing.Point(655, 140);
-            this.pictureBoxRightArrow.Name = "pictureBoxRightArrow";
-            this.pictureBoxRightArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxRightArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxRightArrow.TabIndex = 1;
-            this.pictureBoxRightArrow.TabStop = false;
-            this.pictureBoxRightArrow.Click += new System.EventHandler(this.pictureBoxRightArrow_Click);
-            // 
-            // pictureBoxLeftArrow
-            // 
-            this.pictureBoxLeftArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeftArrow.Image")));
-            this.pictureBoxLeftArrow.Location = new System.Drawing.Point(42, 140);
-            this.pictureBoxLeftArrow.Name = "pictureBoxLeftArrow";
-            this.pictureBoxLeftArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxLeftArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLeftArrow.TabIndex = 1;
-            this.pictureBoxLeftArrow.TabStop = false;
-            this.pictureBoxLeftArrow.Click += new System.EventHandler(this.pictureBoxLeftArrow_Click);
-            // 
-            // buttonDay19
-            // 
-            this.buttonDay19.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay19.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay19.Image = global::AppliMars.Properties.Resources.space;
-            this.buttonDay19.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay19.Location = new System.Drawing.Point(543, 84);
-            this.buttonDay19.Name = "buttonDay19";
-            this.buttonDay19.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay19.TabIndex = 0;
-            this.buttonDay19.Text = "19";
-            this.buttonDay19.UseVisualStyleBackColor = false;
-            this.buttonDay19.Click += new System.EventHandler(this.journee_Click);
-            // 
-            // buttonDay12
-            // 
-            this.buttonDay12.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay12.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay12.Image = global::AppliMars.Properties.Resources.space;
-            this.buttonDay12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay12.Location = new System.Drawing.Point(151, 84);
-            this.buttonDay12.Name = "buttonDay12";
-            this.buttonDay12.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay12.TabIndex = 0;
-            this.buttonDay12.Text = "12";
-            this.buttonDay12.UseVisualStyleBackColor = false;
-            this.buttonDay12.Click += new System.EventHandler(this.journee_Click);
-            // 
-            // buttonDay42
-            // 
-            this.buttonDay42.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay42.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay42.Image = global::AppliMars.Properties.Resources.space;
-            this.buttonDay42.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay42.Location = new System.Drawing.Point(151, 252);
-            this.buttonDay42.Name = "buttonDay42";
-            this.buttonDay42.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay42.TabIndex = 0;
-            this.buttonDay42.Text = "42";
-            this.buttonDay42.UseVisualStyleBackColor = false;
-            this.buttonDay42.Click += new System.EventHandler(this.journee_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // WindowLevel1
             // 
@@ -961,13 +967,13 @@
             this.Text = "Mars Explorer 2017";
             this.groupBoxCalendrier.ResumeLayout(false);
             this.groupBoxCalendrier.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1039,6 +1045,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar trackBarCalendrier;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
