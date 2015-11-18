@@ -22,12 +22,6 @@ public class Journee
 		set;
 	}
 
-	public virtual string _etat
-	{
-		get;
-		set;
-	}
-
 	public virtual string _compteRendu
 	{
 		get;

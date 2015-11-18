@@ -51,12 +51,6 @@ public class Activite
 		set;
 	}
 
-	public virtual string _nomIcone
-	{
-		get;
-		set;
-	}
-
 	public Activite(string unNom, bool boolExt, string uneDesc, DateTime unDebut, DateTime uneFin, string uneIcone)
 	{
 	}

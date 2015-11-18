@@ -13,7 +13,7 @@ namespace AppliMars {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WindowLevel3());
+            Application.Run(new WindowLevel1());
         }
     }
 }

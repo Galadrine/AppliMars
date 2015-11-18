@@ -39,12 +39,15 @@ namespace AppliMars {
         private void trackBarCalendrier_Scroll(object sender, EventArgs e) {
 
             Console.WriteLine("Valeur trackbar : " + trackBarCalendrier.Value);
+            Console.WriteLine("groupBoxCalendrier.Controls.Count : " + groupBoxCalendrier.Controls.Count);
 
             for (int i = 0; i < groupBoxCalendrier.Controls.Count; i++) {
                 if (groupBoxCalendrier.Controls[i].Name.Contains("buttonDay")) {
-                    groupBoxCalendrier.Controls[i].Text = Convert.ToString((50 * trackBarCalendrier.Value) + i - 1);
+                    Console.WriteLine("groupBoxCalendrier.Controls[i].Text : " + groupBoxCalendrier.Controls[i].Text);
 
-                    if (int.Parse(labelDay.Text) == (50 * trackBarCalendrier.Value) + i - 1) {
+                    groupBoxCalendrier.Controls[i].Text = Convert.ToString((50 * trackBarCalendrier.Value) + i );
+
+                    if (int.Parse(labelDay.Text) == (50 * trackBarCalendrier.Value) + i ) {
                         groupBoxCalendrier.Controls[i].BackColor = Color.LightBlue;
                     } else {
                         if (int.Parse(groupBoxCalendrier.Controls[i].Text) < currentDay) {
