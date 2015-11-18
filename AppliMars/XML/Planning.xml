@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Planning>
-
+  <Jour id ="1">
+    <Activites>
+      <Activite>
+        <NomAct></NomAct>
+        <DebutAct></DebutAct>
+        <FinAct></FinAct>
+        <BoolExt></BoolExt>
+        <DescriptionAct></DescriptionAct>
+      </Activite>
+    </Activites>
+    <CRJour></CRJour>
+  </Jour>
 </Planning>
