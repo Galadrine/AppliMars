@@ -44,7 +44,7 @@ public class Planning
         {
             int num = int.Parse(j.Attribute("id").Value);
             string cr = j.Element("CRJour").Value;
-            _tableauJournees.Add(new Journee(num, cr));
+            _tableauJournees.Add(new Journee(num, cr, cheminXMLPlanning));
         }
     }
 

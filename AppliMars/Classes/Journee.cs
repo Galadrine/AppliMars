@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 public class Journee
 {
@@ -29,11 +30,24 @@ public class Journee
 	}
 
 
-	public Journee(int numero, string compteRendu)
+	public Journee(int numero, string compteRendu, string cheminPlanningXML)
 	{
         _listeActivites = new List<Activite>();
         _numero = numero;
         _compteRendu = compteRendu;
+
+        // Récupération de la liste des activités de la journée
+        XDocument planningXML = XDocument.Load(cheminPlanningXML);
+        var activites = from activite in _planningXML.Descendants("Activites") select activite;
+        foreach (XElement a in activites.Elements("Activite"))
+        {
+            string nom = a.Element("NomAct").Value;
+            DateTime debutAct = DateTime.Parce(a.Element("DebutAct").Value);
+            DateTime finAct = DateTime.Parce(a.Element("FinAct").Value);
+            bool ext = bool.Parse(a.Element("BoolExt").Value);
+            string description = a.Element("DescriptionAct").Value;
+            _listeActivites.Add(new Journee(num, cr, cheminXMLPlanning));
+        }
 	}
 
 }
