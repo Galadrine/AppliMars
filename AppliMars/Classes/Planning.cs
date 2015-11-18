@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 public class Planning
 {
-    public virtual List<Journee> tableauJournees {
+    public List<Journee> _tableauJournees {
         get;
         set;
     }
@@ -38,12 +38,14 @@ public class Planning
     public Planning (int DureeMission, string cheminXMLPlanning)
     {
         XDocument _planningXML = XDocument.Load(cheminXMLPlanning);
-        //var jour = from jour in _planningXML.Descendants("Planning") select jour;
-        //foreach (XElement j in planning.Elements("Jour"))
-        //{
-        //    string nomAstronaute = a.Value;
-        //    _astronautes.Add(new Astronaute(nomAstronaute));
-        //}
+        _tableauJournees = new List<Journee>();
+        var jours = from jour in _planningXML.Descendants("Planning") select jour;
+        foreach (XElement j in jours.Elements("Jour"))
+        {
+            int num = int.Parse(j.Attribute("id").Value);
+            string cr = j.Element("CRJour").Value;
+            _tableauJournees.Add(new Journee(num, cr));
+        }
     }
 
 }

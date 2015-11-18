@@ -11,12 +11,12 @@ using System.Text;
 
 public class Journee
 {
-    public virtual List<Activite> listeActivites {
+    public List<Activite> _listeActivites {
         get;
         set;
     }
 
-	public virtual int _numero
+	public int _numero
 	{
 		get;
 		set;
@@ -29,8 +29,11 @@ public class Journee
 	}
 
 
-	public Journee(int unNumero)
+	public Journee(int numero, string compteRendu)
 	{
+        _listeActivites = new List<Activite>();
+        _numero = numero;
+        _compteRendu = compteRendu;
 	}
 
 }
