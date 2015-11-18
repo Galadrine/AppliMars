@@ -42,7 +42,7 @@
             this.buttonDay38 = new System.Windows.Forms.Button();
             this.buttonDay30 = new System.Windows.Forms.Button();
             this.buttonDay28 = new System.Windows.Forms.Button();
-            this.buttonDay7 = new System.Windows.Forms.Button();
+            this.buttonDay07 = new System.Windows.Forms.Button();
             this.buttonDay49 = new System.Windows.Forms.Button();
             this.buttonDay12 = new System.Windows.Forms.Button();
             this.buttonDay39 = new System.Windows.Forms.Button();
@@ -51,37 +51,37 @@
             this.buttonDay37 = new System.Windows.Forms.Button();
             this.buttonDay29 = new System.Windows.Forms.Button();
             this.buttonDay27 = new System.Windows.Forms.Button();
-            this.buttonDay6 = new System.Windows.Forms.Button();
+            this.buttonDay06 = new System.Windows.Forms.Button();
             this.buttonDay46 = new System.Windows.Forms.Button();
             this.buttonDay11 = new System.Windows.Forms.Button();
             this.buttonDay36 = new System.Windows.Forms.Button();
             this.buttonDay17 = new System.Windows.Forms.Button();
             this.buttonDay26 = new System.Windows.Forms.Button();
-            this.buttonDay5 = new System.Windows.Forms.Button();
+            this.buttonDay05 = new System.Windows.Forms.Button();
             this.buttonDay45 = new System.Windows.Forms.Button();
             this.buttonDay10 = new System.Windows.Forms.Button();
             this.buttonDay35 = new System.Windows.Forms.Button();
             this.buttonDay16 = new System.Windows.Forms.Button();
             this.buttonDay25 = new System.Windows.Forms.Button();
-            this.buttonDay4 = new System.Windows.Forms.Button();
+            this.buttonDay04 = new System.Windows.Forms.Button();
             this.buttonDay44 = new System.Windows.Forms.Button();
-            this.buttonDay9 = new System.Windows.Forms.Button();
+            this.buttonDay09 = new System.Windows.Forms.Button();
             this.buttonDay34 = new System.Windows.Forms.Button();
             this.buttonDay15 = new System.Windows.Forms.Button();
             this.buttonDay24 = new System.Windows.Forms.Button();
             this.buttonDay43 = new System.Windows.Forms.Button();
-            this.buttonDay3 = new System.Windows.Forms.Button();
+            this.buttonDay03 = new System.Windows.Forms.Button();
             this.buttonDay33 = new System.Windows.Forms.Button();
-            this.buttonDay8 = new System.Windows.Forms.Button();
+            this.buttonDay08 = new System.Windows.Forms.Button();
             this.buttonDay42 = new System.Windows.Forms.Button();
             this.buttonDay23 = new System.Windows.Forms.Button();
             this.buttonDay32 = new System.Windows.Forms.Button();
-            this.buttonDay2 = new System.Windows.Forms.Button();
+            this.buttonDay02 = new System.Windows.Forms.Button();
             this.buttonDay22 = new System.Windows.Forms.Button();
-            this.buttonDay1 = new System.Windows.Forms.Button();
+            this.buttonDay01 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDay = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
+            this.labelHeures = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBoxJourFin = new System.Windows.Forms.ComboBox();
@@ -91,6 +91,9 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelMinutes = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBoxCalendrier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
@@ -117,7 +120,7 @@
             this.groupBoxCalendrier.Controls.Add(this.buttonDay38);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay30);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay28);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay7);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay07);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay49);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay12);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay39);
@@ -126,34 +129,34 @@
             this.groupBoxCalendrier.Controls.Add(this.buttonDay37);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay29);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay27);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay6);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay06);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay46);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay11);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay36);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay17);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay26);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay5);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay05);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay45);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay10);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay35);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay16);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay25);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay4);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay04);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay44);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay9);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay09);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay34);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay15);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay24);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay43);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay3);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay03);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay33);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay8);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay08);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay42);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay23);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay32);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay2);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay02);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay22);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay1);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay01);
             this.groupBoxCalendrier.Location = new System.Drawing.Point(250, 144);
             this.groupBoxCalendrier.Name = "groupBoxCalendrier";
             this.groupBoxCalendrier.Size = new System.Drawing.Size(747, 380);
@@ -361,18 +364,18 @@
             this.buttonDay28.UseVisualStyleBackColor = false;
             this.buttonDay28.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay7
+            // buttonDay07
             // 
-            this.buttonDay7.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay7.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay7.Location = new System.Drawing.Point(431, 28);
-            this.buttonDay7.Name = "buttonDay7";
-            this.buttonDay7.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay7.TabIndex = 0;
-            this.buttonDay7.Text = "7";
-            this.buttonDay7.UseVisualStyleBackColor = false;
-            this.buttonDay7.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay07.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay07.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay07.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay07.Location = new System.Drawing.Point(431, 28);
+            this.buttonDay07.Name = "buttonDay07";
+            this.buttonDay07.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay07.TabIndex = 0;
+            this.buttonDay07.Text = "7";
+            this.buttonDay07.UseVisualStyleBackColor = false;
+            this.buttonDay07.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay49
             // 
@@ -479,18 +482,18 @@
             this.buttonDay27.UseVisualStyleBackColor = false;
             this.buttonDay27.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay6
+            // buttonDay06
             // 
-            this.buttonDay6.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay6.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay6.Location = new System.Drawing.Point(375, 28);
-            this.buttonDay6.Name = "buttonDay6";
-            this.buttonDay6.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay6.TabIndex = 0;
-            this.buttonDay6.Text = "6";
-            this.buttonDay6.UseVisualStyleBackColor = false;
-            this.buttonDay6.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay06.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay06.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay06.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay06.Location = new System.Drawing.Point(375, 28);
+            this.buttonDay06.Name = "buttonDay06";
+            this.buttonDay06.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay06.TabIndex = 0;
+            this.buttonDay06.Text = "6";
+            this.buttonDay06.UseVisualStyleBackColor = false;
+            this.buttonDay06.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay46
             // 
@@ -557,18 +560,18 @@
             this.buttonDay26.UseVisualStyleBackColor = false;
             this.buttonDay26.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay5
+            // buttonDay05
             // 
-            this.buttonDay5.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay5.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay5.Location = new System.Drawing.Point(319, 28);
-            this.buttonDay5.Name = "buttonDay5";
-            this.buttonDay5.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay5.TabIndex = 0;
-            this.buttonDay5.Text = "5";
-            this.buttonDay5.UseVisualStyleBackColor = false;
-            this.buttonDay5.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay05.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay05.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay05.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay05.Location = new System.Drawing.Point(319, 28);
+            this.buttonDay05.Name = "buttonDay05";
+            this.buttonDay05.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay05.TabIndex = 0;
+            this.buttonDay05.Text = "5";
+            this.buttonDay05.UseVisualStyleBackColor = false;
+            this.buttonDay05.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay45
             // 
@@ -635,18 +638,18 @@
             this.buttonDay25.UseVisualStyleBackColor = false;
             this.buttonDay25.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay4
+            // buttonDay04
             // 
-            this.buttonDay4.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay4.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay4.Location = new System.Drawing.Point(263, 28);
-            this.buttonDay4.Name = "buttonDay4";
-            this.buttonDay4.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay4.TabIndex = 0;
-            this.buttonDay4.Text = "4";
-            this.buttonDay4.UseVisualStyleBackColor = false;
-            this.buttonDay4.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay04.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay04.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay04.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay04.Location = new System.Drawing.Point(263, 28);
+            this.buttonDay04.Name = "buttonDay04";
+            this.buttonDay04.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay04.TabIndex = 0;
+            this.buttonDay04.Text = "4";
+            this.buttonDay04.UseVisualStyleBackColor = false;
+            this.buttonDay04.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay44
             // 
@@ -661,18 +664,18 @@
             this.buttonDay44.UseVisualStyleBackColor = false;
             this.buttonDay44.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay9
+            // buttonDay09
             // 
-            this.buttonDay9.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay9.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay9.Location = new System.Drawing.Point(543, 28);
-            this.buttonDay9.Name = "buttonDay9";
-            this.buttonDay9.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay9.TabIndex = 0;
-            this.buttonDay9.Text = "9";
-            this.buttonDay9.UseVisualStyleBackColor = false;
-            this.buttonDay9.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay09.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay09.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay09.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay09.Location = new System.Drawing.Point(543, 28);
+            this.buttonDay09.Name = "buttonDay09";
+            this.buttonDay09.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay09.TabIndex = 0;
+            this.buttonDay09.Text = "9";
+            this.buttonDay09.UseVisualStyleBackColor = false;
+            this.buttonDay09.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay34
             // 
@@ -726,18 +729,18 @@
             this.buttonDay43.UseVisualStyleBackColor = false;
             this.buttonDay43.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay3
+            // buttonDay03
             // 
-            this.buttonDay3.BackColor = System.Drawing.Color.LightBlue;
-            this.buttonDay3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay3.Location = new System.Drawing.Point(207, 28);
-            this.buttonDay3.Name = "buttonDay3";
-            this.buttonDay3.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay3.TabIndex = 0;
-            this.buttonDay3.Text = "3";
-            this.buttonDay3.UseVisualStyleBackColor = false;
-            this.buttonDay3.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay03.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonDay03.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay03.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay03.Location = new System.Drawing.Point(207, 28);
+            this.buttonDay03.Name = "buttonDay03";
+            this.buttonDay03.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay03.TabIndex = 0;
+            this.buttonDay03.Text = "3";
+            this.buttonDay03.UseVisualStyleBackColor = false;
+            this.buttonDay03.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay33
             // 
@@ -752,18 +755,18 @@
             this.buttonDay33.UseVisualStyleBackColor = false;
             this.buttonDay33.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay8
+            // buttonDay08
             // 
-            this.buttonDay8.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay8.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay8.Location = new System.Drawing.Point(487, 28);
-            this.buttonDay8.Name = "buttonDay8";
-            this.buttonDay8.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay8.TabIndex = 0;
-            this.buttonDay8.Text = "8";
-            this.buttonDay8.UseVisualStyleBackColor = false;
-            this.buttonDay8.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay08.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay08.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay08.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay08.Location = new System.Drawing.Point(487, 28);
+            this.buttonDay08.Name = "buttonDay08";
+            this.buttonDay08.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay08.TabIndex = 0;
+            this.buttonDay08.Text = "8";
+            this.buttonDay08.UseVisualStyleBackColor = false;
+            this.buttonDay08.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay42
             // 
@@ -805,18 +808,18 @@
             this.buttonDay32.UseVisualStyleBackColor = false;
             this.buttonDay32.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay2
+            // buttonDay02
             // 
-            this.buttonDay2.BackColor = System.Drawing.Color.Silver;
-            this.buttonDay2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay2.Location = new System.Drawing.Point(151, 28);
-            this.buttonDay2.Name = "buttonDay2";
-            this.buttonDay2.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay2.TabIndex = 0;
-            this.buttonDay2.Text = "2";
-            this.buttonDay2.UseVisualStyleBackColor = false;
-            this.buttonDay2.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay02.BackColor = System.Drawing.Color.Silver;
+            this.buttonDay02.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay02.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay02.Location = new System.Drawing.Point(151, 28);
+            this.buttonDay02.Name = "buttonDay02";
+            this.buttonDay02.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay02.TabIndex = 0;
+            this.buttonDay02.Text = "2";
+            this.buttonDay02.UseVisualStyleBackColor = false;
+            this.buttonDay02.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay22
             // 
@@ -831,18 +834,18 @@
             this.buttonDay22.UseVisualStyleBackColor = false;
             this.buttonDay22.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay1
+            // buttonDay01
             // 
-            this.buttonDay1.BackColor = System.Drawing.Color.Silver;
-            this.buttonDay1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay1.Location = new System.Drawing.Point(95, 28);
-            this.buttonDay1.Name = "buttonDay1";
-            this.buttonDay1.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay1.TabIndex = 0;
-            this.buttonDay1.Text = "1";
-            this.buttonDay1.UseVisualStyleBackColor = false;
-            this.buttonDay1.Click += new System.EventHandler(this.journee_Click);
+            this.buttonDay01.BackColor = System.Drawing.Color.Silver;
+            this.buttonDay01.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay01.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay01.Location = new System.Drawing.Point(95, 28);
+            this.buttonDay01.Name = "buttonDay01";
+            this.buttonDay01.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay01.TabIndex = 0;
+            this.buttonDay01.Text = "1";
+            this.buttonDay01.UseVisualStyleBackColor = false;
+            this.buttonDay01.Click += new System.EventHandler(this.journee_Click);
             // 
             // label1
             // 
@@ -864,19 +867,22 @@
             this.labelDay.TabIndex = 1;
             this.labelDay.Text = "0";
             // 
-            // labelTime
+            // labelHeures
             // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(146, 33);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(128, 25);
-            this.labelTime.TabIndex = 1;
-            this.labelTime.Text = "0h 0min 0sec";
+            this.labelHeures.AutoSize = true;
+            this.labelHeures.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeures.Location = new System.Drawing.Point(144, 33);
+            this.labelHeures.Name = "labelHeures";
+            this.labelHeures.Size = new System.Drawing.Size(34, 25);
+            this.labelHeures.TabIndex = 1;
+            this.labelHeures.Text = "00";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.labelTime);
+            this.groupBox1.Controls.Add(this.labelHeures);
+            this.groupBox1.Controls.Add(this.labelMinutes);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.labelDay);
             this.groupBox1.Location = new System.Drawing.Point(250, 55);
@@ -954,6 +960,36 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelMinutes
+            // 
+            this.labelMinutes.AutoSize = true;
+            this.labelMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMinutes.Location = new System.Drawing.Point(189, 33);
+            this.labelMinutes.Name = "labelMinutes";
+            this.labelMinutes.Size = new System.Drawing.Size(34, 25);
+            this.labelMinutes.TabIndex = 1;
+            this.labelMinutes.Text = "00";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(218, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 25);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "min";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(172, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "h";
+            // 
             // WindowLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -987,22 +1023,22 @@
         private System.Windows.Forms.Button buttonDay20;
         private System.Windows.Forms.Button buttonDay13;
         private System.Windows.Forms.Button buttonDay19;
-        private System.Windows.Forms.Button buttonDay7;
+        private System.Windows.Forms.Button buttonDay07;
         private System.Windows.Forms.Button buttonDay12;
         private System.Windows.Forms.Button buttonDay18;
-        private System.Windows.Forms.Button buttonDay6;
+        private System.Windows.Forms.Button buttonDay06;
         private System.Windows.Forms.Button buttonDay11;
         private System.Windows.Forms.Button buttonDay17;
-        private System.Windows.Forms.Button buttonDay5;
+        private System.Windows.Forms.Button buttonDay05;
         private System.Windows.Forms.Button buttonDay10;
         private System.Windows.Forms.Button buttonDay16;
-        private System.Windows.Forms.Button buttonDay4;
-        private System.Windows.Forms.Button buttonDay9;
+        private System.Windows.Forms.Button buttonDay04;
+        private System.Windows.Forms.Button buttonDay09;
         private System.Windows.Forms.Button buttonDay15;
-        private System.Windows.Forms.Button buttonDay3;
-        private System.Windows.Forms.Button buttonDay8;
-        private System.Windows.Forms.Button buttonDay2;
-        private System.Windows.Forms.Button buttonDay1;
+        private System.Windows.Forms.Button buttonDay03;
+        private System.Windows.Forms.Button buttonDay08;
+        private System.Windows.Forms.Button buttonDay02;
+        private System.Windows.Forms.Button buttonDay01;
         private System.Windows.Forms.PictureBox pictureBoxRightArrow;
         private System.Windows.Forms.PictureBox pictureBoxLeftArrow;
         private System.Windows.Forms.Button buttonDay28;
@@ -1013,7 +1049,7 @@
         private System.Windows.Forms.Button buttonDay23;
         private System.Windows.Forms.Button buttonDay22;
         private System.Windows.Forms.Label labelDay;
-        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelHeures;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonSearch;
@@ -1046,6 +1082,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar trackBarCalendrier;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelMinutes;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
