@@ -9,51 +9,88 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Activite
-{
-    private List<Astronaute> tableauAstronautes;
+public class Activite {
 
+    #region variables
+
+    private List<Astronaute> tableauAstronautes;
+    private int heuresDebut;
+    private int minutesDebut;
+    private int heuresFin;
+    private int minutesFin;
+    private string nom;
+    private string description;
+    private bool exterieur;
+    private System.Drawing.Point position;
+
+    #endregion
+
+
+    #region accesseurs
+
+    public System.Drawing.Point maPosition {
+        get { return position; }
+        set { position = value; }
+    }
+
+
+    public bool interieurOuExterieur {
+        get { return exterieur; }
+        set { exterieur = value; }
+    }
+
+
+    public string maDescription {
+        get { return description; }
+        set { description = value; }
+    }
+
+
+    public string monNom {
+        get { return nom; }
+        set { nom = value; }
+    }
+    
     public List<Astronaute> mesAstronautes {
         get { return tableauAstronautes; }
         set { tableauAstronautes = value; }
     }
+
+    public int mesMinutesFin {
+        get { return minutesFin; }
+        set { minutesFin = value; }
+    }
+
+
+    public int monHeuresFin {
+        get { return heuresFin; }
+        set { heuresFin = value; }
+    }
+
+
+    public int mesMinutesDebut {
+        get { return minutesDebut; }
+        set { minutesDebut = value; }
+    }
+
+
+    public int monHeureDebut {
+        get { return heuresDebut; }
+        set { heuresDebut = value; }
+    }
     
 
+    #endregion
 
 
-	public virtual DateTime _debutTache
+    #region constructeurs
+
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin)
 	{
-		get;
-		set;
-	}
 
-	public virtual DateTime _finTache
-	{
-		get;
-		set;
-	}
+    }
 
-	public virtual string _nomTache
-	{
-		get;
-		set;
-	}
-
-	public virtual bool _exterieur
-	{
-		get;
-		set;
-	}
-
-	public virtual string _description
-	{
-		get;
-		set;
-	}
-
-	public Activite(string unNom, bool boolExt, string uneDesc, DateTime unDebut, DateTime uneFin, string uneIcone)
-	{
-	}
+    #endregion
 
 }
 
