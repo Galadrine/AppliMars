@@ -52,11 +52,19 @@
     <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Mission.cs" />
     <Compile Include="Classes\Planning.cs" />
+    <Compile Include="Classes\TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Find.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Find.Designer.cs">
       <DependentUpon>Find.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="WindowLevel1.cs">
       <SubType>Form</SubType>
@@ -83,14 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="WindowLevel1.resx">
       <DependentUpon>WindowLevel1.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,16 +116,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Images\add.png" />
-    <Content Include="Images\add0.png" />
-    <Content Include="Images\Grille.png" />
+    <Content Include="Images\calendar.png" />
+    <Content Include="Images\calendar0.png" />
+    <Content Include="Images\day.png" />
+    <Content Include="Images\grille.png" />
     <Content Include="Images\left.png" />
     <Content Include="Images\nanediValles.jpg" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
-    <None Include="Resources\add30.png" />
     <Content Include="XML\General.xml" />
     <Content Include="XML\Planning.xml" />
     <None Include="Images\space.png" />

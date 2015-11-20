@@ -13,8 +13,27 @@ namespace AppliMars {
 
         #region variables
 
-        AppliMars.WindowLevel1 win1;
-        Journee jour;
+
+        private WindowLevel1 win1;
+        private Journee jour;
+
+        #endregion
+
+        #region accesseurs
+
+
+        public WindowLevel1 maFenetrePrec {
+            get { return win1; }
+            set { win1 = value; }
+        }
+
+
+
+        public Journee maJournee {
+            get { return jour; }
+            set { jour = value; }
+        }
+
 
         #endregion
 
@@ -29,9 +48,10 @@ namespace AppliMars {
             : this() {
             labelJour.Text = numeroJour;
 
-            jour = new Journee( Int32.Parse(numeroJour));
-            win1 = w1;
-        }
+            maJournee = new Journee(Int32.Parse(numeroJour));
+            maFenetrePrec = w1;
+
+       }
 
         #endregion
 
@@ -47,14 +67,14 @@ namespace AppliMars {
         #region evenements
 
         private void pictureBoxJourPrecedent_Click(object sender, EventArgs e) {
-            if (jour._numero != 1) {
+            if (jour.monNumero != 1) {
                 labelJour.Text = (Int32.Parse(labelJour.Text)-1).ToString();
                 majActivites();
             }
         }
 
         private void pictureBoxJourSuivant_Click(object sender, EventArgs e) {
-            if (jour._numero != 500) {
+            if (jour.monNumero != 500) {
                 labelJour.Text = (Int32.Parse(labelJour.Text) + 1).ToString();
                 majActivites();
             }

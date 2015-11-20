@@ -49,6 +49,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.labelJour = new System.Windows.Forms.Label();
             this.buttonRetourCalendrier = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.buttonAjoutActivite = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBoxHeures.SuspendLayout();
@@ -94,7 +94,7 @@
             this.groupBoxHeures.Controls.Add(this.label5);
             this.groupBoxHeures.Controls.Add(this.label9);
             this.groupBoxHeures.Controls.Add(this.label1);
-            this.groupBoxHeures.Location = new System.Drawing.Point(32, 89);
+            this.groupBoxHeures.Location = new System.Drawing.Point(212, 6);
             this.groupBoxHeures.Name = "groupBoxHeures";
             this.groupBoxHeures.Size = new System.Drawing.Size(41, 747);
             this.groupBoxHeures.TabIndex = 0;
@@ -316,11 +316,20 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "08h";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "00h";
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(448, 36);
+            this.label26.Location = new System.Drawing.Point(56, 70);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(51, 25);
             this.label26.TabIndex = 2;
@@ -330,7 +339,7 @@
             // 
             this.labelJour.AutoSize = true;
             this.labelJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJour.Location = new System.Drawing.Point(498, 36);
+            this.labelJour.Location = new System.Drawing.Point(106, 70);
             this.labelJour.Name = "labelJour";
             this.labelJour.Size = new System.Drawing.Size(23, 25);
             this.labelJour.TabIndex = 3;
@@ -338,19 +347,22 @@
             // 
             // buttonRetourCalendrier
             // 
-            this.buttonRetourCalendrier.Location = new System.Drawing.Point(32, 36);
+            this.buttonRetourCalendrier.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourCalendrier.Image")));
+            this.buttonRetourCalendrier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRetourCalendrier.Location = new System.Drawing.Point(12, 12);
             this.buttonRetourCalendrier.Name = "buttonRetourCalendrier";
-            this.buttonRetourCalendrier.Size = new System.Drawing.Size(141, 34);
+            this.buttonRetourCalendrier.Size = new System.Drawing.Size(162, 34);
             this.buttonRetourCalendrier.TabIndex = 1;
             this.buttonRetourCalendrier.Text = "Revenir au calendrier";
+            this.buttonRetourCalendrier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRetourCalendrier.UseVisualStyleBackColor = true;
             this.buttonRetourCalendrier.Click += new System.EventHandler(this.buttonRetourCalendrier_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(390, 790);
+            this.button1.Location = new System.Drawing.Point(12, 250);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 23);
+            this.button1.Size = new System.Drawing.Size(162, 34);
             this.button1.TabIndex = 7;
             this.button1.Text = "Acceder au compte-rendu";
             this.button1.UseVisualStyleBackColor = true;
@@ -358,7 +370,7 @@
             // pictureBoxJourSuivant
             // 
             this.pictureBoxJourSuivant.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJourSuivant.Image")));
-            this.pictureBoxJourSuivant.Location = new System.Drawing.Point(535, 38);
+            this.pictureBoxJourSuivant.Location = new System.Drawing.Point(143, 72);
             this.pictureBoxJourSuivant.Name = "pictureBoxJourSuivant";
             this.pictureBoxJourSuivant.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxJourSuivant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -369,7 +381,7 @@
             // pictureBoxJourPrecedent
             // 
             this.pictureBoxJourPrecedent.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJourPrecedent.Image")));
-            this.pictureBoxJourPrecedent.Location = new System.Drawing.Point(414, 38);
+            this.pictureBoxJourPrecedent.Location = new System.Drawing.Point(22, 72);
             this.pictureBoxJourPrecedent.Name = "pictureBoxJourPrecedent";
             this.pictureBoxJourPrecedent.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxJourPrecedent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -379,9 +391,8 @@
             // 
             // buttonAjoutActivite
             // 
-            this.buttonAjoutActivite.Image = global::AppliMars.Properties.Resources.add30;
             this.buttonAjoutActivite.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAjoutActivite.Location = new System.Drawing.Point(993, 168);
+            this.buttonAjoutActivite.Location = new System.Drawing.Point(12, 213);
             this.buttonAjoutActivite.Name = "buttonAjoutActivite";
             this.buttonAjoutActivite.Size = new System.Drawing.Size(162, 34);
             this.buttonAjoutActivite.TabIndex = 1;
@@ -392,9 +403,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(503, 323);
+            this.button2.Location = new System.Drawing.Point(12, 308);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(261, 118);
+            this.button2.Size = new System.Drawing.Size(162, 34);
             this.button2.TabIndex = 8;
             this.button2.Text = "Test Niveau3";
             this.button2.UseVisualStyleBackColor = true;
@@ -403,35 +414,26 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(71, 95);
+            this.pictureBox1.Location = new System.Drawing.Point(253, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(900, 740);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "00h";
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(993, 124);
+            this.button3.Location = new System.Drawing.Point(12, 163);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(162, 23);
+            this.button3.Size = new System.Drawing.Size(162, 34);
             this.button3.TabIndex = 10;
             this.button3.Text = "Emploi du temps suivant";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(993, 95);
+            this.button4.Location = new System.Drawing.Point(12, 126);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(162, 23);
+            this.button4.Size = new System.Drawing.Size(162, 34);
             this.button4.TabIndex = 11;
             this.button4.Text = "Emploi du temps précédent";
             this.button4.UseVisualStyleBackColor = true;
@@ -440,7 +442,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.ControlBox = false;
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

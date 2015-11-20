@@ -12,23 +12,34 @@ using System.Xml.Linq;
 
 public class Journee {
 
+    #region variables
+
+    private List<Activite> _listeActivites;
+    private int _numero;
+    private string _compteRendu;
+
+    
+    
+    
+
+
+    #endregion
+
     #region accesseurs
 
-    public List<Activite> _listeActivites {
-        get;
-        set;
+    public List<Activite> mesActivites {
+        get { return _listeActivites; }
+        set { _listeActivites = value; }
     }
 
-	public int _numero
-	{
-		get;
-		set;
-	}
+    public int monNumero {
+        get { return _numero; }
+        set { _numero = value; }
+    }
 
-	public virtual string _compteRendu
-	{
-		get;
-		set;
+    public string monCompteRendu {
+        get { return _compteRendu; }
+        set { _compteRendu = value; }
     }
 
     #endregion
@@ -36,12 +47,12 @@ public class Journee {
 
     #region constructeurs 
 
-    public Journee() {
-        // ??
-    }
+    public Journee() {}
 
     public Journee(int num) {
-        // ??
+        monNumero = num;
+        monCompteRendu = "";
+        mesActivites = new List<Activite>();
     }
 
     public Journee(int num, string cr, string cheminXMLPlanning) {
