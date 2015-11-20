@@ -117,6 +117,7 @@
   <ItemGroup>
     <Content Include="Images\add.png" />
     <Content Include="Images\add0.png" />
+    <Content Include="Images\Grille.png" />
     <Content Include="Images\left.png" />
     <Content Include="Images\nanediValles.jpg" />
     <Content Include="Images\right.png" />

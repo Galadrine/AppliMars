@@ -38,7 +38,6 @@
             this.label_latitude = new System.Windows.Forms.Label();
             this.label_longitude = new System.Windows.Forms.Label();
             this.Ordonnee = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.list_activite = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
@@ -171,16 +170,6 @@
             this.Ordonnee.Size = new System.Drawing.Size(35, 20);
             this.Ordonnee.TabIndex = 14;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(623, 90);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Niveau 3";
-            // 
             // list_activite
             // 
             this.list_activite.FormattingEnabled = true;
@@ -303,7 +292,6 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.list_activite);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.Ordonnee);
             this.Controls.Add(this.label_longitude);
             this.Controls.Add(this.label_latitude);
@@ -344,7 +332,6 @@
         private System.Windows.Forms.Label label_latitude;
         private System.Windows.Forms.Label label_longitude;
         private System.Windows.Forms.TextBox Ordonnee;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox list_activite;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel;
