@@ -27,8 +27,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel1));
             this.groupBoxCalendrier = new System.Windows.Forms.GroupBox();
             this.trackBarCalendrier = new System.Windows.Forms.TrackBar();
-            this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLeftArrow = new System.Windows.Forms.PictureBox();
             this.buttonDay41 = new System.Windows.Forms.Button();
             this.buttonDay31 = new System.Windows.Forms.Button();
             this.buttonDay21 = new System.Windows.Forms.Button();
@@ -38,13 +36,11 @@
             this.buttonDay13 = new System.Windows.Forms.Button();
             this.buttonDay40 = new System.Windows.Forms.Button();
             this.buttonDay48 = new System.Windows.Forms.Button();
-            this.buttonDay19 = new System.Windows.Forms.Button();
             this.buttonDay38 = new System.Windows.Forms.Button();
             this.buttonDay30 = new System.Windows.Forms.Button();
             this.buttonDay28 = new System.Windows.Forms.Button();
             this.buttonDay07 = new System.Windows.Forms.Button();
             this.buttonDay49 = new System.Windows.Forms.Button();
-            this.buttonDay12 = new System.Windows.Forms.Button();
             this.buttonDay39 = new System.Windows.Forms.Button();
             this.buttonDay47 = new System.Windows.Forms.Button();
             this.buttonDay18 = new System.Windows.Forms.Button();
@@ -73,7 +69,6 @@
             this.buttonDay03 = new System.Windows.Forms.Button();
             this.buttonDay33 = new System.Windows.Forms.Button();
             this.buttonDay08 = new System.Windows.Forms.Button();
-            this.buttonDay42 = new System.Windows.Forms.Button();
             this.buttonDay23 = new System.Windows.Forms.Button();
             this.buttonDay32 = new System.Windows.Forms.Button();
             this.buttonDay02 = new System.Windows.Forms.Button();
@@ -83,6 +78,9 @@
             this.labelDay = new System.Windows.Forms.Label();
             this.labelHeures = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelMinutes = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBoxJourFin = new System.Windows.Forms.ComboBox();
             this.comboBoxJourDebut = new System.Windows.Forms.ComboBox();
@@ -91,15 +89,17 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelMinutes = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLeftArrow = new System.Windows.Forms.PictureBox();
+            this.buttonDay19 = new System.Windows.Forms.Button();
+            this.buttonDay12 = new System.Windows.Forms.Button();
+            this.buttonDay42 = new System.Windows.Forms.Button();
             this.groupBoxCalendrier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCalendrier
@@ -157,7 +157,7 @@
             this.groupBoxCalendrier.Controls.Add(this.buttonDay02);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay22);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay01);
-            this.groupBoxCalendrier.Location = new System.Drawing.Point(250, 144);
+            this.groupBoxCalendrier.Location = new System.Drawing.Point(200, 236);
             this.groupBoxCalendrier.Name = "groupBoxCalendrier";
             this.groupBoxCalendrier.Size = new System.Drawing.Size(747, 380);
             this.groupBoxCalendrier.TabIndex = 0;
@@ -170,29 +170,8 @@
             this.trackBarCalendrier.Name = "trackBarCalendrier";
             this.trackBarCalendrier.Size = new System.Drawing.Size(554, 45);
             this.trackBarCalendrier.TabIndex = 59;
+            this.trackBarCalendrier.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBarCalendrier.Scroll += new System.EventHandler(this.trackBarCalendrier_Scroll);
-            // 
-            // pictureBoxRightArrow
-            // 
-            this.pictureBoxRightArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRightArrow.Image")));
-            this.pictureBoxRightArrow.Location = new System.Drawing.Point(655, 140);
-            this.pictureBoxRightArrow.Name = "pictureBoxRightArrow";
-            this.pictureBoxRightArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxRightArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxRightArrow.TabIndex = 1;
-            this.pictureBoxRightArrow.TabStop = false;
-            this.pictureBoxRightArrow.Click += new System.EventHandler(this.pictureBoxRightArrow_Click);
-            // 
-            // pictureBoxLeftArrow
-            // 
-            this.pictureBoxLeftArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeftArrow.Image")));
-            this.pictureBoxLeftArrow.Location = new System.Drawing.Point(42, 140);
-            this.pictureBoxLeftArrow.Name = "pictureBoxLeftArrow";
-            this.pictureBoxLeftArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxLeftArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLeftArrow.TabIndex = 1;
-            this.pictureBoxLeftArrow.TabStop = false;
-            this.pictureBoxLeftArrow.Click += new System.EventHandler(this.pictureBoxLeftArrow_Click);
             // 
             // buttonDay41
             // 
@@ -311,20 +290,6 @@
             this.buttonDay48.UseVisualStyleBackColor = false;
             this.buttonDay48.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay19
-            // 
-            this.buttonDay19.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay19.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay19.Image = global::AppliMars.Properties.Resources.space;
-            this.buttonDay19.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay19.Location = new System.Drawing.Point(543, 84);
-            this.buttonDay19.Name = "buttonDay19";
-            this.buttonDay19.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay19.TabIndex = 0;
-            this.buttonDay19.Text = "19";
-            this.buttonDay19.UseVisualStyleBackColor = false;
-            this.buttonDay19.Click += new System.EventHandler(this.journee_Click);
-            // 
             // buttonDay38
             // 
             this.buttonDay38.BackColor = System.Drawing.Color.PaleGreen;
@@ -389,20 +354,6 @@
             this.buttonDay49.Text = "49";
             this.buttonDay49.UseVisualStyleBackColor = false;
             this.buttonDay49.Click += new System.EventHandler(this.journee_Click);
-            // 
-            // buttonDay12
-            // 
-            this.buttonDay12.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay12.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay12.Image = global::AppliMars.Properties.Resources.space;
-            this.buttonDay12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay12.Location = new System.Drawing.Point(151, 84);
-            this.buttonDay12.Name = "buttonDay12";
-            this.buttonDay12.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay12.TabIndex = 0;
-            this.buttonDay12.Text = "12";
-            this.buttonDay12.UseVisualStyleBackColor = false;
-            this.buttonDay12.Click += new System.EventHandler(this.journee_Click);
             // 
             // buttonDay39
             // 
@@ -768,20 +719,6 @@
             this.buttonDay08.UseVisualStyleBackColor = false;
             this.buttonDay08.Click += new System.EventHandler(this.journee_Click);
             // 
-            // buttonDay42
-            // 
-            this.buttonDay42.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonDay42.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDay42.Image = global::AppliMars.Properties.Resources.space;
-            this.buttonDay42.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay42.Location = new System.Drawing.Point(151, 252);
-            this.buttonDay42.Name = "buttonDay42";
-            this.buttonDay42.Size = new System.Drawing.Size(50, 50);
-            this.buttonDay42.TabIndex = 0;
-            this.buttonDay42.Text = "42";
-            this.buttonDay42.UseVisualStyleBackColor = false;
-            this.buttonDay42.Click += new System.EventHandler(this.journee_Click);
-            // 
             // buttonDay23
             // 
             this.buttonDay23.BackColor = System.Drawing.Color.PaleGreen;
@@ -800,7 +737,7 @@
             this.buttonDay32.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonDay32.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay32.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay32.Location = new System.Drawing.Point(151, 196);
+            this.buttonDay32.Location = new System.Drawing.Point(150, 196);
             this.buttonDay32.Name = "buttonDay32";
             this.buttonDay32.Size = new System.Drawing.Size(50, 50);
             this.buttonDay32.TabIndex = 0;
@@ -813,7 +750,7 @@
             this.buttonDay02.BackColor = System.Drawing.Color.Silver;
             this.buttonDay02.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay02.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay02.Location = new System.Drawing.Point(151, 28);
+            this.buttonDay02.Location = new System.Drawing.Point(150, 28);
             this.buttonDay02.Name = "buttonDay02";
             this.buttonDay02.Size = new System.Drawing.Size(50, 50);
             this.buttonDay02.TabIndex = 0;
@@ -826,7 +763,7 @@
             this.buttonDay22.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonDay22.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay22.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay22.Location = new System.Drawing.Point(151, 140);
+            this.buttonDay22.Location = new System.Drawing.Point(150, 140);
             this.buttonDay22.Name = "buttonDay22";
             this.buttonDay22.Size = new System.Drawing.Size(50, 50);
             this.buttonDay22.TabIndex = 0;
@@ -885,11 +822,41 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.labelDay);
-            this.groupBox1.Location = new System.Drawing.Point(250, 55);
+            this.groupBox1.Location = new System.Drawing.Point(200, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(296, 83);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // labelMinutes
+            // 
+            this.labelMinutes.AutoSize = true;
+            this.labelMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMinutes.Location = new System.Drawing.Point(189, 33);
+            this.labelMinutes.Name = "labelMinutes";
+            this.labelMinutes.Size = new System.Drawing.Size(34, 25);
+            this.labelMinutes.TabIndex = 1;
+            this.labelMinutes.Text = "00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(172, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "h";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(218, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 25);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "min";
             // 
             // groupBox2
             // 
@@ -899,7 +866,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBoxSearch);
             this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Location = new System.Drawing.Point(640, 55);
+            this.groupBox2.Location = new System.Drawing.Point(590, 147);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(357, 83);
             this.groupBox2.TabIndex = 3;
@@ -920,7 +887,7 @@
             this.comboBoxJourDebut.Location = new System.Drawing.Point(73, 46);
             this.comboBoxJourDebut.Name = "comboBoxJourDebut";
             this.comboBoxJourDebut.Size = new System.Drawing.Size(49, 21);
-            this.comboBoxJourDebut.TabIndex = 3;
+            this.comboBoxJourDebut.TabIndex = 2;
             // 
             // label3
             // 
@@ -952,7 +919,7 @@
             this.buttonSearch.Location = new System.Drawing.Point(265, 44);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 0;
+            this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Rechercher";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
@@ -960,56 +927,93 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // labelMinutes
+            // pictureBoxRightArrow
             // 
-            this.labelMinutes.AutoSize = true;
-            this.labelMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMinutes.Location = new System.Drawing.Point(189, 33);
-            this.labelMinutes.Name = "labelMinutes";
-            this.labelMinutes.Size = new System.Drawing.Size(34, 25);
-            this.labelMinutes.TabIndex = 1;
-            this.labelMinutes.Text = "00";
+            this.pictureBoxRightArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRightArrow.Image")));
+            this.pictureBoxRightArrow.Location = new System.Drawing.Point(655, 140);
+            this.pictureBoxRightArrow.Name = "pictureBoxRightArrow";
+            this.pictureBoxRightArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxRightArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRightArrow.TabIndex = 1;
+            this.pictureBoxRightArrow.TabStop = false;
+            this.pictureBoxRightArrow.Click += new System.EventHandler(this.pictureBoxRightArrow_Click);
             // 
-            // label4
+            // pictureBoxLeftArrow
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(218, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "min";
+            this.pictureBoxLeftArrow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeftArrow.Image")));
+            this.pictureBoxLeftArrow.Location = new System.Drawing.Point(42, 140);
+            this.pictureBoxLeftArrow.Name = "pictureBoxLeftArrow";
+            this.pictureBoxLeftArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxLeftArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLeftArrow.TabIndex = 1;
+            this.pictureBoxLeftArrow.TabStop = false;
+            this.pictureBoxLeftArrow.Click += new System.EventHandler(this.pictureBoxLeftArrow_Click);
             // 
-            // label5
+            // buttonDay19
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(172, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "h";
+            this.buttonDay19.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay19.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay19.Image = global::AppliMars.Properties.Resources.space;
+            this.buttonDay19.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay19.Location = new System.Drawing.Point(543, 84);
+            this.buttonDay19.Name = "buttonDay19";
+            this.buttonDay19.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay19.TabIndex = 0;
+            this.buttonDay19.Text = "19";
+            this.buttonDay19.UseVisualStyleBackColor = false;
+            this.buttonDay19.Click += new System.EventHandler(this.journee_Click);
+            // 
+            // buttonDay12
+            // 
+            this.buttonDay12.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay12.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay12.Image = global::AppliMars.Properties.Resources.space;
+            this.buttonDay12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay12.Location = new System.Drawing.Point(150, 84);
+            this.buttonDay12.Name = "buttonDay12";
+            this.buttonDay12.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay12.TabIndex = 0;
+            this.buttonDay12.Text = "12";
+            this.buttonDay12.UseVisualStyleBackColor = false;
+            this.buttonDay12.Click += new System.EventHandler(this.journee_Click);
+            // 
+            // buttonDay42
+            // 
+            this.buttonDay42.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDay42.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDay42.Image = global::AppliMars.Properties.Resources.space;
+            this.buttonDay42.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonDay42.Location = new System.Drawing.Point(150, 252);
+            this.buttonDay42.Name = "buttonDay42";
+            this.buttonDay42.Size = new System.Drawing.Size(50, 50);
+            this.buttonDay42.TabIndex = 0;
+            this.buttonDay42.Text = "42";
+            this.buttonDay42.UseVisualStyleBackColor = false;
+            this.buttonDay42.Click += new System.EventHandler(this.journee_Click);
             // 
             // WindowLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 602);
+            this.ClientSize = new System.Drawing.Size(1184, 861);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxCalendrier);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "WindowLevel1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mars Explorer 2017";
             this.groupBoxCalendrier.ResumeLayout(false);
             this.groupBoxCalendrier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -18,7 +18,10 @@ namespace AppliMars {
         }
 
         private void journee_Click(object sender, EventArgs e) {
-
+            Button but = sender as Button;
+            WindowLevel2 win2 = new WindowLevel2(but.Text, this);
+            win2.Show();
+            this.Hide();
         }
 
         private void pictureBoxLeftArrow_Click(object sender, EventArgs e) {
@@ -39,11 +42,9 @@ namespace AppliMars {
         private void trackBarCalendrier_Scroll(object sender, EventArgs e) {
 
             Console.WriteLine("Valeur trackbar : " + trackBarCalendrier.Value);
-            Console.WriteLine("groupBoxCalendrier.Controls.Count : " + groupBoxCalendrier.Controls.Count);
 
             for (int i = 0; i < groupBoxCalendrier.Controls.Count; i++) {
                 if (groupBoxCalendrier.Controls[i].Name.Contains("buttonDay")) {
-                    Console.WriteLine("groupBoxCalendrier.Controls[i].Text : " + groupBoxCalendrier.Controls[i].Text);
 
                     groupBoxCalendrier.Controls[i].Text = Convert.ToString((50 * trackBarCalendrier.Value) + i );
 

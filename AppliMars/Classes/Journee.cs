@@ -10,8 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-public class Journee
-{
+public class Journee {
+
+    #region accesseurs
+
     public List<Activite> _listeActivites {
         get;
         set;
@@ -27,8 +29,29 @@ public class Journee
 	{
 		get;
 		set;
-	}
+    }
 
+    #endregion
+
+
+    #region constructeurs 
+
+    public Journee() {
+        // ??
+    }
+
+    public Journee(int num) {
+        // ??
+    }
+
+    public Journee(int num, string cr, string cheminXMLPlanning) {
+        // ??
+    }
+
+
+    #endregion
+
+    /*
 
 	public Journee(int numero, string compteRendu, string cheminPlanningXML)
 	{
@@ -49,6 +72,8 @@ public class Journee
             _listeActivites.Add(new Journee(num, cr, cheminXMLPlanning));
         }
 	}
+     
+    */
 
 }
 

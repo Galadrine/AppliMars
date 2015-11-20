@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowLevel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowLevel2.Designer.cs">
+      <DependentUpon>WindowLevel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowLevel3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     <EmbeddedResource Include="WindowLevel1.resx">
       <DependentUpon>WindowLevel1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WindowLevel2.resx">
+      <DependentUpon>WindowLevel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowLevel3.resx">
+      <DependentUpon>WindowLevel3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,14 +113,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Images\add.png" />
+    <Content Include="Images\add0.png" />
     <Content Include="Images\left.png" />
     <Content Include="Images\nanediValles.jpg" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
+    <None Include="Resources\add30.png" />
     <Content Include="XML\General.xml" />
     <Content Include="XML\Planning.xml" />
     <None Include="Images\space.png" />
