@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Planning>
   <Jour id ="1">
+    <CRJour></CRJour>
     <Activites>
       <Activite>
         <NomAct></NomAct>
@@ -10,6 +11,5 @@
         <DescriptionAct></DescriptionAct>
       </Activite>
     </Activites>
-    <CRJour></CRJour>
   </Jour>
 </Planning>

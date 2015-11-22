@@ -74,7 +74,7 @@ namespace AppliMartienneTest
 
         #region constructeurs 
         // Création d'une nouvelle mission (Création nouveaux XML)
-        public Mission (string nomMission, DateTime dateDebut, int dureeMission)
+        public Mission (string nomMission, DateTime dateDebut, int dureeMission, string emplacementPlanningXML)
         {
             // Création de l'instance
             _nomMission = nomMission;
@@ -82,6 +82,7 @@ namespace AppliMartienneTest
             _dureeMission = dureeMission;
             _dateFin = _dateDebut.AddDays(_dureeMission);
             _jourJ = 1;
+            _cheminPlanningXML = "" + emplacementPlanningXML + "Planning.xml";
             _astronautes = new List<Astronaute>();
             _nbAstronautes = 0;
 
@@ -91,19 +92,43 @@ namespace AppliMartienneTest
                     new XElement("NomMission", _nomMission),
                     new XElement("DateDebut", _dateDebut),
                     new XElement("Duree", _dureeMission),
+                    new XElement("Planning", _cheminPlanningXML),
                     new XElement("Map"),
                     new XElement("Home"),
                     new XElement("NbAstronautes", _nbAstronautes),
                     new XElement("Astronautes")));
+            _generalXML.Save("GeneralXML");
 
             // Il manque l'ajout des astronautes (à partir d'une liste ?) ( cf méthode externe)
 
 
             // /!\ Il manque la liste des activités et la journée par défaut
+            
 
-            _generalXML.Save("GeneralXML");
+                _generalXML.Save("GeneralXML");
 
             // Génération du planning par défaut
+            XDocument _planningXML = new XDocument();
+            // Création du fichier XML Planning depuis la journée par défaut pour toute la durée de la mission
+            for (int i = 1; i <= _dureeMission; i++ )
+            {
+                _planningXML.Element("Planning").Add(
+                    new XElement("Jour",
+                        new XAttribute("id", i),
+                        new XElement("CRJour"),
+                        new XElement("Activites")));
+                var activites = from activite in _generalXML.Descendants("Timetable") select activite;
+                foreach (XElement a in activites.Elements("Activity"))
+                {
+                    string heureDebut = a.Element("HeureDeb").Value;
+                    string heureFin = a.Element("HeureFin").Value;
+                    string nom = a.Element("Nom").Value;
+                    string description = a.Element("Description").Value;
+                    string extBool = a.Element("ExtBool").Value;
+                    
+                }
+                
+            }
             // Création des intances 
             // Création du fichier XML Planning
         }

@@ -54,7 +54,7 @@
 			<Activity>Emergency</Activity>
 		</Category>
 	</Activities>
-	<Defaultday>
+	<DefaultDay>
 		<Timetable>
 			<Activity>
 				<HeureDeb>0:00:00</HeureDeb>
@@ -120,7 +120,7 @@
 				<ExtBool>false</ExtBool>				
 			</Activity>
 		</Timetable>
-	</Defaultday>
+	</DefaultDay>
 </Mission>
 
 		
