@@ -29,9 +29,16 @@ namespace AppliMars {
 
         public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2)
             : this() {
-                win2 = w2;
-                labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
-                
+            win2 = w2;
+            labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+
+        }
+
+        public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2, int idActivite)
+            : this() {
+            win2 = w2;
+            labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+
         }
 
 
@@ -42,6 +49,10 @@ namespace AppliMars {
 
         public void SupprimerActivite() {
 
+        }
+
+        public System.Drawing.Point convertionCoordonneesImageVersXML(Point coordinates) {
+            return new System.Drawing.Point((coordinates.X * 3) - 700, (coordinates.Y * 3) - 1000);
         }
 
             
@@ -58,7 +69,7 @@ namespace AppliMars {
 
         private void pictureBoxMap_Click(object sender, EventArgs e) {
             MouseEventArgs me = (MouseEventArgs)e;
-            Point coordinates = me.Location;
+            Point coordinates = convertionCoordonneesImageVersXML(me.Location);
 
 
             TextBoxAbscisse.Text = (coordinates.X * 3).ToString();
@@ -83,12 +94,16 @@ namespace AppliMars {
                 labelLatitude.Visible = true;
                 TextBoxAbscisse.Visible = true;
                 TextBoxOrdonnee.Visible = true;
+                pictureBoxMap.Visible = true;
+
             } else {
                 labelCoordonnees.Visible = false;
                 labelLongitude.Visible = false;
                 labelLatitude.Visible = false;
                 TextBoxAbscisse.Visible = false;
                 TextBoxOrdonnee.Visible = false;
+                pictureBoxMap.Visible = false;
+
 
             }
         }

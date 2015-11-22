@@ -59,9 +59,6 @@ public class Journee {
         // ??
     }
 
-
-    #endregion
-
     /*
 
 	public Journee(int numero, string compteRendu, string cheminPlanningXML)
@@ -85,6 +82,11 @@ public class Journee {
 	}
      
     */
+
+
+    #endregion
+
+
 
 }
 

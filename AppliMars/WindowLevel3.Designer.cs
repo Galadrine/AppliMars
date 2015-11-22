@@ -47,10 +47,10 @@
             this.checkBoxLocalisation = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -59,7 +59,7 @@
             // textBoxDescription
             // 
             this.textBoxDescription.Location = new System.Drawing.Point(135, 146);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(247, 173);
@@ -121,7 +121,7 @@
             // 
             this.TextBoxAbscisse.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TextBoxAbscisse.Location = new System.Drawing.Point(198, 366);
-            this.TextBoxAbscisse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxAbscisse.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxAbscisse.Name = "TextBoxAbscisse";
             this.TextBoxAbscisse.Size = new System.Drawing.Size(35, 20);
             this.TextBoxAbscisse.TabIndex = 11;
@@ -153,7 +153,7 @@
             // TextBoxOrdonnee
             // 
             this.TextBoxOrdonnee.Location = new System.Drawing.Point(288, 368);
-            this.TextBoxOrdonnee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextBoxOrdonnee.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxOrdonnee.Name = "TextBoxOrdonnee";
             this.TextBoxOrdonnee.Size = new System.Drawing.Size(35, 20);
             this.TextBoxOrdonnee.TabIndex = 14;
@@ -174,7 +174,7 @@
             // 
             this.comboBoxHeuresDebut.FormattingEnabled = true;
             this.comboBoxHeuresDebut.Location = new System.Drawing.Point(135, 70);
-            this.comboBoxHeuresDebut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxHeuresDebut.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxHeuresDebut.Name = "comboBoxHeuresDebut";
             this.comboBoxHeuresDebut.Size = new System.Drawing.Size(31, 21);
             this.comboBoxHeuresDebut.TabIndex = 21;
@@ -183,7 +183,7 @@
             // 
             this.comboBoxMinutesDebut.FormattingEnabled = true;
             this.comboBoxMinutesDebut.Location = new System.Drawing.Point(185, 70);
-            this.comboBoxMinutesDebut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMinutesDebut.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMinutesDebut.Name = "comboBoxMinutesDebut";
             this.comboBoxMinutesDebut.Size = new System.Drawing.Size(31, 21);
             this.comboBoxMinutesDebut.TabIndex = 22;
@@ -192,7 +192,7 @@
             // 
             this.comboBoxHeuresFin.FormattingEnabled = true;
             this.comboBoxHeuresFin.Location = new System.Drawing.Point(135, 101);
-            this.comboBoxHeuresFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxHeuresFin.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxHeuresFin.Name = "comboBoxHeuresFin";
             this.comboBoxHeuresFin.Size = new System.Drawing.Size(31, 21);
             this.comboBoxHeuresFin.TabIndex = 23;
@@ -201,7 +201,7 @@
             // 
             this.comboBoxMinutesFin.FormattingEnabled = true;
             this.comboBoxMinutesFin.Location = new System.Drawing.Point(185, 101);
-            this.comboBoxMinutesFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMinutesFin.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMinutesFin.Name = "comboBoxMinutesFin";
             this.comboBoxMinutesFin.Size = new System.Drawing.Size(31, 21);
             this.comboBoxMinutesFin.TabIndex = 24;
@@ -209,7 +209,7 @@
             // buttonAjouter
             // 
             this.buttonAjouter.Location = new System.Drawing.Point(135, 404);
-            this.buttonAjouter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAjouter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAjouter.Name = "buttonAjouter";
             this.buttonAjouter.Size = new System.Drawing.Size(98, 32);
             this.buttonAjouter.TabIndex = 26;
@@ -219,7 +219,7 @@
             // buttonSupprimer
             // 
             this.buttonSupprimer.Location = new System.Drawing.Point(237, 404);
-            this.buttonSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSupprimer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSupprimer.Name = "buttonSupprimer";
             this.buttonSupprimer.Size = new System.Drawing.Size(98, 32);
             this.buttonSupprimer.TabIndex = 27;
@@ -257,6 +257,7 @@
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMap.TabIndex = 29;
             this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Visible = false;
             this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
             // 
             // checkBoxLocalisation
@@ -311,16 +312,6 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 73);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "h";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -330,6 +321,16 @@
             this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "h";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(220, 104);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "min";
             // 
             // label5
             // 
@@ -341,15 +342,15 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "min";
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 104);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "min";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(168, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "h";
             // 
             // label7
             // 
@@ -366,7 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.ClientSize = new System.Drawing.Size(1184, 791);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxMap);
@@ -375,7 +376,7 @@
             this.Controls.Add(this.labelNumeroJour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "WindowLevel3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

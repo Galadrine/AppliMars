@@ -51,16 +51,24 @@ namespace AppliMars {
             maJournee = new Journee(Int32.Parse(numeroJour));
             maFenetrePrec = w1;
 
+
+            verifDifferentsEDT();
+
        }
 
         #endregion
-
 
         #region methodes
 
         private void majActivites() {
 
         }
+
+        private void verifDifferentsEDT() {
+
+        }
+
+
 
         #endregion
 
@@ -81,7 +89,10 @@ namespace AppliMars {
         }
 
         private void buttonAjoutActivite_Click(object sender, EventArgs e) {
-
+            Button but = sender as Button;
+            WindowLevel3 win2 = new WindowLevel3(but.Text, this);
+            win2.Show();
+            this.Hide();
         }
 
         private void buttonRetourCalendrier_Click(object sender, EventArgs e) {
@@ -92,12 +103,21 @@ namespace AppliMars {
 
         private void detailActivite(object sender, EventArgs e) {
             Button but = sender as Button;
-            WindowLevel3 win2 = new WindowLevel3(but.Text, this);
-            win2.Show();
+            WindowLevel3 win3 = new WindowLevel3(but.Text, this, 0);
+            win3.Show();
+            this.Hide();
+        }
+
+        private void buttonCompteRendu_Click(object sender, EventArgs e) {
+            Button but = sender as Button;
+            WindowRecord winrec = new WindowRecord(but.Text, this);
+            winrec.Show();
             this.Hide();
         }
 
         #endregion
+
+
 
 
 

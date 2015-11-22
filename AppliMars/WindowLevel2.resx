@@ -128,6 +128,16 @@
         dmQYP5+HLizxk6tTAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="buttonCompteRendu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQ5JREFUSEvN
+        lWERwjAMRicBKTgACUjACUjAATgBB8wBOAAHkDeWXrrLLoX2B9/du5X1lteVZesmWQpX4dUA6lAvy114
+        CvsGUAdJFsxMtgh1qDdkIawEK+gFvV3LQShJEmzHgaICxheB3wpbyDnCdbsZSBKwV6x2PZ6wAh1rKK4C
+        /kCu8SBJMFe0RMC2epBqAVvEvAfhGApuwtnwEFQQJRTwtOiKLayczM0DCQW1CQWsxG7PN5BQUJtQwNFr
+        ohJIKPAaqBRSJPCaSF/B1Y3G0UMf0+pGq00omDaPoq/r/2w0Xtubz3BYiddE9g68eSBJwPfgxKBxqMkH
+        KpmOgtc0v0CtbLu5XWycbAG1pHjXvQGCbvoRekfU9AAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBoxJourSuivant.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAATBJREFUeF7t

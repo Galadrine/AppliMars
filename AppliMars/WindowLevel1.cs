@@ -11,11 +11,31 @@ using System.Windows.Forms;
 namespace AppliMars {
     public partial class WindowLevel1 : Form {
 
+        #region variables
+
         int currentDay = 12;
+
+        #endregion
+
+        #region constructeurs
 
         public WindowLevel1() {
             InitializeComponent();
         }
+
+        #endregion
+
+
+        #region methodes
+
+        public IEnumerable<Control> GetAll(Control control, Type type) {
+            var controls = control.Controls.Cast<Control>();
+            return controls.SelectMany(ctrl => GetAll(ctrl, type)).Concat(controls).Where(c => c.GetType() == type);
+        }
+
+        #endregion
+
+        #region evenements
 
         private void journee_Click(object sender, EventArgs e) {
             Button but = sender as Button;
@@ -41,6 +61,12 @@ namespace AppliMars {
 
         private void trackBarCalendrier_Scroll(object sender, EventArgs e) {
 
+            var c = GetAll(this, typeof(Button));
+            MessageBox.Show("Total Controls: " + c.Count());
+            
+            // var first = c.
+
+
             Console.WriteLine("Valeur trackbar : " + trackBarCalendrier.Value);
 
             for (int i = 0; i < groupBoxCalendrier.Controls.Count; i++) {
@@ -60,11 +86,26 @@ namespace AppliMars {
                     }
                 }
             }
+
+
+
+
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e) {
+            WindowResultSearch win2 = new WindowResultSearch(this);
+            win2.Show();
+            this.Hide();
+        }
+
+
+
 
         private void timer1_Tick(object sender, EventArgs e) {
 
         }
+
+        #endregion
 
     }
 }
