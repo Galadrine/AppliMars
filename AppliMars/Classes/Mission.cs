@@ -74,7 +74,7 @@ namespace AppliMartienneTest
 
         #region constructeurs 
         // Création d'une nouvelle mission (Création nouveaux XML)
-        public Mission (string nomMission, DateTime dateDebut, int dureeMission, string emplacementPlanningXML)
+        public Mission (string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes, string emplacementPlanningXML)
         {
             // Création de l'instance
             _nomMission = nomMission;
@@ -83,8 +83,15 @@ namespace AppliMartienneTest
             _dateFin = _dateDebut.AddDays(_dureeMission);
             _jourJ = 1;
             _cheminPlanningXML = "" + emplacementPlanningXML + "Planning.xml";
+            // création des astronautes 
+
+            //////// ATTENTION A L'ORDRE : XDoc pas encore créer alors que ajoutAstronaute ajoute aussi dans le xml !!!!!
             _astronautes = new List<Astronaute>();
             _nbAstronautes = 0;
+            foreach (string nom in nomsAstronautes)
+            {
+                this.ajoutAstronaute(nom);
+            }
 
             // Création du fichier XML Géréral
             XDocument _generalXML = new XDocument(
@@ -97,19 +104,67 @@ namespace AppliMartienneTest
                     new XElement("Home"),
                     new XElement("NbAstronautes", _nbAstronautes),
                     new XElement("Astronautes")));
-            _generalXML.Save("GeneralXML");
-
-            // Il manque l'ajout des astronautes (à partir d'une liste ?) ( cf méthode externe)
+            _generalXML.Save(_cheminGeneralXML);
 
 
-            // /!\ Il manque la liste des activités et la journée par défaut
-            
+            // Création de la liste des activités par défaut d'une journée dans le XML
+            #region DefaultDay
+            _generalXML.Element("Mission").Add(new XElement("DefaultDay", 
+                new XElement("Timetable",
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "0:00:00"),
+                        new XElement("HeureFin", "7:00:00"),
+                        new XElement("Nom", "Sleeping"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "7:00:00"),
+                        new XElement("HeureFin", "8:00:00"),
+                        new XElement("Nom", "Eating"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "8:00:00"),
+                        new XElement("HeureFin", "12:00:00"),
+                        new XElement("Nom", "Private"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "12:00:00"),
+                        new XElement("HeureFin", "14:00:00"),
+                        new XElement("Nom", "Eating"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "14:00:00"),
+                        new XElement("HeureFin", "19:00:00"),
+                        new XElement("Nom", "Private"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "19:00:00"),
+                        new XElement("HeureFin", "21:00:00"),
+                        new XElement("Nom", "Eating"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "21:00:00"),
+                        new XElement("HeureFin", "23:00:00"),
+                        new XElement("Nom", "Private"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")),
+                    new XElement("Activity",
+                        new XElement("HeureDeb", "23:00:00"),
+                        new XElement("HeureFin", "24:00:00"),
+                        new XElement("Nom", "Sleeping"),
+                        new XElement("Description"),
+                        new XElement("ExtBool", "false")))));
+                _generalXML.Save(_cheminGeneralXML);
+            #endregion
 
-                _generalXML.Save("GeneralXML");
-
-            // Génération du planning par défaut
+            // Création du fichier XML Planning pour la mission (depuis la journée par défaut)
+            #region CréationXMLPlanning
             XDocument _planningXML = new XDocument();
-            // Création du fichier XML Planning depuis la journée par défaut pour toute la durée de la mission
             for (int i = 1; i <= _dureeMission; i++ )
             {
                 _planningXML.Element("Planning").Add(
@@ -117,20 +172,33 @@ namespace AppliMartienneTest
                         new XAttribute("id", i),
                         new XElement("CRJour"),
                         new XElement("Activites")));
+
+                // Récupération des infos de chaque activité d'une journée par défaut
                 var activites = from activite in _generalXML.Descendants("Timetable") select activite;
                 foreach (XElement a in activites.Elements("Activity"))
                 {
-                    string heureDebut = a.Element("HeureDeb").Value;
-                    string heureFin = a.Element("HeureFin").Value;
-                    string nom = a.Element("Nom").Value;
-                    string description = a.Element("Description").Value;
-                    string extBool = a.Element("ExtBool").Value;
+                    string heureDebutAct = a.Element("HeureDeb").Value;
+                    string heureFinAct = a.Element("HeureFin").Value;
+                    string nomAct = a.Element("Nom").Value;
+                    string extBoolAct = a.Element("ExtBool").Value;
+                    string descriptionAct = a.Element("Description").Value;
                     
+                    // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
+                    var edt = (from jour in _planningXML.Descendants("Planning") where jour.Attribute("id").Value == i.ToString() select jour.Element("Activites")).FirstOrDefault();
+                    edt.Add(new XElement("Activite",
+                        new XElement("NomAct", nomAct),
+                        new XElement("DebutAct", heureDebutAct),
+                        new XElement("FinAct", heureFinAct),
+                        new XElement("BoolExt", extBoolAct),
+                        new XElement("DescriptionAct", descriptionAct)));   
                 }
                 
             }
-            // Création des intances 
-            // Création du fichier XML Planning
+            _planningXML.Save(_cheminPlanningXML);
+                #endregion
+            
+            // Création des instances 
+
         }
     
 

@@ -8,7 +8,7 @@
 	<Home></Home>
 	<NbAstronautes></NbAstronautes>
 	<Astronautes>
-		<Astronaute> </Astronaute>
+    <Astronaute></Astronaute>
 	</Astronautes>
 	<Activities>
 		<Category id = "Living">
@@ -71,15 +71,8 @@
 				<ExtBool>false</ExtBool>				
 			</Activity>
 			<Activity>
-				<HeureDeb>0:00:00</HeureDeb>
-				<HeureFin>7:00:00</HeureFin>
-				<Nom>Sleeping</Nom>
-				<Description></Description>
-				<ExtBool>false</ExtBool>				
-			</Activity>
-			<Activity>
 				<HeureDeb>8:00:00</HeureDeb>
-				<HeureFin>14:00:00</HeureFin>
+				<HeureFin>12:00:00</HeureFin>
 				<Nom>Private</Nom>
 				<Description></Description>
 				<ExtBool>false</ExtBool>				
