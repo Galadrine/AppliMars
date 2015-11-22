@@ -3,6 +3,7 @@
   <NomMission></NomMission>
   <DateDebut></DateDebut>
   <Duree></Duree>
+  <Planning></Planning>
 	<Map></Map>
 	<Home></Home>
 	<NbAstronautes></NbAstronautes>
@@ -40,7 +41,7 @@
 		<Category id = "Communication">
 			<Activity>Sending message</Activity>
 			<Activity>Receiving message</Activity>
-		</Communication>
+		</Category>
 		<Category id = "Repair">
 			<Activity>LSS</Activity>
 			<Activity>Power systems</Activity>
@@ -53,7 +54,7 @@
 			<Activity>Emergency</Activity>
 		</Category>
 	</Activities>
-	<Default day>
+	<Defaultday>
 		<Timetable>
 			<Activity>
 				<HeureDeb>0:00:00</HeureDeb>
@@ -119,7 +120,7 @@
 				<ExtBool>false</ExtBool>				
 			</Activity>
 		</Timetable>
-	</Default day>
+	</Defaultday>
 </Mission>
 
 		

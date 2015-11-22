@@ -9,6 +9,7 @@ namespace AppliMartienneTest
 {
     class Mission
     {
+        #region variables 
         public string _nomMission
         {
             get;
@@ -69,7 +70,9 @@ namespace AppliMartienneTest
             set;
         }
 
+        #endregion
 
+        #region constructeurs 
         // Création d'une nouvelle mission (Création nouveaux XML)
         public Mission (string nomMission, DateTime dateDebut, int dureeMission)
         {
@@ -93,7 +96,11 @@ namespace AppliMartienneTest
                     new XElement("NbAstronautes", _nbAstronautes),
                     new XElement("Astronautes")));
 
-// /!\ Il manque la liste des activités et la journée par défaut
+            // Il manque l'ajout des astronautes (à partir d'une liste ?) ( cf méthode externe)
+
+
+            // /!\ Il manque la liste des activités et la journée par défaut
+
             _generalXML.Save("GeneralXML");
 
             // Génération du planning par défaut
@@ -123,11 +130,16 @@ namespace AppliMartienneTest
             // MAJ du jour J
             _jourJ = calculJourJ();
 
-            // Chargement du planning associé à la mission
+            // Génération du planning associé à la mission
+            // Récupération du chemin et du nom du fichier XML du Planning
+            _cheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
             _planning = new Planning(_dureeMission, _cheminPlanningXML);
 
         }
 
+        #endregion
+
+        #region Méthodes
         // Calcul du jour actuel de la mission (Jour sur Mars) 
         public int calculJourJ()
         {
@@ -135,5 +147,20 @@ namespace AppliMartienneTest
             int jourJ = ts.Minutes / 1480;
             return jourJ;
         }
+
+        // Ajout d'un astronaute à la mission + inscription dans le xml 
+// /!\ Non gestion des doublons (ajout d'un astronaute ayant le même nom qu'un déjà inscrit)
+        public void ajoutAstronaute(string nvAstronaute) 
+        {
+            _astronautes.Add(new Astronaute(nvAstronaute));
+            XDocument _generalXML = XDocument.Load(_cheminGeneralXML);
+            _generalXML.Element("Mission").Element("Astronautes").Add(new XElement("Astronaute", nvAstronaute));
+            int nvNbAstronautes = int.Parse(_generalXML.Element("Mission").Element("NbAstronautes").Value) + 1;
+            _generalXML.Element("Mission").SetElementValue("NbAstronautes", nvNbAstronautes);
+        }
+
+
+
+        #endregion
     }
 }

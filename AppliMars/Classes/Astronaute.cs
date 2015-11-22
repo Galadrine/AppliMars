@@ -19,6 +19,7 @@ public class Astronaute
 
 	public Astronaute(string nomAstronaute)
 	{
+        _nomAstronaute = nomAstronaute;
 	}
 
 }
