@@ -3,14 +3,19 @@
   <Jour id ="1">
     <CRJour></CRJour>
     <Activites>
-      <Activite>
+      <Activite idAct ="1">
         <NomAct></NomAct>
-        <DebutAct></DebutAct>
-        <FinAct></FinAct>
+        <HDebutAct></HDebutAct>
+        <MDebutAct></MDebutAct>
+        <HFinAct></HFinAct>
+        <MFinAct></MFinAct>
         <BoolExt></BoolExt>
         <PosX></PosX>
         <PosY></PosY>
         <DescriptionAct></DescriptionAct>
+        <Participants>
+          <Astronaute></Astronaute>
+        </Participants>
       </Activite>
     </Activites>
   </Jour>

@@ -226,11 +226,10 @@ namespace AppliMars
             // MAJ du jour J
             _jourJ = calculJourJ();
 
-            // Génération du planning associé à la mission
             // Récupération du chemin et du nom du fichier XML du Planning
             _cheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
-            _planning = new Planning(_dureeMission, _cheminPlanningXML);
-
+            // Génération du planning associé à la mission
+            _planning = new Planning(_cheminPlanningXML);
         }
 
         #endregion

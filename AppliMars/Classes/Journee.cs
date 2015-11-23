@@ -18,11 +18,7 @@ public class Journee {
     private int _numero;
     private string _compteRendu;
 
-    
-    
-    
-
-
+  
     #endregion
 
     #region accesseurs
@@ -47,41 +43,51 @@ public class Journee {
 
     #region constructeurs 
 
-    public Journee() {}
 
-    public Journee(int num) {
+    public Journee(int num) 
+    {
         monNumero = num;
         monCompteRendu = "";
         mesActivites = new List<Activite>();
     }
 
-    public Journee(int num, string cr, string cheminXMLPlanning) {
-        // ??
-    }
-
     /*
-
-	public Journee(int numero, string compteRendu, string cheminPlanningXML)
-	{
-        _listeActivites = new List<Activite>();
-        _numero = numero;
-        _compteRendu = compteRendu;
-
-        // Récupération de la liste des activités de la journée
-        XDocument planningXML = XDocument.Load(cheminPlanningXML);
-        var activites = from activite in _planningXML.Descendants("Activites") select activite;
-        foreach (XElement a in activites.Elements("Activite"))
+        public Journee(int numero, string compteRendu, string cheminPlanningXML)
         {
-            string nom = a.Element("NomAct").Value;
-            DateTime debutAct = DateTime.Parce(a.Element("DebutAct").Value);
-            DateTime finAct = DateTime.Parce(a.Element("FinAct").Value);
-            bool ext = bool.Parse(a.Element("BoolExt").Value);
-            string description = a.Element("DescriptionAct").Value;
-            _listeActivites.Add(new Journee(num, cr, cheminXMLPlanning));
-        }
-	}
-     
-    */
+            _listeActivites = new List<Activite>();
+            _numero = numero;
+            _compteRendu = compteRendu;
+
+            // Récupération de la liste des activités de la journée
+            XDocument _planningXML = XDocument.Load(cheminPlanningXML);
+            var activites = from activite in _planningXML.Descendants("Activites")
+                            where activite.Parent.Parent.Attribute("id").ToString() == numero.ToString()
+                            select activite;
+            foreach (XElement a in activites.Elements("Activite"))
+            {
+                string nom = a.Element("NomAct").Value;
+                int hDebutAct = int.Parse(a.Element("HDebutAct").Value);
+                int mDebutAct = int.Parse(a.Element("MDebutAct").Value);
+                int hFinAct = int.Parse(a.Element("HFinAct").Value);
+                int mFinAct = int.Parse(a.Element("MFinAct").Value);
+                bool ext = bool.Parse(a.Element("BoolExt").Value);
+                string description = a.Element("DescriptionAct").Value;
+                // Récupération de la liste des participants
+                //var participants = from astronaute in _planningXML.Descendants("Participants")
+                //                   where  
+                //foreach (XElement p in)
+                if (ext == true)
+                {
+                    int posX = int.Parse(a.Element("PosX").Value);
+                    int posY = int.Parse(a.Element("PosY").Value);
+                    _listeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, posX, posY))
+                }
+                else 
+                _listeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct));
+            }
+     * 
+        }*/
+
 
 
     #endregion

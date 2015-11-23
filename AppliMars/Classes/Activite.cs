@@ -10,7 +10,7 @@ public class Activite {
     public static int _nbActTotal;
 
     public int _idAct;
-    private List<Astronaute> _tableauAstronautes;
+    private List<Astronaute> _participants;
     private int _heuresDebut;
     private int _minutesDebut;
     private int _heuresFin;
@@ -81,10 +81,38 @@ public class Activite {
 
 
     #region constructeurs
-    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, int posX, int posY)
+    // Création d'une nouvelle instance d'activité (pas dans au chargement du XML)
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants,  int posX, int posY)
     {
+        this.initAct(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants);
+        _posX = posX;
+        _posY = posY;
         _idAct = _nbActTotal + 1;
         _nbActTotal++;
+        
+    }
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants)
+        : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, 0, 0) { }
+
+    // Création d'une nouvelle instance d'activité au chargement du XML (avec ID prédéfini)
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants,  int posX, int posY, int idAct)
+    {
+        this.initAct(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants);
+        _posX = posX;
+        _posY = posY;
+        _idAct = idAct;
+    }
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, int idAct) 
+        : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, 0, 0, idAct){}
+
+
+    #endregion
+
+
+    #region methodes
+
+    public void initAct(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants)
+    {
         _nom = unNom;
         _exterieur = boolExt;
         _description = uneDesc;
@@ -92,18 +120,9 @@ public class Activite {
         _minutesDebut = MDebut;
         _heuresFin = HFin;
         _minutesFin = MFin;
-        _posX = posX;
-        _posY = posY;
+        _participants = new List<Astronaute>();
+        _participants = participants;
     }
-
-    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin) 
-        : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, 0, 0){}
-
-
-    #endregion
-
-
-    #region methodes
 
     public System.Drawing.Point convertionCoordonneesXMLVersImage(int posX, int posY) {
         return new System.Drawing.Point((posX / 3) - 700, (posY / 3) - 1000);
