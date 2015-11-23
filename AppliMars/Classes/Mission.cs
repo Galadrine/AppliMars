@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace AppliMartienneTest
+namespace AppliMars
 {
-    class Mission
+    public class Mission
     {
         #region variables 
         public string _nomMission

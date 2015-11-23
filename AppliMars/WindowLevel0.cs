@@ -13,5 +13,21 @@ namespace AppliMars {
         public WindowLevel0() {
             InitializeComponent();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void buttonModifier_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buttonCharger_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buttonCreer_Click(object sender, EventArgs e) {
+
+        }
     }
 }

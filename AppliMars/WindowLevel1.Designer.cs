@@ -26,7 +26,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel1));
             this.groupBoxCalendrier = new System.Windows.Forms.GroupBox();
-            this.trackBarCalendrier = new System.Windows.Forms.TrackBar();
             this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
             this.pictureBoxLeftArrow = new System.Windows.Forms.PictureBox();
             this.buttonDay41 = new System.Windows.Forms.Button();
@@ -95,7 +94,6 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.timerMinutes = new System.Windows.Forms.Timer(this.components);
             this.groupBoxCalendrier.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,74 +102,64 @@
             // 
             // groupBoxCalendrier
             // 
-            this.groupBoxCalendrier.Controls.Add(this.trackBarCalendrier);
             this.groupBoxCalendrier.Controls.Add(this.pictureBoxRightArrow);
             this.groupBoxCalendrier.Controls.Add(this.pictureBoxLeftArrow);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay50);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay41);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay49);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay48);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay42);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay43);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay47);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay44);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay46);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay45);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay01);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay32);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay31);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay40);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay02);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay33);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay22);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay38);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay23);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay39);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay34);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay03);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay21);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay04);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay37);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay35);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay14);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay20);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay50);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay13);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay40);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay48);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay19);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay38);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay30);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay28);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay07);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay49);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay12);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay39);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay47);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay18);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay37);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay29);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay27);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay06);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay46);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay11);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay36);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay17);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay26);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay05);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay45);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay10);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay35);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay16);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay25);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay04);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay44);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay09);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay34);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay15);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay30);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay24);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay43);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay03);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay33);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay28);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay06);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay07);
             this.groupBoxCalendrier.Controls.Add(this.buttonDay08);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay42);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay23);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay32);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay02);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay22);
-            this.groupBoxCalendrier.Controls.Add(this.buttonDay01);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay09);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay10);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay25);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay29);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay13);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay19);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay11);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay12);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay27);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay15);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay26);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay16);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay17);
+            this.groupBoxCalendrier.Controls.Add(this.buttonDay18);
             this.groupBoxCalendrier.Location = new System.Drawing.Point(200, 236);
             this.groupBoxCalendrier.Name = "groupBoxCalendrier";
-            this.groupBoxCalendrier.Size = new System.Drawing.Size(747, 380);
+            this.groupBoxCalendrier.Size = new System.Drawing.Size(747, 366);
             this.groupBoxCalendrier.TabIndex = 0;
             this.groupBoxCalendrier.TabStop = false;
             this.groupBoxCalendrier.Text = "Calendrier";
-            // 
-            // trackBarCalendrier
-            // 
-            this.trackBarCalendrier.Location = new System.Drawing.Point(95, 326);
-            this.trackBarCalendrier.Name = "trackBarCalendrier";
-            this.trackBarCalendrier.Size = new System.Drawing.Size(554, 45);
-            this.trackBarCalendrier.TabIndex = 59;
-            this.trackBarCalendrier.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarCalendrier.Scroll += new System.EventHandler(this.trackBarCalendrier_Scroll);
             // 
             // pictureBoxRightArrow
             // 
@@ -396,7 +384,7 @@
             this.buttonDay12.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay12.Image = ((System.Drawing.Image)(resources.GetObject("buttonDay12.Image")));
             this.buttonDay12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay12.Location = new System.Drawing.Point(150, 84);
+            this.buttonDay12.Location = new System.Drawing.Point(151, 84);
             this.buttonDay12.Name = "buttonDay12";
             this.buttonDay12.Size = new System.Drawing.Size(50, 50);
             this.buttonDay12.TabIndex = 0;
@@ -773,7 +761,7 @@
             this.buttonDay42.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonDay42.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay42.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay42.Location = new System.Drawing.Point(150, 252);
+            this.buttonDay42.Location = new System.Drawing.Point(151, 252);
             this.buttonDay42.Name = "buttonDay42";
             this.buttonDay42.Size = new System.Drawing.Size(50, 50);
             this.buttonDay42.TabIndex = 0;
@@ -799,7 +787,7 @@
             this.buttonDay32.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonDay32.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay32.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay32.Location = new System.Drawing.Point(150, 196);
+            this.buttonDay32.Location = new System.Drawing.Point(151, 196);
             this.buttonDay32.Name = "buttonDay32";
             this.buttonDay32.Size = new System.Drawing.Size(50, 50);
             this.buttonDay32.TabIndex = 0;
@@ -812,7 +800,7 @@
             this.buttonDay02.BackColor = System.Drawing.Color.Silver;
             this.buttonDay02.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay02.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay02.Location = new System.Drawing.Point(150, 28);
+            this.buttonDay02.Location = new System.Drawing.Point(151, 28);
             this.buttonDay02.Name = "buttonDay02";
             this.buttonDay02.Size = new System.Drawing.Size(50, 50);
             this.buttonDay02.TabIndex = 0;
@@ -825,7 +813,7 @@
             this.buttonDay22.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonDay22.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDay22.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.buttonDay22.Location = new System.Drawing.Point(150, 140);
+            this.buttonDay22.Location = new System.Drawing.Point(151, 140);
             this.buttonDay22.Name = "buttonDay22";
             this.buttonDay22.Size = new System.Drawing.Size(50, 50);
             this.buttonDay22.TabIndex = 0;
@@ -938,7 +926,7 @@
             // comboBoxJourFin
             // 
             this.comboBoxJourFin.FormattingEnabled = true;
-            this.comboBoxJourFin.Location = new System.Drawing.Point(151, 46);
+            this.comboBoxJourFin.Location = new System.Drawing.Point(185, 45);
             this.comboBoxJourFin.Name = "comboBoxJourFin";
             this.comboBoxJourFin.Size = new System.Drawing.Size(49, 21);
             this.comboBoxJourFin.TabIndex = 3;
@@ -946,7 +934,7 @@
             // comboBoxJourDebut
             // 
             this.comboBoxJourDebut.FormattingEnabled = true;
-            this.comboBoxJourDebut.Location = new System.Drawing.Point(73, 46);
+            this.comboBoxJourDebut.Location = new System.Drawing.Point(107, 45);
             this.comboBoxJourDebut.Name = "comboBoxJourDebut";
             this.comboBoxJourDebut.Size = new System.Drawing.Size(49, 21);
             this.comboBoxJourDebut.TabIndex = 2;
@@ -954,7 +942,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 51);
+            this.label3.Location = new System.Drawing.Point(163, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 13);
             this.label3.TabIndex = 2;
@@ -963,7 +951,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 51);
+            this.label2.Location = new System.Drawing.Point(38, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
@@ -971,14 +959,14 @@
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(7, 20);
+            this.textBoxSearch.Location = new System.Drawing.Point(41, 19);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(193, 20);
             this.textBoxSearch.TabIndex = 1;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(265, 44);
+            this.buttonSearch.Location = new System.Drawing.Point(240, 43);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 4;
@@ -1005,8 +993,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mars Explorer 2017";
             this.groupBoxCalendrier.ResumeLayout(false);
-            this.groupBoxCalendrier.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalendrier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -1083,7 +1069,6 @@
         private System.Windows.Forms.ComboBox comboBoxJourDebut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TrackBar trackBarCalendrier;
         private System.Windows.Forms.Timer timerMinutes;
         private System.Windows.Forms.Label labelMinutes;
         private System.Windows.Forms.Label label5;

@@ -13,14 +13,41 @@ namespace AppliMars {
 
         #region variables
 
-        int currentDay = 12;
+        private int _currentDay = 12;
+        private Mission _mission;
 
         #endregion
+
+        #region accesseurs
+
+        public Mission maMission {
+            get { return _mission; }
+            set { _mission = value; }
+        }
+
+        public int maJournneeCourante {
+            get { return _currentDay; }
+            set { _currentDay = value; }
+        }
+        
+
+        #endregion
+
 
         #region constructeurs
 
         public WindowLevel1() {
             InitializeComponent();
+            /*
+            comboBox1.Items.Add(new Item("Student 1", 1));
+            comboBox1.Items.Add(new Item("Student 2", 2));
+            comboBox1.Items.Add(new Item("Student 3", 3));
+            */
+        }
+
+        public WindowLevel1(int i) {
+            InitializeComponent();
+
         }
 
         #endregion
@@ -35,6 +62,7 @@ namespace AppliMars {
 
         #endregion
 
+
         #region evenements
 
         private void journee_Click(object sender, EventArgs e) {
@@ -45,24 +73,35 @@ namespace AppliMars {
         }
 
         private void pictureBoxLeftArrow_Click(object sender, EventArgs e) {
+            /*
             if (trackBarCalendrier.Value > 0) {
                 trackBarCalendrier.Value = trackBarCalendrier.Value - 1;
             }
             trackBarCalendrier_Scroll(sender, e);
+            */
+
+
 
         }
 
         private void pictureBoxRightArrow_Click(object sender, EventArgs e) {
+            /*
             if (trackBarCalendrier.Value < 9) {
                 trackBarCalendrier.Value = trackBarCalendrier.Value + 1;
             }
             trackBarCalendrier_Scroll(sender, e);
+            */
+
+
+
         }
 
+        /*
         private void trackBarCalendrier_Scroll(object sender, EventArgs e) {
 
             var c = GetAll(this, typeof(Button));
-            MessageBox.Show("Total Controls: " + c.Count());
+
+            // MessageBox.Show("Total Controls: " + c.Count());
             
             // var first = c.
 
@@ -86,19 +125,14 @@ namespace AppliMars {
                     }
                 }
             }
-
-
-
-
         }
+        */
 
         private void buttonSearch_Click(object sender, EventArgs e) {
             WindowResultSearch win2 = new WindowResultSearch(this);
             win2.Show();
             this.Hide();
         }
-
-
 
 
         private void timer1_Tick(object sender, EventArgs e) {
