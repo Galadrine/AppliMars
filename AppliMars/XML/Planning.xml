@@ -8,6 +8,8 @@
         <DebutAct></DebutAct>
         <FinAct></FinAct>
         <BoolExt></BoolExt>
+        <PosX></PosX>
+        <PosY></PosY>
         <DescriptionAct></DescriptionAct>
       </Activite>
     </Activites>

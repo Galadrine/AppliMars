@@ -6,16 +6,19 @@ using System.Text;
 public class Activite {
 
     #region variables
+    
+    public static int _nbActTotal;
 
-    private List<Astronaute> tableauAstronautes;
-    private int heuresDebut;
-    private int minutesDebut;
-    private int heuresFin;
-    private int minutesFin;
-    private string nom;
-    private string description;
-    private bool exterieur;
-    private System.Drawing.Point position;
+    public int _idAct;
+    private List<Astronaute> _tableauAstronautes;
+    private int _heuresDebut;
+    private int _minutesDebut;
+    private int _heuresFin;
+    private int _minutesFin;
+    private string _nom;
+    private string _description;
+    private bool _exterieur;
+    private int _posX, _posY;
 
     #endregion
 
@@ -23,54 +26,54 @@ public class Activite {
     #region accesseurs
 
     public System.Drawing.Point maPosition {
-        get { return position; }
-        set { position = value; }
+        get { return _position; }
+        set { _position = value; }
     }
 
 
     public bool interieurOuExterieur {
-        get { return exterieur; }
-        set { exterieur = value; }
+        get { return _exterieur; }
+        set { _exterieur = value; }
     }
 
 
     public string maDescription {
-        get { return description; }
-        set { description = value; }
+        get { return _description; }
+        set { _description = value; }
     }
 
 
     public string monNom {
-        get { return nom; }
-        set { nom = value; }
+        get { return _nom; }
+        set { _nom = value; }
     }
     
     public List<Astronaute> mesAstronautes {
-        get { return tableauAstronautes; }
-        set { tableauAstronautes = value; }
+        get { return _tableauAstronautes; }
+        set { _tableauAstronautes = value; }
     }
 
     public int mesMinutesFin {
-        get { return minutesFin; }
-        set { minutesFin = value; }
+        get { return _minutesFin; }
+        set { _minutesFin = value; }
     }
 
 
     public int monHeuresFin {
-        get { return heuresFin; }
-        set { heuresFin = value; }
+        get { return _heuresFin; }
+        set { _heuresFin = value; }
     }
 
 
     public int mesMinutesDebut {
-        get { return minutesDebut; }
-        set { minutesDebut = value; }
+        get { return _minutesDebut; }
+        set { _minutesDebut = value; }
     }
 
 
     public int monHeureDebut {
-        get { return heuresDebut; }
-        set { heuresDebut = value; }
+        get { return _heuresDebut; }
+        set { _heuresDebut = value; }
     }
     
 
@@ -78,11 +81,24 @@ public class Activite {
 
 
     #region constructeurs
-
-    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin)
-	{
-
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, int posX, int posY)
+    {
+        _idAct = _nbActTotal + 1;
+        _nbActTotal++;
+        _nom = unNom;
+        _exterieur = boolExt;
+        _description = uneDesc;
+        _heuresDebut = HDebut;
+        _minutesDebut = MDebut;
+        _heuresFin = HFin;
+        _minutesFin = MFin;
+        _posX = posX;
+        _posY = posY;
     }
+
+    public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin) 
+        : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, 0, 0){}
+
 
     #endregion
 

@@ -73,6 +73,8 @@ namespace AppliMars
         #endregion
 
         #region constructeurs 
+
+
         // Création d'une nouvelle mission (Création nouveaux XML)
         public Mission (string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes, string emplacementPlanningXML)
         {
@@ -84,13 +86,12 @@ namespace AppliMars
             _jourJ = 1;
             _cheminPlanningXML = "" + emplacementPlanningXML + "Planning.xml";
             // création des astronautes 
-
-            //////// ATTENTION A L'ORDRE : XDoc pas encore créer alors que ajoutAstronaute ajoute aussi dans le xml !!!!!
             _astronautes = new List<Astronaute>();
             _nbAstronautes = 0;
             foreach (string nom in nomsAstronautes)
             {
-                this.ajoutAstronaute(nom);
+                _astronautes.Add(new Astronaute(nom));
+                _nbAstronautes++;
             }
 
             // Création du fichier XML Géréral
@@ -106,7 +107,12 @@ namespace AppliMars
                     new XElement("Astronautes")));
             _generalXML.Save(_cheminGeneralXML);
 
-
+            // Ajout des astronautes dans le XML 
+            foreach (string nom in nomsAstronautes)
+            {
+                _generalXML.Element("Mission").Element("Astronautes").Add(new XElement("Astronaute", nom));
+            }
+            
             // Création de la liste des activités par défaut d'une journée dans le XML
             #region DefaultDay
             _generalXML.Element("Mission").Add(new XElement("DefaultDay", 
@@ -196,9 +202,6 @@ namespace AppliMars
             }
             _planningXML.Save(_cheminPlanningXML);
                 #endregion
-            
-            // Création des instances 
-
         }
     
 
