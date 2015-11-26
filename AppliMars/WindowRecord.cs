@@ -36,7 +36,7 @@ namespace AppliMars {
 
 
 
-                journeePasse = true;
+                // journeePasse = true;
 
             }
 

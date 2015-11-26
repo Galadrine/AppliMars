@@ -9,34 +9,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Lieu
-{
-	public virtual string _nomLieu
-	{
-		get;
-		set;
-	}
+public class Lieu {
 
-	public virtual Double _posXLieu
-	{
-		get;
-		set;
-	}
+    #region variables
 
-	public virtual Double _posYLieu
-	{
-		get;
-		set;
-	}
+    private string _nomLieu;
+    private int _posXLieu;
+    private int _posYLieu;
 
-	public virtual Double[] getCoordonnees()
-	{
-		throw new System.NotImplementedException();
-	}
+    #endregion
 
-	public Lieu(string unNom, Double unePosX, Double unePosY)
-	{
-	}
+
+    #region accesseurs
+
+    public int maPosX {
+        get { return _posXLieu; }
+        set { _posXLieu = value; }
+    }
+    public int maPosY {
+        get { return _posYLieu; }
+        set { _posYLieu = value; }
+    }
+
+    public string monNom {
+        get { return _nomLieu; }
+        set { _nomLieu = value; }
+    }
+
+
+    #endregion
+
+
+    #region constructeurs
+
+    public Lieu(string unNom, Double unePosX, Double unePosY) {
+
+    }
+
+    #endregion
+
+
+    #region méthodes
+
+
+    #endregion
 
 }
 

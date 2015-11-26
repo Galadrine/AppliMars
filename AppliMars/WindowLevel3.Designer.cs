@@ -30,7 +30,6 @@
             this.label_heure_debut = new System.Windows.Forms.Label();
             this.label_heure_fin = new System.Windows.Forms.Label();
             this.labelCoordonnees = new System.Windows.Forms.Label();
-            this.TextBoxAbscisse = new System.Windows.Forms.TextBox();
             this.labelLatitude = new System.Windows.Forms.Label();
             this.labelLongitude = new System.Windows.Forms.Label();
             this.TextBoxOrdonnee = new System.Windows.Forms.TextBox();
@@ -52,8 +51,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.TextBoxAbscisse = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxDescription
@@ -116,17 +118,6 @@
             this.labelCoordonnees.TabIndex = 10;
             this.labelCoordonnees.Text = "Coordonnee du lieu";
             this.labelCoordonnees.Visible = false;
-            // 
-            // TextBoxAbscisse
-            // 
-            this.TextBoxAbscisse.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TextBoxAbscisse.Location = new System.Drawing.Point(198, 366);
-            this.TextBoxAbscisse.Margin = new System.Windows.Forms.Padding(2);
-            this.TextBoxAbscisse.Name = "TextBoxAbscisse";
-            this.TextBoxAbscisse.Size = new System.Drawing.Size(35, 20);
-            this.TextBoxAbscisse.TabIndex = 11;
-            this.TextBoxAbscisse.Visible = false;
-            this.TextBoxAbscisse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
             // 
             // labelLatitude
             // 
@@ -283,6 +274,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.comboBoxTypeActivite);
             this.groupBox1.Controls.Add(this.checkBoxLocalisation);
             this.groupBox1.Controls.Add(this.textBoxDescription);
@@ -363,6 +355,29 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Activité du jour";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(280, 336);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            395,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(43, 20);
+            this.numericUpDown1.TabIndex = 31;
+            // 
+            // TextBoxAbscisse
+            // 
+            this.TextBoxAbscisse.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TextBoxAbscisse.Location = new System.Drawing.Point(198, 366);
+            this.TextBoxAbscisse.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxAbscisse.Name = "TextBoxAbscisse";
+            this.TextBoxAbscisse.Size = new System.Drawing.Size(35, 20);
+            this.TextBoxAbscisse.TabIndex = 11;
+            this.TextBoxAbscisse.Visible = false;
+            this.TextBoxAbscisse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +399,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +413,6 @@
         private System.Windows.Forms.Label label_heure_debut;
         private System.Windows.Forms.Label label_heure_fin;
         private System.Windows.Forms.Label labelCoordonnees;
-        private System.Windows.Forms.TextBox TextBoxAbscisse;
         private System.Windows.Forms.Label labelLatitude;
         private System.Windows.Forms.Label labelLongitude;
         private System.Windows.Forms.TextBox TextBoxOrdonnee;
@@ -419,6 +434,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox TextBoxAbscisse;
     }
 }
 

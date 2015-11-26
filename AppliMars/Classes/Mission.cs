@@ -9,68 +9,77 @@ namespace AppliMars
 {
     public class Mission
     {
-        #region variables 
-        public string _nomMission
-        {
-            get;
-            set;
+
+        #region variables
+
+        public string _nomMission;
+        public DateTime _dateDebut;
+        public int _dureeMission;
+        public DateTime _dateFin;
+        public int _jourJ;
+        public List<Astronaute> _astronautes;
+        public int _nbAstronautes;
+        public string _cheminGeneralXML;
+        public string _cheminPlanningXML;
+        public Planning _planning;
+
+        #endregion
+
+
+        #region accesseurs
+
+        public string monNomMission {
+            get { return _nomMission; }
+            set { _nomMission = value; }
         }
 
-        public DateTime _dateDebut
-        {
-            get;
-            set;
+        public DateTime maDateDebut {
+            get { return _dateDebut; }
+            set { _dateDebut = value; }
         }
 
-        public int _dureeMission
-        {
-            get;
-            set;
+        public int maDureeMission {
+            get { return _dureeMission; }
+            set { _dureeMission = value; }
         }
 
-        public DateTime _dateFin
-        {
-            get;
-            set;
+        public DateTime maDateFin {
+            get { return _dateFin; }
+            set { _dateFin = value; }
         }
 
-        public int _jourJ
-        {
-            get;
-            set;
+        public int monJourJ {
+            get { return _jourJ; }
+            set { _jourJ = value; }
         }
 
-        public List<Astronaute> _astronautes
-        {
-            get;
-            set;
+        public List<Astronaute> mesAstronautes {
+            get { return _astronautes; }
+            set { _astronautes = value; }
         }
 
-        public int _nbAstronautes
-        {
-            get;
-            set;
+        public int monNbAstronautes {
+            get { return _nbAstronautes; }
+            set { _nbAstronautes = value; }
         }
 
-        public string _cheminGeneralXML
-        {
-            get;
-            set;
+        public string monCheminGeneralXML {
+            get { return _cheminGeneralXML; }
+            set { _cheminGeneralXML = value; }
         }
 
-        public string _cheminPlanningXML
-        {
-            get;
-            set;
+        public string monCheminPlanningXML {
+            get { return _cheminPlanningXML; }
+            set { _cheminPlanningXML = value; }
         }
 
-        public Planning _planning
-        {
-            get;
-            set;
+        public Planning monPlanning {
+            get { return _planning; }
+            set { _planning = value; }
         }
 
         #endregion
+
 
         #region constructeurs 
 
@@ -234,6 +243,7 @@ namespace AppliMars
 
         #endregion
 
+
         #region Méthodes
         // Calcul du jour actuel de la mission (Jour sur Mars) 
         public int calculJourJ()
@@ -244,7 +254,7 @@ namespace AppliMars
         }
 
         // Ajout d'un astronaute à la mission + inscription dans le xml 
-// /!\ Non gestion des doublons (ajout d'un astronaute ayant le même nom qu'un déjà inscrit)
+        // /!\ Non gestion des doublons (ajout d'un astronaute ayant le même nom qu'un déjà inscrit)
         public void ajoutAstronaute(string nvAstronaute) 
         {
             _astronautes.Add(new Astronaute(nvAstronaute));

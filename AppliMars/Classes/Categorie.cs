@@ -9,35 +9,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Categorie
-{
+public class Categorie {
 
-    public Categorie SuperCategorie {
-        get;
-        set;
+    #region variables
+
+    private string _nomCategorie;
+    private Categorie _superCategorie;
+    private Categorie _sousCategorie;
+    private List<Activite> _listeActivite;
+
+    #endregion
+
+
+    #region accesseurs 
+
+    public Categorie maSousCategorie {
+        get { return _sousCategorie; }
+        set { _sousCategorie = value; }
+    }
+    
+    public Categorie maSuperCategorie {
+        get { return _superCategorie; }
+        set { _superCategorie = value; }
     }
 
-    public Categorie SousCategorie {
-        get;
-        set;
+    public string monNom {
+        get { return _nomCategorie; }
+        set { _nomCategorie = value; }
     }
 
+    public List<Activite> maListe {
+        get { return _listeActivite; }
+        set { _listeActivite = value; }
+    }
 
-	public virtual string _nomCaterogie
-	{
-		get;
-		set;
-	}
+    #endregion
 
-	public virtual IEnumerable<Activite> listeActivite
-	{
-		get;
-		set;
-	}
 
-	public Categorie(string unNom)
+    #region constructeurs
+
+    public Categorie(string unNom)
 	{
-	}
+
+    }
+
+    #endregion
+
+
 
 }
 

@@ -12,31 +12,37 @@ using System.Xml.Linq;
 
 public class Planning
 {
-    #region Variables
-    public List<Journee> _tableauJournees {
-        get;
-        set;
+
+    #region variables
+
+    private List<Journee> _tableauJournees;    
+    private string _nomPlanning;
+
+    #endregion
+
+
+    #region accesseurs
+
+    public List<Journee> monTableauJournees {
+        get { return _tableauJournees; }
+        set { _tableauJournees = value; }
     }
 
+    public string monNomPlanning {
+        get { return _nomPlanning; }
+        set { _nomPlanning = value; }
+    }
 
-	public string _nomPlanning
-	{
-		get;
-		set;
-	}
-
-    // WHAT IS THIS ?
-	public virtual void majJourJXML(int nouveauJour)
-	{
-		throw new System.NotImplementedException();
-	}
     #endregion
+
+
+    #region constructeurs
 
     // Création de l'instance Planning à partir d'un fichier XML 
     public Planning (string cheminXMLPlanning)
     {
         XDocument _planningXML = XDocument.Load(cheminXMLPlanning);
-        _tableauJournees = new List<Journee>();
+        monTableauJournees = new List<Journee>();
         var jours = from jour in _planningXML.Descendants("Planning") select jour;
         foreach (XElement j in jours.Elements("Jour"))
         {
@@ -45,6 +51,8 @@ public class Planning
             _tableauJournees.Add(new Journee(num, cr, cheminXMLPlanning));
         }
     }
+
+    #endregion
 
 }
 

@@ -27,15 +27,16 @@ namespace AppliMars {
 
         #endregion
 
+
         #region constructeurs
 
         public WindowResultSearch() {
             InitializeComponent();
         }
 
-        public WindowResultSearch(AppliMars.WindowLevel1 w1) {
+        public WindowResultSearch(AppliMars.WindowLevel1 w1, TextBox t, ComboBox c1, ComboBox c2) {
             InitializeComponent();
-
+            
             maFenetrePrec = w1;
 
         }
@@ -43,10 +44,12 @@ namespace AppliMars {
         
         #endregion
 
+
         #region methodes
 
 
         #endregion
+
 
         #region evenements
 

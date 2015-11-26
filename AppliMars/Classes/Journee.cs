@@ -21,9 +21,10 @@ public class Journee {
   
     #endregion
 
+
     #region accesseurs
 
-    public List<Activite> mesActivites {
+    public List<Activite> maListeActivites {
         get { return _listeActivites; }
         set { _listeActivites = value; }
     }
@@ -48,15 +49,15 @@ public class Journee {
     {
         monNumero = num;
         monCompteRendu = "";
-        mesActivites = new List<Activite>();
+        maListeActivites = new List<Activite>();
     }
 
-    /*
+    
         public Journee(int numero, string compteRendu, string cheminPlanningXML)
         {
-            _listeActivites = new List<Activite>();
-            _numero = numero;
-            _compteRendu = compteRendu;
+            maListeActivites = new List<Activite>();
+            monNumero = numero;
+            monCompteRendu = compteRendu;
 
             // Récupération de la liste des activités de la journée
             XDocument _planningXML = XDocument.Load(cheminPlanningXML);
@@ -72,6 +73,9 @@ public class Journee {
                 int mFinAct = int.Parse(a.Element("MFinAct").Value);
                 bool ext = bool.Parse(a.Element("BoolExt").Value);
                 string description = a.Element("DescriptionAct").Value;
+
+                List<Astronaute> astro = new List<Astronaute>();
+
                 // Récupération de la liste des participants
                 //var participants = from astronaute in _planningXML.Descendants("Participants")
                 //                   where  
@@ -80,19 +84,17 @@ public class Journee {
                 {
                     int posX = int.Parse(a.Element("PosX").Value);
                     int posY = int.Parse(a.Element("PosY").Value);
-                    _listeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, posX, posY))
+                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, posX, posY));
                 }
-                else 
-                _listeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct));
+                else
+                maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
             }
-     * 
-        }*/
+     
+        }
 
 
 
     #endregion
-
-
 
 }
 

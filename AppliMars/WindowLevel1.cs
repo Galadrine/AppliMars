@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -38,11 +38,16 @@ namespace AppliMars {
 
         public WindowLevel1() {
             InitializeComponent();
-            /*
-            comboBox1.Items.Add(new Item("Student 1", 1));
-            comboBox1.Items.Add(new Item("Student 2", 2));
-            comboBox1.Items.Add(new Item("Student 3", 3));
-            */
+
+            // TO DO : Remplacer par les lignes commentées après avoir créer les XML des Missions
+            // for (int i = 0; i < _mission._dureeMission; i++) {
+            for (int i = 1; i <= 500; i++) {
+                // comboBoxJourDebut.Items.Add(_mission._planning._tableauJournees[i]);
+                comboBoxJourDebut.Items.Add(i);
+                comboBoxJourFin.Items.Add(i);
+            }
+            comboBoxJourDebut.SelectedIndex = 0;
+            comboBoxJourFin.SelectedIndex = 499;
         }
 
         public WindowLevel1(int i) {
@@ -129,7 +134,7 @@ namespace AppliMars {
         */
 
         private void buttonSearch_Click(object sender, EventArgs e) {
-            WindowResultSearch win2 = new WindowResultSearch(this);
+            WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch, comboBoxJourDebut, comboBoxJourFin);
             win2.Show();
             this.Hide();
         }

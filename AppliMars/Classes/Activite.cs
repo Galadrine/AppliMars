@@ -8,8 +8,8 @@ public class Activite {
     #region variables
     
     public static int _nbActTotal;
-
     public int _idAct;
+    private int _posX, _posY;
     private List<Astronaute> _participants;
     private int _heuresDebut;
     private int _minutesDebut;
@@ -18,30 +18,41 @@ public class Activite {
     private string _nom;
     private string _description;
     private bool _exterieur;
-    private int _posX, _posY;
 
     #endregion
 
 
     #region accesseurs
 
-    public System.Drawing.Point maPosition {
-        get { return _position; }
-        set { _position = value; }
+    public int monNbActionTotal {
+        get { return _nbActTotal; }
+        set { _nbActTotal = value; }
     }
 
+    public int monID {
+        get { return _idAct; }
+        set { _idAct = value; }
+    }
+
+    public int maPosX {
+        get { return _posX; }
+        set { _posX = value; }
+    }
+
+    public int maPosY {
+        get { return _posY; }
+        set { _posY = value; }
+    }
 
     public bool interieurOuExterieur {
         get { return _exterieur; }
         set { _exterieur = value; }
     }
 
-
     public string maDescription {
         get { return _description; }
         set { _description = value; }
     }
-
 
     public string monNom {
         get { return _nom; }
@@ -49,8 +60,8 @@ public class Activite {
     }
     
     public List<Astronaute> mesAstronautes {
-        get { return _tableauAstronautes; }
-        set { _tableauAstronautes = value; }
+        get { return _participants; }
+        set { _participants = value; }
     }
 
     public int mesMinutesFin {
@@ -58,53 +69,54 @@ public class Activite {
         set { _minutesFin = value; }
     }
 
-
     public int monHeuresFin {
         get { return _heuresFin; }
         set { _heuresFin = value; }
     }
-
 
     public int mesMinutesDebut {
         get { return _minutesDebut; }
         set { _minutesDebut = value; }
     }
 
-
     public int monHeureDebut {
         get { return _heuresDebut; }
         set { _heuresDebut = value; }
     }
     
-
     #endregion
 
 
     #region constructeurs
+
     // Création d'une nouvelle instance d'activité (pas dans au chargement du XML)
     public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants,  int posX, int posY)
     {
         this.initAct(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants);
-        _posX = posX;
-        _posY = posY;
-        _idAct = _nbActTotal + 1;
-        _nbActTotal++;
+        maPosX = posX;
+        maPosY = posY;
+        monID = _nbActTotal + 1;
+        monNbActionTotal++;
         
     }
+
+
     public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants)
         : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, 0, 0) { }
+
 
     // Création d'une nouvelle instance d'activité au chargement du XML (avec ID prédéfini)
     public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants,  int posX, int posY, int idAct)
     {
         this.initAct(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants);
-        _posX = posX;
-        _posY = posY;
-        _idAct = idAct;
+        maPosX = posX;
+        maPosY = posY;
+        monID = idAct;
     }
+
+
     public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, int idAct) 
         : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, 0, 0, idAct){}
-
 
     #endregion
 
@@ -113,15 +125,19 @@ public class Activite {
 
     public void initAct(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants)
     {
-        _nom = unNom;
-        _exterieur = boolExt;
-        _description = uneDesc;
-        _heuresDebut = HDebut;
-        _minutesDebut = MDebut;
-        _heuresFin = HFin;
-        _minutesFin = MFin;
-        _participants = new List<Astronaute>();
-        _participants = participants;
+        monNom = unNom;
+        interieurOuExterieur = boolExt;
+        maDescription = uneDesc;
+        monHeureDebut = HDebut;
+        mesMinutesDebut = MDebut;
+        monHeureDebut = HFin;
+        monHeuresFin = MFin;
+        mesAstronautes = new List<Astronaute>();
+
+        foreach (var ast in participants) {
+            mesAstronautes.Add(ast);
+        }
+
     }
 
     public System.Drawing.Point convertionCoordonneesXMLVersImage(int posX, int posY) {
