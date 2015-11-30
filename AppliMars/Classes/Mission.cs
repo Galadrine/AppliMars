@@ -247,7 +247,7 @@ namespace AppliMars
             // Récupération du chemin et du nom du fichier XML du Planning
             _cheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
             // Génération du planning associé à la mission
-            _planning = new Planning(_cheminPlanningXML);
+            _planning = new Planning(_cheminPlanningXML, this);
         }
 
         #endregion

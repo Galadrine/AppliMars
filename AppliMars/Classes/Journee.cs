@@ -11,6 +11,7 @@ namespace AppliMars {
 
         #region variables
 
+        private Mission _m;
         private List<Activite> _listeActivites;
         private int _numero;
         private string _compteRendu;
@@ -34,6 +35,10 @@ namespace AppliMars {
         public string monCompteRendu {
             get { return _compteRendu; }
             set { _compteRendu = value; }
+        }
+
+        public Mission m {
+            get {return _m;}
         }
 
         #endregion
@@ -76,10 +81,12 @@ namespace AppliMars {
                 var participants = from astronaute in _planningXML.Descendants("participants")
                                    where astronaute.Parent.Parent.Attribute("idAct").ToString() == idAct.ToString()
                                    select astronaute;
-                //foreach (XElement p in participants)
-                //{
-                //    astro.Add()
-                //}
+                foreach (XElement p in participants)
+                {
+                    // Recherche le participant dans la liste des Astronautes de la mission
+                    // Astronaute astroExistant = _m._astronautes.Find(p);
+                    // astro.Add(astroExistant);
+                }
                 if (ext == true) {
                     int posX = int.Parse(a.Element("PosX").Value);
                     int posY = int.Parse(a.Element("PosY").Value);
