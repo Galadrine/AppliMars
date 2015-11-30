@@ -140,15 +140,6 @@
         7RvMxPSlxXCEewAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="buttonDay12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAM1JREFUOE+l
-        kwERwjAQBCMBCUhAAhJwABLqACQgASfgABwgoTiA204v0PmElOFmdprk7z/fpE0V7cRZ9COMt6KphbiK
-        ZwVieIpqJZtqEdouJZTAO9FS3MVDEFxXIIaHLsjJuggqH4bZd+HBS06WC7BLS3j+KrARPxXgXX3qjPku
-        QgG3FU5XcnFzGp9hMxa5idUwe4vd3QExPHiDvMNcgjpBe7QM3LfNjL2OJ7wqAT4Ofpp9Azx4ycli8tne
-        HCYFOFG3fxOlBCCG5yiUk9IL8D55AOSuRlMAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="timerMinutes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

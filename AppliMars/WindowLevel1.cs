@@ -15,8 +15,11 @@ namespace AppliMars {
 
         private int _currentDay = 12;
         private Mission _mission;
+        private Planning plan = new Planning(500);
+
 
         #endregion
+
 
         #region accesseurs
 
@@ -39,6 +42,36 @@ namespace AppliMars {
         public WindowLevel1() {
             InitializeComponent();
 
+            // TO DO 
+            // Charger ici la date du début de la mission
+            DateTime deb = new DateTime(2015,11,12,00,01,00);
+            List<string> list = new List<string>();
+            _mission = new Mission("MaMission", deb, 500, list);
+
+            DateTime now = DateTime.Now;
+
+            TimeSpan diff = now - _mission.maDateDebut;
+            Double totalMin = diff.TotalMinutes;
+
+            int nbJours = (int)(totalMin / 1480);
+            double minRestantes = (totalMin - (nbJours * 1480));
+
+            int hActuelle = (int)(minRestantes / 60);
+            int minActuelle = (int)(minRestantes - (hActuelle * 60));
+
+            labelJour.Text = nbJours.ToString();
+            labelHeures.Text = hActuelle.ToString();
+            labelMinutes.Text = minActuelle.ToString();
+
+
+
+
+
+
+
+            Console.WriteLine(diff);
+
+
             // TO DO : Remplacer par les lignes commentées après avoir créer les XML des Missions
             // for (int i = 0; i < _mission._dureeMission; i++) {
             for (int i = 1; i <= 500; i++) {
@@ -46,12 +79,55 @@ namespace AppliMars {
                 comboBoxJourDebut.Items.Add(i);
                 comboBoxJourFin.Items.Add(i);
             }
+
             comboBoxJourDebut.SelectedIndex = 0;
             comboBoxJourFin.SelectedIndex = 499;
+
+
+            int ent = 500;
+            int cpt = 1;
+
+            for (int i = 1; i <= ent / 50; i++) {
+
+                for (int j = 1; j <= 5; j++) {
+
+                    for (int k = 1; k <= 10; k++) {
+
+                        Button bt = new Button();
+                        bt.Text = cpt.ToString();
+                        groupBoxCalendrier.Controls.Add(bt);
+                        bt.Width = 50;
+                        bt.Height = 50;
+
+                        // TO DO
+                        // Vérifier si le jour est passé ou non
+                        if (false) {
+                            bt.BackColor = System.Drawing.Color.Silver;
+                        } else if (false) {
+                            bt.BackColor = System.Drawing.Color.LightBlue;
+                        } else {
+                            bt.BackColor = System.Drawing.Color.PaleGreen;
+                        }
+
+                        bt.Click += new EventHandler(journee_Click);
+
+                        bt.BackColor = System.Drawing.Color.PaleGreen;
+                        bt.Location = new Point(98 + ((k-1) * 56), 28 + ((j-1) * 56));
+
+                        cpt++;
+                    }
+                }
+            }
+
+            Console.WriteLine("teset");
+
         }
 
-        public WindowLevel1(int i) {
+        // Initialise les XX boutons des jours
+        public WindowLevel1(int ent) {
             InitializeComponent();
+            
+
 
         }
 
@@ -78,6 +154,7 @@ namespace AppliMars {
         }
 
         private void pictureBoxLeftArrow_Click(object sender, EventArgs e) {
+
             /*
             if (trackBarCalendrier.Value > 0) {
                 trackBarCalendrier.Value = trackBarCalendrier.Value - 1;
@@ -87,15 +164,20 @@ namespace AppliMars {
 
 
 
+
+
         }
 
         private void pictureBoxRightArrow_Click(object sender, EventArgs e) {
+
             /*
             if (trackBarCalendrier.Value < 9) {
                 trackBarCalendrier.Value = trackBarCalendrier.Value + 1;
             }
             trackBarCalendrier_Scroll(sender, e);
             */
+
+
 
 
 
