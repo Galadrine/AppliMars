@@ -66,6 +66,7 @@ public class Journee {
                         select activite;
         foreach (XElement a in activites.Elements("Activite"))
         {
+            int idAct = int.Parse(a.Attribute("idAct").Value);
             string nom = a.Element("NomAct").Value;
             int hDebutAct = int.Parse(a.Element("HDebutAct").Value);
             int mDebutAct = int.Parse(a.Element("MDebutAct").Value);
@@ -74,53 +75,26 @@ public class Journee {
             bool ext = bool.Parse(a.Element("BoolExt").Value);
             string description = a.Element("DescriptionAct").Value;
 
+
             List<Astronaute> astro = new List<Astronaute>();
 
-            // Récupération de la liste des participants
-            //var participants = from astronaute in _planningXML.Descendants("Participants")
-            //                   where  
-            //foreach (XElement p in)
+            // récupération de la liste des participants
+            var participants = from astronaute in _planningXML.Descendants("participants")
+                               where astronaute.Parent.Parent.Attribute("idAct").ToString() == idAct.ToString()
+                               select astronaute;
+            //foreach (XElement p in participants)
+            //{
+            //    astro.Add()
+            //}
             if (ext == true)
             {
-<<<<<<< HEAD
-                int idAct = int.Parse(a.Attribute("idAct").Value);
-                string nom = a.Element("NomAct").Value;
-                int hDebutAct = int.Parse(a.Element("HDebutAct").Value);
-                int mDebutAct = int.Parse(a.Element("MDebutAct").Value);
-                int hFinAct = int.Parse(a.Element("HFinAct").Value);
-                int mFinAct = int.Parse(a.Element("MFinAct").Value);
-                bool ext = bool.Parse(a.Element("BoolExt").Value);
-                string description = a.Element("DescriptionAct").Value;
-                
-
-                List<Astronaute> astro = new List<Astronaute>();
-
-                // récupération de la liste des participants
-                var participants = from astronaute in _planningXML.Descendants("participants")
-                                   where  astronaute.Parent.Parent.Attribute("idAct").ToString() == idAct.ToString()
-                                   select astronaute;
-                //foreach (XElement p in participants)
-                //{
-                //    astro.Add()
-                //}
-                if (ext == true)
-                {
-                    int posX = int.Parse(a.Element("PosX").Value);
-                    int posY = int.Parse(a.Element("PosY").Value);
-                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, posX, posY));
-                }
-                else
-                maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
-=======
                 int posX = int.Parse(a.Element("PosX").Value);
                 int posY = int.Parse(a.Element("PosY").Value);
                 maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, posX, posY));
->>>>>>> origin/master
             }
             else
-            maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
+                maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
         }
-     
     }
 
     #endregion
