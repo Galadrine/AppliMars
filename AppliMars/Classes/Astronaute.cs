@@ -8,7 +8,8 @@ namespace AppliMars {
     public class Astronaute {
 
         #region variables
-        private static List<Astronaute> _mesAstronautes;
+
+        private static List<Astronaute> _mesAstronautes = new List<Astronaute>();
         private string _nomAstronaute;
 
         #endregion accesseurs

@@ -42,6 +42,9 @@ namespace AppliMars {
         public WindowLevel1() {
             InitializeComponent();
 
+            Astronaute ast = new Astronaute("Bob");
+
+
             // TO DO 
             // Charger ici la date du début de la mission
             DateTime deb = new DateTime(2015,11,12,00,01,00);
