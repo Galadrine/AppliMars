@@ -111,7 +111,6 @@ namespace AppliMars {
 
                         bt.Click += new EventHandler(journee_Click);
 
-                        bt.BackColor = System.Drawing.Color.PaleGreen;
                         bt.Location = new Point(98 + ((k-1) * 56), 28 + ((j-1) * 56));
 
                         cpt++;
