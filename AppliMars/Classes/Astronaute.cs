@@ -8,7 +8,7 @@ namespace AppliMars {
     public class Astronaute {
 
         #region variables
-
+        private static List<Astronaute> _mesAstronautes;
         private string _nomAstronaute;
 
         #endregion accesseurs
@@ -28,6 +28,7 @@ namespace AppliMars {
 
         public Astronaute(string nomAstronaute) {
             monNom = nomAstronaute;
+            _mesAstronautes.Add(this);
         }
 
         #endregion
