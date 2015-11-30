@@ -83,6 +83,15 @@ namespace AppliMars
 
         #region constructeurs 
 
+        public Mission(string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes) {
+            // Création de l'instance
+            _nomMission = nomMission;
+            _dateDebut = dateDebut;
+            _dureeMission = dureeMission;
+            _dateFin = _dateDebut.AddDays(_dureeMission);
+            _jourJ = 1;
+        }
+
 
         // Création d'une nouvelle mission (Création nouveaux XML)
         public Mission (string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes, string emplacementPlanningXML)

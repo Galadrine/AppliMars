@@ -52,6 +52,13 @@ public class Planning
         }
     }
 
+    public Planning(int nbJours) {
+        monTableauJournees = new List<Journee>();
+        for (int i = 0; i < nbJours; i++) {
+            Journee j = new Journee(i);
+        }
+    }
+
     #endregion
 
 }
