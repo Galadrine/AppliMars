@@ -66,6 +66,7 @@ public class Journee {
                             select activite;
             foreach (XElement a in activites.Elements("Activite"))
             {
+                int idAct = int.Parse(a.Attribute("idAct").Value);
                 string nom = a.Element("NomAct").Value;
                 int hDebutAct = int.Parse(a.Element("HDebutAct").Value);
                 int mDebutAct = int.Parse(a.Element("MDebutAct").Value);
@@ -73,13 +74,18 @@ public class Journee {
                 int mFinAct = int.Parse(a.Element("MFinAct").Value);
                 bool ext = bool.Parse(a.Element("BoolExt").Value);
                 string description = a.Element("DescriptionAct").Value;
+                
 
                 List<Astronaute> astro = new List<Astronaute>();
 
-                // Récupération de la liste des participants
-                //var participants = from astronaute in _planningXML.Descendants("Participants")
-                //                   where  
-                //foreach (XElement p in)
+                // récupération de la liste des participants
+                var participants = from astronaute in _planningXML.Descendants("participants")
+                                   where  astronaute.Parent.Parent.Attribute("idAct").ToString() == idAct.ToString()
+                                   select astronaute;
+                //foreach (XElement p in participants)
+                //{
+                //    astro.Add()
+                //}
                 if (ext == true)
                 {
                     int posX = int.Parse(a.Element("PosX").Value);
