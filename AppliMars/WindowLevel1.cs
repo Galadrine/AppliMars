@@ -63,7 +63,7 @@ namespace AppliMars {
             labelHeures.Text = hActuelle.ToString();
             labelMinutes.Text = minActuelle.ToString();
 
-
+            _mission.monJourJ = nbJours;
 
 
 
@@ -101,9 +101,9 @@ namespace AppliMars {
 
                         // TO DO
                         // Vérifier si le jour est passé ou non
-                        if (false) {
+                        if (cpt < _mission.monJourJ) {
                             bt.BackColor = System.Drawing.Color.Silver;
-                        } else if (false) {
+                        } else if (cpt == _mission.monJourJ) {
                             bt.BackColor = System.Drawing.Color.LightBlue;
                         } else {
                             bt.BackColor = System.Drawing.Color.PaleGreen;

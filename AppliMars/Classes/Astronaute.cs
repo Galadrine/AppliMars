@@ -3,39 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Astronaute {
+namespace AppliMars {
 
-    #region variables
+    public class Astronaute {
 
-    private string _nomAstronaute;
+        #region variables
 
-    #endregion accesseurs
+        private string _nomAstronaute;
+
+        #endregion accesseurs
 
 
-    #region accesseurs
+        #region accesseurs
 
-    public string monNom {
-        get { return _nomAstronaute; }
-        set { _nomAstronaute = value; }
+        public string monNom {
+            get { return _nomAstronaute; }
+            set { _nomAstronaute = value; }
+        }
+
+        #endregion
+
+
+        #region constructeurs
+
+        public Astronaute(string nomAstronaute) {
+            monNom = nomAstronaute;
+        }
+
+        #endregion
+
+
+        #region méthodes
+
+
+        #endregion
+
+
     }
-
-    #endregion
-
-
-    #region constructeurs
-
-    public Astronaute(string nomAstronaute) {
-        monNom = nomAstronaute;
-    }
-
-    #endregion
-
-
-    #region méthodes
-
-
-    #endregion
-
 
 }
-
