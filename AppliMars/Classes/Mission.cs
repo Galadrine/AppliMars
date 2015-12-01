@@ -187,39 +187,7 @@ namespace AppliMars
             #endregion
 
             // Création du fichier XML Planning pour la mission (depuis la journée par défaut)
-            #region CréationXMLPlanning
-            XDocument _planningXML = new XDocument();
-            for (int i = 1; i <= _dureeMission; i++ )
-            {
-                _planningXML.Element("Planning").Add(
-                    new XElement("Jour",
-                        new XAttribute("id", i),
-                        new XElement("CRJour"),
-                        new XElement("Activites")));
-
-                // Récupération des infos de chaque activité d'une journée par défaut
-                var activites = from activite in _generalXML.Descendants("Timetable") select activite;
-                foreach (XElement a in activites.Elements("Activity"))
-                {
-                    string heureDebutAct = a.Element("HeureDeb").Value;
-                    string heureFinAct = a.Element("HeureFin").Value;
-                    string nomAct = a.Element("Nom").Value;
-                    string extBoolAct = a.Element("ExtBool").Value;
-                    string descriptionAct = a.Element("Description").Value;
-                    
-                    // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
-                    var edt = (from jour in _planningXML.Descendants("Planning") where jour.Attribute("id").Value == i.ToString() select jour.Element("Activites")).FirstOrDefault();
-                    edt.Add(new XElement("Activite",
-                        new XElement("NomAct", nomAct),
-                        new XElement("DebutAct", heureDebutAct),
-                        new XElement("FinAct", heureFinAct),
-                        new XElement("BoolExt", extBoolAct),
-                        new XElement("DescriptionAct", descriptionAct)));   
-                }
-                
-            }
-            _planningXML.Save(_cheminPlanningXML);
-                #endregion
+            this.creaPlanningXML();
         }
     
 
@@ -260,6 +228,41 @@ namespace AppliMars
             TimeSpan ts = DateTime.Now - _dateDebut;
             int jourJ = ts.Minutes / 1480;
             return jourJ;
+        }
+
+        // Création du XML Planning (avec que des journées par défaut)
+        public void creaPlanningXML()
+        {
+            XDocument _planningXML = new XDocument();
+            for (int i = 1; i <= _dureeMission; i++)
+            {
+                _planningXML.Element("Planning").Add(
+                    new XElement("Jour",
+                        new XAttribute("id", i),
+                        new XElement("CRJour"),
+                        new XElement("Activites")));
+
+                // Récupération des infos de chaque activité d'une journée par défaut
+                var activites = from activite in _generalXML.Descendants("Timetable") select activite;
+                foreach (XElement a in activites.Elements("Activity"))
+                {
+                    string heureDebutAct = a.Element("HeureDeb").Value;
+                    string heureFinAct = a.Element("HeureFin").Value;
+                    string nomAct = a.Element("Nom").Value;
+                    string extBoolAct = a.Element("ExtBool").Value;
+                    string descriptionAct = a.Element("Description").Value;
+
+                    // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
+                    var edt = (from jour in _planningXML.Descendants("Planning") where jour.Attribute("id").Value == i.ToString() select jour.Element("Activites")).FirstOrDefault();
+                    edt.Add(new XElement("Activite",
+                        new XElement("NomAct", nomAct),
+                        new XElement("DebutAct", heureDebutAct),
+                        new XElement("FinAct", heureFinAct),
+                        new XElement("BoolExt", extBoolAct),
+                        new XElement("DescriptionAct", descriptionAct)));
+                }
+            }
+            _planningXML.Save(_cheminPlanningXML);
         }
 
         // Ajout d'un astronaute à la mission + inscription dans le xml 

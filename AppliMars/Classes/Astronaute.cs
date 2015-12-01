@@ -26,7 +26,8 @@ namespace AppliMars {
 
         #region constructeurs
 
-        public Astronaute(string nomAstronaute) {
+        public Astronaute(string nomAstronaute)
+        {
             monNom = nomAstronaute;
         }
 

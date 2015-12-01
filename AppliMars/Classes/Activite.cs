@@ -133,7 +133,8 @@ namespace AppliMars {
             monHeuresFin = MFin;
             mesAstronautes = new List<Astronaute>();
 
-            foreach (var ast in participants) {
+            foreach (var ast in participants)
+            {
                 mesAstronautes.Add(ast);
             }
 

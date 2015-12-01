@@ -84,8 +84,12 @@ namespace AppliMars {
                 foreach (XElement p in participants)
                 {
                     // Recherche le participant dans la liste des Astronautes de la mission
-                    // Astronaute astroExistant = _m._astronautes.Find(p);
-                    // astro.Add(astroExistant);
+                    string nomP = p.ToString();
+                    Astronaute pTrouve = (from astronautePresent in _m.mesAstronautes
+                                          where astronautePresent.ToString() == nomP
+                                          select astronautePresent).FirstOrDefault();
+                    // Ajout de l'astronaute dans la liste des participants à l'activité 
+                    astro.Add(pTrouve);
                 }
                 if (ext == true) {
                     int posX = int.Parse(a.Element("PosX").Value);
