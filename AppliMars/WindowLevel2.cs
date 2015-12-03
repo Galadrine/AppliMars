@@ -14,8 +14,8 @@ namespace AppliMars {
         #region variables
 
 
-        private WindowLevel1 win1;
-        private Journee jour;
+        private WindowLevel1 _win1;
+        private Journee _jour;
 
         #endregion
 
@@ -23,15 +23,15 @@ namespace AppliMars {
 
 
         public WindowLevel1 maFenetrePrec {
-            get { return win1; }
-            set { win1 = value; }
+            get { return _win1; }
+            set { _win1 = value; }
         }
 
 
 
         public Journee maJournee {
-            get { return jour; }
-            set { jour = value; }
+            get { return _jour; }
+            set { _jour = value; }
         }
 
 
@@ -44,17 +44,25 @@ namespace AppliMars {
 
         }
 
-        public WindowLevel2(string numeroJour, AppliMars.WindowLevel1 w1)
-            : this() {
-            labelJour.Text = numeroJour;
+       // public windowlevel2(string numerojour, applimars.windowlevel1 w1)
+       //     : this() 
+       // {
+       //     labeljour.text = numerojour;
 
-            maJournee = new Journee(Int32.Parse(numeroJour));
-            maFenetrePrec = w1;
+       //     majournee = new journee(int32.parse(numerojour));
+       //     mafenetreprec = w1;
 
 
-            verifDifferentsEDT();
+       //     verifdifferentsedt();
 
-       }
+       //}
+
+        public WindowLevel2(Journee jour, AppliMars.WindowLevel1 w1)
+        {
+            _win1 = w1;
+            _jour = jour;
+            labelJour.Text = _jour.monNumero.ToString();
+        }
 
         #endregion
 
@@ -75,14 +83,14 @@ namespace AppliMars {
         #region evenements
 
         private void pictureBoxJourPrecedent_Click(object sender, EventArgs e) {
-            if (jour.monNumero != 1) {
+            if (_jour.monNumero != 1) {
                 labelJour.Text = (Int32.Parse(labelJour.Text)-1).ToString();
                 majActivites();
             }
         }
 
         private void pictureBoxJourSuivant_Click(object sender, EventArgs e) {
-            if (jour.monNumero != 500) {
+            if (_jour.monNumero != 500) {
                 labelJour.Text = (Int32.Parse(labelJour.Text) + 1).ToString();
                 majActivites();
             }
@@ -97,7 +105,7 @@ namespace AppliMars {
 
         private void buttonRetourCalendrier_Click(object sender, EventArgs e) {
             this.Close();
-            win1.Show();
+            _win1.Show();
         }
 
 
@@ -110,7 +118,7 @@ namespace AppliMars {
 
         private void buttonCompteRendu_Click(object sender, EventArgs e) {
             Button but = sender as Button;
-            WindowRecord winrec = new WindowRecord(but.Text, this);
+            WindowRecord winrec = new WindowRecord(maJournee, this);
             winrec.Show();
             this.Hide();
         }

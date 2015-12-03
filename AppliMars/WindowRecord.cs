@@ -13,33 +13,28 @@ namespace AppliMars {
 
         #region variables
 
-        AppliMars.WindowLevel2 win2;
-        bool journeePasse = false;
+        AppliMars.WindowLevel2 _win2;
+        Journee _jour;
+        bool journeePasse;
 
         #endregion 
 
 
-
         #region constructeurs 
 
-        public WindowRecord(string numeroJour, AppliMars.WindowLevel2 w2)
+        public WindowRecord(Journee jour, AppliMars.WindowLevel2 w2)
             : this() {
-            win2 = w2;
+            _win2 = w2;
+            _jour = jour;
+            this.Text = "Compte-rendu du jour "+(jour.monNumero).ToString();
+            labelCompteRendu.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
 
-            this.Text = "Compte-rendu du jour "+(win2.maJournee.monNumero).ToString();
-            labelCompteRendu.Text = "Compte-rendu du jour " + (win2.maJournee.monNumero).ToString();
-
-
-            // Insérer ici le code pour vérifier si le jour est passé ou pas
-            if (false) {
-
-
-
-
-                // journeePasse = true;
-
-            }
-
+            // érifier si le jour est passé ou pas
+            if (_jour.monNumero < _jour.m._jourJ)
+                journeePasse = true;
+            else
+                journeePasse = false;
+            l_CR.Text = _jour.monCompteRendu;
 
         }
 
@@ -63,11 +58,11 @@ namespace AppliMars {
 
         private void buttonRetourJournee_Click(object sender, EventArgs e) {
             this.Close();
-            win2.Show();
+            _win2.Show();
         }
 
         private void buttonModifier_Click(object sender, EventArgs e) {
-            textBoxCompteRendu.Text.Substring(0,1000);
+            tB_CR.Text.Substring(0,1000);
         }
 
         #endregion
@@ -77,9 +72,14 @@ namespace AppliMars {
         }
 
         private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) {
-            if (textBoxCompteRendu.Text.Length > 1000) {
+            if (tB_CR.Text.Length > 1000) {
                 labelDanger.Visible = true;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
 
