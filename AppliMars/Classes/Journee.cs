@@ -34,7 +34,11 @@ namespace AppliMars {
 
         public string monCompteRendu {
             get { return _compteRendu; }
-            set { _compteRendu = value; }
+            set 
+            { 
+                _compteRendu = value;
+                // MAJ dans le XML !!
+            }
         }
 
         public Mission m {

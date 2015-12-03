@@ -187,7 +187,7 @@ namespace AppliMars
             #endregion
 
             // Création du fichier XML Planning pour la mission (depuis la journée par défaut)
-            this.creaPlanningXML();
+            this.creaPlanningXML(_generalXML);
         }
     
 
@@ -231,7 +231,7 @@ namespace AppliMars
         }
 
         // Création du XML Planning (avec que des journées par défaut)
-        public void creaPlanningXML()
+        public void creaPlanningXML(XDocument generalXML)
         {
             XDocument _planningXML = new XDocument();
             for (int i = 1; i <= _dureeMission; i++)
@@ -243,7 +243,7 @@ namespace AppliMars
                         new XElement("Activites")));
 
                 // Récupération des infos de chaque activité d'une journée par défaut
-                var activites = from activite in _generalXML.Descendants("Timetable") select activite;
+                var activites = from activite in generalXML.Descendants("Timetable") select activite;
                 foreach (XElement a in activites.Elements("Activity"))
                 {
                     string heureDebutAct = a.Element("HeureDeb").Value;

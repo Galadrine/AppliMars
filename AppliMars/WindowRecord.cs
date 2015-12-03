@@ -31,11 +31,18 @@ namespace AppliMars {
 
             // érifier si le jour est passé ou pas
             if (_jour.monNumero < _jour.m._jourJ)
+            {
                 journeePasse = true;
+                tB_CR.ReadOnly = true;
+            }
             else
+            {
                 journeePasse = false;
-            l_CR.Text = _jour.monCompteRendu;
-
+                tB_CR.ReadOnly = false;
+            }
+                
+            tB_CR.Text = _jour.monCompteRendu;
+            
         }
 
 
@@ -61,7 +68,8 @@ namespace AppliMars {
             _win2.Show();
         }
 
-        private void buttonModifier_Click(object sender, EventArgs e) {
+        private void buttonModifier_Click(object sender, EventArgs e) 
+        {
             tB_CR.Text.Substring(0,1000);
         }
 
@@ -71,10 +79,9 @@ namespace AppliMars {
 
         }
 
-        private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) {
-            if (tB_CR.Text.Length > 1000) {
-                labelDanger.Visible = true;
-            }
+        private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) 
+        {
+            _jour.monCompteRendu = tB_CR.Text;
         }
 
         private void label2_Click(object sender, EventArgs e)
