@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mission>
+  <NomMission>Mars Attack</NomMission>
+  <DateDebut>2015-12-01T00:01:00</DateDebut>
+  <Duree>500</Duree>
+  <Planning>..//..//Mission1/General.xml</Planning>
+  <Map />
+  <Home />
+  <NbAstronautes>3</NbAstronautes>
+  <Astronautes>
+    <Astronaute>Bob</Astronaute>
+    <Astronaute>Charlie</Astronaute>
+    <Astronaute>Popeye</Astronaute>
+  </Astronautes>
+  <DefaultDay>
+    <Timetable>
+      <Activity>
+        <HeureDeb>0:00:00</HeureDeb>
+        <HeureFin>7:00:00</HeureFin>
+        <Nom>Sleeping</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>7:00:00</HeureDeb>
+        <HeureFin>8:00:00</HeureFin>
+        <Nom>Eating</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>8:00:00</HeureDeb>
+        <HeureFin>12:00:00</HeureFin>
+        <Nom>Private</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>12:00:00</HeureDeb>
+        <HeureFin>14:00:00</HeureFin>
+        <Nom>Eating</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>14:00:00</HeureDeb>
+        <HeureFin>19:00:00</HeureFin>
+        <Nom>Private</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>19:00:00</HeureDeb>
+        <HeureFin>21:00:00</HeureFin>
+        <Nom>Eating</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>21:00:00</HeureDeb>
+        <HeureFin>23:00:00</HeureFin>
+        <Nom>Private</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>23:00:00</HeureDeb>
+        <HeureFin>24:00:00</HeureFin>
+        <Nom>Sleeping</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+    </Timetable>
+  </DefaultDay>
+</Mission>

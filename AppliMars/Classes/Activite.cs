@@ -98,7 +98,6 @@ namespace AppliMars {
             maPosY = posY;
             monID = _nbActTotal + 1;
             monNbActionTotal++;
-
         }
 
 
@@ -112,6 +111,8 @@ namespace AppliMars {
             maPosX = posX;
             maPosY = posY;
             monID = idAct;
+            if (_nbActTotal < monID)
+                _nbActTotal = monID;
         }
 
 

@@ -241,6 +241,7 @@ namespace AppliMars
             // _generalXML.Element("Mission").Element("Astronautes").Add(new XElement("Astronaute", nom));
 
             XDocument _planningXML = new XDocument(new XElement("Planning"));
+            int numAct = 0;
             for (int i = 1; i <= _dureeMission; i++)
             {
                 XElement x = new XElement("Jour",
@@ -264,14 +265,23 @@ namespace AppliMars
 
                     // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
                     string iToString = i.ToString();
-                    var edt5 = _planningXML.Descendants("Jour").First();
+                    XElement parts = new XElement("Participants");
+                    foreach (XElement astro in generalXML.Element("Mission").Element("Astronautes").Elements("Astronaute"))
+                    {
+                        parts.Add(astro);
+                    }
+                    var edt5 = _planningXML.Descendants("Jour").First(); // A QUOI CA SERT CA ?
                     var edt = (from jour in _planningXML.Descendants("Jour") where (string)jour.Attribute("id") == iToString select jour.Element("Activites")).FirstOrDefault();
                     edt.Add(new XElement("Activite",
+                        new XAttribute("idAct",numAct+1),
                         new XElement("NomAct", nomAct),
                         new XElement("DebutAct", heureDebutAct),
                         new XElement("FinAct", heureFinAct),
                         new XElement("BoolExt", extBoolAct),
-                        new XElement("DescriptionAct", descriptionAct)));
+                        new XElement("DescriptionAct", descriptionAct),
+                        parts));
+
+                    numAct++;
                 }
             }
             _planningXML.Save(_cheminPlanningXML);
