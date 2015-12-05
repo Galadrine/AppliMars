@@ -37,6 +37,7 @@ namespace AppliMars {
 
         #endregion
 
+
         #region constructeurs
 
         public WindowLevel2() {
@@ -44,27 +45,30 @@ namespace AppliMars {
 
         }
 
-       // public windowlevel2(string numerojour, applimars.windowlevel1 w1)
-       //     : this() 
-       // {
-       //     labeljour.text = numerojour;
+        /*
+        public windowlevel2(string numerojour, applimars.windowlevel1 w1)
+            : this() 
+        {
+            labeljour.text = numerojour;
 
-       //     majournee = new journee(int32.parse(numerojour));
-       //     mafenetreprec = w1;
+            majournee = new journee(int32.parse(numerojour));
+            mafenetreprec = w1;
 
 
-       //     verifdifferentsedt();
+            verifdifferentsedt();
 
-       //}
+        }
+        */
 
         public WindowLevel2(Journee jour, AppliMars.WindowLevel1 w1)
-        {
-            _win1 = w1;
-            _jour = jour;
-            labelJour.Text = _jour.monNumero.ToString();
+            : this() {
+            maFenetrePrec = w1;
+            maJournee = jour;
+            labelJour.Text = maJournee.monNumero.ToString();
         }
 
         #endregion
+
 
         #region methodes
 

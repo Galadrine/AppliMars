@@ -32,22 +32,27 @@ namespace AppliMars {
         public Mission m
         {
             get { return _m;}
+            set { _m = value; }
         }
         #endregion
 
 
         #region constructeurs
 
+        // J'ai enlevé le paramètre cheminPlanningXML car il est contenu dans mission
         // Création de l'instance Planning à partir d'un fichier XML 
-        public Planning(string cheminXMLPlanning, Mission mission) {
-            _m = mission;
+        public Planning( Mission mission) {
+
+            string cheminXMLPlanning = mission.monCheminPlanningXML;
+
+            m = mission;
             XDocument _planningXML = XDocument.Load(cheminXMLPlanning);
             monTableauJournees = new List<Journee>();
             var jours = from jour in _planningXML.Descendants("Planning") select jour;
             foreach (XElement j in jours.Elements("Jour")) {
                 int num = int.Parse(j.Attribute("id").Value);
                 string cr = j.Element("CRJour").Value;
-                _tableauJournees.Add(new Journee(num, cr, cheminXMLPlanning, _m));
+                _tableauJournees.Add(new Journee(num, cr, m));
             }
         }
 

@@ -13,11 +13,13 @@ namespace AppliMars {
 
         #region variables
 
-        private int _currentDay = 12;
+        private int _currentDay;
         private Mission _mission;
-        private Planning plan = new Planning(500);
 
+        private int _numPage;
+        private List<Button> _boutons = new List<Button>(); //liste des boutons reprsésentant les jours
 
+        
         #endregion
 
 
@@ -32,25 +34,27 @@ namespace AppliMars {
             get { return _currentDay; }
             set { _currentDay = value; }
         }
-        
+
+        public int monNumeroPage {
+            get { return _numPage; }
+            set { _numPage = value; }
+        }
+
+        public List<Button> MesBoutons {
+            get { return _boutons; }
+            set { _boutons = value; }
+        }
 
         #endregion
 
 
         #region constructeurs
 
-        public WindowLevel1() {
+        public WindowLevel1(Mission miss) {
             InitializeComponent();
 
-            Astronaute ast = new Astronaute("Bob");
-
-
-            // TO DO 
-            // Charger ici la date du début de la mission
-            DateTime deb = new DateTime(2015,11,12,00,01,00);
-            List<string> list = new List<string>();
-            _mission = new Mission("MaMission", deb, 500, list);
-
+            maMission = miss;
+            maMission.monPlanning = new Planning(miss);
             DateTime now = DateTime.Now;
 
             TimeSpan diff = now - _mission.maDateDebut;
@@ -66,28 +70,40 @@ namespace AppliMars {
             labelHeures.Text = hActuelle.ToString();
             labelMinutes.Text = minActuelle.ToString();
 
-            _mission.monJourJ = nbJours;
+            _mission.monJourJ = nbJours+1;
+            maJournneeCourante = nbJours+1;
 
 
-
-
-
-            Console.WriteLine(diff);
-
-
-            // TO DO : Remplacer par les lignes commentées après avoir créer les XML des Missions
-            // for (int i = 0; i < _mission._dureeMission; i++) {
-            for (int i = 1; i <= 500; i++) {
+            for (int i = 0; i < _mission.maDureeMission; i++) {
                 // comboBoxJourDebut.Items.Add(_mission._planning._tableauJournees[i]);
                 comboBoxJourDebut.Items.Add(i);
                 comboBoxJourFin.Items.Add(i);
             }
 
             comboBoxJourDebut.SelectedIndex = 0;
-            comboBoxJourFin.SelectedIndex = 499;
+            comboBoxJourFin.SelectedIndex = maMission.maDureeMission-1;
+
+            MesBoutons=genererBoutonsJours();
+
+            monNumeroPage = 0;
+            affichageBoutons("right");
+        }
 
 
-            int ent = 500;
+        #endregion
+
+
+        #region methodes
+
+        public IEnumerable<Control> GetAll(Control control, Type type) {
+            var controls = control.Controls.Cast<Control>();
+            return controls.SelectMany(ctrl => GetAll(ctrl, type)).Concat(controls).Where(c => c.GetType() == type);
+        }
+
+        public List<Button> genererBoutonsJours() {
+
+            /*
+            int ent = maMission.maDureeMission - 1;
             int cpt = 1;
 
             for (int i = 1; i <= ent / 50; i++) {
@@ -120,27 +136,75 @@ namespace AppliMars {
                     }
                 }
             }
+            */
 
-            Console.WriteLine("teset");
+            Planning P = maMission.monPlanning;
+            List<Button> monCalendrier = new List<Button>();
 
+            int date = 1, page, ligne, rang;
+
+            foreach (Journee J in P.monTableauJournees) {
+                page = ((date - 1) / 50) + 1;
+                ligne = (((date - 1) - ((page - 1) * 50)) / 10) + 1;
+                rang = (date - 1) - ((page - 1) * 50) - ((ligne - 1) * 10);
+
+                Button jour = new Button();
+                jour.Text = Convert.ToString(date);
+                jour.Width = 50;
+                jour.Height = 50;
+                jour.Visible = false;
+                jour.Enabled = false;
+                jour.Location = new System.Drawing.Point(95 + 56 * rang, 56 * ligne);
+                jour.Click += new System.EventHandler(journee_Click);
+                monCalendrier.Add(jour);
+                date++;
+                if (date < _mission.monJourJ) {
+                    jour.BackColor = System.Drawing.Color.Silver;
+                } else if (date == _mission.monJourJ) {
+                    jour.BackColor = System.Drawing.Color.LightBlue;
+                } else {
+                    jour.BackColor = System.Drawing.Color.PaleGreen;
+                }
+
+                groupBoxCalendrier.Controls.Add(jour);
+
+            }
+            pictureBoxLeftArrow.Enabled = false;
+
+            return monCalendrier;
         }
 
-        // Initialise les XX boutons des jours
-        public WindowLevel1(int ent) {
-            InitializeComponent();
-            
 
+        public void affichageBoutons(string direction) {
 
-        }
+            if (direction == "left") {
+                monNumeroPage--;
+                for (int i = (monNumeroPage) * 50; i < MesBoutons.Count(); i++) {
+                    MesBoutons[i].Visible = false;
+                    MesBoutons[i].Enabled = false;
+                }
+            } else if (direction == "right")  {
+                monNumeroPage++;
+                for (int i = 0; i < (monNumeroPage - 1) * 50; i++) {
+                    MesBoutons[i].Visible = false;
+                    MesBoutons[i].Enabled = false;
+                }
+            }
 
-        #endregion
+            for (int i = (monNumeroPage - 1) * 50; i < (monNumeroPage) * 50; i++) { 
+                MesBoutons[i].Visible = true;
+                MesBoutons[i].Enabled = true;
+            }
 
+            if (monNumeroPage >= 10)
+                pictureBoxRightArrow.Enabled = false;
+            else if (monNumeroPage > 1)
+                pictureBoxLeftArrow.Enabled = true;
+            else if (monNumeroPage <= 1) 
+                pictureBoxLeftArrow.Enabled = false;
+            else if (monNumeroPage < 10) 
+                pictureBoxRightArrow.Enabled = true;
 
-        #region methodes
-
-        public IEnumerable<Control> GetAll(Control control, Type type) {
-            var controls = control.Controls.Cast<Control>();
-            return controls.SelectMany(ctrl => GetAll(ctrl, type)).Concat(controls).Where(c => c.GetType() == type);
         }
 
         #endregion
@@ -150,79 +214,27 @@ namespace AppliMars {
 
         private void journee_Click(object sender, EventArgs e) {
             Button but = sender as Button;
-            WindowLevel2 win2 = new WindowLevel2(but.Text, this);
+            ////////////// ??
+            //WindowLevel2 win2 = new WindowLevel2(but.Text, this);
+            WindowLevel2 win2 = new WindowLevel2(new Journee(Int32.Parse(but.Text), "",maMission), this);
             win2.Show();
             this.Hide();
         }
 
         private void pictureBoxLeftArrow_Click(object sender, EventArgs e) {
-
-            /*
-            if (trackBarCalendrier.Value > 0) {
-                trackBarCalendrier.Value = trackBarCalendrier.Value - 1;
-            }
-            trackBarCalendrier_Scroll(sender, e);
-            */
-
-
-
-
-
+            affichageBoutons("left");
         }
 
         private void pictureBoxRightArrow_Click(object sender, EventArgs e) {
-
-            /*
-            if (trackBarCalendrier.Value < 9) {
-                trackBarCalendrier.Value = trackBarCalendrier.Value + 1;
-            }
-            trackBarCalendrier_Scroll(sender, e);
-            */
-
-
-
-
+            affichageBoutons("right");
 
         }
-
-        /*
-        private void trackBarCalendrier_Scroll(object sender, EventArgs e) {
-
-            var c = GetAll(this, typeof(Button));
-
-            // MessageBox.Show("Total Controls: " + c.Count());
-            
-            // var first = c.
-
-
-            Console.WriteLine("Valeur trackbar : " + trackBarCalendrier.Value);
-
-            for (int i = 0; i < groupBoxCalendrier.Controls.Count; i++) {
-                if (groupBoxCalendrier.Controls[i].Name.Contains("buttonDay")) {
-
-                    groupBoxCalendrier.Controls[i].Text = Convert.ToString((50 * trackBarCalendrier.Value) + i );
-
-                    if (int.Parse(labelDay.Text) == (50 * trackBarCalendrier.Value) + i ) {
-                        groupBoxCalendrier.Controls[i].BackColor = Color.LightBlue;
-                    } else {
-                        if (int.Parse(groupBoxCalendrier.Controls[i].Text) < currentDay) {
-                            groupBoxCalendrier.Controls[i].BackColor = Color.Silver;
-                        } else {
-                            groupBoxCalendrier.Controls[i].BackColor = Color.PaleGreen;
-                        }
-
-                    }
-                }
-            }
-        }
-        */
 
         private void buttonSearch_Click(object sender, EventArgs e) {
             WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch, comboBoxJourDebut, comboBoxJourFin);
             win2.Show();
             this.Hide();
         }
-
 
         private void timer1_Tick(object sender, EventArgs e) {
 

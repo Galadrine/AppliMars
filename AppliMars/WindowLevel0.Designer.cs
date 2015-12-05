@@ -28,6 +28,7 @@
             this.buttonCharger = new System.Windows.Forms.Button();
             this.buttonModifier = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBoxMois = new System.Windows.Forms.ComboBox();
             this.comboBoxAnnee = new System.Windows.Forms.ComboBox();
             this.comboBoxJour = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.groupBoxListMissions = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxListMissions.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,14 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Creation d\'une mission";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(143, 144);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 6;
             // 
             // comboBoxMois
             // 
@@ -204,15 +212,6 @@
             this.button1.Text = "Mission 00";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonCharger_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(143, 144);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 6;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // WindowLevel0
             // 

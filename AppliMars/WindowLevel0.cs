@@ -10,9 +10,44 @@ using System.Windows.Forms;
 
 namespace AppliMars {
     public partial class WindowLevel0 : Form {
+
+        #region variables
+
+        private List<Mission> _mesMissions;
+
+        #endregion
+
+
+        #region accesseurs
+
+
+        public List<Mission> maListeMissions {
+            get { return _mesMissions; }
+            set { _mesMissions = value; }
+        }
+
+
+
+        #endregion
+
+
+        #region constructeurs
+
         public WindowLevel0() {
             InitializeComponent();
+
+
+            DateTime deb = new DateTime(2015, 11, 12, 00, 01, 00);
+            List<string> list = new List<string>();
+            Mission _mission = new Mission("MaMission", deb, 500, list);
+
+            maListeMissions.Add(_mission);
         }
+
+        #endregion
+
+
+        #region évènements
 
         private void groupBox1_Enter(object sender, EventArgs e) {
 
@@ -23,6 +58,8 @@ namespace AppliMars {
         }
 
         private void buttonCharger_Click(object sender, EventArgs e) {
+
+
 
         }
 
@@ -40,9 +77,7 @@ namespace AppliMars {
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
     }
 }

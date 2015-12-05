@@ -12,16 +12,16 @@ namespace AppliMars
 
         #region variables
 
-        public string _nomMission;
-        public DateTime _dateDebut;
-        public int _dureeMission;
-        public DateTime _dateFin;
-        public int _jourJ;
-        public List<Astronaute> _astronautes;
-        public int _nbAstronautes;
-        public string _cheminGeneralXML;
-        public string _cheminPlanningXML;
-        public Planning _planning;
+        private string _nomMission;
+        private DateTime _dateDebut;
+        private int _dureeMission;
+        private DateTime _dateFin;
+        private int _jourJ;
+        private List<Astronaute> _astronautes;
+        private int _nbAstronautes;
+        private string _cheminGeneralXML;
+        private string _cheminPlanningXML;
+        private Planning _planning;
 
         #endregion
 
@@ -103,6 +103,7 @@ namespace AppliMars
             _dateFin = _dateDebut.AddDays(_dureeMission);
             _jourJ = 1;
             _cheminPlanningXML = "" + emplacementPlanningXML + "Planning.xml";
+            _cheminGeneralXML = "" + emplacementPlanningXML + "General.xml";
             // création des astronautes 
             _astronautes = new List<Astronaute>();
             _nbAstronautes = 0;
@@ -115,14 +116,17 @@ namespace AppliMars
             // Création du fichier XML Géréral
             XDocument _generalXML = new XDocument(
                 new XElement("Mission",
-                    new XElement("NomMission", _nomMission),
-                    new XElement("DateDebut", _dateDebut),
-                    new XElement("Duree", _dureeMission),
-                    new XElement("Planning", _cheminPlanningXML),
+                    new XElement("NomMission", nomMission),
+                    new XElement("DateDebut", dateDebut),
+                    new XElement("Duree", maDureeMission),
+                    new XElement("Planning", monCheminGeneralXML),
                     new XElement("Map"),
                     new XElement("Home"),
-                    new XElement("NbAstronautes", _nbAstronautes),
+                    new XElement("NbAstronautes", monNbAstronautes),
                     new XElement("Astronautes")));
+            ////////////////////////////////////////////////////////////////////////////////
+            ////////////////////// Y a pas une erreur ? J'ai modifié
+            //_generalXML.Save(_cheminGeneralXML);
             _generalXML.Save(_cheminGeneralXML);
 
             // Ajout des astronautes dans le XML 
@@ -196,17 +200,17 @@ namespace AppliMars
         {
             // chargement du XML général 
             XDocument _generalXML = XDocument.Load(cheminXMLGeneral);
-            _nomMission = _generalXML.Element("Mission").Element("NomMission").Value;
-            _dateDebut = DateTime.Parse(_generalXML.Element("Mission").Element("DateDebut").Value);
-            _dureeMission = int.Parse(_generalXML.Element("Mission").Element("Duree").Value);
-            _dateFin = DateTime.Parse(_generalXML.Element("Mission").Element("DateFin").Value);
-            _nbAstronautes = int.Parse(_generalXML.Element("Mission").Element("NbAstronautes").Value);
-            _astronautes = new List<Astronaute>();
+            monNomMission = _generalXML.Element("Mission").Element("NomMission").Value;
+            maDateDebut = DateTime.Parse(_generalXML.Element("Mission").Element("DateDebut").Value);
+            maDureeMission = int.Parse(_generalXML.Element("Mission").Element("Duree").Value);
+            maDateFin = DateTime.Parse(_generalXML.Element("Mission").Element("DateFin").Value);
+            monNbAstronautes = int.Parse(_generalXML.Element("Mission").Element("NbAstronautes").Value);
+            mesAstronautes = new List<Astronaute>();
             var astronautes = from astronaute in _generalXML.Descendants("Astronautes") select astronaute;
             foreach (XElement a in astronautes.Elements("Astronaute"))
             {
                 string nomAstronaute = a.Value;
-                _astronautes.Add(new Astronaute(nomAstronaute));
+                mesAstronautes.Add(new Astronaute(nomAstronaute));
             }
 
             // MAJ du jour J
@@ -215,13 +219,14 @@ namespace AppliMars
             // Récupération du chemin et du nom du fichier XML du Planning
             _cheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
             // Génération du planning associé à la mission
-            _planning = new Planning(_cheminPlanningXML, this);
+            _planning = new Planning(this);
         }
 
         #endregion
 
 
         #region Méthodes
+
         // Calcul du jour actuel de la mission (Jour sur Mars) 
         public int calculJourJ()
         {
@@ -233,14 +238,16 @@ namespace AppliMars
         // Création du XML Planning (avec que des journées par défaut)
         public void creaPlanningXML(XDocument generalXML)
         {
-            XDocument _planningXML = new XDocument();
+            // _generalXML.Element("Mission").Element("Astronautes").Add(new XElement("Astronaute", nom));
+
+            XDocument _planningXML = new XDocument(new XElement("Planning"));
             for (int i = 1; i <= _dureeMission; i++)
             {
-                _planningXML.Element("Planning").Add(
-                    new XElement("Jour",
+                XElement x = new XElement("Jour",
                         new XAttribute("id", i),
                         new XElement("CRJour"),
-                        new XElement("Activites")));
+                        new XElement("Activites"));
+                _planningXML.Element("Planning").Add(x);
 
                 // Récupération des infos de chaque activité d'une journée par défaut
                 var activites = from activite in generalXML.Descendants("Timetable") select activite;
@@ -252,8 +259,13 @@ namespace AppliMars
                     string extBoolAct = a.Element("ExtBool").Value;
                     string descriptionAct = a.Element("Description").Value;
 
+
+
+
                     // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
-                    var edt = (from jour in _planningXML.Descendants("Planning") where jour.Attribute("id").Value == i.ToString() select jour.Element("Activites")).FirstOrDefault();
+                    string iToString = i.ToString();
+                    var edt5 = _planningXML.Descendants("Jour").First();
+                    var edt = (from jour in _planningXML.Descendants("Jour") where (string)jour.Attribute("id") == iToString select jour.Element("Activites")).FirstOrDefault();
                     edt.Add(new XElement("Activite",
                         new XElement("NomAct", nomAct),
                         new XElement("DebutAct", heureDebutAct),

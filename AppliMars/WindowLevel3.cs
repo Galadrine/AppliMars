@@ -23,8 +23,6 @@ namespace AppliMars {
 
         public WindowLevel3() {
             InitializeComponent();
-            
-
         }
 
         public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2)

@@ -9,7 +9,7 @@ namespace AppliMars {
 
         #region variables
 
-        public static int _nbActTotal;
+        public static int _nbActTotal = 0;
         public int _idAct;
         private int _posX, _posY;
         private List<Astronaute> _participants;

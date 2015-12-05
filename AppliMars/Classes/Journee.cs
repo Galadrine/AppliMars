@@ -34,8 +34,7 @@ namespace AppliMars {
 
         public string monCompteRendu {
             get { return _compteRendu; }
-            set 
-            { 
+            set { 
                 _compteRendu = value;
                 // MAJ dans le XML !!
             }
@@ -57,8 +56,11 @@ namespace AppliMars {
             maListeActivites = new List<Activite>();
         }
 
+        // J'ai enlevé le paramètre cheminPlanningXML car il est contenu dans mission
+        public Journee(int numero, string compteRendu, Mission mission) {
 
-        public Journee(int numero, string compteRendu, string cheminPlanningXML) {
+            string cheminPlanningXML = mission.monCheminPlanningXML;
+
             maListeActivites = new List<Activite>();
             monNumero = numero;
             monCompteRendu = compteRendu;
@@ -66,7 +68,7 @@ namespace AppliMars {
             // Récupération de la liste des activités de la journée
             XDocument _planningXML = XDocument.Load(cheminPlanningXML);
             var activites = from activite in _planningXML.Descendants("Activites")
-                            where activite.Parent.Parent.Attribute("id").ToString() == numero.ToString()
+                            where (string)activite.Parent.Parent.Attribute("id") == numero.ToString()
                             select activite;
             foreach (XElement a in activites.Elements("Activite")) {
                 int idAct = int.Parse(a.Attribute("idAct").Value);
