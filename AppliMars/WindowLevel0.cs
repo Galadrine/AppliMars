@@ -53,20 +53,6 @@ namespace AppliMars {
 
         }
 
-        private void buttonModifier_Click(object sender, EventArgs e) {
-
-        }
-
-        private void buttonCharger_Click(object sender, EventArgs e) {
-
-
-
-        }
-
-        private void buttonCreer_Click(object sender, EventArgs e) {
-
-        }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -78,6 +64,12 @@ namespace AppliMars {
         }
 
         #endregion
+
+        // Lancement page de nouvelle Mission
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Lancer la fenetre de création de mission
+        }
 
     }
 }

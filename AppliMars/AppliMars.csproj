@@ -89,6 +89,12 @@
     <Compile Include="WindowLevel3.Designer.cs">
       <DependentUpon>WindowLevel3.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowNewMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowNewMission.Designer.cs">
+      <DependentUpon>WindowNewMission.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowLevel3.resx">
       <DependentUpon>WindowLevel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowNewMission.resx">
+      <DependentUpon>WindowNewMission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowRecord.resx">
       <DependentUpon>WindowRecord.cs</DependentUpon>

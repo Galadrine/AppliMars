@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,7 +95,7 @@ namespace AppliMars
 
 
         // Création d'une nouvelle mission (Création nouveaux XML)
-        public Mission (string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes, string emplacementPlanningXML)
+        public Mission (string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes, string path)
         {
             // Création de l'instance
             _nomMission = nomMission;
@@ -102,8 +103,11 @@ namespace AppliMars
             _dureeMission = dureeMission;
             _dateFin = _dateDebut.AddDays(_dureeMission);
             _jourJ = 1;
-            _cheminPlanningXML = "" + emplacementPlanningXML + "Planning.xml";
-            _cheminGeneralXML = "" + emplacementPlanningXML + "General.xml";
+            // Création du dossier 
+            string emplacementXML = "" + path + "/" + nomMission;
+            Directory.CreateDirectory(emplacementXML); 
+            _cheminPlanningXML = "" + emplacementXML + "/Planning.xml";
+            _cheminGeneralXML = "" + emplacementXML + "/General.xml";
             // création des astronautes 
             _astronautes = new List<Astronaute>();
             _nbAstronautes = 0;
@@ -259,8 +263,6 @@ namespace AppliMars
                     string nomAct = a.Element("Nom").Value;
                     string extBoolAct = a.Element("ExtBool").Value;
                     string descriptionAct = a.Element("Description").Value;
-
-
 
 
                     // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
