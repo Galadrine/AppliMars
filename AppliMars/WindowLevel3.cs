@@ -44,13 +44,12 @@ namespace AppliMars {
 
         public WindowLevel3() {
             InitializeComponent();
-            this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero;
         }
 
         // Fenetre Niveau 3 pour créaétion d'activite
         public WindowLevel3(Journee jour, WindowLevel2 win2)
             : this() {
-
+                maJournee = jour;
         }
 
         // Fenetre Niveau 3 pour activité existante
@@ -61,6 +60,7 @@ namespace AppliMars {
             maFenetrePrec = win2;
             monActivite = activite;
             maJournee = jour;
+            this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero;
 
             tB_TypeAct.ReadOnly = true;
             tB_descrAct.ReadOnly = true;
@@ -75,8 +75,6 @@ namespace AppliMars {
             lB_listePart.Enabled = false;
             //b_annuler.Visible = false;
             //b_valider.Visible = false;
-
-<<<<<<< HEAD
             l_numJour.Text = maJournee.monNumero.ToString();
             tB_TypeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
@@ -87,19 +85,9 @@ namespace AppliMars {
             tB_xAct.Text = monActivite.maPosX.ToString();
             tB_yAct.Text = monActivite.maPosY.ToString();
             cB_localisation.Checked = monActivite.interieurOuExterieur;
-=======
-            l_numJour.Text = _jour.monNumero.ToString();
-            tB_TypeAct.Text = _act.monNom;
-            tB_descrAct.Text = _act.maDescription;
-            tB_HDebAct.Text = _act.monHeureDebut.ToString();
-            tB_MDebAct.Text = _act.mesMinutesDebut.ToString();
-            tB_HFinAct.Text = _act.monHeuresFin.ToString();
-            tB_MFinAct.Text = _act.mesMinutesFin.ToString();
-            tB_xAct.Text = _act.maPosX.ToString();
-            tB_yAct.Text = _act.maPosY.ToString();
-            cB_localisation.Checked = _act.interieurOuExterieur;
-            lB_listePart.DataSource = _act.mesAstronautes;
->>>>>>> origin/master
+
+            lB_listePart.DataSource = monActivite.mesAstronautes;
+
 
             // A FAIRE : GESTION DE LA MAP!!
         }
@@ -160,6 +148,21 @@ namespace AppliMars {
                 tB_yAct.Visible = false;
                 pictureBoxMap.Visible = false;
             }
+        }
+
+        // Laisse ça ici, c'est pour savoir comment faire pour plus tard (on sait jamais)
+        private void buttonSupprimer_Click(object sender, EventArgs e) {
+            DialogResult dlgRes = DialogResult.No;
+            dlgRes = MessageBox.Show(
+            "Voulez-vous vraiement supprimer cette activité ?",
+            "Confirmation suppression activité",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            if (dlgRes == DialogResult.Yes) {
+                // SupprimerActivite();
+            }
+
         }
 
         #endregion
