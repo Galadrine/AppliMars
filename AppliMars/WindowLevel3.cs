@@ -41,8 +41,9 @@ namespace AppliMars {
             tB_xAct.ReadOnly = true;
             tB_yAct.ReadOnly = true;
             cB_localisation.Enabled = false;
-            b_annuler.Visible = false;
-            b_valider.Visible = false;
+            lB_listePart.Enabled = false;
+            //b_annuler.Visible = false;
+            //b_valider.Visible = false;
 
             l_numJour.Text = _jour.monNumero.ToString();
             tB_TypeAct.Text = _act.monNom;
@@ -54,6 +55,7 @@ namespace AppliMars {
             tB_xAct.Text = _act.maPosX.ToString();
             tB_yAct.Text = _act.maPosY.ToString();
             cB_localisation.Checked = _act.interieurOuExterieur;
+            lB_listePart.DataSource = _act.mesAstronautes;
 
             // A FAIRE : GESTION DE LA MAP!!
         }
