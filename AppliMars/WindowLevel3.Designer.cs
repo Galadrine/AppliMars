@@ -52,6 +52,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.b_annuler = new System.Windows.Forms.Button();
             this.b_valider = new System.Windows.Forms.Button();
+            this.l_participants = new System.Windows.Forms.Label();
+            this.lB_listePart = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +110,7 @@
             // labelCoordonnees
             // 
             this.labelCoordonnees.AutoSize = true;
-            this.labelCoordonnees.Location = new System.Drawing.Point(11, 369);
+            this.labelCoordonnees.Location = new System.Drawing.Point(11, 518);
             this.labelCoordonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoordonnees.Name = "labelCoordonnees";
             this.labelCoordonnees.Size = new System.Drawing.Size(99, 13);
@@ -119,7 +121,7 @@
             // labelLatitude
             // 
             this.labelLatitude.AutoSize = true;
-            this.labelLatitude.Location = new System.Drawing.Point(239, 371);
+            this.labelLatitude.Location = new System.Drawing.Point(239, 520);
             this.labelLatitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLatitude.Name = "labelLatitude";
             this.labelLatitude.Size = new System.Drawing.Size(41, 13);
@@ -130,7 +132,7 @@
             // labelLongitude
             // 
             this.labelLongitude.AutoSize = true;
-            this.labelLongitude.Location = new System.Drawing.Point(133, 371);
+            this.labelLongitude.Location = new System.Drawing.Point(133, 520);
             this.labelLongitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLongitude.Name = "labelLongitude";
             this.labelLongitude.Size = new System.Drawing.Size(50, 13);
@@ -140,7 +142,7 @@
             // 
             // tB_yAct
             // 
-            this.tB_yAct.Location = new System.Drawing.Point(288, 368);
+            this.tB_yAct.Location = new System.Drawing.Point(288, 517);
             this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_yAct.Name = "tB_yAct";
             this.tB_yAct.Size = new System.Drawing.Size(35, 20);
@@ -186,7 +188,7 @@
             // cB_localisation
             // 
             this.cB_localisation.AutoSize = true;
-            this.cB_localisation.Location = new System.Drawing.Point(135, 334);
+            this.cB_localisation.Location = new System.Drawing.Point(135, 483);
             this.cB_localisation.Name = "cB_localisation";
             this.cB_localisation.Size = new System.Drawing.Size(119, 17);
             this.cB_localisation.TabIndex = 30;
@@ -197,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 336);
+            this.label2.Location = new System.Drawing.Point(47, 485);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
@@ -206,6 +208,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lB_listePart);
+            this.groupBox1.Controls.Add(this.l_participants);
             this.groupBox1.Controls.Add(this.tB_MFinAct);
             this.groupBox1.Controls.Add(this.tB_HFinAct);
             this.groupBox1.Controls.Add(this.tB_MDebAct);
@@ -229,7 +233,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(158, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 419);
+            this.groupBox1.Size = new System.Drawing.Size(408, 549);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
@@ -311,7 +315,7 @@
             // tB_xAct
             // 
             this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tB_xAct.Location = new System.Drawing.Point(198, 366);
+            this.tB_xAct.Location = new System.Drawing.Point(198, 515);
             this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_xAct.Name = "tB_xAct";
             this.tB_xAct.Size = new System.Drawing.Size(35, 20);
@@ -332,7 +336,7 @@
             // 
             // b_annuler
             // 
-            this.b_annuler.Location = new System.Drawing.Point(208, 524);
+            this.b_annuler.Location = new System.Drawing.Point(211, 641);
             this.b_annuler.Name = "b_annuler";
             this.b_annuler.Size = new System.Drawing.Size(126, 48);
             this.b_annuler.TabIndex = 32;
@@ -341,12 +345,30 @@
             // 
             // b_valider
             // 
-            this.b_valider.Location = new System.Drawing.Point(381, 524);
+            this.b_valider.Location = new System.Drawing.Point(381, 641);
             this.b_valider.Name = "b_valider";
             this.b_valider.Size = new System.Drawing.Size(126, 48);
             this.b_valider.TabIndex = 33;
             this.b_valider.Text = "VALIDER";
             this.b_valider.UseVisualStyleBackColor = true;
+            // 
+            // l_participants
+            // 
+            this.l_participants.AutoSize = true;
+            this.l_participants.Location = new System.Drawing.Point(50, 337);
+            this.l_participants.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_participants.Name = "l_participants";
+            this.l_participants.Size = new System.Drawing.Size(62, 13);
+            this.l_participants.TabIndex = 36;
+            this.l_participants.Text = "Participants";
+            // 
+            // lB_listePart
+            // 
+            this.lB_listePart.FormattingEnabled = true;
+            this.lB_listePart.Location = new System.Drawing.Point(136, 337);
+            this.lB_listePart.Name = "lB_listePart";
+            this.lB_listePart.Size = new System.Drawing.Size(246, 121);
+            this.lB_listePart.TabIndex = 37;
             // 
             // WindowLevel3
             // 
@@ -406,6 +428,8 @@
         private System.Windows.Forms.TextBox tB_TypeAct;
         private System.Windows.Forms.Button b_annuler;
         private System.Windows.Forms.Button b_valider;
+        private System.Windows.Forms.ListBox lB_listePart;
+        private System.Windows.Forms.Label l_participants;
     }
 }
 
