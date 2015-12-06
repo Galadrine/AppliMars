@@ -13,14 +13,13 @@ namespace AppliMars {
 
         #region variables
 
-
         private WindowLevel1 _win1;
         private Journee _jour;
 
         #endregion
 
-        #region accesseurs
 
+        #region accesseurs
 
         public WindowLevel1 maFenetrePrec {
             get { return _win1; }
@@ -34,7 +33,6 @@ namespace AppliMars {
             set { _jour = value; }
         }
 
-
         #endregion
 
 
@@ -42,7 +40,6 @@ namespace AppliMars {
 
         public WindowLevel2() {
             InitializeComponent();
-
         }
 
         /*
@@ -65,6 +62,7 @@ namespace AppliMars {
             maFenetrePrec = w1;
             maJournee = jour;
             labelJour.Text = maJournee.monNumero.ToString();
+            this.Text = maFenetrePrec.maMission.monNomMission + " - Jour " + maJournee.monNumero;
         }
 
         #endregion
@@ -84,6 +82,7 @@ namespace AppliMars {
 
         #endregion
 
+
         #region evenements
 
         private void pictureBoxJourPrecedent_Click(object sender, EventArgs e) {
@@ -102,20 +101,21 @@ namespace AppliMars {
 
         private void buttonAjoutActivite_Click(object sender, EventArgs e) {
             Button but = sender as Button;
-            WindowLevel3 win2 = new WindowLevel3(but.Text, this);
-            win2.Show();
+            WindowLevel3 win3 = new WindowLevel3(maJournee, this);
+            win3.Show();
             this.Hide();
         }
 
         private void buttonRetourCalendrier_Click(object sender, EventArgs e) {
             this.Close();
-            _win1.Show();
+            maFenetrePrec.Show();
         }
 
 
         private void detailActivite(object sender, EventArgs e) {
             Button but = sender as Button;
-            WindowLevel3 win3 = new WindowLevel3(but.Text, this, 0);
+            // INSERER ICI LA SELECTION DE L'ACTIVITE
+            WindowLevel3 win3 = new WindowLevel3(maJournee.maListeActivites[0], maJournee, this);
             win3.Show();
             this.Hide();
         }
@@ -128,12 +128,6 @@ namespace AppliMars {
         }
 
         #endregion
-
-
-
-
-
-
 
 
     }

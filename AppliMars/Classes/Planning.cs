@@ -39,7 +39,6 @@ namespace AppliMars {
 
         #region constructeurs
 
-        // J'ai enlevé le paramètre cheminPlanningXML car il est contenu dans mission
         // Création de l'instance Planning à partir d'un fichier XML 
         public Planning( Mission mission) {
 

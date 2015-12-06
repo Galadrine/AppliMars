@@ -1,5 +1,5 @@
 ﻿using System;
- using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,10 +15,9 @@ namespace AppliMars {
 
         private int _currentDay;
         private Mission _mission;
-
         private int _numPage;
-        private List<Button> _boutons = new List<Button>(); //liste des boutons reprsésentant les jours
-
+        private List<Button> _boutons = new List<Button>();
+        private WindowLevel0 win0;
         
         #endregion
 
@@ -45,16 +44,23 @@ namespace AppliMars {
             set { _boutons = value; }
         }
 
+        public WindowLevel0 maFenetrePrec {
+            get { return win0; }
+            set { win0 = value; }
+        }
+        
+
         #endregion
 
 
         #region constructeurs
 
-        public WindowLevel1(Mission miss) {
+        public WindowLevel1(Mission miss, WindowLevel0 winzero) {
             InitializeComponent();
 
+            maFenetrePrec = winzero;
             maMission = miss;
-            maMission.monPlanning = new Planning(miss);
+            this.Text = maMission.monNomMission;
             DateTime now = DateTime.Now;
 
             TimeSpan diff = now - _mission.maDateDebut;
@@ -89,7 +95,6 @@ namespace AppliMars {
             affichageBoutons("right");
         }
 
-
         #endregion
 
 
@@ -101,42 +106,6 @@ namespace AppliMars {
         }
 
         public List<Button> genererBoutonsJours() {
-
-            /*
-            int ent = maMission.maDureeMission - 1;
-            int cpt = 1;
-
-            for (int i = 1; i <= ent / 50; i++) {
-
-                for (int j = 1; j <= 5; j++) {
-
-                    for (int k = 1; k <= 10; k++) {
-
-                        Button bt = new Button();
-                        bt.Text = cpt.ToString();
-                        groupBoxCalendrier.Controls.Add(bt);
-                        bt.Width = 50;
-                        bt.Height = 50;
-
-                        // TO DO
-                        // Vérifier si le jour est passé ou non
-                        if (cpt < _mission.monJourJ) {
-                            bt.BackColor = System.Drawing.Color.Silver;
-                        } else if (cpt == _mission.monJourJ) {
-                            bt.BackColor = System.Drawing.Color.LightBlue;
-                        } else {
-                            bt.BackColor = System.Drawing.Color.PaleGreen;
-                        }
-
-                        bt.Click += new EventHandler(journee_Click);
-
-                        bt.Location = new Point(98 + ((k-1) * 56), 28 + ((j-1) * 56));
-
-                        cpt++;
-                    }
-                }
-            }
-            */
 
             Planning P = maMission.monPlanning;
             List<Button> monCalendrier = new List<Button>();
@@ -173,7 +142,6 @@ namespace AppliMars {
 
             return monCalendrier;
         }
-
 
         public void affichageBoutons(string direction) {
 
@@ -214,8 +182,6 @@ namespace AppliMars {
 
         private void journee_Click(object sender, EventArgs e) {
             Button but = sender as Button;
-            ////////////// ??
-            //WindowLevel2 win2 = new WindowLevel2(but.Text, this);
             WindowLevel2 win2 = new WindowLevel2(new Journee(Int32.Parse(but.Text), "",maMission), this);
             win2.Show();
             this.Hide();
@@ -240,7 +206,13 @@ namespace AppliMars {
 
         }
 
+        private void buttonRetourChoixMission_Click(object sender, EventArgs e) {
+            this.Close();
+            maFenetrePrec.Show();
+        }
+
         #endregion
+
 
     }
 }

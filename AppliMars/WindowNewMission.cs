@@ -10,23 +10,59 @@ using System.Windows.Forms;
 
 namespace AppliMars
 {
-    public partial class WindowNewMission : Form
-    {
-        List<string> _listeAstronautes = new List<string>();
+    public partial class WindowNewMission : Form {
 
-        public WindowNewMission()
-        {
-            InitializeComponent();
-            lB_ListeAstroNvMission.DataSource = _listeAstronautes;
+        #region variables
+
+        private List<string> _listeAstronautes = new List<string>();
+        private WindowLevel0 _win0;
+
+        #endregion
+
+
+        #region accesseurs
+
+        public List<string> maListeAstronautes {
+            get { return _listeAstronautes; }
+            set { _listeAstronautes = value; }
         }
+
+        public WindowLevel0 maFenetrePrec {
+            get { return _win0; }
+            set { _win0 = value; }
+        }
+        
+
+        #endregion
+
+
+        #region constructeurs
+
+        public WindowNewMission(WindowLevel0 win) {
+            InitializeComponent();
+            maFenetrePrec = win;
+
+            lB_ListeAstroNvMission.DataSource = maListeAstronautes;
+        }
+
+        #endregion
+
+
+        #region méthodes
+
+
+        #endregion
+
+
+        #region évènements
 
         private void b_NewAstro_Click(object sender, EventArgs e)
         {
             string nvAstro = tB_nvAstro.Text;
             if (!String.IsNullOrWhiteSpace(nvAstro))
-                _listeAstronautes.Add(tB_nvAstro.Text);
+                maListeAstronautes.Add(tB_nvAstro.Text);
             lB_ListeAstroNvMission.DataSource = null;
-            lB_ListeAstroNvMission.DataSource = _listeAstronautes;
+            lB_ListeAstroNvMission.DataSource = maListeAstronautes;
             tB_nvAstro.Clear();
         }
 
@@ -35,11 +71,11 @@ namespace AppliMars
             int selectedIndex = lB_ListeAstroNvMission.SelectedIndex;
             try
             {
-                _listeAstronautes.RemoveAt(selectedIndex);
+                maListeAstronautes.RemoveAt(selectedIndex);
             }
             catch { }
             lB_ListeAstroNvMission.DataSource = null;
-            lB_ListeAstroNvMission.DataSource = _listeAstronautes;
+            lB_ListeAstroNvMission.DataSource = maListeAstronautes;
         }
 
         private void b_creerNvMission_Click(object sender, EventArgs e)
@@ -57,9 +93,9 @@ namespace AppliMars
             string nomMission = tB_nomNvMission.Text;
             DateTime dateDebut = dT_DateDebNvMission.Value.Date;
             int dureeMission = int.Parse(tB_dureeNvMission.Text);
-            List<string> astronautes = _listeAstronautes;
+            List<string> astronautes = maListeAstronautes;
             Mission _mission = new Mission(nomMission, dateDebut, dureeMission, astronautes, cheminPourFichiersXML);
-            WindowLevel1 win1 = new WindowLevel1(_mission);
+            WindowLevel1 win1 = new WindowLevel1(_mission, maFenetrePrec);
             win1.Show();
         }
 
@@ -78,5 +114,14 @@ namespace AppliMars
                 tB_dureeNvMission.ForeColor = Color.Black;
             }
         }
+
+        private void buttonRetourChoixMission_Click(object sender, EventArgs e) {
+            this.Close();
+            maFenetrePrec.Show();
+        }
+
+        #endregion
+
+
     }
 }

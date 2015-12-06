@@ -73,21 +73,16 @@ namespace AppliMars {
             tB_CR.Text.Substring(0,1000);
         }
 
-        #endregion
-
         private void textBoxCompteRendu_KeyPress(object sender, KeyPressEventArgs e) {
 
         }
 
-        private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) 
-        {
+        private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) {
             _jour.monCompteRendu = tB_CR.Text;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
+        #endregion
 
 
 

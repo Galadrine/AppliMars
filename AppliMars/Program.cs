@@ -28,17 +28,20 @@ namespace AppliMars {
             }
 
 
+            /*
+            // Création d'une mission à la main
+            datetime deb = new datetime(2015, 12, 01, 00, 01, 00);
+            list<string> list = new list<string>();
+            list.add("bob");
+            list.add("charlie");
+            list.add("popeye");
+            mission _mission = new mission("mars attack", deb, 500, list, @"..//..//mission1/");
 
-            //datetime deb = new datetime(2015, 12, 01, 00, 01, 00);
-            //list<string> list = new list<string>();
-            //list.add("bob");
-            //list.add("charlie");
-            //list.add("popeye");
-            //mission _mission = new mission("mars attack", deb, 500, list, @"..//..//mission1/");
+            Application.Run(new WindowLevel1(_mission));
+            */
 
-            //Application.Run(new WindowLevel1(_mission));
 
-            Application.Run(new WindowNewMission());
+            Application.Run(new WindowLevel0());
         }
     }
 }

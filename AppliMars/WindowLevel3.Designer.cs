@@ -39,17 +39,17 @@
             this.cB_localisation = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tB_MFinAct = new System.Windows.Forms.TextBox();
+            this.tB_HFinAct = new System.Windows.Forms.TextBox();
+            this.tB_MDebAct = new System.Windows.Forms.TextBox();
+            this.tB_HDebAct = new System.Windows.Forms.TextBox();
+            this.tB_TypeAct = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tB_xAct = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tB_TypeAct = new System.Windows.Forms.TextBox();
-            this.tB_HDebAct = new System.Windows.Forms.TextBox();
-            this.tB_MDebAct = new System.Windows.Forms.TextBox();
-            this.tB_MFinAct = new System.Windows.Forms.TextBox();
-            this.tB_HFinAct = new System.Windows.Forms.TextBox();
             this.b_annuler = new System.Windows.Forms.Button();
             this.b_valider = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
@@ -233,6 +233,41 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // tB_MFinAct
+            // 
+            this.tB_MFinAct.Location = new System.Drawing.Point(186, 98);
+            this.tB_MFinAct.Name = "tB_MFinAct";
+            this.tB_MFinAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_MFinAct.TabIndex = 35;
+            // 
+            // tB_HFinAct
+            // 
+            this.tB_HFinAct.Location = new System.Drawing.Point(135, 98);
+            this.tB_HFinAct.Name = "tB_HFinAct";
+            this.tB_HFinAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_HFinAct.TabIndex = 34;
+            // 
+            // tB_MDebAct
+            // 
+            this.tB_MDebAct.Location = new System.Drawing.Point(186, 67);
+            this.tB_MDebAct.Name = "tB_MDebAct";
+            this.tB_MDebAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_MDebAct.TabIndex = 33;
+            // 
+            // tB_HDebAct
+            // 
+            this.tB_HDebAct.Location = new System.Drawing.Point(136, 67);
+            this.tB_HDebAct.Name = "tB_HDebAct";
+            this.tB_HDebAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_HDebAct.TabIndex = 32;
+            // 
+            // tB_TypeAct
+            // 
+            this.tB_TypeAct.Location = new System.Drawing.Point(136, 24);
+            this.tB_TypeAct.Name = "tB_TypeAct";
+            this.tB_TypeAct.Size = new System.Drawing.Size(100, 20);
+            this.tB_TypeAct.TabIndex = 31;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -295,41 +330,6 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Activité du jour";
             // 
-            // tB_TypeAct
-            // 
-            this.tB_TypeAct.Location = new System.Drawing.Point(136, 24);
-            this.tB_TypeAct.Name = "tB_TypeAct";
-            this.tB_TypeAct.Size = new System.Drawing.Size(100, 20);
-            this.tB_TypeAct.TabIndex = 31;
-            // 
-            // tB_HDebAct
-            // 
-            this.tB_HDebAct.Location = new System.Drawing.Point(136, 67);
-            this.tB_HDebAct.Name = "tB_HDebAct";
-            this.tB_HDebAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_HDebAct.TabIndex = 32;
-            // 
-            // tB_MDebAct
-            // 
-            this.tB_MDebAct.Location = new System.Drawing.Point(186, 67);
-            this.tB_MDebAct.Name = "tB_MDebAct";
-            this.tB_MDebAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_MDebAct.TabIndex = 33;
-            // 
-            // tB_MFinAct
-            // 
-            this.tB_MFinAct.Location = new System.Drawing.Point(186, 98);
-            this.tB_MFinAct.Name = "tB_MFinAct";
-            this.tB_MFinAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_MFinAct.TabIndex = 35;
-            // 
-            // tB_HFinAct
-            // 
-            this.tB_HFinAct.Location = new System.Drawing.Point(135, 98);
-            this.tB_HFinAct.Name = "tB_HFinAct";
-            this.tB_HFinAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_HFinAct.TabIndex = 34;
-            // 
             // b_annuler
             // 
             this.b_annuler.Location = new System.Drawing.Point(208, 524);
@@ -352,7 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 750);
+            this.ClientSize = new System.Drawing.Size(1184, 791);
             this.ControlBox = false;
             this.Controls.Add(this.b_valider);
             this.Controls.Add(this.b_annuler);

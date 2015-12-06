@@ -131,7 +131,8 @@ namespace AppliMars
                     new XElement("NomMission", nomMission),
                     new XElement("DateDebut", dateDebut),
                     new XElement("Duree", maDureeMission),
-                    new XElement("Planning", monCheminGeneralXML),
+                    new XElement("General", monCheminGeneralXML),
+                    new XElement("Planning", monCheminPlanningXML),
                     new XElement("Map"),
                     new XElement("Home"),
                     new XElement("NbAstronautes", monNbAstronautes),
@@ -275,7 +276,7 @@ namespace AppliMars
             monNomMission = _generalXML.Element("Mission").Element("NomMission").Value;
             maDateDebut = DateTime.Parse(_generalXML.Element("Mission").Element("DateDebut").Value);
             maDureeMission = int.Parse(_generalXML.Element("Mission").Element("Duree").Value);
-            maDateFin = DateTime.Parse(_generalXML.Element("Mission").Element("DateFin").Value);
+            //maDateFin = DateTime.Parse(_generalXML.Element("Mission").Element("DateFin").Value);
             monNbAstronautes = int.Parse(_generalXML.Element("Mission").Element("NbAstronautes").Value);
             mesAstronautes = new List<Astronaute>();
             var astronautes = from astronaute in _generalXML.Descendants("Astronautes") select astronaute;
@@ -289,7 +290,8 @@ namespace AppliMars
             _jourJ = calculJourJ();
 
             // Récupération du chemin et du nom du fichier XML du Planning
-            _cheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
+            monCheminGeneralXML = _generalXML.Element("Mission").Element("General").Value;
+            monCheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
             // Génération du planning associé à la mission
             _planning = new Planning(this);
         }

@@ -163,6 +163,8 @@
     <Content Include="Images\news.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
+    <Content Include="Missions\Mission1\General.xml" />
+    <Content Include="Missions\Mission1\Planning.xml" />
     <Content Include="XML\General.xml" />
     <Content Include="XML\Planning.xml" />
     <None Include="Images\space.png" />

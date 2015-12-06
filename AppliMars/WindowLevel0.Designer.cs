@@ -24,50 +24,103 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel0));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonChargementMission = new System.Windows.Forms.Button();
+            this.buttonNouvelleMission = new System.Windows.Forms.Button();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.listBoxMissions = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonChargementMission
             // 
-            this.button1.Location = new System.Drawing.Point(421, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Lancer la mission";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonChargementMission.Location = new System.Drawing.Point(6, 120);
+            this.buttonChargementMission.Name = "buttonChargementMission";
+            this.buttonChargementMission.Size = new System.Drawing.Size(174, 49);
+            this.buttonChargementMission.TabIndex = 0;
+            this.buttonChargementMission.Text = "Lancer la mission";
+            this.buttonChargementMission.UseVisualStyleBackColor = true;
+            this.buttonChargementMission.Click += new System.EventHandler(this.buttonChargementMission_Click);
             // 
-            // button2
+            // buttonNouvelleMission
             // 
-            this.button2.Location = new System.Drawing.Point(193, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 49);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Nouvelle mission";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonNouvelleMission.Location = new System.Drawing.Point(156, 262);
+            this.buttonNouvelleMission.Name = "buttonNouvelleMission";
+            this.buttonNouvelleMission.Size = new System.Drawing.Size(174, 49);
+            this.buttonNouvelleMission.TabIndex = 1;
+            this.buttonNouvelleMission.Text = "Nouvelle mission";
+            this.buttonNouvelleMission.UseVisualStyleBackColor = true;
+            this.buttonNouvelleMission.Click += new System.EventHandler(this.buttonNouvelleMission_Click);
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(63, 18);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(369, 39);
+            this.labelTitle.TabIndex = 2;
+            this.labelTitle.Text = "SpaceShip Organisator";
+            // 
+            // listBoxMissions
+            // 
+            this.listBoxMissions.FormattingEnabled = true;
+            this.listBoxMissions.Location = new System.Drawing.Point(6, 19);
+            this.listBoxMissions.Name = "listBoxMissions";
+            this.listBoxMissions.Size = new System.Drawing.Size(174, 95);
+            this.listBoxMissions.TabIndex = 3;
+            this.listBoxMissions.SelectedIndexChanged += new System.EventHandler(this.listBoxMissions_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listBoxMissions);
+            this.groupBox1.Controls.Add(this.buttonChargementMission);
+            this.groupBox1.Location = new System.Drawing.Point(150, 73);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(186, 183);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Missions éxistantes";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelTitle);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.buttonNouvelleMission);
+            this.panel1.Location = new System.Drawing.Point(369, 122);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(478, 412);
+            this.panel1.TabIndex = 5;
             // 
             // WindowLevel0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 394);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WindowLevel0";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Spaceship Organisator";
+            this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonChargementMission;
+        private System.Windows.Forms.Button buttonNouvelleMission;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.ListBox listBoxMissions;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }

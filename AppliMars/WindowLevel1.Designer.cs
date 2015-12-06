@@ -43,6 +43,7 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.timerMinutes = new System.Windows.Forms.Timer(this.components);
+            this.buttonRetourChoixMission = new System.Windows.Forms.Button();
             this.groupBoxCalendrier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).BeginInit();
@@ -227,11 +228,24 @@
             // 
             this.timerMinutes.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // buttonRetourChoixMission
+            // 
+            this.buttonRetourChoixMission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRetourChoixMission.Location = new System.Drawing.Point(22, 12);
+            this.buttonRetourChoixMission.Name = "buttonRetourChoixMission";
+            this.buttonRetourChoixMission.Size = new System.Drawing.Size(162, 34);
+            this.buttonRetourChoixMission.TabIndex = 5;
+            this.buttonRetourChoixMission.Text = "Revenir au choix de la mission";
+            this.buttonRetourChoixMission.UseVisualStyleBackColor = true;
+            this.buttonRetourChoixMission.Click += new System.EventHandler(this.buttonRetourChoixMission_Click);
+            // 
             // WindowLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 750);
+            this.ControlBox = false;
+            this.Controls.Add(this.buttonRetourChoixMission);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxCalendrier);
@@ -272,6 +286,7 @@
         private System.Windows.Forms.Label labelMinutes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonRetourChoixMission;
     }
 }
 

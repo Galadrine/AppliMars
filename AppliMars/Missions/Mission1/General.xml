@@ -3,7 +3,8 @@
   <NomMission>Mars Attack</NomMission>
   <DateDebut>2015-12-01T00:01:00</DateDebut>
   <Duree>500</Duree>
-  <Planning>..//..//Mission1/General.xml</Planning>
+  <General>..//..//Missions/Mission1/General.xml</General>
+  <Planning>..//..//Missions/Mission1/Planning.xml</Planning>
   <Map />
   <Home />
   <NbAstronautes>3</NbAstronautes>

@@ -13,25 +13,55 @@ namespace AppliMars {
 
         #region variables
 
-        AppliMars.WindowLevel2 win2;
-        Activite _act;
-        Journee _jour;
-
+        private WindowLevel2 win2;
+        private Activite act;
+        private Journee jour;
 
         #endregion
+
+
+        #region accesseurs
+
+        public Activite monActivite {
+            get { return act; }
+            set { act = value; }
+        }
+
+        public WindowLevel2 maFenetrePrec {
+            get { return win2; }
+            set { win2 = value; }
+        }
+
+        public Journee maJournee {
+            get { return jour; }
+            set { jour = value; }
+        }
+
+        #endregion
+
 
         #region constructeurs
 
         public WindowLevel3() {
             InitializeComponent();
+            this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero;
+        }
+
+        // Fenetre Niveau 3 pour créaétion d'activite
+        public WindowLevel3(Journee jour, WindowLevel2 win2)
+            : this() {
+
         }
 
         // Fenetre Niveau 3 pour activité existante
-        public WindowLevel3(Activite activite, Journee jour)
+        public WindowLevel3(Activite activite, Journee jour, WindowLevel2 win2) 
+            : this()
         {
-            InitializeComponent();
-            _act = activite;
-            _jour = jour;
+
+            maFenetrePrec = win2;
+            monActivite = activite;
+            maJournee = jour;
+
             tB_TypeAct.ReadOnly = true;
             tB_descrAct.ReadOnly = true;
             tB_HDebAct.ReadOnly = true;
@@ -40,30 +70,24 @@ namespace AppliMars {
             tB_MFinAct.ReadOnly = true;
             tB_xAct.ReadOnly = true;
             tB_yAct.ReadOnly = true;
+
             cB_localisation.Enabled = false;
             b_annuler.Visible = false;
             b_valider.Visible = false;
 
-            l_numJour.Text = _jour.monNumero.ToString();
-            tB_TypeAct.Text = _act.monNom;
-            tB_descrAct.Text = _act.maDescription;
-            tB_HDebAct.Text = _act.monHeureDebut.ToString();
-            tB_MDebAct.Text = _act.mesMinutesDebut.ToString();
-            tB_HFinAct.Text = _act.monHeuresFin.ToString();
-            tB_MFinAct.Text = _act.mesMinutesFin.ToString();
-            tB_xAct.Text = _act.maPosX.ToString();
-            tB_yAct.Text = _act.maPosY.ToString();
-            cB_localisation.Checked = _act.interieurOuExterieur;
+            l_numJour.Text = maJournee.monNumero.ToString();
+            tB_TypeAct.Text = monActivite.monNom;
+            tB_descrAct.Text = monActivite.maDescription;
+            tB_HDebAct.Text = monActivite.monHeureDebut.ToString();
+            tB_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
+            tB_HFinAct.Text = monActivite.monHeuresFin.ToString();
+            tB_MFinAct.Text = monActivite.mesMinutesFin.ToString();
+            tB_xAct.Text = monActivite.maPosX.ToString();
+            tB_yAct.Text = monActivite.maPosY.ToString();
+            cB_localisation.Checked = monActivite.interieurOuExterieur;
 
             // A FAIRE : GESTION DE LA MAP!!
         }
-
-        //public WindowLevel3(Journee jour)
-        //{
-        //    InitializeComponent();
-        //    _jour = jour;
-
-        //}
 
 
         #endregion
@@ -71,18 +95,15 @@ namespace AppliMars {
 
         #region methodes
 
-
         public System.Drawing.Point convertionCoordonneesImageVersXML(Point coordinates) 
         {
             return new System.Drawing.Point((coordinates.X * 3) - 700, (coordinates.Y * 3) - 1000);
         }
-
             
         #endregion
 
 
         #region evenements
-
 
         private void buttonRetourJournee_Click(object sender, EventArgs e) {
             this.Close();
@@ -93,10 +114,8 @@ namespace AppliMars {
             MouseEventArgs me = (MouseEventArgs)e;
             Point coordinates = convertionCoordonneesImageVersXML(me.Location);
 
-
             tB_xAct.Text = (coordinates.X * 3).ToString();
             tB_yAct.Text = (coordinates.Y * 3).ToString();
-
         }
 
         private void TextBoxAbscisse_KeyPress(object sender, KeyPressEventArgs e) {
@@ -127,8 +146,6 @@ namespace AppliMars {
                 pictureBoxMap.Visible = false;
             }
         }
-
-        
 
         #endregion
 
