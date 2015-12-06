@@ -367,7 +367,7 @@
             // 
             this.buttonCompteRendu.Image = ((System.Drawing.Image)(resources.GetObject("buttonCompteRendu.Image")));
             this.buttonCompteRendu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCompteRendu.Location = new System.Drawing.Point(6, 56);
+            this.buttonCompteRendu.Location = new System.Drawing.Point(6, 52);
             this.buttonCompteRendu.Name = "buttonCompteRendu";
             this.buttonCompteRendu.Size = new System.Drawing.Size(162, 34);
             this.buttonCompteRendu.TabIndex = 7;
@@ -484,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.ClientSize = new System.Drawing.Size(1184, 750);
             this.ControlBox = false;
             this.Controls.Add(this.labelNomEmploiDuTemps);
             this.Controls.Add(this.groupBox2);

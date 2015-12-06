@@ -20,6 +20,7 @@ namespace AppliMars
         private int _jourJ;
         private List<Astronaute> _astronautes;
         private int _nbAstronautes;
+        private List<Categorie> _listeCate;
         private string _cheminGeneralXML;
         private string _cheminPlanningXML;
         private Planning _planning;
@@ -64,6 +65,12 @@ namespace AppliMars
             set { _nbAstronautes = value; }
         }
 
+        public List<Categorie> maListeCategories
+        {
+            get { return _listeCate; }
+            set { _listeCate = value; }
+        }
+
         public string monCheminGeneralXML {
             get { return _cheminGeneralXML; }
             set { _cheminGeneralXML = value; }
@@ -103,6 +110,7 @@ namespace AppliMars
             _dureeMission = dureeMission;
             _dateFin = _dateDebut.AddDays(_dureeMission);
             _jourJ = 1;
+            _listeCate = new List<Categorie>();
             // Création du dossier 
             string emplacementXML = "" + path + "/" + nomMission;
             Directory.CreateDirectory(emplacementXML); 
@@ -128,9 +136,7 @@ namespace AppliMars
                     new XElement("Home"),
                     new XElement("NbAstronautes", monNbAstronautes),
                     new XElement("Astronautes")));
-            ////////////////////////////////////////////////////////////////////////////////
-            ////////////////////// Y a pas une erreur ? J'ai modifié
-            //_generalXML.Save(_cheminGeneralXML);
+            
             _generalXML.Save(_cheminGeneralXML);
 
             // Ajout des astronautes dans le XML 
@@ -138,7 +144,69 @@ namespace AppliMars
             {
                 _generalXML.Element("Mission").Element("Astronautes").Add(new XElement("Astronaute", nom));
             }
-            
+
+            // Création de la liste des activités (figure2 sujet)
+            #region Activites
+            _generalXML.Element("Mission").Add(new XElement("Activites",
+                new XElement("Categorie",
+                    new XAttribute("id", "Living"),
+                    new XElement("Activite", "Eating"),
+                    new XElement("Activite", "Sleeping"),
+                    new XElement("Activite", "Entertrainment"),
+                    new XElement("Activite", "Private"),
+                    new XElement("Activite", "Health controle"),
+                    new XElement("Activite", "Medical act")),
+                new XElement("Categorie",
+                    new XAttribute("id", "Science"),
+                    new XElement("Categorie", 
+                        new XAttribute("id", "Exploration"),
+                        new XElement("Activite", "Space suit"),
+                        new XElement("Activite", "Vehicle")),
+                    new XElement("Activite", "Briefind"),
+                    new XElement("Activite", "Debriefing"), 
+                    new XElement("Activite", "Inside Experiment"),
+                    new XElement("Activite", "Outside experiment")),
+                new XElement("Categorie",
+                    new XAttribute("id", "Maintenance"),
+                    new XElement("Activite", "Cleaning"),
+                    new XElement("Activite", "LSS air system"),
+                    new XElement("Activite", "LSS water system"),
+                    new XElement("Activite", "LSS food system"),
+                    new XElement("Activite", "Power systems"),
+                    new XElement("Activite", "Space suit"),
+                    new XElement("Activite", "Other")),
+                new XElement("Categorie", 
+                    new XAttribute("id", "Communication"),
+                    new XElement("Activite", "Sending message"),
+                    new XElement("Activite", "Receiving message")),
+                new XElement("Categorie",
+                    new XAttribute("id", "Repair"),
+                    new XElement("Activite", "LSS"),
+                    new XElement("Activite", "Power systems"),
+                    new XElement("Activite", "Communication systems"),
+                    new XElement("Activite", "Habitat"),
+                    new XElement("Activite", "Space suit"),
+                    new XElement("Activite", "Vehicle")),
+                new XElement("Categorie",
+                    new XAttribute("id", "Other"),
+                    new XElement("Activite", "Emergency"))));
+            _generalXML.Save(_cheminGeneralXML);
+            #endregion
+
+            // Création des instances des categories
+            //var categories = from cate in _generalXML.Descendants("Categorie") select cate;
+            foreach (XElement cate in _generalXML.Element("Mission").Element("Activites").Elements("Categorie"))
+            {
+                string nomNvCate = cate.Attribute("id").ToString();
+                List<string> listeActNvCate = new List<string>();
+                // Récupération des activités de cette catégorie
+                foreach (XElement actCate in cate.Descendants("Activite"))
+                {
+                    listeActNvCate.Add(actCate.ToString());
+                }
+                _listeCate.Add(new Categorie(nomNvCate, listeActNvCate));
+            }
+
             // Création de la liste des activités par défaut d'une journée dans le XML
             #region DefaultDay
             _generalXML.Element("Mission").Add(new XElement("DefaultDay", 

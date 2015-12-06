@@ -10,31 +10,31 @@ namespace AppliMars {
         #region variables
 
         private string _nomCategorie;
-        private Categorie _superCategorie;
-        private Categorie _sousCategorie;
-        private List<Activite> _listeActivite;
+        //private Categorie _superCategorie;
+        //private Categorie _sousCategorie;
+        private List<string> _listeActivite;
 
         #endregion
 
 
         #region accesseurs
 
-        public Categorie maSousCategorie {
-            get { return _sousCategorie; }
-            set { _sousCategorie = value; }
-        }
+        //public Categorie maSousCategorie {
+        //    get { return _sousCategorie; }
+        //    set { _sousCategorie = value; }
+        //}
 
-        public Categorie maSuperCategorie {
-            get { return _superCategorie; }
-            set { _superCategorie = value; }
-        }
+        //public Categorie maSuperCategorie {
+        //    get { return _superCategorie; }
+        //    set { _superCategorie = value; }
+        //}
 
         public string monNom {
             get { return _nomCategorie; }
             set { _nomCategorie = value; }
         }
 
-        public List<Activite> maListe {
+        public List<string> maListe {
             get { return _listeActivite; }
             set { _listeActivite = value; }
         }
@@ -44,8 +44,10 @@ namespace AppliMars {
 
         #region constructeurs
 
-        public Categorie(string unNom) {
-
+        public Categorie(string unNom, List<string> listeActivites) 
+        {
+            _nomCategorie = unNom;
+            _listeActivite = listeActivites;
         }
 
         #endregion

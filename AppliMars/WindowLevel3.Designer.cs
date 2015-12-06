@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel3));
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.tB_descrAct = new System.Windows.Forms.TextBox();
             this.label_description_activite = new System.Windows.Forms.Label();
             this.l_numJour = new System.Windows.Forms.Label();
             this.label_heure_debut = new System.Windows.Forms.Label();
@@ -32,40 +32,38 @@
             this.labelCoordonnees = new System.Windows.Forms.Label();
             this.labelLatitude = new System.Windows.Forms.Label();
             this.labelLongitude = new System.Windows.Forms.Label();
-            this.TextBoxOrdonnee = new System.Windows.Forms.TextBox();
+            this.tB_yAct = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxHeuresDebut = new System.Windows.Forms.ComboBox();
-            this.comboBoxMinutesDebut = new System.Windows.Forms.ComboBox();
-            this.comboBoxHeuresFin = new System.Windows.Forms.ComboBox();
-            this.comboBoxMinutesFin = new System.Windows.Forms.ComboBox();
-            this.buttonAjouter = new System.Windows.Forms.Button();
-            this.buttonSupprimer = new System.Windows.Forms.Button();
             this.buttonRetourJournee = new System.Windows.Forms.Button();
-            this.comboBoxTypeActivite = new System.Windows.Forms.ComboBox();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
-            this.checkBoxLocalisation = new System.Windows.Forms.CheckBox();
+            this.cB_localisation = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TextBoxAbscisse = new System.Windows.Forms.TextBox();
+            this.tB_xAct = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.tB_TypeAct = new System.Windows.Forms.TextBox();
+            this.tB_HDebAct = new System.Windows.Forms.TextBox();
+            this.tB_MDebAct = new System.Windows.Forms.TextBox();
+            this.tB_MFinAct = new System.Windows.Forms.TextBox();
+            this.tB_HFinAct = new System.Windows.Forms.TextBox();
+            this.b_annuler = new System.Windows.Forms.Button();
+            this.b_valider = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxDescription
+            // tB_descrAct
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(135, 146);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(247, 173);
-            this.textBoxDescription.TabIndex = 2;
+            this.tB_descrAct.Location = new System.Drawing.Point(135, 146);
+            this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
+            this.tB_descrAct.Multiline = true;
+            this.tB_descrAct.Name = "tB_descrAct";
+            this.tB_descrAct.Size = new System.Drawing.Size(247, 173);
+            this.tB_descrAct.TabIndex = 2;
             // 
             // label_description_activite
             // 
@@ -84,9 +82,8 @@
             this.l_numJour.Location = new System.Drawing.Point(395, 58);
             this.l_numJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_numJour.Name = "l_numJour";
-            this.l_numJour.Size = new System.Drawing.Size(34, 25);
+            this.l_numJour.Size = new System.Drawing.Size(0, 25);
             this.l_numJour.TabIndex = 4;
-            this.l_numJour.Text = "00";
             // 
             // label_heure_debut
             // 
@@ -141,15 +138,15 @@
             this.labelLongitude.Text = "longitude";
             this.labelLongitude.Visible = false;
             // 
-            // TextBoxOrdonnee
+            // tB_yAct
             // 
-            this.TextBoxOrdonnee.Location = new System.Drawing.Point(288, 368);
-            this.TextBoxOrdonnee.Margin = new System.Windows.Forms.Padding(2);
-            this.TextBoxOrdonnee.Name = "TextBoxOrdonnee";
-            this.TextBoxOrdonnee.Size = new System.Drawing.Size(35, 20);
-            this.TextBoxOrdonnee.TabIndex = 14;
-            this.TextBoxOrdonnee.Visible = false;
-            this.TextBoxOrdonnee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxOrdonnee_KeyPress);
+            this.tB_yAct.Location = new System.Drawing.Point(288, 368);
+            this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
+            this.tB_yAct.Name = "tB_yAct";
+            this.tB_yAct.Size = new System.Drawing.Size(35, 20);
+            this.tB_yAct.TabIndex = 14;
+            this.tB_yAct.Visible = false;
+            this.tB_yAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxOrdonnee_KeyPress);
             // 
             // label1
             // 
@@ -160,63 +157,6 @@
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Type d\'activité";
-            // 
-            // comboBoxHeuresDebut
-            // 
-            this.comboBoxHeuresDebut.FormattingEnabled = true;
-            this.comboBoxHeuresDebut.Location = new System.Drawing.Point(135, 70);
-            this.comboBoxHeuresDebut.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxHeuresDebut.Name = "comboBoxHeuresDebut";
-            this.comboBoxHeuresDebut.Size = new System.Drawing.Size(31, 21);
-            this.comboBoxHeuresDebut.TabIndex = 21;
-            // 
-            // comboBoxMinutesDebut
-            // 
-            this.comboBoxMinutesDebut.FormattingEnabled = true;
-            this.comboBoxMinutesDebut.Location = new System.Drawing.Point(185, 70);
-            this.comboBoxMinutesDebut.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxMinutesDebut.Name = "comboBoxMinutesDebut";
-            this.comboBoxMinutesDebut.Size = new System.Drawing.Size(31, 21);
-            this.comboBoxMinutesDebut.TabIndex = 22;
-            // 
-            // comboBoxHeuresFin
-            // 
-            this.comboBoxHeuresFin.FormattingEnabled = true;
-            this.comboBoxHeuresFin.Location = new System.Drawing.Point(135, 101);
-            this.comboBoxHeuresFin.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxHeuresFin.Name = "comboBoxHeuresFin";
-            this.comboBoxHeuresFin.Size = new System.Drawing.Size(31, 21);
-            this.comboBoxHeuresFin.TabIndex = 23;
-            // 
-            // comboBoxMinutesFin
-            // 
-            this.comboBoxMinutesFin.FormattingEnabled = true;
-            this.comboBoxMinutesFin.Location = new System.Drawing.Point(185, 101);
-            this.comboBoxMinutesFin.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxMinutesFin.Name = "comboBoxMinutesFin";
-            this.comboBoxMinutesFin.Size = new System.Drawing.Size(31, 21);
-            this.comboBoxMinutesFin.TabIndex = 24;
-            // 
-            // buttonAjouter
-            // 
-            this.buttonAjouter.Location = new System.Drawing.Point(135, 404);
-            this.buttonAjouter.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(98, 32);
-            this.buttonAjouter.TabIndex = 26;
-            this.buttonAjouter.Text = "Ajouter";
-            this.buttonAjouter.UseVisualStyleBackColor = true;
-            // 
-            // buttonSupprimer
-            // 
-            this.buttonSupprimer.Location = new System.Drawing.Point(237, 404);
-            this.buttonSupprimer.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSupprimer.Name = "buttonSupprimer";
-            this.buttonSupprimer.Size = new System.Drawing.Size(98, 32);
-            this.buttonSupprimer.TabIndex = 27;
-            this.buttonSupprimer.Text = "Supprimer";
-            this.buttonSupprimer.UseVisualStyleBackColor = true;
-            this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
             // 
             // buttonRetourJournee
             // 
@@ -231,14 +171,6 @@
             this.buttonRetourJournee.UseVisualStyleBackColor = true;
             this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
             // 
-            // comboBoxTypeActivite
-            // 
-            this.comboBoxTypeActivite.FormattingEnabled = true;
-            this.comboBoxTypeActivite.Location = new System.Drawing.Point(135, 27);
-            this.comboBoxTypeActivite.Name = "comboBoxTypeActivite";
-            this.comboBoxTypeActivite.Size = new System.Drawing.Size(145, 21);
-            this.comboBoxTypeActivite.TabIndex = 28;
-            // 
             // pictureBoxMap
             // 
             this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
@@ -251,16 +183,16 @@
             this.pictureBoxMap.Visible = false;
             this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
             // 
-            // checkBoxLocalisation
+            // cB_localisation
             // 
-            this.checkBoxLocalisation.AutoSize = true;
-            this.checkBoxLocalisation.Location = new System.Drawing.Point(135, 334);
-            this.checkBoxLocalisation.Name = "checkBoxLocalisation";
-            this.checkBoxLocalisation.Size = new System.Drawing.Size(119, 17);
-            this.checkBoxLocalisation.TabIndex = 30;
-            this.checkBoxLocalisation.Text = "Activité en extérieur";
-            this.checkBoxLocalisation.UseVisualStyleBackColor = true;
-            this.checkBoxLocalisation.CheckedChanged += new System.EventHandler(this.checkBoxLocalisation_CheckedChanged);
+            this.cB_localisation.AutoSize = true;
+            this.cB_localisation.Location = new System.Drawing.Point(135, 334);
+            this.cB_localisation.Name = "cB_localisation";
+            this.cB_localisation.Size = new System.Drawing.Size(119, 17);
+            this.cB_localisation.TabIndex = 30;
+            this.cB_localisation.Text = "Activité en extérieur";
+            this.cB_localisation.UseVisualStyleBackColor = true;
+            this.cB_localisation.CheckedChanged += new System.EventHandler(this.checkBoxLocalisation_CheckedChanged);
             // 
             // label2
             // 
@@ -274,10 +206,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.comboBoxTypeActivite);
-            this.groupBox1.Controls.Add(this.checkBoxLocalisation);
-            this.groupBox1.Controls.Add(this.textBoxDescription);
+            this.groupBox1.Controls.Add(this.tB_MFinAct);
+            this.groupBox1.Controls.Add(this.tB_HFinAct);
+            this.groupBox1.Controls.Add(this.tB_MDebAct);
+            this.groupBox1.Controls.Add(this.tB_HDebAct);
+            this.groupBox1.Controls.Add(this.tB_TypeAct);
+            this.groupBox1.Controls.Add(this.cB_localisation);
+            this.groupBox1.Controls.Add(this.tB_descrAct);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -285,36 +220,18 @@
             this.groupBox1.Controls.Add(this.label_description_activite);
             this.groupBox1.Controls.Add(this.label_heure_debut);
             this.groupBox1.Controls.Add(this.label_heure_fin);
-            this.groupBox1.Controls.Add(this.buttonSupprimer);
             this.groupBox1.Controls.Add(this.labelCoordonnees);
-            this.groupBox1.Controls.Add(this.buttonAjouter);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBoxMinutesFin);
-            this.groupBox1.Controls.Add(this.TextBoxAbscisse);
-            this.groupBox1.Controls.Add(this.comboBoxHeuresFin);
+            this.groupBox1.Controls.Add(this.tB_xAct);
             this.groupBox1.Controls.Add(this.labelLatitude);
-            this.groupBox1.Controls.Add(this.comboBoxMinutesDebut);
             this.groupBox1.Controls.Add(this.labelLongitude);
-            this.groupBox1.Controls.Add(this.comboBoxHeuresDebut);
-            this.groupBox1.Controls.Add(this.TextBoxOrdonnee);
+            this.groupBox1.Controls.Add(this.tB_yAct);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(158, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 456);
+            this.groupBox1.Size = new System.Drawing.Size(408, 419);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(280, 336);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            395,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(43, 20);
-            this.numericUpDown1.TabIndex = 31;
             // 
             // label4
             // 
@@ -339,7 +256,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(220, 73);
+            this.label5.Location = new System.Drawing.Point(220, 70);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
@@ -349,23 +266,23 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 73);
+            this.label3.Location = new System.Drawing.Point(168, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "h";
             // 
-            // TextBoxAbscisse
+            // tB_xAct
             // 
-            this.TextBoxAbscisse.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TextBoxAbscisse.Location = new System.Drawing.Point(198, 366);
-            this.TextBoxAbscisse.Margin = new System.Windows.Forms.Padding(2);
-            this.TextBoxAbscisse.Name = "TextBoxAbscisse";
-            this.TextBoxAbscisse.Size = new System.Drawing.Size(35, 20);
-            this.TextBoxAbscisse.TabIndex = 11;
-            this.TextBoxAbscisse.Visible = false;
-            this.TextBoxAbscisse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
+            this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tB_xAct.Location = new System.Drawing.Point(198, 366);
+            this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
+            this.tB_xAct.Name = "tB_xAct";
+            this.tB_xAct.Size = new System.Drawing.Size(35, 20);
+            this.tB_xAct.TabIndex = 11;
+            this.tB_xAct.Visible = false;
+            this.tB_xAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
             // 
             // label7
             // 
@@ -378,12 +295,67 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Activité du jour";
             // 
+            // tB_TypeAct
+            // 
+            this.tB_TypeAct.Location = new System.Drawing.Point(136, 24);
+            this.tB_TypeAct.Name = "tB_TypeAct";
+            this.tB_TypeAct.Size = new System.Drawing.Size(100, 20);
+            this.tB_TypeAct.TabIndex = 31;
+            // 
+            // tB_HDebAct
+            // 
+            this.tB_HDebAct.Location = new System.Drawing.Point(136, 67);
+            this.tB_HDebAct.Name = "tB_HDebAct";
+            this.tB_HDebAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_HDebAct.TabIndex = 32;
+            // 
+            // tB_MDebAct
+            // 
+            this.tB_MDebAct.Location = new System.Drawing.Point(186, 67);
+            this.tB_MDebAct.Name = "tB_MDebAct";
+            this.tB_MDebAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_MDebAct.TabIndex = 33;
+            // 
+            // tB_MFinAct
+            // 
+            this.tB_MFinAct.Location = new System.Drawing.Point(186, 98);
+            this.tB_MFinAct.Name = "tB_MFinAct";
+            this.tB_MFinAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_MFinAct.TabIndex = 35;
+            // 
+            // tB_HFinAct
+            // 
+            this.tB_HFinAct.Location = new System.Drawing.Point(135, 98);
+            this.tB_HFinAct.Name = "tB_HFinAct";
+            this.tB_HFinAct.Size = new System.Drawing.Size(27, 20);
+            this.tB_HFinAct.TabIndex = 34;
+            // 
+            // b_annuler
+            // 
+            this.b_annuler.Location = new System.Drawing.Point(208, 524);
+            this.b_annuler.Name = "b_annuler";
+            this.b_annuler.Size = new System.Drawing.Size(126, 48);
+            this.b_annuler.TabIndex = 32;
+            this.b_annuler.Text = "ANNULER";
+            this.b_annuler.UseVisualStyleBackColor = true;
+            // 
+            // b_valider
+            // 
+            this.b_valider.Location = new System.Drawing.Point(381, 524);
+            this.b_valider.Name = "b_valider";
+            this.b_valider.Size = new System.Drawing.Size(126, 48);
+            this.b_valider.TabIndex = 33;
+            this.b_valider.Text = "VALIDER";
+            this.b_valider.UseVisualStyleBackColor = true;
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 750);
             this.ControlBox = false;
+            this.Controls.Add(this.b_valider);
+            this.Controls.Add(this.b_annuler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.buttonRetourJournee);
@@ -399,7 +371,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,7 +378,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.TextBox tB_descrAct;
         private System.Windows.Forms.Label label_description_activite;
         private System.Windows.Forms.Label l_numJour;
         private System.Windows.Forms.Label label_heure_debut;
@@ -415,18 +386,11 @@
         private System.Windows.Forms.Label labelCoordonnees;
         private System.Windows.Forms.Label labelLatitude;
         private System.Windows.Forms.Label labelLongitude;
-        private System.Windows.Forms.TextBox TextBoxOrdonnee;
+        private System.Windows.Forms.TextBox tB_yAct;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxHeuresDebut;
-        private System.Windows.Forms.ComboBox comboBoxMinutesDebut;
-        private System.Windows.Forms.ComboBox comboBoxHeuresFin;
-        private System.Windows.Forms.ComboBox comboBoxMinutesFin;
-        private System.Windows.Forms.Button buttonAjouter;
-        private System.Windows.Forms.Button buttonSupprimer;
         private System.Windows.Forms.Button buttonRetourJournee;
-        private System.Windows.Forms.ComboBox comboBoxTypeActivite;
         private System.Windows.Forms.PictureBox pictureBoxMap;
-        private System.Windows.Forms.CheckBox checkBoxLocalisation;
+        private System.Windows.Forms.CheckBox cB_localisation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
@@ -434,8 +398,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox TextBoxAbscisse;
+        private System.Windows.Forms.TextBox tB_xAct;
+        private System.Windows.Forms.TextBox tB_MFinAct;
+        private System.Windows.Forms.TextBox tB_HFinAct;
+        private System.Windows.Forms.TextBox tB_MDebAct;
+        private System.Windows.Forms.TextBox tB_HDebAct;
+        private System.Windows.Forms.TextBox tB_TypeAct;
+        private System.Windows.Forms.Button b_annuler;
+        private System.Windows.Forms.Button b_valider;
     }
 }
 

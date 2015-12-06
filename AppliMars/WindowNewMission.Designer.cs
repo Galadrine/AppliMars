@@ -65,14 +65,14 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(240, 138);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Durée";
+            this.label6.Text = "Jour(s)";
             // 
             // dT_DateDebNvMission
             // 
-            this.dT_DateDebNvMission.CustomFormat = "DD:MM:YYYY";
-            this.dT_DateDebNvMission.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dT_DateDebNvMission.CustomFormat = "";
+            this.dT_DateDebNvMission.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dT_DateDebNvMission.Location = new System.Drawing.Point(105, 102);
             this.dT_DateDebNvMission.Name = "dT_DateDebNvMission";
             this.dT_DateDebNvMission.Size = new System.Drawing.Size(200, 20);

@@ -14,7 +14,8 @@ namespace AppliMars {
         #region variables
 
         AppliMars.WindowLevel2 win2;
-        Activite act;
+        Activite _act;
+        Journee _jour;
 
 
         #endregion
@@ -25,23 +26,44 @@ namespace AppliMars {
             InitializeComponent();
         }
 
-        public WindowLevel3(Activite activite)
+        // Fenetre Niveau 3 pour activité existante
+        public WindowLevel3(Activite activite, Journee jour)
         {
+            InitializeComponent();
+            _act = activite;
+            _jour = jour;
+            tB_TypeAct.ReadOnly = true;
+            tB_descrAct.ReadOnly = true;
+            tB_HDebAct.ReadOnly = true;
+            tB_MDebAct.ReadOnly = true;
+            tB_HFinAct.ReadOnly = true;
+            tB_MFinAct.ReadOnly = true;
+            tB_xAct.ReadOnly = true;
+            tB_yAct.ReadOnly = true;
+            cB_localisation.Enabled = false;
+            b_annuler.Visible = false;
+            b_valider.Visible = false;
 
+            l_numJour.Text = _jour.monNumero.ToString();
+            tB_TypeAct.Text = _act.monNom;
+            tB_descrAct.Text = _act.maDescription;
+            tB_HDebAct.Text = _act.monHeureDebut.ToString();
+            tB_MDebAct.Text = _act.mesMinutesDebut.ToString();
+            tB_HFinAct.Text = _act.monHeuresFin.ToString();
+            tB_MFinAct.Text = _act.mesMinutesFin.ToString();
+            tB_xAct.Text = _act.maPosX.ToString();
+            tB_yAct.Text = _act.maPosY.ToString();
+            cB_localisation.Checked = _act.interieurOuExterieur;
+
+            // A FAIRE : GESTION DE LA MAP!!
         }
-        //public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2)
-        //    : this() {
-        //    win2 = w2;
-        //    labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+
+        //public WindowLevel3(Journee jour)
+        //{
+        //    InitializeComponent();
+        //    _jour = jour;
+
         //}
-
-        //public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2, int idActivite)
-        //    : this() {
-        //    win2 = w2;
-        //    labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
-        //}
-
-
 
 
         #endregion
@@ -49,11 +71,9 @@ namespace AppliMars {
 
         #region methodes
 
-        public void SupprimerActivite() {
 
-        }
-
-        public System.Drawing.Point convertionCoordonneesImageVersXML(Point coordinates) {
+        public System.Drawing.Point convertionCoordonneesImageVersXML(Point coordinates) 
+        {
             return new System.Drawing.Point((coordinates.X * 3) - 700, (coordinates.Y * 3) - 1000);
         }
 
@@ -74,8 +94,8 @@ namespace AppliMars {
             Point coordinates = convertionCoordonneesImageVersXML(me.Location);
 
 
-            TextBoxAbscisse.Text = (coordinates.X * 3).ToString();
-            TextBoxOrdonnee.Text = (coordinates.Y * 3).ToString();
+            tB_xAct.Text = (coordinates.X * 3).ToString();
+            tB_yAct.Text = (coordinates.Y * 3).ToString();
 
         }
 
@@ -90,39 +110,25 @@ namespace AppliMars {
         }
 
         private void checkBoxLocalisation_CheckedChanged(object sender, EventArgs e) {
-            if (checkBoxLocalisation.Checked) {
+            if (cB_localisation.Checked) {
                 labelCoordonnees.Visible = true;
                 labelLongitude.Visible = true;
                 labelLatitude.Visible = true;
-                TextBoxAbscisse.Visible = true;
-                TextBoxOrdonnee.Visible = true;
+                tB_xAct.Visible = true;
+                tB_yAct.Visible = true;
                 pictureBoxMap.Visible = true;
 
             } else {
                 labelCoordonnees.Visible = false;
                 labelLongitude.Visible = false;
                 labelLatitude.Visible = false;
-                TextBoxAbscisse.Visible = false;
-                TextBoxOrdonnee.Visible = false;
+                tB_xAct.Visible = false;
+                tB_yAct.Visible = false;
                 pictureBoxMap.Visible = false;
-
-
             }
         }
 
-        private void buttonSupprimer_Click(object sender, EventArgs e) {
-            DialogResult dlgRes = DialogResult.No;
-            dlgRes = MessageBox.Show(
-            "Voulez-vous vraiement supprimer cette activité ?",
-            "Confirmation suppression activité",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            if (dlgRes == DialogResult.Yes) {
-                SupprimerActivite();
-            }
-
-        }
+        
 
         #endregion
 
