@@ -25,19 +25,23 @@ namespace AppliMars {
             InitializeComponent();
         }
 
-        public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2)
-            : this() {
-            win2 = w2;
-            labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+        public WindowLevel3(Activite activite)
+        {
 
         }
+        //public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2)
+        //    : this() {
+        //    win2 = w2;
+        //    labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+        //}
 
-        public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2, int idActivite)
-            : this() {
-            win2 = w2;
-            labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+        //public WindowLevel3(string numeroJour, AppliMars.WindowLevel2 w2, int idActivite)
+        //    : this() {
+        //    win2 = w2;
+        //    labelNumeroJour.Text = (win2.maJournee.monNumero).ToString();
+        //}
 
-        }
+
 
 
         #endregion

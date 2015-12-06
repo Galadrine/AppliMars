@@ -26,7 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel3));
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label_description_activite = new System.Windows.Forms.Label();
-            this.labelNumeroJour = new System.Windows.Forms.Label();
+            this.l_numJour = new System.Windows.Forms.Label();
             this.label_heure_debut = new System.Windows.Forms.Label();
             this.label_heure_fin = new System.Windows.Forms.Label();
             this.labelCoordonnees = new System.Windows.Forms.Label();
@@ -46,13 +46,13 @@
             this.checkBoxLocalisation = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.TextBoxAbscisse = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -77,16 +77,16 @@
             this.label_description_activite.TabIndex = 3;
             this.label_description_activite.Text = "Description";
             // 
-            // labelNumeroJour
+            // l_numJour
             // 
-            this.labelNumeroJour.AutoSize = true;
-            this.labelNumeroJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumeroJour.Location = new System.Drawing.Point(395, 58);
-            this.labelNumeroJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelNumeroJour.Name = "labelNumeroJour";
-            this.labelNumeroJour.Size = new System.Drawing.Size(34, 25);
-            this.labelNumeroJour.TabIndex = 4;
-            this.labelNumeroJour.Text = "00";
+            this.l_numJour.AutoSize = true;
+            this.l_numJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l_numJour.Location = new System.Drawing.Point(395, 58);
+            this.l_numJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_numJour.Name = "l_numJour";
+            this.l_numJour.Size = new System.Drawing.Size(34, 25);
+            this.l_numJour.TabIndex = 4;
+            this.l_numJour.Text = "00";
             // 
             // label_heure_debut
             // 
@@ -304,6 +304,18 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(280, 336);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            395,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(43, 20);
+            this.numericUpDown1.TabIndex = 31;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -344,29 +356,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "h";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(258, 58);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 25);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Activité du jour";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(280, 336);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            395,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(43, 20);
-            this.numericUpDown1.TabIndex = 31;
-            // 
             // TextBoxAbscisse
             // 
             this.TextBoxAbscisse.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -378,17 +367,28 @@
             this.TextBoxAbscisse.Visible = false;
             this.TextBoxAbscisse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(258, 58);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 25);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Activité du jour";
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.ClientSize = new System.Drawing.Size(1184, 750);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.buttonRetourJournee);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.labelNumeroJour);
+            this.Controls.Add(this.l_numJour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -409,7 +409,7 @@
 
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label label_description_activite;
-        private System.Windows.Forms.Label labelNumeroJour;
+        private System.Windows.Forms.Label l_numJour;
         private System.Windows.Forms.Label label_heure_debut;
         private System.Windows.Forms.Label label_heure_fin;
         private System.Windows.Forms.Label labelCoordonnees;
