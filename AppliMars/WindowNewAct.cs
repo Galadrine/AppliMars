@@ -91,6 +91,16 @@ namespace AppliMars
                 flagDuree = int.TryParse(tB_MDebAct.Text, out mDebNvAct);
                 flagDuree = int.TryParse(tB_HFinAct.Text, out hFinNvAct);
                 flagDuree = int.TryParse(tB_MFinAct.Text, out mFinNvAct);
+                // Arrondir à la dizaine les minutes 
+                mDebNvAct = (int)(10*Math.Round((mDebNvAct / 10)*1.0));
+                mFinNvAct = (int)(10 * Math.Round((mFinNvAct / 10) * 1.0));
+                
+                // Vérifie que l'horaire est contenue dans la journée 
+                if ((hDebNvAct == 24 && mDebNvAct >= 40) || (hFinNvAct == 24 && mFinNvAct >= 40)
+                    || hDebNvAct >= 24 || hFinNvAct >= 24)
+                {
+                    flagDuree = false;
+                }
                 if (flagDuree == false)
                 {
                     l_erreurConvert.Visible = true;
@@ -116,6 +126,13 @@ namespace AppliMars
                 }
 
                 // Vérification des chevauchements avec d'autres activités 
+                
+                
+                
+                
+                
+                
+                
                 _jour.maListeActivites.Add(new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, xNvAct, yNvAct));
 
             }
