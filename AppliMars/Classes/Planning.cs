@@ -40,7 +40,7 @@ namespace AppliMars {
         #region constructeurs
 
         // Création de l'instance Planning à partir d'un fichier XML 
-        public Planning( Mission mission) {
+        public Planning(Mission mission) {
 
             string cheminXMLPlanning = mission.monCheminPlanningXML;
 

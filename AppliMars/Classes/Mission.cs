@@ -91,38 +91,28 @@ namespace AppliMars
 
         #region constructeurs 
 
-        public Mission(string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes) {
-            // Création de l'instance
-            _nomMission = nomMission;
-            _dateDebut = dateDebut;
-            _dureeMission = dureeMission;
-            _dateFin = _dateDebut.AddDays(_dureeMission);
-            _jourJ = 1;
-        }
-
-
         // Création d'une nouvelle mission (Création nouveaux XML)
         public Mission (string nomMission, DateTime dateDebut, int dureeMission, List<string> nomsAstronautes, string path)
         {
             // Création de l'instance
-            _nomMission = nomMission;
-            _dateDebut = dateDebut;
-            _dureeMission = dureeMission;
-            _dateFin = _dateDebut.AddDays(_dureeMission);
-            _jourJ = 1;
-            _listeCate = new List<Categorie>();
+            monNomMission = nomMission;
+            maDateDebut = dateDebut;
+            maDureeMission = dureeMission;
+            //maDateFin = _dateDebut.AddDays(_dureeMission);
+            monJourJ = 1;
+            maListeCategories = new List<Categorie>();
             // Création du dossier 
-            string emplacementXML = "" + path + "/" + nomMission;
+            string emplacementXML = "" + path + nomMission;
             Directory.CreateDirectory(emplacementXML); 
-            _cheminPlanningXML = "" + emplacementXML + "/Planning.xml";
-            _cheminGeneralXML = "" + emplacementXML + "/General.xml";
+            monCheminPlanningXML = "" + emplacementXML + "/Planning.xml";
+            monCheminGeneralXML = "" + emplacementXML + "/General.xml";
             // création des astronautes 
-            _astronautes = new List<Astronaute>();
+            mesAstronautes = new List<Astronaute>();
             _nbAstronautes = 0;
             foreach (string nom in nomsAstronautes)
             {
-                _astronautes.Add(new Astronaute(nom));
-                _nbAstronautes++;
+                mesAstronautes.Add(new Astronaute(nom));
+                monNbAstronautes++;
             }
 
             // Création du fichier XML Géréral
@@ -209,6 +199,7 @@ namespace AppliMars
             }
 
             // Création de la liste des activités par défaut d'une journée dans le XML
+
             #region DefaultDay
             _generalXML.Element("Mission").Add(new XElement("DefaultDay", 
                 new XElement("Timetable",
@@ -218,6 +209,7 @@ namespace AppliMars
                         new XElement("Nom", "Sleeping"),
                         new XElement("Description"),
                         new XElement("ExtBool", "false")),
+                        /*
                     new XElement("Activity",
                         new XElement("HeureDeb", "7:00:00"),
                         new XElement("HeureFin", "8:00:00"),
@@ -254,6 +246,7 @@ namespace AppliMars
                         new XElement("Nom", "Private"),
                         new XElement("Description"),
                         new XElement("ExtBool", "false")),
+                         */
                     new XElement("Activity",
                         new XElement("HeureDeb", "23:00:00"),
                         new XElement("HeureFin", "24:00:00"),
@@ -265,9 +258,10 @@ namespace AppliMars
 
             // Création du fichier XML Planning pour la mission (depuis la journée par défaut)
             this.creaPlanningXML(_generalXML);
+            monPlanning = new Planning(this);
+
         }
     
-
         // Création d'une Mission à partir d'un fichier XML
         public Mission (string cheminXMLGeneral)
         {
@@ -293,7 +287,7 @@ namespace AppliMars
             monCheminGeneralXML = _generalXML.Element("Mission").Element("General").Value;
             monCheminPlanningXML = _generalXML.Element("Mission").Element("Planning").Value;
             // Génération du planning associé à la mission
-            _planning = new Planning(this);
+            monPlanning = new Planning(this);
         }
 
         #endregion

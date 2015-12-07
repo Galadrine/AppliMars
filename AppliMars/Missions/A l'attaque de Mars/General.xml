@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mission>
+  <NomMission>A l'attaque de Mars</NomMission>
+  <DateDebut>2015-12-01T00:00:00</DateDebut>
+  <Duree>500</Duree>
+  <General>..//..//Missions//A l'attaque de Mars/General.xml</General>
+  <Planning>..//..//Missions//A l'attaque de Mars/Planning.xml</Planning>
+  <Map />
+  <Home />
+  <NbAstronautes>2</NbAstronautes>
+  <Astronautes>
+    <Astronaute>Bob</Astronaute>
+    <Astronaute>Astrid</Astronaute>
+  </Astronautes>
+  <Activites>
+    <Categorie id="Living">
+      <Activite>Eating</Activite>
+      <Activite>Sleeping</Activite>
+      <Activite>Entertrainment</Activite>
+      <Activite>Private</Activite>
+      <Activite>Health controle</Activite>
+      <Activite>Medical act</Activite>
+    </Categorie>
+    <Categorie id="Science">
+      <Categorie id="Exploration">
+        <Activite>Space suit</Activite>
+        <Activite>Vehicle</Activite>
+      </Categorie>
+      <Activite>Briefind</Activite>
+      <Activite>Debriefing</Activite>
+      <Activite>Inside Experiment</Activite>
+      <Activite>Outside experiment</Activite>
+    </Categorie>
+    <Categorie id="Maintenance">
+      <Activite>Cleaning</Activite>
+      <Activite>LSS air system</Activite>
+      <Activite>LSS water system</Activite>
+      <Activite>LSS food system</Activite>
+      <Activite>Power systems</Activite>
+      <Activite>Space suit</Activite>
+      <Activite>Other</Activite>
+    </Categorie>
+    <Categorie id="Communication">
+      <Activite>Sending message</Activite>
+      <Activite>Receiving message</Activite>
+    </Categorie>
+    <Categorie id="Repair">
+      <Activite>LSS</Activite>
+      <Activite>Power systems</Activite>
+      <Activite>Communication systems</Activite>
+      <Activite>Habitat</Activite>
+      <Activite>Space suit</Activite>
+      <Activite>Vehicle</Activite>
+    </Categorie>
+    <Categorie id="Other">
+      <Activite>Emergency</Activite>
+    </Categorie>
+  </Activites>
+  <DefaultDay>
+    <Timetable>
+      <Activity>
+        <HeureDeb>0:00:00</HeureDeb>
+        <HeureFin>7:00:00</HeureFin>
+        <Nom>Sleeping</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HeureDeb>23:00:00</HeureDeb>
+        <HeureFin>24:00:00</HeureFin>
+        <Nom>Sleeping</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+    </Timetable>
+  </DefaultDay>
+</Mission>

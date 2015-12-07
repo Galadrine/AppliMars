@@ -40,7 +40,15 @@ namespace AppliMars {
 
         public WindowLevel0() {
             InitializeComponent();
+            refreshListBox();
+        }
 
+        #endregion
+
+
+        #region méthodes
+
+        public void refreshListBox() {
             string defautMissionsDir = "..//..//Missions//";
 
             DirectoryInfo dInfo = new DirectoryInfo(defautMissionsDir);
@@ -52,22 +60,11 @@ namespace AppliMars {
 
                 stringListBox = A.Name;
                 listBoxMissions.Items.Add(stringListBox);
-                
-                Mission toInsert = new Mission(defautMissionsDir+A.Name+"//General.xml");
+
+                Mission toInsert = new Mission(defautMissionsDir + A.Name + "//General.xml");
                 maListeMissions.Add(toInsert);
-                
+
             }
-
-            Console.WriteLine("");
-
-            /*
-            //Créatiion d'une mission à la main
-            DateTime deb = new DateTime(2015, 11, 12, 00, 01, 00);
-            List<string> list = new List<string>();
-            Mission _mission = new Mission("MaMission", deb, 500, list);
-
-            maListeMissions.Add(_mission);
-            */
  
 
         }

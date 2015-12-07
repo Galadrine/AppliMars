@@ -23,7 +23,6 @@
         /// le contenu de cette méthode avec l'éditeur de code.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel1));
             this.groupBoxCalendrier = new System.Windows.Forms.GroupBox();
             this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
@@ -42,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.timerMinutes = new System.Windows.Forms.Timer(this.components);
             this.buttonRetourChoixMission = new System.Windows.Forms.Button();
             this.groupBoxCalendrier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
@@ -224,10 +222,6 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // timerMinutes
-            // 
-            this.timerMinutes.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // buttonRetourChoixMission
             // 
             this.buttonRetourChoixMission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,7 +276,6 @@
         private System.Windows.Forms.ComboBox comboBoxJourDebut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timerMinutes;
         private System.Windows.Forms.Label labelMinutes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

@@ -81,14 +81,8 @@ namespace AppliMars
         private void b_creerNvMission_Click(object sender, EventArgs e)
         {
             // Récupération du fichier cible pour sauver les XML de la mission
-            string cheminPourFichiersXML = "";
-            FolderBrowserDialog dossier = new FolderBrowserDialog();
+            string cheminPourFichiersXML = "..//..//Missions//";
 
-            //dossier.ShowDialog();
-            if ( dossier.ShowDialog() == DialogResult.OK)
-            {
-                cheminPourFichiersXML = dossier.SelectedPath;
-            }
             // Récupération des données
             string nomMission = tB_nomNvMission.Text;
             DateTime dateDebut = dT_DateDebNvMission.Value.Date;
@@ -96,6 +90,9 @@ namespace AppliMars
             List<string> astronautes = maListeAstronautes;
             Mission _mission = new Mission(nomMission, dateDebut, dureeMission, astronautes, cheminPourFichiersXML);
             WindowLevel1 win1 = new WindowLevel1(_mission, maFenetrePrec);
+
+            maFenetrePrec.refreshListBox();
+            this.Close();
             win1.Show();
         }
 

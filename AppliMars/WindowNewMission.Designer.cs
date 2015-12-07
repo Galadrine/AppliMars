@@ -44,6 +44,7 @@
             this.tB_dureeNvMission = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonRetourChoixMission = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,6 +165,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.l_nomNvMission);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.l_dateDebNvMission);
             this.groupBox1.Controls.Add(this.tB_dureeNvMission);
             this.groupBox1.Controls.Add(this.lB_ListeAstroNvMission);
@@ -192,6 +194,15 @@
             this.buttonRetourChoixMission.Text = "Revenir au choix de la mission";
             this.buttonRetourChoixMission.UseVisualStyleBackColor = true;
             this.buttonRetourChoixMission.Click += new System.EventHandler(this.buttonRetourChoixMission_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Durée";
             // 
             // WindowNewMission
             // 
@@ -230,5 +241,6 @@
         private System.Windows.Forms.TextBox tB_dureeNvMission;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonRetourChoixMission;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -16,7 +16,6 @@ namespace AppliMars {
         private int _numero;
         private string _compteRendu;
 
-
         #endregion
 
 
@@ -56,7 +55,6 @@ namespace AppliMars {
             maListeActivites = new List<Activite>();
         }
 
-        // J'ai enlevé le paramètre cheminPlanningXML car il est contenu dans mission
         public Journee(int numero, string compteRendu, Mission mission) {
 
             string cheminPlanningXML = mission.monCheminPlanningXML;

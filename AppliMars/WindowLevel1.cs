@@ -182,7 +182,8 @@ namespace AppliMars {
 
         private void journee_Click(object sender, EventArgs e) {
             Button but = sender as Button;
-            WindowLevel2 win2 = new WindowLevel2(new Journee(Int32.Parse(but.Text), "",maMission), this);
+            Journee monJour = maMission.monPlanning.monTableauJournees[Int32.Parse(but.Text)-1];
+            WindowLevel2 win2 = new WindowLevel2(monJour, this);
             win2.Show();
             this.Hide();
         }
@@ -193,17 +194,12 @@ namespace AppliMars {
 
         private void pictureBoxRightArrow_Click(object sender, EventArgs e) {
             affichageBoutons("right");
-
         }
 
         private void buttonSearch_Click(object sender, EventArgs e) {
             WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch, comboBoxJourDebut, comboBoxJourFin);
             win2.Show();
             this.Hide();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e) {
-
         }
 
         private void buttonRetourChoixMission_Click(object sender, EventArgs e) {
