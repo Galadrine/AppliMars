@@ -55,17 +55,20 @@
             this.l_participants = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.l_numJour = new System.Windows.Forms.Label();
+            this.b_creerNvAct = new System.Windows.Forms.Button();
+            this.l_erreurConvert = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cB_localisation
             // 
             this.cB_localisation.AutoSize = true;
-            this.cB_localisation.Location = new System.Drawing.Point(127, 493);
+            this.cB_localisation.Location = new System.Drawing.Point(128, 425);
             this.cB_localisation.Name = "cB_localisation";
             this.cB_localisation.Size = new System.Drawing.Size(119, 17);
             this.cB_localisation.TabIndex = 46;
             this.cB_localisation.Text = "Activité en extérieur";
             this.cB_localisation.UseVisualStyleBackColor = true;
+            this.cB_localisation.CheckedChanged += new System.EventHandler(this.cB_localisation_CheckedChanged);
             // 
             // tB_descrAct
             // 
@@ -73,8 +76,9 @@
             this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_descrAct.Multiline = true;
             this.tB_descrAct.Name = "tB_descrAct";
-            this.tB_descrAct.Size = new System.Drawing.Size(247, 173);
+            this.tB_descrAct.Size = new System.Drawing.Size(247, 146);
             this.tB_descrAct.TabIndex = 31;
+            this.tB_descrAct.TextChanged += new System.EventHandler(this.tB_descrAct_TextChanged);
             // 
             // l_hFin
             // 
@@ -149,7 +153,7 @@
             // l_coord
             // 
             this.l_coord.AutoSize = true;
-            this.l_coord.Location = new System.Drawing.Point(3, 528);
+            this.l_coord.Location = new System.Drawing.Point(4, 460);
             this.l_coord.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_coord.Name = "l_coord";
             this.l_coord.Size = new System.Drawing.Size(99, 13);
@@ -160,7 +164,7 @@
             // l_loc
             // 
             this.l_loc.AutoSize = true;
-            this.l_loc.Location = new System.Drawing.Point(39, 495);
+            this.l_loc.Location = new System.Drawing.Point(40, 427);
             this.l_loc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_loc.Name = "l_loc";
             this.l_loc.Size = new System.Drawing.Size(63, 13);
@@ -170,7 +174,7 @@
             // tB_xAct
             // 
             this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tB_xAct.Location = new System.Drawing.Point(190, 525);
+            this.tB_xAct.Location = new System.Drawing.Point(191, 457);
             this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_xAct.Name = "tB_xAct";
             this.tB_xAct.Size = new System.Drawing.Size(35, 20);
@@ -180,7 +184,7 @@
             // l_y
             // 
             this.l_y.AutoSize = true;
-            this.l_y.Location = new System.Drawing.Point(231, 530);
+            this.l_y.Location = new System.Drawing.Point(232, 462);
             this.l_y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_y.Name = "l_y";
             this.l_y.Size = new System.Drawing.Size(41, 13);
@@ -191,7 +195,7 @@
             // l_x
             // 
             this.l_x.AutoSize = true;
-            this.l_x.Location = new System.Drawing.Point(125, 530);
+            this.l_x.Location = new System.Drawing.Point(126, 462);
             this.l_x.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_x.Name = "l_x";
             this.l_x.Size = new System.Drawing.Size(50, 13);
@@ -201,7 +205,7 @@
             // 
             // tB_yAct
             // 
-            this.tB_yAct.Location = new System.Drawing.Point(280, 527);
+            this.tB_yAct.Location = new System.Drawing.Point(281, 459);
             this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_yAct.Name = "tB_yAct";
             this.tB_yAct.Size = new System.Drawing.Size(35, 20);
@@ -276,16 +280,16 @@
             // lB_listePart
             // 
             this.lB_listePart.FormattingEnabled = true;
-            this.lB_listePart.Location = new System.Drawing.Point(130, 351);
+            this.lB_listePart.Location = new System.Drawing.Point(130, 324);
             this.lB_listePart.Name = "lB_listePart";
             this.lB_listePart.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lB_listePart.Size = new System.Drawing.Size(246, 121);
+            this.lB_listePart.Size = new System.Drawing.Size(246, 95);
             this.lB_listePart.TabIndex = 55;
             // 
             // l_participants
             // 
             this.l_participants.AutoSize = true;
-            this.l_participants.Location = new System.Drawing.Point(44, 351);
+            this.l_participants.Location = new System.Drawing.Point(44, 324);
             this.l_participants.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_participants.Name = "l_participants";
             this.l_participants.Size = new System.Drawing.Size(62, 13);
@@ -313,11 +317,35 @@
             this.l_numJour.Size = new System.Drawing.Size(0, 25);
             this.l_numJour.TabIndex = 57;
             // 
+            // b_creerNvAct
+            // 
+            this.b_creerNvAct.Location = new System.Drawing.Point(128, 495);
+            this.b_creerNvAct.Name = "b_creerNvAct";
+            this.b_creerNvAct.Size = new System.Drawing.Size(172, 34);
+            this.b_creerNvAct.TabIndex = 58;
+            this.b_creerNvAct.Text = "CREER";
+            this.b_creerNvAct.UseVisualStyleBackColor = true;
+            this.b_creerNvAct.Click += new System.EventHandler(this.b_creerNvAct_Click);
+            // 
+            // l_erreurConvert
+            // 
+            this.l_erreurConvert.AutoSize = true;
+            this.l_erreurConvert.ForeColor = System.Drawing.Color.Red;
+            this.l_erreurConvert.Location = new System.Drawing.Point(259, 127);
+            this.l_erreurConvert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_erreurConvert.Name = "l_erreurConvert";
+            this.l_erreurConvert.Size = new System.Drawing.Size(117, 13);
+            this.l_erreurConvert.TabIndex = 59;
+            this.l_erreurConvert.Text = "Conversion impossible !";
+            this.l_erreurConvert.Visible = false;
+            // 
             // WindowNewAct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 552);
+            this.ClientSize = new System.Drawing.Size(416, 541);
+            this.Controls.Add(this.l_erreurConvert);
+            this.Controls.Add(this.b_creerNvAct);
             this.Controls.Add(this.l_numJour);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lB_listePart);
@@ -381,5 +409,7 @@
         private System.Windows.Forms.Label l_participants;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label l_numJour;
+        private System.Windows.Forms.Button b_creerNvAct;
+        private System.Windows.Forms.Label l_erreurConvert;
     }
 }
