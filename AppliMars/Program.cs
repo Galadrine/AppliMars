@@ -15,17 +15,17 @@ namespace AppliMars {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            if (File.Exists(@"..//..//XML//General.xml")) {
+            //if (File.Exists(@"..//..//XML//General.xml")) {
 
-            } else {
+            //} else {
 
-            }
+            //}
 
-            if (File.Exists(@"..//..//XML//Planning.xml")) {
+            //if (File.Exists(@"..//..//XML//Planning.xml")) {
 
-            } else {
+            //} else {
 
-            }
+            //}
 
 
             /*

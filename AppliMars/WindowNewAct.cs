@@ -106,6 +106,16 @@ namespace AppliMars
                     l_erreurConvert.Visible = true;
                     flag = false;
                 }
+                // Echange si les horaires de début et de fin sont inversés
+                if (hDebNvAct > hFinNvAct)
+                {
+                    int tmp = hFinNvAct;
+                    hFinNvAct = hDebNvAct;
+                    hDebNvAct = tmp;
+                    tmp = mFinNvAct;
+                    mFinNvAct = mDebNvAct;
+                    mDebNvAct = tmp;
+                }
                 List<Astronaute> partNvAct = new List<Astronaute>();
                 foreach (string astro in lB_listePart.SelectedItems)
                 {
@@ -126,17 +136,21 @@ namespace AppliMars
                 }
 
                 // Vérification des chevauchements avec d'autres activités 
+                foreach (Activite a in _jour.maListeActivites)
+                {
+                    if (hDebNvAct <= a.monHeuresFin)
+                    {
+                        if (hFinNvAct >= a.monHeureDebut)
+                        {
+                            flag = false;
+                        }
+                    }
+                }
                 
-                
-                
-                
-                
-                
-                
+                // Si tout est ok flag == true, on peut créer la nouvelle activité 
                 _jour.maListeActivites.Add(new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, xNvAct, yNvAct));
-
             }
-            
+            MessageBox.Show("Impossible de créer la nouvelle activité");
         }
 
     }
