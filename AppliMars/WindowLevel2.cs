@@ -15,7 +15,8 @@ namespace AppliMars {
 
         private WindowLevel1 _win1;
         private Journee _jour;
-
+        private Activite _monactivite;
+        
         #endregion
 
 
@@ -32,6 +33,12 @@ namespace AppliMars {
             get { return _jour; }
             set { _jour = value; }
         }
+
+        public Activite monactiviteSelectionnee {
+            get { return _monactivite; }
+            set { _monactivite = value; }
+        }
+
 
         #endregion
 
@@ -63,6 +70,7 @@ namespace AppliMars {
             maJournee = jour;
             labelJour.Text = maJournee.monNumero.ToString();
             this.Text = maFenetrePrec.maMission.monNomMission + " - Jour " + maJournee.monNumero;
+            insertionActivitesListBox();
         }
 
         #endregion
@@ -78,7 +86,14 @@ namespace AppliMars {
 
         }
 
+        public void insertionActivitesListBox() {
+            string stringActivite;
+            foreach (Activite A in maJournee.maListeActivites) {
+                stringActivite = A.getDetailsActivites();
+                listBoxActivites.Items.Add(stringActivite);
 
+            }
+        }
 
         #endregion
 
@@ -114,8 +129,7 @@ namespace AppliMars {
 
         private void detailActivite(object sender, EventArgs e) {
             Button but = sender as Button;
-            // INSERER ICI LA SELECTION DE L'ACTIVITE
-            WindowLevel3 win3 = new WindowLevel3(maJournee.maListeActivites[0], maJournee, this);
+            WindowLevel3 win3 = new WindowLevel3(monactiviteSelectionnee, maJournee, this);
             win3.Show();
             this.Hide();
         }
@@ -127,8 +141,12 @@ namespace AppliMars {
             this.Hide();
         }
 
-        #endregion
 
+        private void listBoxActivites_SelectedIndexChanged(object sender, EventArgs e) {
+            buttonGoToLevel3.Visible = true;
+            monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
+        }
+        #endregion
 
     }
 }

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mission>
-  <NomMission>A l'attaque de Mars</NomMission>
+  <NomMission>Mars Attack</NomMission>
   <DateDebut>2015-12-01T00:00:00</DateDebut>
   <Duree>500</Duree>
-  <General>..//..//Missions//A l'attaque de Mars/General.xml</General>
-  <Planning>..//..//Missions//A l'attaque de Mars/Planning.xml</Planning>
+  <General>..//..//Missions//Mars Attack/General.xml</General>
+  <Planning>..//..//Missions//Mars Attack/Planning.xml</Planning>
   <Map />
   <Home />
   <NbAstronautes>2</NbAstronautes>
   <Astronautes>
     <Astronaute>Bob</Astronaute>
-    <Astronaute>Astrid</Astronaute>
+    <Astronaute>Popeye</Astronaute>
   </Astronautes>
   <Activites>
     <Categorie id="Living">
@@ -59,15 +59,32 @@
   <DefaultDay>
     <Timetable>
       <Activity>
-        <HeureDeb>0:00:00</HeureDeb>
-        <HeureFin>7:00:00</HeureFin>
+        <HDebutAct>00</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>07</HFinAct>
+        <MFinAct>00</MFinAct>
         <Nom>Sleeping</Nom>
         <Description />
         <ExtBool>false</ExtBool>
       </Activity>
       <Activity>
-        <HeureDeb>23:00:00</HeureDeb>
-        <HeureFin>24:00:00</HeureFin>
+        <HDebutAct>07</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>08</HFinAct>
+        <MFinAct>00</MFinAct>
+        <HDebutAct>00</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>07</HFinAct>
+        <MFinAct>00</MFinAct>
+        <Nom>Eating</Nom>
+        <Description />
+        <ExtBool>false</ExtBool>
+      </Activity>
+      <Activity>
+        <HDebutAct>23</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>24</HFinAct>
+        <MFinAct>40</MFinAct>
         <Nom>Sleeping</Nom>
         <Description />
         <ExtBool>false</ExtBool>

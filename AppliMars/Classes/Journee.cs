@@ -48,13 +48,6 @@ namespace AppliMars {
 
         #region constructeurs
 
-
-        public Journee(int num) {
-            monNumero = num;
-            monCompteRendu = "";
-            maListeActivites = new List<Activite>();
-        }
-
         public Journee(int numero, string compteRendu, Mission mission) {
 
             string cheminPlanningXML = mission.monCheminPlanningXML;
@@ -65,10 +58,16 @@ namespace AppliMars {
 
             // Récupération de la liste des activités de la journée
             XDocument _planningXML = XDocument.Load(cheminPlanningXML);
+
             var activites = from activite in _planningXML.Descendants("Activites")
-                            where (string)activite.Parent.Parent.Attribute("id") == numero.ToString()
+                            where (string)activite.Parent.FirstAttribute == numero.ToString()
                             select activite;
-            foreach (XElement a in activites.Elements("Activite")) {
+            var elements = activites.Elements("Activite");
+            int xd = elements.Count();
+            IEnumerable<XElement> elements2 = activites.Descendants("Activites");
+            int xd2 = elements2.Count();
+
+            foreach (XElement a in elements) {
                 int idAct = int.Parse(a.Attribute("idAct").Value);
                 string nom = a.Element("NomAct").Value;
                 int hDebutAct = int.Parse(a.Element("HDebutAct").Value);

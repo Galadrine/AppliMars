@@ -51,7 +51,7 @@ namespace AppliMars {
             foreach (XElement j in jours.Elements("Jour")) {
                 int num = int.Parse(j.Attribute("id").Value);
                 string cr = j.Element("CRJour").Value;
-                _tableauJournees.Add(new Journee(num, cr, m));
+                monTableauJournees.Add(new Journee(num, cr, m));
             }
         }
 

@@ -65,6 +65,9 @@ namespace AppliMars {
                 maListeMissions.Add(toInsert);
 
             }
+            if (subdirs.Length>0) {
+                listBoxMissions.SetSelected(0, true);
+            }
  
 
         }

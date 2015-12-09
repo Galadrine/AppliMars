@@ -26,18 +26,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel2));
             this.label26 = new System.Windows.Forms.Label();
             this.labelJour = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonGoToLevel3 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelNomEmploiDuTemps = new System.Windows.Forms.Label();
             this.buttonAjoutActivite = new System.Windows.Forms.Button();
             this.buttonCompteRendu = new System.Windows.Forms.Button();
+            this.labelNomEmploiDuTemps = new System.Windows.Forms.Label();
             this.buttonRetourCalendrier = new System.Windows.Forms.Button();
             this.pictureBoxJourSuivant = new System.Windows.Forms.PictureBox();
             this.pictureBoxJourPrecedent = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxActivites = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourSuivant)).BeginInit();
@@ -64,15 +64,16 @@
             this.labelJour.TabIndex = 3;
             this.labelJour.Text = "0";
             // 
-            // button2
+            // buttonGoToLevel3
             // 
-            this.button2.Location = new System.Drawing.Point(170, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(162, 30);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Test Niveau3";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.detailActivite);
+            this.buttonGoToLevel3.Location = new System.Drawing.Point(769, 77);
+            this.buttonGoToLevel3.Name = "buttonGoToLevel3";
+            this.buttonGoToLevel3.Size = new System.Drawing.Size(162, 30);
+            this.buttonGoToLevel3.TabIndex = 8;
+            this.buttonGoToLevel3.Text = "Modifier l\'activité sélectionnée";
+            this.buttonGoToLevel3.UseVisualStyleBackColor = true;
+            this.buttonGoToLevel3.Visible = false;
+            this.buttonGoToLevel3.Click += new System.EventHandler(this.detailActivite);
             // 
             // button3
             // 
@@ -114,16 +115,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions sur la journée";
             // 
-            // labelNomEmploiDuTemps
-            // 
-            this.labelNomEmploiDuTemps.AutoSize = true;
-            this.labelNomEmploiDuTemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(513, 40);
-            this.labelNomEmploiDuTemps.Name = "labelNomEmploiDuTemps";
-            this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(188, 20);
-            this.labelNomEmploiDuTemps.TabIndex = 14;
-            this.labelNomEmploiDuTemps.Text = "Emploi du temps de John";
-            // 
             // buttonAjoutActivite
             // 
             this.buttonAjoutActivite.Image = global::AppliMars.Properties.Resources.add;
@@ -149,6 +140,16 @@
             this.buttonCompteRendu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCompteRendu.UseVisualStyleBackColor = true;
             this.buttonCompteRendu.Click += new System.EventHandler(this.buttonCompteRendu_Click);
+            // 
+            // labelNomEmploiDuTemps
+            // 
+            this.labelNomEmploiDuTemps.AutoSize = true;
+            this.labelNomEmploiDuTemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(513, 40);
+            this.labelNomEmploiDuTemps.Name = "labelNomEmploiDuTemps";
+            this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(188, 20);
+            this.labelNomEmploiDuTemps.TabIndex = 14;
+            this.labelNomEmploiDuTemps.Text = "Emploi du temps de John";
             // 
             // buttonRetourCalendrier
             // 
@@ -185,13 +186,14 @@
             this.pictureBoxJourPrecedent.TabStop = false;
             this.pictureBoxJourPrecedent.Click += new System.EventHandler(this.pictureBoxJourPrecedent_Click);
             // 
-            // listBox1
+            // listBoxActivites
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(481, 77);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(247, 368);
-            this.listBox1.TabIndex = 15;
+            this.listBoxActivites.FormattingEnabled = true;
+            this.listBoxActivites.Location = new System.Drawing.Point(481, 77);
+            this.listBoxActivites.Name = "listBoxActivites";
+            this.listBoxActivites.Size = new System.Drawing.Size(247, 368);
+            this.listBoxActivites.TabIndex = 15;
+            this.listBoxActivites.SelectedIndexChanged += new System.EventHandler(this.listBoxActivites_SelectedIndexChanged);
             // 
             // WindowLevel2
             // 
@@ -199,11 +201,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 791);
             this.ControlBox = false;
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxActivites);
             this.Controls.Add(this.labelNomEmploiDuTemps);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonGoToLevel3);
             this.Controls.Add(this.buttonRetourCalendrier);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.labelJour);
@@ -233,12 +235,12 @@
         private System.Windows.Forms.PictureBox pictureBoxJourPrecedent;
         private System.Windows.Forms.Button buttonRetourCalendrier;
         private System.Windows.Forms.Button buttonCompteRendu;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonGoToLevel3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelNomEmploiDuTemps;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxActivites;
     }
 }

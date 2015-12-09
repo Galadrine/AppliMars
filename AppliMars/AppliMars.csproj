@@ -159,6 +159,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Missions\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +173,10 @@
     <Content Include="Images\news.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
-    <Content Include="Missions\Mission1\General.xml" />
-    <Content Include="Missions\Mission1\Planning.xml" />
     <Content Include="XML\General.xml" />
-    <Content Include="XML\Planning.xml" />
+    <Content Include="XML\Planning.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Images\space.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

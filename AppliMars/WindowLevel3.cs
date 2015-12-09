@@ -80,7 +80,7 @@ namespace AppliMars {
             tB_descrAct.Text = monActivite.maDescription;
             tB_HDebAct.Text = monActivite.monHeureDebut.ToString();
             tB_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
-            tB_HFinAct.Text = monActivite.monHeuresFin.ToString();
+            tB_HFinAct.Text = monActivite.monHeureFin.ToString();
             tB_MFinAct.Text = monActivite.mesMinutesFin.ToString();
             tB_xAct.Text = monActivite.maPosX.ToString();
             tB_yAct.Text = monActivite.maPosY.ToString();

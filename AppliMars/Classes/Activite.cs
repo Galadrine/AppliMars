@@ -72,7 +72,7 @@ namespace AppliMars {
             set { _minutesFin = value; }
         }
 
-        public int monHeuresFin {
+        public int monHeureFin {
             get { return _heuresFin; }
             set { _heuresFin = value; }
         }
@@ -131,8 +131,8 @@ namespace AppliMars {
             maDescription = uneDesc;
             monHeureDebut = HDebut;
             mesMinutesDebut = MDebut;
-            monHeureDebut = HFin;
-            monHeuresFin = MFin;
+            monHeureFin = HFin;
+            mesMinutesFin = MFin;
             mesAstronautes = new List<Astronaute>();
 
             foreach (var ast in participants)
@@ -144,6 +144,10 @@ namespace AppliMars {
 
         public System.Drawing.Point convertionCoordonneesXMLVersImage(int posX, int posY) {
             return new System.Drawing.Point((posX / 3) - 700, (posY / 3) - 1000);
+        }
+
+        public string getDetailsActivites() {
+            return monHeureDebut.ToString("D2") + "h" + mesMinutesDebut.ToString("D2") + " - " + monHeureFin.ToString("D2") + "h" + mesMinutesFin.ToString("D2") + " : " + monNom;
         }
 
         #endregion
