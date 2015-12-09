@@ -138,7 +138,7 @@ namespace AppliMars
                 // Vérification des chevauchements avec d'autres activités 
                 foreach (Activite a in _jour.maListeActivites)
                 {
-                    if (hDebNvAct <= a.monHeuresFin)
+                    if (hDebNvAct <= a.monHeureFin)
                     {
                         if (hFinNvAct >= a.monHeureDebut)
                         {

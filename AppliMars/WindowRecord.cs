@@ -29,7 +29,7 @@ namespace AppliMars {
             this.Text = "Compte-rendu du jour "+(jour.monNumero).ToString();
             labelCompteRendu.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
 
-            // érifier si le jour est passé ou pas
+            // vérifier si le jour est passé ou pas
             if (_jour.monNumero < _jour.m.monJourJ)
             {
                 journeePasse = true;
