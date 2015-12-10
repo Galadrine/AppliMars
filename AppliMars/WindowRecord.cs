@@ -29,8 +29,13 @@ namespace AppliMars {
             this.Text = "Compte-rendu du jour "+(jour.monNumero).ToString();
             labelCompteRendu.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
 
+<<<<<<< HEAD
             // érifier si le jour est passé ou pas
             if (_jour.monNumero < _jour.maMission.monJourJ)
+=======
+            // vérifier si le jour est passé ou pas
+            if (_jour.monNumero < _jour.m.monJourJ)
+>>>>>>> origin/master
             {
                 journeePasse = true;
                 tB_CR.ReadOnly = true;
