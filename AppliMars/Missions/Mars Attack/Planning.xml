@@ -13,7 +13,6 @@
         <DescriptionAct></DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
-          <Astronaute>Popeye</Astronaute>
         </Participants>
       </Activite>
       <Activite idAct="2">
@@ -25,7 +24,6 @@
         <BoolExt>false</BoolExt>
         <DescriptionAct></DescriptionAct>
         <Participants>
-          <Astronaute>Bob</Astronaute>
           <Astronaute>Popeye</Astronaute>
         </Participants>
       </Activite>
@@ -47,21 +45,8 @@
   <Jour id="2">
     <CRJour />
     <Activites>
-      <Activite idAct="4">
-        <NomAct>Sleeping</NomAct>
-        <HDebutAct>00</HDebutAct>
-        <MDebutAct>00</MDebutAct>
-        <HFinAct>07</HFinAct>
-        <MFinAct>00</MFinAct>
-        <BoolExt>false</BoolExt>
-        <DescriptionAct></DescriptionAct>
-        <Participants>
-          <Astronaute>Bob</Astronaute>
-          <Astronaute>Popeye</Astronaute>
-        </Participants>
-      </Activite>
       <Activite idAct="5">
-        <NomAct>Eating</NomAct>
+        <NomAct>azeazeazeaze</NomAct>
         <HDebutAct>07</HDebutAct>
         <MDebutAct>00</MDebutAct>
         <HFinAct>08</HFinAct>
@@ -92,7 +77,7 @@
     <CRJour />
     <Activites>
       <Activite idAct="7">
-        <NomAct>Sleeping</NomAct>
+        <NomAct>Bob et popeye Sleeping</NomAct>
         <HDebutAct>00</HDebutAct>
         <MDebutAct>00</MDebutAct>
         <HFinAct>07</HFinAct>
@@ -105,7 +90,7 @@
         </Participants>
       </Activite>
       <Activite idAct="8">
-        <NomAct>Eating</NomAct>
+        <NomAct>bob efzrgthyjuik</NomAct>
         <HDebutAct>07</HDebutAct>
         <MDebutAct>00</MDebutAct>
         <HFinAct>08</HFinAct>
@@ -114,11 +99,22 @@
         <DescriptionAct></DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
-          <Astronaute>Popeye</Astronaute>
         </Participants>
       </Activite>
-      <Activite idAct="9">
-        <NomAct>Sleeping</NomAct>
+      <Activite idAct="8456">
+        <NomAct>bob efzrgthyjuik</NomAct>
+        <HDebutAct>07</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>08</HFinAct>
+        <MFinAct>00</MFinAct>
+        <BoolExt>false</BoolExt>
+        <DescriptionAct></DescriptionAct>
+        <Participants>
+          <Astronaute>Bob</Astronaute>
+        </Participants>
+      </Activite>
+      <Activite idAct="9729">
+        <NomAct>popeye srethgssretqezr</NomAct>
         <HDebutAct>23</HDebutAct>
         <MDebutAct>00</MDebutAct>
         <HFinAct>24</HFinAct>
@@ -126,7 +122,18 @@
         <BoolExt>false</BoolExt>
         <DescriptionAct></DescriptionAct>
         <Participants>
-          <Astronaute>Bob</Astronaute>
+          <Astronaute>Popeye</Astronaute>
+        </Participants>
+      </Activite>
+      <Activite idAct="9759">
+        <NomAct>popeye srethgssretqezr</NomAct>
+        <HDebutAct>23</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>24</HFinAct>
+        <MFinAct>40</MFinAct>
+        <BoolExt>false</BoolExt>
+        <DescriptionAct></DescriptionAct>
+        <Participants>
           <Astronaute>Popeye</Astronaute>
         </Participants>
       </Activite>

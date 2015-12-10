@@ -39,8 +39,9 @@ namespace AppliMars {
             }
         }
 
-        public Mission m {
+        public Mission maMission {
             get {return _m;}
+            set { _m = value; }
         }
 
         #endregion
@@ -66,6 +67,7 @@ namespace AppliMars {
             int xd = elements.Count();
             IEnumerable<XElement> elements2 = activites.Descendants("Activites");
             int xd2 = elements2.Count();
+            maMission = mission;
 
             foreach (XElement a in elements) {
                 int idAct = int.Parse(a.Attribute("idAct").Value);

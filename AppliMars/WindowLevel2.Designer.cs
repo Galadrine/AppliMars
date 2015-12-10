@@ -27,8 +27,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.labelJour = new System.Windows.Forms.Label();
             this.buttonGoToLevel3 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonEDTSuiv = new System.Windows.Forms.Button();
+            this.buttonEDTPrec = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonAjoutActivite = new System.Windows.Forms.Button();
@@ -38,6 +38,7 @@
             this.pictureBoxJourSuivant = new System.Windows.Forms.PictureBox();
             this.pictureBoxJourPrecedent = new System.Windows.Forms.PictureBox();
             this.listBoxActivites = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourSuivant)).BeginInit();
@@ -66,7 +67,7 @@
             // 
             // buttonGoToLevel3
             // 
-            this.buttonGoToLevel3.Location = new System.Drawing.Point(769, 77);
+            this.buttonGoToLevel3.Location = new System.Drawing.Point(265, 246);
             this.buttonGoToLevel3.Name = "buttonGoToLevel3";
             this.buttonGoToLevel3.Size = new System.Drawing.Size(162, 30);
             this.buttonGoToLevel3.TabIndex = 8;
@@ -75,29 +76,31 @@
             this.buttonGoToLevel3.Visible = false;
             this.buttonGoToLevel3.Click += new System.EventHandler(this.detailActivite);
             // 
-            // button3
+            // buttonEDTSuiv
             // 
-            this.button3.Location = new System.Drawing.Point(6, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(162, 34);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Emploi du temps suivant";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonEDTSuiv.Location = new System.Drawing.Point(6, 56);
+            this.buttonEDTSuiv.Name = "buttonEDTSuiv";
+            this.buttonEDTSuiv.Size = new System.Drawing.Size(162, 34);
+            this.buttonEDTSuiv.TabIndex = 10;
+            this.buttonEDTSuiv.Text = "Emploi du temps suivant";
+            this.buttonEDTSuiv.UseVisualStyleBackColor = true;
+            this.buttonEDTSuiv.Click += new System.EventHandler(this.buttonEDTSuiv_Click);
             // 
-            // button4
+            // buttonEDTPrec
             // 
-            this.button4.Location = new System.Drawing.Point(6, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(162, 34);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Emploi du temps précédent";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonEDTPrec.Location = new System.Drawing.Point(6, 19);
+            this.buttonEDTPrec.Name = "buttonEDTPrec";
+            this.buttonEDTPrec.Size = new System.Drawing.Size(162, 34);
+            this.buttonEDTPrec.TabIndex = 11;
+            this.buttonEDTPrec.Text = "Emploi du temps précédent";
+            this.buttonEDTPrec.UseVisualStyleBackColor = true;
+            this.buttonEDTPrec.Click += new System.EventHandler(this.buttonEDTPrec_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(763, 131);
+            this.groupBox1.Controls.Add(this.buttonEDTPrec);
+            this.groupBox1.Controls.Add(this.buttonEDTSuiv);
+            this.groupBox1.Location = new System.Drawing.Point(774, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(176, 100);
             this.groupBox1.TabIndex = 12;
@@ -145,11 +148,12 @@
             // 
             this.labelNomEmploiDuTemps.AutoSize = true;
             this.labelNomEmploiDuTemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(513, 40);
+            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(649, 40);
             this.labelNomEmploiDuTemps.Name = "labelNomEmploiDuTemps";
-            this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(188, 20);
+            this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(44, 20);
             this.labelNomEmploiDuTemps.TabIndex = 14;
-            this.labelNomEmploiDuTemps.Text = "Emploi du temps de John";
+            this.labelNomEmploiDuTemps.Text = "John";
+            this.labelNomEmploiDuTemps.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonRetourCalendrier
             // 
@@ -195,6 +199,16 @@
             this.listBoxActivites.TabIndex = 15;
             this.listBoxActivites.SelectedIndexChanged += new System.EventHandler(this.listBoxActivites_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(494, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Emploi du temps de";
+            // 
             // WindowLevel2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +216,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 791);
             this.ControlBox = false;
             this.Controls.Add(this.listBoxActivites);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelNomEmploiDuTemps);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -236,11 +251,12 @@
         private System.Windows.Forms.Button buttonRetourCalendrier;
         private System.Windows.Forms.Button buttonCompteRendu;
         private System.Windows.Forms.Button buttonGoToLevel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonEDTSuiv;
+        private System.Windows.Forms.Button buttonEDTPrec;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelNomEmploiDuTemps;
         private System.Windows.Forms.ListBox listBoxActivites;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -16,7 +16,11 @@ namespace AppliMars {
         private WindowLevel1 _win1;
         private Journee _jour;
         private Activite _monactivite;
+        private int _idAstronauteEnCours;
+        private Astronaute _astronaute;
+
         
+
         #endregion
 
 
@@ -26,8 +30,6 @@ namespace AppliMars {
             get { return _win1; }
             set { _win1 = value; }
         }
-
-
 
         public Journee maJournee {
             get { return _jour; }
@@ -39,6 +41,15 @@ namespace AppliMars {
             set { _monactivite = value; }
         }
 
+        public int monIdAstronaute {
+            get { return _idAstronauteEnCours; }
+            set { _idAstronauteEnCours = value; }
+        }
+
+        public Astronaute monAstronaute {
+            get { return _astronaute; }
+            set { _astronaute = value; }
+        }
 
         #endregion
 
@@ -49,28 +60,12 @@ namespace AppliMars {
             InitializeComponent();
         }
 
-        /*
-        public windowlevel2(string numerojour, applimars.windowlevel1 w1)
-            : this() 
-        {
-            labeljour.text = numerojour;
-
-            majournee = new journee(int32.parse(numerojour));
-            mafenetreprec = w1;
-
-
-            verifdifferentsedt();
-
-        }
-        */
-
         public WindowLevel2(Journee jour, AppliMars.WindowLevel1 w1)
             : this() {
             maFenetrePrec = w1;
             maJournee = jour;
-            labelJour.Text = maJournee.monNumero.ToString();
-            this.Text = maFenetrePrec.maMission.monNomMission + " - Jour " + maJournee.monNumero;
-            insertionActivitesListBox();
+            refreshPage();
+            monIdAstronaute = 0;
         }
 
         #endregion
@@ -78,21 +73,27 @@ namespace AppliMars {
 
         #region methodes
 
-        private void majActivites() {
-
-        }
-
-        private void verifDifferentsEDT() {
-
-        }
-
         public void insertionActivitesListBox() {
+            listBoxActivites.Items.Clear();
             string stringActivite;
             foreach (Activite A in maJournee.maListeActivites) {
-                stringActivite = A.getDetailsActivites();
-                listBoxActivites.Items.Add(stringActivite);
+                foreach (Astronaute ast in maJournee.maMission.mesAstronautes) {
+                    if (ast.monNom == monAstronaute.monNom) {
+                        ////////////////////////////////////// Astronautes non chargés dans activité d'une journée
+                        stringActivite = A.getDetailsActivites();
+                        listBoxActivites.Items.Add(stringActivite);
+                    }
+                }
 
             }
+        }
+
+        public void refreshPage() {
+            monAstronaute = maJournee.maMission.mesAstronautes[monIdAstronaute];
+            labelJour.Text = maJournee.monNumero.ToString();
+            this.Text = maFenetrePrec.maMission.monNomMission + " - Jour " + maJournee.monNumero;
+            insertionActivitesListBox();
+            labelNomEmploiDuTemps.Text = maJournee.maMission.mesAstronautes[monIdAstronaute].monNom;
         }
 
         #endregion
@@ -101,16 +102,16 @@ namespace AppliMars {
         #region evenements
 
         private void pictureBoxJourPrecedent_Click(object sender, EventArgs e) {
-            if (_jour.monNumero != 1) {
-                labelJour.Text = (Int32.Parse(labelJour.Text)-1).ToString();
-                majActivites();
+            if (maJournee.monNumero != 1) {
+                maJournee = maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 2];
+                refreshPage();
             }
         }
 
         private void pictureBoxJourSuivant_Click(object sender, EventArgs e) {
-            if (_jour.monNumero != 500) {
-                labelJour.Text = (Int32.Parse(labelJour.Text) + 1).ToString();
-                majActivites();
+            if (maJournee.monNumero != maFenetrePrec.maMission.monPlanning.monTableauJournees.Count) {
+                maJournee = maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero ];
+                refreshPage();
             }
         }
 
@@ -126,7 +127,6 @@ namespace AppliMars {
             maFenetrePrec.Show();
         }
 
-
         private void detailActivite(object sender, EventArgs e) {
             Button but = sender as Button;
             WindowLevel3 win3 = new WindowLevel3(monactiviteSelectionnee, maJournee, this);
@@ -141,12 +141,32 @@ namespace AppliMars {
             this.Hide();
         }
 
-
         private void listBoxActivites_SelectedIndexChanged(object sender, EventArgs e) {
             buttonGoToLevel3.Visible = true;
             monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
         }
+
+        private void buttonEDTSuiv_Click(object sender, EventArgs e) {
+            monIdAstronaute++;
+            if (monIdAstronaute >= maJournee.maMission.mesAstronautes.Count) {
+                monIdAstronaute=0;
+            }
+            Console.WriteLine();
+        }
+
+        private void buttonEDTPrec_Click(object sender, EventArgs e) {
+            monIdAstronaute--;
+            if (monIdAstronaute < 0) {
+                monIdAstronaute = maJournee.maMission.mesAstronautes.Count-1;
+            }
+            Console.WriteLine();
+        }
+
+
         #endregion
+
+
+
 
     }
 }

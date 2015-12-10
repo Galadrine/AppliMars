@@ -29,9 +29,9 @@ namespace AppliMars
             _jour = jour;
 
             l_numJour.Text = _jour.monNumero.ToString();
-            cB_cate.DataSource = _jour.m.maListeCategories;
+            cB_cate.DataSource = _jour.maMission.maListeCategories;
             // cB_typeAct dépendant de cB_cate
-            lB_listePart.DataSource = _jour.m.mesAstronautes;
+            lB_listePart.DataSource = _jour.maMission.mesAstronautes;
             if (cB_localisation.Checked == false)
             {
                 tB_xAct.Text = "0";
@@ -119,7 +119,7 @@ namespace AppliMars
                 List<Astronaute> partNvAct = new List<Astronaute>();
                 foreach (string astro in lB_listePart.SelectedItems)
                 {
-                    var astroTrouve = from astroPresent in _jour.m.mesAstronautes where astroPresent.ToString() == astro.ToString() select astroPresent;
+                    var astroTrouve = from astroPresent in _jour.maMission.mesAstronautes where astroPresent.ToString() == astro.ToString() select astroPresent;
                     partNvAct.Add((Astronaute)astroTrouve);
                 }
                 int xNvAct, yNvAct;
@@ -138,7 +138,7 @@ namespace AppliMars
                 // Vérification des chevauchements avec d'autres activités 
                 foreach (Activite a in _jour.maListeActivites)
                 {
-                    if (hDebNvAct <= a.monHeuresFin)
+                    if (hDebNvAct <= a.monHeureFin)
                     {
                         if (hFinNvAct >= a.monHeureDebut)
                         {
