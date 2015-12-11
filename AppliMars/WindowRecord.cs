@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AppliMars {
     public partial class WindowRecord : Form {
@@ -15,12 +16,32 @@ namespace AppliMars {
 
         AppliMars.WindowLevel2 _win2;
         Journee _jour;
-        bool journeePasse;
+        private bool _passee;
 
         #endregion 
 
 
-        #region constructeurs 
+        #region accesseurs
+
+        public Journee maJournee {
+            get { return _jour; }
+            set { _jour = value; }
+        }
+
+        public WindowLevel2 maFenetrePrec {
+            get { return _win2; }
+            set { _win2 = value; }
+        }
+
+        public bool journeePasse {
+            get { return _passee; }
+            set { _passee = value; }
+        }
+
+        #endregion
+
+
+        #region constructeurs
 
         public WindowRecord(Journee jour, AppliMars.WindowLevel2 w2)
             : this() {
@@ -34,7 +55,7 @@ namespace AppliMars {
             {
                 journeePasse = true;
                 tB_CR.ReadOnly = true;
-                string s1 = "Le compte rendu fait ";
+                string s1 = "Le compte rendu contient ";
                 string s2 = " caractères.";
                 int i0 = tB_CR.TextLength;
                 labelCarRest.Text = s1 + i0.ToString() + s2;
@@ -78,7 +99,18 @@ namespace AppliMars {
 
         private void buttonModifier_Click(object sender, EventArgs e) 
         {
-            tB_CR.Text.Substring(0,1000);
+            string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
+            var doc = XDocument.Load(fileName);
+            XElement target = doc
+                .Element("Planning")
+                .Elements("Jour")
+                .Where(elem => (string)elem.Attribute("id") == maJournee.monNumero.ToString())
+                .First();
+            target.Element("CRJour").Value = tB_CR.Text;
+            doc.Save(fileName);
+
+            this.Close();
+            _win2.Show();
         }
 
         private void textBoxCompteRendu_KeyPress(object sender, KeyPressEventArgs e) {

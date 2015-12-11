@@ -391,8 +391,6 @@ namespace AppliMars
             _generalXML.Element("Mission").SetElementValue("NbAstronautes", nvNbAstronautes);
         }
 
-
-
         #endregion
     }
 }

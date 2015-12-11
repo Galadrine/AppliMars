@@ -448,7 +448,7 @@
     </Activites>
   </Jour>
   <Jour id="11">
-    <CRJour></CRJour>
+    <CRJour>aze</CRJour>
     <Activites>
       <Activite idAct="31">
         <NomAct>Sleeping</NomAct>
