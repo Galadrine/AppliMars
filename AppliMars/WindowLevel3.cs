@@ -62,6 +62,7 @@ namespace AppliMars {
             monActivite = activite;
             maJournee = jour;
             this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero;
+            labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
 
             tB_TypeAct.ReadOnly = true;
             tB_descrAct.ReadOnly = true;

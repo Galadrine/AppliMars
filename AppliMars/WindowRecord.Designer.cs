@@ -28,25 +28,24 @@
             this.buttonModifier = new System.Windows.Forms.Button();
             this.labelCompteRendu = new System.Windows.Forms.Label();
             this.buttonRetourJournee = new System.Windows.Forms.Button();
-            this.labelDanger = new System.Windows.Forms.Label();
             this.labelCarRest = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tB_CR
             // 
             this.tB_CR.AcceptsReturn = true;
-            this.tB_CR.Location = new System.Drawing.Point(177, 145);
+            this.tB_CR.Location = new System.Drawing.Point(56, 191);
             this.tB_CR.MaxLength = 1000;
             this.tB_CR.Multiline = true;
             this.tB_CR.Name = "tB_CR";
-            this.tB_CR.Size = new System.Drawing.Size(816, 338);
+            this.tB_CR.Size = new System.Drawing.Size(728, 338);
             this.tB_CR.TabIndex = 3;
             this.tB_CR.TextChanged += new System.EventHandler(this.textBoxCompteRendu_TextChanged);
             this.tB_CR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCompteRendu_KeyPress);
             // 
             // buttonModifier
             // 
-            this.buttonModifier.Location = new System.Drawing.Point(895, 518);
+            this.buttonModifier.Location = new System.Drawing.Point(686, 564);
             this.buttonModifier.Margin = new System.Windows.Forms.Padding(2);
             this.buttonModifier.Name = "buttonModifier";
             this.buttonModifier.Size = new System.Drawing.Size(98, 32);
@@ -59,7 +58,7 @@
             // 
             this.labelCompteRendu.AutoSize = true;
             this.labelCompteRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCompteRendu.Location = new System.Drawing.Point(173, 108);
+            this.labelCompteRendu.Location = new System.Drawing.Point(52, 147);
             this.labelCompteRendu.Name = "labelCompteRendu";
             this.labelCompteRendu.Size = new System.Drawing.Size(184, 20);
             this.labelCompteRendu.TabIndex = 28;
@@ -78,23 +77,11 @@
             this.buttonRetourJournee.UseVisualStyleBackColor = true;
             this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
             // 
-            // labelDanger
-            // 
-            this.labelDanger.AutoSize = true;
-            this.labelDanger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDanger.ForeColor = System.Drawing.Color.LightCoral;
-            this.labelDanger.Location = new System.Drawing.Point(527, 101);
-            this.labelDanger.Name = "labelDanger";
-            this.labelDanger.Size = new System.Drawing.Size(466, 20);
-            this.labelDanger.TabIndex = 29;
-            this.labelDanger.Text = "Votre rapport dépasse 1000 caractères ! Il sera tronqué !";
-            this.labelDanger.Visible = false;
-            // 
             // labelCarRest
             // 
             this.labelCarRest.AutoSize = true;
             this.labelCarRest.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelCarRest.Location = new System.Drawing.Point(778, 486);
+            this.labelCarRest.Location = new System.Drawing.Point(569, 532);
             this.labelCarRest.Name = "labelCarRest";
             this.labelCarRest.Size = new System.Drawing.Size(215, 13);
             this.labelCarRest.TabIndex = 30;
@@ -105,10 +92,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 750);
+            this.ClientSize = new System.Drawing.Size(864, 731);
             this.ControlBox = false;
             this.Controls.Add(this.labelCarRest);
-            this.Controls.Add(this.labelDanger);
             this.Controls.Add(this.labelCompteRendu);
             this.Controls.Add(this.buttonModifier);
             this.Controls.Add(this.tB_CR);
@@ -130,7 +116,6 @@
         private System.Windows.Forms.TextBox tB_CR;
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Label labelCompteRendu;
-        private System.Windows.Forms.Label labelDanger;
         private System.Windows.Forms.Label labelCarRest;
     }
 }

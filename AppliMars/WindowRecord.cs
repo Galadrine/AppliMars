@@ -34,13 +34,21 @@ namespace AppliMars {
             {
                 journeePasse = true;
                 tB_CR.ReadOnly = true;
+                string s1 = "Le compte rendu fait ";
+                string s2 = " caractères.";
+                int i0 = tB_CR.TextLength;
+                labelCarRest.Text = s1 + i0.ToString() + s2;
             }
             else
             {
                 journeePasse = false;
                 tB_CR.ReadOnly = false;
+                string s1 = "Vous pouvez taper encore ";
+                string s2 = " caractères.";
+                int i0 = tB_CR.TextLength;
+                int i1 = 1000 - i0;
+                labelCarRest.Text = s1 + i1.ToString() + s2;
             }
-                
             tB_CR.Text = _jour.monCompteRendu;
             
         }
@@ -54,7 +62,7 @@ namespace AppliMars {
         #endregion
 
 
-        #region methodes 
+        #region methodes
 
 
 
@@ -74,12 +82,21 @@ namespace AppliMars {
         }
 
         private void textBoxCompteRendu_KeyPress(object sender, KeyPressEventArgs e) {
+            if (tB_CR.TextLength<=1000) {
+                string s1 = "Vous pouvez taper encore ";
+                string s2 = " caractères.";
+                int i0 = tB_CR.TextLength;
+                int i1 = 1000 - i0;
+                labelCarRest.Text = s1 + i1.ToString() + s2;
+            }
 
         }
 
         private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) {
             _jour.monCompteRendu = tB_CR.Text;
+
         }
+
 
 
         #endregion

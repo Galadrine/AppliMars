@@ -45,7 +45,8 @@ namespace AppliMars
             maJournee = jour;
             maFenetrePrec = win;
             this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Création d'une activité pour le jour " + maJournee.monNumero;
-            l_numJour.Text = _jour.monNumero.ToString();
+            labelNumeroJour.Text = maJournee.monNumero.ToString();
+            l_numJour.Text = _jour.monNumero.ToString("D3");
             cB_cate.DataSource = _jour.maMission.maListeCategories;
             // cB_typeAct dépendant de cB_cate
             lB_listePart.DataSource = _jour.maMission.mesAstronautes;

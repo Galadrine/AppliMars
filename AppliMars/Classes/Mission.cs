@@ -336,7 +336,7 @@ namespace AppliMars
             {
                 XElement x = new XElement("Jour",
                         new XAttribute("id", i),
-                        new XElement("CRJour"),
+                        new XElement("CRJour",""),
                         new XElement("Activites"));
                 _planningXML.Element("Planning").Add(x);
 
@@ -375,6 +375,7 @@ namespace AppliMars
 
                     numAct++;
                 }
+
             }
             _planningXML.Save(_cheminPlanningXML);
         }

@@ -43,8 +43,8 @@
             this.b_creerNvMission = new System.Windows.Forms.Button();
             this.tB_dureeNvMission = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonRetourChoixMission = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonRetourChoixMission = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +120,7 @@
             // l_dureeNvMission
             // 
             this.l_dureeNvMission.AutoSize = true;
-            this.l_dureeNvMission.Location = new System.Drawing.Point(404, 284);
+            this.l_dureeNvMission.Location = new System.Drawing.Point(194, 285);
             this.l_dureeNvMission.Name = "l_dureeNvMission";
             this.l_dureeNvMission.Size = new System.Drawing.Size(36, 13);
             this.l_dureeNvMission.TabIndex = 15;
@@ -177,12 +177,21 @@
             this.groupBox1.Controls.Add(this.tB_nvAstro);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dT_DateDebNvMission);
-            this.groupBox1.Location = new System.Drawing.Point(407, 131);
+            this.groupBox1.Location = new System.Drawing.Point(197, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(426, 358);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Création d\'une mission";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Durée";
             // 
             // buttonRetourChoixMission
             // 
@@ -195,20 +204,11 @@
             this.buttonRetourChoixMission.UseVisualStyleBackColor = true;
             this.buttonRetourChoixMission.Click += new System.EventHandler(this.buttonRetourChoixMission_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Durée";
-            // 
             // WindowNewMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.ClientSize = new System.Drawing.Size(864, 731);
             this.Controls.Add(this.buttonRetourChoixMission);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.l_dureeNvMission);
