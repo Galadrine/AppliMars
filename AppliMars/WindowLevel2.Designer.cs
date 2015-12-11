@@ -71,7 +71,7 @@
             // 
             // buttonGoToLevel3
             // 
-            this.buttonGoToLevel3.Location = new System.Drawing.Point(27, 124);
+            this.buttonGoToLevel3.Location = new System.Drawing.Point(33, 127);
             this.buttonGoToLevel3.Name = "buttonGoToLevel3";
             this.buttonGoToLevel3.Size = new System.Drawing.Size(162, 30);
             this.buttonGoToLevel3.TabIndex = 8;
@@ -104,7 +104,7 @@
             // 
             this.groupBox1.Controls.Add(this.buttonEDTPrec);
             this.groupBox1.Controls.Add(this.buttonEDTSuiv);
-            this.groupBox1.Location = new System.Drawing.Point(259, 138);
+            this.groupBox1.Location = new System.Drawing.Point(263, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(176, 100);
             this.groupBox1.TabIndex = 12;
@@ -115,7 +115,7 @@
             // 
             this.groupBox2.Controls.Add(this.buttonAjoutActivite);
             this.groupBox2.Controls.Add(this.buttonCompteRendu);
-            this.groupBox2.Location = new System.Drawing.Point(21, 18);
+            this.groupBox2.Location = new System.Drawing.Point(27, 21);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(176, 100);
             this.groupBox2.TabIndex = 13;
@@ -152,7 +152,7 @@
             // 
             this.labelNomEmploiDuTemps.AutoSize = true;
             this.labelNomEmploiDuTemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(681, 89);
+            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(673, 89);
             this.labelNomEmploiDuTemps.Name = "labelNomEmploiDuTemps";
             this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(44, 20);
             this.labelNomEmploiDuTemps.TabIndex = 14;
@@ -217,7 +217,7 @@
             // 
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.buttonGoToLevel3);
-            this.panel1.Location = new System.Drawing.Point(783, 129);
+            this.panel1.Location = new System.Drawing.Point(775, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 194);
             this.panel1.TabIndex = 16;

@@ -50,6 +50,7 @@ namespace AppliMars {
         public WindowLevel3(Journee jour, WindowLevel2 win2)
             : this() {
                 maJournee = jour;
+                maFenetrePrec = win2;
         }
 
         // Fenetre Niveau 3 pour activité existante
@@ -86,8 +87,20 @@ namespace AppliMars {
             tB_yAct.Text = monActivite.maPosY.ToString();
             cB_localisation.Checked = monActivite.interieurOuExterieur;
 
-            lB_listePart.DataSource = monActivite.mesAstronautes;
+            
+            foreach (Astronaute a in monActivite.mesAstronautes) {
+                lB_listePart.Items.Add(a.monNom);
+            }
 
+
+            if (monActivite.interieurOuExterieur == true) {
+                labelCoordonnees.Visible = true;
+                labelLongitude.Visible = true;
+                labelLatitude.Visible = true;
+                tB_xAct.Visible = true;
+                tB_yAct.Visible = true;
+                pictureBoxMap.Visible = true;
+            }
 
             // A FAIRE : GESTION DE LA MAP!!
         }
@@ -110,15 +123,25 @@ namespace AppliMars {
 
         private void buttonRetourJournee_Click(object sender, EventArgs e) {
             this.Close();
-            win2.Show();
+            maFenetrePrec.Show();
         }
 
         private void pictureBoxMap_Click(object sender, EventArgs e) {
+            Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
+            Graphics graphics = this.pictureBoxMap.CreateGraphics();
+            Point p0 = new Point(0, 0);
+            graphics.DrawImage(imageSource, p0);
+
             MouseEventArgs me = (MouseEventArgs)e;
             Point coordinates = convertionCoordonneesImageVersXML(me.Location);
 
             tB_xAct.Text = (coordinates.X * 3).ToString();
             tB_yAct.Text = (coordinates.Y * 3).ToString();
+
+            Image astronaut = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+            Point p = new Point(me.Location.X-10, me.Location.Y-34);
+            graphics.DrawImage(astronaut, p);
+
         }
 
         private void TextBoxAbscisse_KeyPress(object sender, KeyPressEventArgs e) {

@@ -39,6 +39,8 @@
             this.cB_localisation = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lB_listePart = new System.Windows.Forms.ListBox();
+            this.l_participants = new System.Windows.Forms.Label();
             this.tB_MFinAct = new System.Windows.Forms.TextBox();
             this.tB_HFinAct = new System.Windows.Forms.TextBox();
             this.tB_MDebAct = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.b_annuler = new System.Windows.Forms.Button();
             this.b_valider = new System.Windows.Forms.Button();
-            this.l_participants = new System.Windows.Forms.Label();
-            this.lB_listePart = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -237,6 +237,24 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // lB_listePart
+            // 
+            this.lB_listePart.FormattingEnabled = true;
+            this.lB_listePart.Location = new System.Drawing.Point(136, 337);
+            this.lB_listePart.Name = "lB_listePart";
+            this.lB_listePart.Size = new System.Drawing.Size(246, 121);
+            this.lB_listePart.TabIndex = 37;
+            // 
+            // l_participants
+            // 
+            this.l_participants.AutoSize = true;
+            this.l_participants.Location = new System.Drawing.Point(50, 337);
+            this.l_participants.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_participants.Name = "l_participants";
+            this.l_participants.Size = new System.Drawing.Size(62, 13);
+            this.l_participants.TabIndex = 36;
+            this.l_participants.Text = "Participants";
+            // 
             // tB_MFinAct
             // 
             this.tB_MFinAct.Location = new System.Drawing.Point(186, 98);
@@ -351,24 +369,6 @@
             this.b_valider.TabIndex = 33;
             this.b_valider.Text = "VALIDER";
             this.b_valider.UseVisualStyleBackColor = true;
-            // 
-            // l_participants
-            // 
-            this.l_participants.AutoSize = true;
-            this.l_participants.Location = new System.Drawing.Point(50, 337);
-            this.l_participants.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.l_participants.Name = "l_participants";
-            this.l_participants.Size = new System.Drawing.Size(62, 13);
-            this.l_participants.TabIndex = 36;
-            this.l_participants.Text = "Participants";
-            // 
-            // lB_listePart
-            // 
-            this.lB_listePart.FormattingEnabled = true;
-            this.lB_listePart.Location = new System.Drawing.Point(136, 337);
-            this.lB_listePart.Name = "lB_listePart";
-            this.lB_listePart.Size = new System.Drawing.Size(246, 121);
-            this.lB_listePart.TabIndex = 37;
             // 
             // WindowLevel3
             // 

@@ -83,7 +83,7 @@
         <HFinAct>07</HFinAct>
         <MFinAct>00</MFinAct>
         <BoolExt>false</BoolExt>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>Desc1</DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
           <Astronaute>Popeye</Astronaute>
@@ -96,7 +96,7 @@
         <HFinAct>08</HFinAct>
         <MFinAct>00</MFinAct>
         <BoolExt>false</BoolExt>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>Desc2</DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
         </Participants>
@@ -108,7 +108,7 @@
         <HFinAct>08</HFinAct>
         <MFinAct>00</MFinAct>
         <BoolExt>false</BoolExt>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>Desc3</DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
         </Participants>
@@ -120,7 +120,7 @@
         <HFinAct>24</HFinAct>
         <MFinAct>40</MFinAct>
         <BoolExt>false</BoolExt>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>Desc4</DescriptionAct>
         <Participants>
           <Astronaute>Popeye</Astronaute>
         </Participants>
@@ -132,7 +132,7 @@
         <HFinAct>24</HFinAct>
         <MFinAct>40</MFinAct>
         <BoolExt>false</BoolExt>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>Desc5</DescriptionAct>
         <Participants>
           <Astronaute>Popeye</Astronaute>
         </Participants>

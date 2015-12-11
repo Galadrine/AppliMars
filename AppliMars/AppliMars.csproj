@@ -164,12 +164,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\add.png" />
+    <Content Include="Images\astronaut24.png" />
+    <Content Include="Images\astronaut32.png" />
     <Content Include="Images\calendar.png" />
     <Content Include="Images\calendar0.png" />
     <Content Include="Images\day.png" />
     <Content Include="Images\grille.png" />
     <Content Include="Images\left.png" />
+    <Content Include="Images\maps.png" />
     <Content Include="Images\nanediValles.jpg" />
+    <Content Include="Images\nanediValles3.jpg" />
     <Content Include="Images\news.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
