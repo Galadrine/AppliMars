@@ -94,12 +94,21 @@ namespace AppliMars {
 
 
             if (monActivite.interieurOuExterieur == true) {
-                labelCoordonnees.Visible = true;
-                labelLongitude.Visible = true;
-                labelLatitude.Visible = true;
-                tB_xAct.Visible = true;
-                tB_yAct.Visible = true;
-                pictureBoxMap.Visible = true;
+
+                Graphics graphics = this.pictureBoxMap.CreateGraphics();
+                Image astronaut = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+                Point p = new Point(70, 1000);
+                graphics.DrawImage(astronaut, p);
+
+                tB_xAct.Enabled = true;
+                tB_yAct.Enabled = true;
+                pictureBoxMap.Enabled = true;
+            } else {
+                Graphics graphics = this.pictureBoxMap.CreateGraphics();
+                Image astronaut = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+                Point p = new Point(70, 1000);
+                graphics.DrawImage(astronaut, p);
+                
             }
 
             // A FAIRE : GESTION DE LA MAP!!

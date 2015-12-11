@@ -53,7 +53,7 @@
             // 
             this.groupBoxCalendrier.Controls.Add(this.pictureBoxRightArrow);
             this.groupBoxCalendrier.Controls.Add(this.pictureBoxLeftArrow);
-            this.groupBoxCalendrier.Location = new System.Drawing.Point(200, 236);
+            this.groupBoxCalendrier.Location = new System.Drawing.Point(55, 230);
             this.groupBoxCalendrier.Name = "groupBoxCalendrier";
             this.groupBoxCalendrier.Size = new System.Drawing.Size(747, 366);
             this.groupBoxCalendrier.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.labelJour);
-            this.groupBox1.Location = new System.Drawing.Point(200, 147);
+            this.groupBox1.Location = new System.Drawing.Point(55, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(296, 83);
             this.groupBox1.TabIndex = 2;
@@ -164,7 +164,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBoxSearch);
             this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Location = new System.Drawing.Point(590, 147);
+            this.groupBox2.Location = new System.Drawing.Point(445, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(357, 83);
             this.groupBox2.TabIndex = 3;
@@ -237,7 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 750);
+            this.ClientSize = new System.Drawing.Size(864, 731);
             this.ControlBox = false;
             this.Controls.Add(this.buttonRetourChoixMission);
             this.Controls.Add(this.groupBox2);

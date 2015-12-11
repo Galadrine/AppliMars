@@ -54,6 +54,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.b_annuler = new System.Windows.Forms.Button();
             this.b_valider = new System.Windows.Forms.Button();
+            this.labelNumeroJour = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,7 @@
             // 
             this.l_numJour.AutoSize = true;
             this.l_numJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_numJour.Location = new System.Drawing.Point(395, 58);
+            this.l_numJour.Location = new System.Drawing.Point(278, 44);
             this.l_numJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_numJour.Name = "l_numJour";
             this.l_numJour.Size = new System.Drawing.Size(0, 25);
@@ -110,44 +111,44 @@
             // labelCoordonnees
             // 
             this.labelCoordonnees.AutoSize = true;
+            this.labelCoordonnees.Enabled = false;
             this.labelCoordonnees.Location = new System.Drawing.Point(11, 518);
             this.labelCoordonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoordonnees.Name = "labelCoordonnees";
             this.labelCoordonnees.Size = new System.Drawing.Size(99, 13);
             this.labelCoordonnees.TabIndex = 10;
             this.labelCoordonnees.Text = "Coordonnee du lieu";
-            this.labelCoordonnees.Visible = false;
             // 
             // labelLatitude
             // 
             this.labelLatitude.AutoSize = true;
+            this.labelLatitude.Enabled = false;
             this.labelLatitude.Location = new System.Drawing.Point(239, 520);
             this.labelLatitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLatitude.Name = "labelLatitude";
             this.labelLatitude.Size = new System.Drawing.Size(41, 13);
             this.labelLatitude.TabIndex = 12;
             this.labelLatitude.Text = "latitude";
-            this.labelLatitude.Visible = false;
             // 
             // labelLongitude
             // 
             this.labelLongitude.AutoSize = true;
+            this.labelLongitude.Enabled = false;
             this.labelLongitude.Location = new System.Drawing.Point(133, 520);
             this.labelLongitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLongitude.Name = "labelLongitude";
             this.labelLongitude.Size = new System.Drawing.Size(50, 13);
             this.labelLongitude.TabIndex = 13;
             this.labelLongitude.Text = "longitude";
-            this.labelLongitude.Visible = false;
             // 
             // tB_yAct
             // 
+            this.tB_yAct.Enabled = false;
             this.tB_yAct.Location = new System.Drawing.Point(288, 517);
             this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_yAct.Name = "tB_yAct";
             this.tB_yAct.Size = new System.Drawing.Size(35, 20);
             this.tB_yAct.TabIndex = 14;
-            this.tB_yAct.Visible = false;
             this.tB_yAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxOrdonnee_KeyPress);
             // 
             // label1
@@ -175,14 +176,14 @@
             // 
             // pictureBoxMap
             // 
+            this.pictureBoxMap.Enabled = false;
             this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
-            this.pictureBoxMap.Location = new System.Drawing.Point(580, 35);
+            this.pictureBoxMap.Location = new System.Drawing.Point(463, 21);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(365, 684);
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMap.TabIndex = 29;
             this.pictureBoxMap.TabStop = false;
-            this.pictureBoxMap.Visible = false;
             this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
             // 
             // cB_localisation
@@ -231,9 +232,9 @@
             this.groupBox1.Controls.Add(this.labelLongitude);
             this.groupBox1.Controls.Add(this.tB_yAct);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(158, 86);
+            this.groupBox1.Location = new System.Drawing.Point(42, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 549);
+            this.groupBox1.Size = new System.Drawing.Size(410, 550);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
@@ -333,19 +334,19 @@
             // tB_xAct
             // 
             this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tB_xAct.Enabled = false;
             this.tB_xAct.Location = new System.Drawing.Point(198, 515);
             this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_xAct.Name = "tB_xAct";
             this.tB_xAct.Size = new System.Drawing.Size(35, 20);
             this.tB_xAct.TabIndex = 11;
-            this.tB_xAct.Visible = false;
             this.tB_xAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(258, 58);
+            this.label7.Location = new System.Drawing.Point(173, 21);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 25);
@@ -354,7 +355,7 @@
             // 
             // b_annuler
             // 
-            this.b_annuler.Location = new System.Drawing.Point(211, 641);
+            this.b_annuler.Location = new System.Drawing.Point(94, 627);
             this.b_annuler.Name = "b_annuler";
             this.b_annuler.Size = new System.Drawing.Size(126, 48);
             this.b_annuler.TabIndex = 32;
@@ -363,24 +364,37 @@
             // 
             // b_valider
             // 
-            this.b_valider.Location = new System.Drawing.Point(381, 641);
+            this.b_valider.Location = new System.Drawing.Point(264, 627);
             this.b_valider.Name = "b_valider";
             this.b_valider.Size = new System.Drawing.Size(126, 48);
             this.b_valider.TabIndex = 33;
             this.b_valider.Text = "VALIDER";
             this.b_valider.UseVisualStyleBackColor = true;
             // 
+            // labelNumeroJour
+            // 
+            this.labelNumeroJour.AutoSize = true;
+            this.labelNumeroJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumeroJour.Location = new System.Drawing.Point(307, 21);
+            this.labelNumeroJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNumeroJour.Name = "labelNumeroJour";
+            this.labelNumeroJour.Size = new System.Drawing.Size(45, 25);
+            this.labelNumeroJour.TabIndex = 4;
+            this.labelNumeroJour.Text = "000";
+            this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.ClientSize = new System.Drawing.Size(864, 731);
             this.ControlBox = false;
             this.Controls.Add(this.b_valider);
             this.Controls.Add(this.b_annuler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.buttonRetourJournee);
+            this.Controls.Add(this.labelNumeroJour);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.l_numJour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -389,7 +403,7 @@
             this.MaximizeBox = false;
             this.Name = "WindowLevel3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mars Explorer 2017";
+            this.Text = "Modification d\'une mission";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -430,6 +444,7 @@
         private System.Windows.Forms.Button b_valider;
         private System.Windows.Forms.ListBox lB_listePart;
         private System.Windows.Forms.Label l_participants;
+        private System.Windows.Forms.Label labelNumeroJour;
     }
 }
 

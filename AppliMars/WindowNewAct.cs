@@ -13,27 +13,43 @@ namespace AppliMars
     public partial class WindowNewAct : Form
     {
         #region Variables
-        private Journee _jour;
 
+        private Journee _jour;
+        private WindowLevel2 _win2;
 
         #endregion
 
-        public WindowNewAct()
-        {
+
+        #region accesseurs
+
+        public WindowLevel2 maFenetrePrec {
+            get { return _win2; }
+            set { _win2 = value; }
+        }
+
+        public Journee maJournee {
+            get { return _jour; }
+            set { _jour = value; }
+        }
+
+        #endregion
+
+
+        #region constructeurs
+
+        public WindowNewAct() {
             InitializeComponent();
         }
 
-        public WindowNewAct(Journee jour)
-        {
-            InitializeComponent();
-            _jour = jour;
-
+        public WindowNewAct(Journee jour, WindowLevel2 win) :this(){
+            maJournee = jour;
+            maFenetrePrec = win;
+            this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Création d'une activité pour le jour " + maJournee.monNumero;
             l_numJour.Text = _jour.monNumero.ToString();
             cB_cate.DataSource = _jour.maMission.maListeCategories;
             // cB_typeAct dépendant de cB_cate
             lB_listePart.DataSource = _jour.maMission.mesAstronautes;
-            if (cB_localisation.Checked == false)
-            {
+            if (cB_localisation.Checked == false) {
                 tB_xAct.Text = "0";
                 tB_yAct.Text = "0";
                 tB_xAct.ReadOnly = true;
@@ -41,48 +57,48 @@ namespace AppliMars
             }
         }
 
-        private void cB_cate_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        #endregion
+
+
+        #region méthodes
+
+        #endregion
+
+
+        #region évènements
+
+        private void cB_cate_SelectedIndexChanged(object sender, EventArgs e) {
             // TYPE ACT en fonction de CATEGORIE
 
             //Categorie cateSelected = from cate in _jour.m.maListeCategories where cate.ToString() == cB_cate.SelectedItem select cate;
             //cB_typeAct.DataSource = cateSelected.maListe;
         }
 
-        private void tB_descrAct_TextChanged(object sender, EventArgs e)
-        {
-            while (tB_descrAct.Text.Length < 4000)
-            {
+        private void tB_descrAct_TextChanged(object sender, EventArgs e) {
+            while (tB_descrAct.Text.Length < 4000) {
                 tB_descrAct.ForeColor = Color.Red;
             }
         }
 
-        private void cB_localisation_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cB_localisation.Checked == false)
-            {
+        private void cB_localisation_CheckedChanged(object sender, EventArgs e) {
+            if (cB_localisation.Checked == false) {
                 tB_xAct.Enabled = tB_yAct.Enabled = false;
                 tB_xAct.BackColor = tB_yAct.BackColor = Color.LightGray;
-            }
-            else
-            {
+            } else {
                 tB_xAct.Enabled = tB_yAct.Enabled = true;
                 tB_xAct.BackColor = tB_yAct.BackColor = Color.White;
             }
 
         }
 
-        private void b_creerNvAct_Click(object sender, EventArgs e)
-        {
+        private void b_creerNvAct_Click(object sender, EventArgs e) {
             bool flag = true;
-            while (flag == true)
-            {
+            while (flag == true) {
                 // Récupération de toutes les informations
                 string nomNvAct = cB_typeAct.SelectedText;
                 bool extNvAct = cB_localisation.Checked;
                 string descrNvAct = tB_descrAct.Text;
-                if (descrNvAct.Length > 400)
-                {
+                if (descrNvAct.Length > 400) {
                     tB_descrAct.ForeColor = Color.Red;
                     flag = false;
                 }
@@ -92,23 +108,20 @@ namespace AppliMars
                 flagDuree = int.TryParse(tB_HFinAct.Text, out hFinNvAct);
                 flagDuree = int.TryParse(tB_MFinAct.Text, out mFinNvAct);
                 // Arrondir à la dizaine les minutes 
-                mDebNvAct = (int)(10*Math.Round((mDebNvAct / 10)*1.0));
+                mDebNvAct = (int)(10 * Math.Round((mDebNvAct / 10) * 1.0));
                 mFinNvAct = (int)(10 * Math.Round((mFinNvAct / 10) * 1.0));
-                
+
                 // Vérifie que l'horaire est contenue dans la journée 
                 if ((hDebNvAct == 24 && mDebNvAct >= 40) || (hFinNvAct == 24 && mFinNvAct >= 40)
-                    || hDebNvAct >= 24 || hFinNvAct >= 24)
-                {
+                    || hDebNvAct >= 24 || hFinNvAct >= 24) {
                     flagDuree = false;
                 }
-                if (flagDuree == false)
-                {
+                if (flagDuree == false) {
                     l_erreurConvert.Visible = true;
                     flag = false;
                 }
                 // Echange si les horaires de début et de fin sont inversés
-                if (hDebNvAct > hFinNvAct)
-                {
+                if (hDebNvAct > hFinNvAct) {
                     int tmp = hFinNvAct;
                     hFinNvAct = hDebNvAct;
                     hDebNvAct = tmp;
@@ -117,8 +130,7 @@ namespace AppliMars
                     mDebNvAct = tmp;
                 }
                 List<Astronaute> partNvAct = new List<Astronaute>();
-                foreach (string astro in lB_listePart.SelectedItems)
-                {
+                foreach (string astro in lB_listePart.SelectedItems) {
                     var astroTrouve = from astroPresent in _jour.maMission.mesAstronautes where astroPresent.ToString() == astro.ToString() select astroPresent;
                     partNvAct.Add((Astronaute)astroTrouve);
                 }
@@ -129,29 +141,38 @@ namespace AppliMars
                     flagLoc = false;
                 if (yNvAct < -1053 || yNvAct > 1000)
                     flagLoc = false;
-                if (flagLoc == false)
-                {
+                if (flagLoc == false) {
                     tB_xAct.ForeColor = tB_yAct.ForeColor = Color.Red;
                     flag = false;
                 }
 
                 // Vérification des chevauchements avec d'autres activités 
-                foreach (Activite a in _jour.maListeActivites)
-                {
-                    if (hDebNvAct <= a.monHeureFin)
-                    {
-                        if (hFinNvAct >= a.monHeureDebut)
-                        {
+                foreach (Activite a in _jour.maListeActivites) {
+                    if (hDebNvAct <= a.monHeureFin) {
+                        if (hFinNvAct >= a.monHeureDebut) {
                             flag = false;
                         }
                     }
                 }
-                
+
                 // Si tout est ok flag == true, on peut créer la nouvelle activité 
                 _jour.maListeActivites.Add(new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, xNvAct, yNvAct));
             }
             MessageBox.Show("Impossible de créer la nouvelle activité");
         }
+
+        private void buttonRetourJournee_Click(object sender, EventArgs e) {
+            this.Close();
+            maFenetrePrec.Show();
+        }
+        #endregion
+
+
+
+
+
+
+        
 
     }
 }

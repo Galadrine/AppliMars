@@ -89,7 +89,7 @@
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.buttonNouvelleMission);
-            this.panel1.Location = new System.Drawing.Point(369, 122);
+            this.panel1.Location = new System.Drawing.Point(178, 151);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 412);
             this.panel1.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.ClientSize = new System.Drawing.Size(864, 731);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

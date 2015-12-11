@@ -115,8 +115,13 @@ namespace AppliMars {
 
         private void buttonAjoutActivite_Click(object sender, EventArgs e) {
             Button but = sender as Button;
+            WindowNewAct winNA = new WindowNewAct(maJournee, this);
+            
+            /*
             WindowLevel3 win3 = new WindowLevel3(maJournee, this);
             win3.Show();
+            */
+            winNA.Show();
             this.Hide();
         }
 
