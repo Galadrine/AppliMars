@@ -19,8 +19,6 @@ namespace AppliMars {
         private int _idAstronauteEnCours;
         private Astronaute _astronaute;
 
-        
-
         #endregion
 
 
@@ -66,6 +64,7 @@ namespace AppliMars {
             maJournee = jour;
             refreshPage();
             monIdAstronaute = 0;
+
         }
 
         #endregion
@@ -76,15 +75,14 @@ namespace AppliMars {
         public void insertionActivitesListBox() {
             listBoxActivites.Items.Clear();
             string stringActivite;
+
             foreach (Activite A in maJournee.maListeActivites) {
-                foreach (Astronaute ast in maJournee.maMission.mesAstronautes) {
-                    if (ast.monNom == monAstronaute.monNom) {
-                        ////////////////////////////////////// Astronautes non chargés dans activité d'une journée
+                foreach (Astronaute Astro in A.mesAstronautes) {
+                    if (Astro.monNom == monAstronaute.monNom) {
                         stringActivite = A.getDetailsActivites();
                         listBoxActivites.Items.Add(stringActivite);
                     }
                 }
-
             }
         }
 
@@ -142,8 +140,10 @@ namespace AppliMars {
         }
 
         private void listBoxActivites_SelectedIndexChanged(object sender, EventArgs e) {
-            buttonGoToLevel3.Visible = true;
-            monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
+            if (listBoxActivites.SelectedIndex >= 0) {
+                buttonGoToLevel3.Visible = true;
+                monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
+            }
         }
 
         private void buttonEDTSuiv_Click(object sender, EventArgs e) {
@@ -151,7 +151,7 @@ namespace AppliMars {
             if (monIdAstronaute >= maJournee.maMission.mesAstronautes.Count) {
                 monIdAstronaute=0;
             }
-            Console.WriteLine();
+            refreshPage();
         }
 
         private void buttonEDTPrec_Click(object sender, EventArgs e) {
@@ -159,7 +159,7 @@ namespace AppliMars {
             if (monIdAstronaute < 0) {
                 monIdAstronaute = maJournee.maMission.mesAstronautes.Count-1;
             }
-            Console.WriteLine();
+            refreshPage();
         }
 
 

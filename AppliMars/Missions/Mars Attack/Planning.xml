@@ -13,6 +13,7 @@
         <DescriptionAct></DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
+          <Astronaute>Popeye</Astronaute>
         </Participants>
       </Activite>
       <Activite idAct="2">
@@ -37,7 +38,6 @@
         <DescriptionAct></DescriptionAct>
         <Participants>
           <Astronaute>Bob</Astronaute>
-          <Astronaute>Popeye</Astronaute>
         </Participants>
       </Activite>
     </Activites>

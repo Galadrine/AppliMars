@@ -39,17 +39,21 @@
             this.pictureBoxJourPrecedent = new System.Windows.Forms.PictureBox();
             this.listBoxActivites = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourSuivant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourPrecedent)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(308, 75);
+            this.label26.Location = new System.Drawing.Point(37, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(51, 25);
             this.label26.TabIndex = 2;
@@ -59,7 +63,7 @@
             // 
             this.labelJour.AutoSize = true;
             this.labelJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJour.Location = new System.Drawing.Point(358, 75);
+            this.labelJour.Location = new System.Drawing.Point(87, 0);
             this.labelJour.Name = "labelJour";
             this.labelJour.Size = new System.Drawing.Size(23, 25);
             this.labelJour.TabIndex = 3;
@@ -67,7 +71,7 @@
             // 
             // buttonGoToLevel3
             // 
-            this.buttonGoToLevel3.Location = new System.Drawing.Point(265, 246);
+            this.buttonGoToLevel3.Location = new System.Drawing.Point(27, 124);
             this.buttonGoToLevel3.Name = "buttonGoToLevel3";
             this.buttonGoToLevel3.Size = new System.Drawing.Size(162, 30);
             this.buttonGoToLevel3.TabIndex = 8;
@@ -100,7 +104,7 @@
             // 
             this.groupBox1.Controls.Add(this.buttonEDTPrec);
             this.groupBox1.Controls.Add(this.buttonEDTSuiv);
-            this.groupBox1.Location = new System.Drawing.Point(774, 131);
+            this.groupBox1.Location = new System.Drawing.Point(259, 138);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(176, 100);
             this.groupBox1.TabIndex = 12;
@@ -111,7 +115,7 @@
             // 
             this.groupBox2.Controls.Add(this.buttonAjoutActivite);
             this.groupBox2.Controls.Add(this.buttonCompteRendu);
-            this.groupBox2.Location = new System.Drawing.Point(259, 131);
+            this.groupBox2.Location = new System.Drawing.Point(21, 18);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(176, 100);
             this.groupBox2.TabIndex = 13;
@@ -148,7 +152,7 @@
             // 
             this.labelNomEmploiDuTemps.AutoSize = true;
             this.labelNomEmploiDuTemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(649, 40);
+            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(681, 89);
             this.labelNomEmploiDuTemps.Name = "labelNomEmploiDuTemps";
             this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(44, 20);
             this.labelNomEmploiDuTemps.TabIndex = 14;
@@ -171,7 +175,7 @@
             // pictureBoxJourSuivant
             // 
             this.pictureBoxJourSuivant.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJourSuivant.Image")));
-            this.pictureBoxJourSuivant.Location = new System.Drawing.Point(395, 77);
+            this.pictureBoxJourSuivant.Location = new System.Drawing.Point(124, 2);
             this.pictureBoxJourSuivant.Name = "pictureBoxJourSuivant";
             this.pictureBoxJourSuivant.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxJourSuivant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -182,7 +186,7 @@
             // pictureBoxJourPrecedent
             // 
             this.pictureBoxJourPrecedent.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJourPrecedent.Image")));
-            this.pictureBoxJourPrecedent.Location = new System.Drawing.Point(274, 77);
+            this.pictureBoxJourPrecedent.Location = new System.Drawing.Point(3, 2);
             this.pictureBoxJourPrecedent.Name = "pictureBoxJourPrecedent";
             this.pictureBoxJourPrecedent.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxJourPrecedent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -193,7 +197,7 @@
             // listBoxActivites
             // 
             this.listBoxActivites.FormattingEnabled = true;
-            this.listBoxActivites.Location = new System.Drawing.Point(481, 77);
+            this.listBoxActivites.Location = new System.Drawing.Point(498, 129);
             this.listBoxActivites.Name = "listBoxActivites";
             this.listBoxActivites.Size = new System.Drawing.Size(247, 368);
             this.listBoxActivites.TabIndex = 15;
@@ -203,11 +207,31 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(494, 40);
+            this.label1.Location = new System.Drawing.Point(526, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Emploi du temps de";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.buttonGoToLevel3);
+            this.panel1.Location = new System.Drawing.Point(783, 129);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 194);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label26);
+            this.panel2.Controls.Add(this.pictureBoxJourPrecedent);
+            this.panel2.Controls.Add(this.pictureBoxJourSuivant);
+            this.panel2.Controls.Add(this.labelJour);
+            this.panel2.Location = new System.Drawing.Point(543, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(150, 28);
+            this.panel2.TabIndex = 17;
             // 
             // WindowLevel2
             // 
@@ -215,17 +239,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 791);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBoxActivites);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelNomEmploiDuTemps);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonGoToLevel3);
             this.Controls.Add(this.buttonRetourCalendrier);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.labelJour);
-            this.Controls.Add(this.pictureBoxJourSuivant);
-            this.Controls.Add(this.pictureBoxJourPrecedent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -236,6 +256,9 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourSuivant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourPrecedent)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +281,7 @@
         private System.Windows.Forms.Label labelNomEmploiDuTemps;
         private System.Windows.Forms.ListBox listBoxActivites;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -83,25 +83,26 @@ namespace AppliMars {
                 List<Astronaute> astro = new List<Astronaute>();
 
                 // récupération de la liste des participants
-                var participants = from astronaute in _planningXML.Descendants("participants")
-                                   where astronaute.Parent.Parent.Attribute("idAct").ToString() == idAct.ToString()
+
+                // var jours = from jour in _planningXML.Descendants("Planning") select jour;
+                var participants = from astronaute in _planningXML.Descendants("Astronaute")
+                                   where (string)astronaute.Parent.Parent.Attribute("idAct") == idAct.ToString()
                                    select astronaute;
+
+                int count1 = participants.Count();
+
                 foreach (XElement p in participants)
                 {
-                    // Recherche le participant dans la liste des Astronautes de la mission
-                    string nomP = p.ToString();
-                    Astronaute pTrouve = (from astronautePresent in _m.mesAstronautes
-                                          where astronautePresent.ToString() == nomP
-                                          select astronautePresent).FirstOrDefault();
+                    string nomP = p.Value.ToString();
                     // Ajout de l'astronaute dans la liste des participants à l'activité 
-                    astro.Add(pTrouve);
+                    astro.Add(new Astronaute(nomP));
                 }
                 if (ext == true) {
                     int posX = int.Parse(a.Element("PosX").Value);
                     int posY = int.Parse(a.Element("PosY").Value);
                     maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, posX, posY));
                 } else
-                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
+                     maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
             }
         }
 
