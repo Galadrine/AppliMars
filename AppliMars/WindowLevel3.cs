@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AppliMars {
     public partial class WindowLevel3 : Form {
@@ -46,7 +47,7 @@ namespace AppliMars {
             InitializeComponent();
         }
 
-        // Fenetre Niveau 3 pour créaétion d'activite
+        // Fenetre Niveau 3 pour création d'activite
         public WindowLevel3(Journee jour, WindowLevel2 win2)
             : this() {
                 maJournee = jour;
@@ -61,10 +62,10 @@ namespace AppliMars {
             maFenetrePrec = win2;
             monActivite = activite;
             maJournee = jour;
-            this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero;
+            this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero.ToString("D3");
             labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
 
-            tB_TypeAct.ReadOnly = true;
+            cB_typeAct.Enabled = false;
             tB_descrAct.ReadOnly = true;
             tB_HDebAct.ReadOnly = true;
             tB_MDebAct.ReadOnly = true;
@@ -77,8 +78,7 @@ namespace AppliMars {
             lB_listePart.Enabled = false;
             //b_annuler.Visible = false;
             //b_valider.Visible = false;
-            l_numJour.Text = maJournee.monNumero.ToString();
-            tB_TypeAct.Text = monActivite.monNom;
+            cB_typeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
             tB_HDebAct.Text = monActivite.monHeureDebut.ToString();
             tB_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
@@ -86,33 +86,39 @@ namespace AppliMars {
             tB_MFinAct.Text = monActivite.mesMinutesFin.ToString();
             tB_xAct.Text = monActivite.maPosX.ToString();
             tB_yAct.Text = monActivite.maPosY.ToString();
-            cB_localisation.Checked = monActivite.interieurOuExterieur;
+            cB_localisation.Checked = monActivite.enExterieur;
 
             
             foreach (Astronaute a in monActivite.mesAstronautes) {
                 lB_listePart.Items.Add(a.monNom);
             }
 
+            Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
+            Graphics graphics = this.pictureBoxMap.CreateGraphics();
+            Point p0 = new Point(0, 0);
+            graphics.DrawImage(imageSource, p0);
 
-            if (monActivite.interieurOuExterieur == true) {
-
-                Graphics graphics = this.pictureBoxMap.CreateGraphics();
-                Image astronaut = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-                Point p = new Point(70, 1000);
-                graphics.DrawImage(astronaut, p);
-
+            // Affichage de la position sur la map
+            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+            Point p;
+            if (monActivite.enExterieur == true) {
+                p = new Point(monActivite.maPosX / 3, monActivite.maPosY / 3);
                 tB_xAct.Enabled = true;
                 tB_yAct.Enabled = true;
                 pictureBoxMap.Enabled = true;
             } else {
-                Graphics graphics = this.pictureBoxMap.CreateGraphics();
-                Image astronaut = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-                Point p = new Point(70, 1000);
-                graphics.DrawImage(astronaut, p);
-                
-            }
+                p = new Point(70/3, 1000/3);
+                pictureBoxMap.Enabled = true;
 
-            // A FAIRE : GESTION DE LA MAP!!
+            }
+            graphics.DrawImage(maps, p);
+
+            DialogResult dlgRes = DialogResult.No;
+            dlgRes = MessageBox.Show(
+            p.X.ToString() + " - " + p.Y.ToString(),
+            "p.X.ToString() + p.Y.ToString()",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
         }
 
 
@@ -148,9 +154,17 @@ namespace AppliMars {
             tB_xAct.Text = (coordinates.X * 3).ToString();
             tB_yAct.Text = (coordinates.Y * 3).ToString();
 
-            Image astronaut = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
             Point p = new Point(me.Location.X-10, me.Location.Y-34);
-            graphics.DrawImage(astronaut, p);
+            graphics.DrawImage(maps, p);
+
+
+            DialogResult dlgRes = DialogResult.No;
+            dlgRes = MessageBox.Show(
+            p.X.ToString() + " - " + p.Y.ToString(),
+            "p.X.ToString() + p.Y.ToString()",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
 
         }
 
@@ -183,8 +197,7 @@ namespace AppliMars {
             }
         }
 
-        // Laisse ça ici, c'est pour savoir comment faire pour plus tard (on sait jamais)
-        private void buttonSupprimer_Click(object sender, EventArgs e) {
+        private void b_supprimer_Click(object sender, EventArgs e) { // Laisse ça ici, c'est pour savoir comment faire pour plus tard (on sait jamais)
             DialogResult dlgRes = DialogResult.No;
             dlgRes = MessageBox.Show(
             "Voulez-vous vraiement supprimer cette activité ?",
@@ -196,6 +209,28 @@ namespace AppliMars {
                 // SupprimerActivite();
             }
 
+        }
+
+        private void b_annuler_Click(object sender, EventArgs e) {
+            this.Close();
+            maFenetrePrec.Show();
+        }
+
+        private void b_valider_Click(object sender, EventArgs e) {
+            string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
+            XDocument _generalXML = XDocument.Load(fileName);
+            var edt = (from jour in _generalXML.Descendants("Jour") where (string)jour.Attribute("id") == maJournee.monNumero.ToString() select jour.Element("Activites")).FirstOrDefault();
+            var doc = XDocument.Load(fileName);
+            XElement target = doc
+                .Element("Planning")
+                .Elements("Jour")
+                .Where(elem => (string)elem.Attribute("id") == maJournee.monNumero.ToString())
+                .First();
+            //target.Element("CRJour").Value = tB_CR.Text;
+            doc.Save(fileName);
+
+            this.Close();
+            maFenetrePrec.Show();
         }
 
         #endregion

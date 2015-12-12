@@ -39,13 +39,16 @@
             this.cB_localisation = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.l_erreurConvert = new System.Windows.Forms.Label();
+            this.l_cate = new System.Windows.Forms.Label();
+            this.cB_cate = new System.Windows.Forms.ComboBox();
+            this.cB_typeAct = new System.Windows.Forms.ComboBox();
             this.lB_listePart = new System.Windows.Forms.ListBox();
             this.l_participants = new System.Windows.Forms.Label();
             this.tB_MFinAct = new System.Windows.Forms.TextBox();
             this.tB_HFinAct = new System.Windows.Forms.TextBox();
             this.tB_MDebAct = new System.Windows.Forms.TextBox();
             this.tB_HDebAct = new System.Windows.Forms.TextBox();
-            this.tB_TypeAct = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,25 +56,26 @@
             this.tB_xAct = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.b_annuler = new System.Windows.Forms.Button();
-            this.b_valider = new System.Windows.Forms.Button();
+            this.b_supprimer = new System.Windows.Forms.Button();
             this.labelNumeroJour = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tB_descrAct
             // 
-            this.tB_descrAct.Location = new System.Drawing.Point(135, 146);
+            this.tB_descrAct.Location = new System.Drawing.Point(138, 155);
             this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_descrAct.Multiline = true;
             this.tB_descrAct.Name = "tB_descrAct";
-            this.tB_descrAct.Size = new System.Drawing.Size(247, 173);
+            this.tB_descrAct.Size = new System.Drawing.Size(245, 145);
             this.tB_descrAct.TabIndex = 2;
             // 
             // label_description_activite
             // 
             this.label_description_activite.AutoSize = true;
-            this.label_description_activite.Location = new System.Drawing.Point(50, 146);
+            this.label_description_activite.Location = new System.Drawing.Point(52, 155);
             this.label_description_activite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_description_activite.Name = "label_description_activite";
             this.label_description_activite.Size = new System.Drawing.Size(60, 13);
@@ -91,7 +95,7 @@
             // label_heure_debut
             // 
             this.label_heure_debut.AutoSize = true;
-            this.label_heure_debut.Location = new System.Drawing.Point(74, 70);
+            this.label_heure_debut.Location = new System.Drawing.Point(76, 96);
             this.label_heure_debut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_heure_debut.Name = "label_heure_debut";
             this.label_heure_debut.Size = new System.Drawing.Size(36, 13);
@@ -101,7 +105,7 @@
             // label_heure_fin
             // 
             this.label_heure_fin.AutoSize = true;
-            this.label_heure_fin.Location = new System.Drawing.Point(89, 101);
+            this.label_heure_fin.Location = new System.Drawing.Point(91, 127);
             this.label_heure_fin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_heure_fin.Name = "label_heure_fin";
             this.label_heure_fin.Size = new System.Drawing.Size(21, 13);
@@ -112,7 +116,7 @@
             // 
             this.labelCoordonnees.AutoSize = true;
             this.labelCoordonnees.Enabled = false;
-            this.labelCoordonnees.Location = new System.Drawing.Point(11, 518);
+            this.labelCoordonnees.Location = new System.Drawing.Point(11, 442);
             this.labelCoordonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoordonnees.Name = "labelCoordonnees";
             this.labelCoordonnees.Size = new System.Drawing.Size(99, 13);
@@ -123,7 +127,7 @@
             // 
             this.labelLatitude.AutoSize = true;
             this.labelLatitude.Enabled = false;
-            this.labelLatitude.Location = new System.Drawing.Point(239, 520);
+            this.labelLatitude.Location = new System.Drawing.Point(240, 444);
             this.labelLatitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLatitude.Name = "labelLatitude";
             this.labelLatitude.Size = new System.Drawing.Size(41, 13);
@@ -134,7 +138,7 @@
             // 
             this.labelLongitude.AutoSize = true;
             this.labelLongitude.Enabled = false;
-            this.labelLongitude.Location = new System.Drawing.Point(133, 520);
+            this.labelLongitude.Location = new System.Drawing.Point(136, 444);
             this.labelLongitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLongitude.Name = "labelLongitude";
             this.labelLongitude.Size = new System.Drawing.Size(50, 13);
@@ -144,7 +148,7 @@
             // tB_yAct
             // 
             this.tB_yAct.Enabled = false;
-            this.tB_yAct.Location = new System.Drawing.Point(288, 517);
+            this.tB_yAct.Location = new System.Drawing.Point(289, 441);
             this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_yAct.Name = "tB_yAct";
             this.tB_yAct.Size = new System.Drawing.Size(35, 20);
@@ -154,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 27);
+            this.label1.Location = new System.Drawing.Point(36, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
@@ -189,7 +193,7 @@
             // cB_localisation
             // 
             this.cB_localisation.AutoSize = true;
-            this.cB_localisation.Location = new System.Drawing.Point(135, 483);
+            this.cB_localisation.Location = new System.Drawing.Point(136, 407);
             this.cB_localisation.Name = "cB_localisation";
             this.cB_localisation.Size = new System.Drawing.Size(119, 17);
             this.cB_localisation.TabIndex = 30;
@@ -200,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 485);
+            this.label2.Location = new System.Drawing.Point(47, 409);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
@@ -209,13 +213,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.l_erreurConvert);
+            this.groupBox1.Controls.Add(this.l_cate);
+            this.groupBox1.Controls.Add(this.cB_cate);
+            this.groupBox1.Controls.Add(this.cB_typeAct);
             this.groupBox1.Controls.Add(this.lB_listePart);
             this.groupBox1.Controls.Add(this.l_participants);
             this.groupBox1.Controls.Add(this.tB_MFinAct);
             this.groupBox1.Controls.Add(this.tB_HFinAct);
             this.groupBox1.Controls.Add(this.tB_MDebAct);
             this.groupBox1.Controls.Add(this.tB_HDebAct);
-            this.groupBox1.Controls.Add(this.tB_TypeAct);
             this.groupBox1.Controls.Add(this.cB_localisation);
             this.groupBox1.Controls.Add(this.tB_descrAct);
             this.groupBox1.Controls.Add(this.label4);
@@ -234,22 +241,60 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(42, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 550);
+            this.groupBox1.Size = new System.Drawing.Size(410, 480);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
+            // 
+            // l_erreurConvert
+            // 
+            this.l_erreurConvert.AutoSize = true;
+            this.l_erreurConvert.ForeColor = System.Drawing.Color.Red;
+            this.l_erreurConvert.Location = new System.Drawing.Point(267, 109);
+            this.l_erreurConvert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_erreurConvert.Name = "l_erreurConvert";
+            this.l_erreurConvert.Size = new System.Drawing.Size(117, 13);
+            this.l_erreurConvert.TabIndex = 60;
+            this.l_erreurConvert.Text = "Conversion impossible !";
+            this.l_erreurConvert.Visible = false;
+            // 
+            // l_cate
+            // 
+            this.l_cate.AutoSize = true;
+            this.l_cate.Location = new System.Drawing.Point(60, 30);
+            this.l_cate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_cate.Name = "l_cate";
+            this.l_cate.Size = new System.Drawing.Size(52, 13);
+            this.l_cate.TabIndex = 51;
+            this.l_cate.Text = "Catégorie";
+            // 
+            // cB_cate
+            // 
+            this.cB_cate.FormattingEnabled = true;
+            this.cB_cate.Location = new System.Drawing.Point(138, 27);
+            this.cB_cate.Name = "cB_cate";
+            this.cB_cate.Size = new System.Drawing.Size(121, 21);
+            this.cB_cate.TabIndex = 52;
+            // 
+            // cB_typeAct
+            // 
+            this.cB_typeAct.FormattingEnabled = true;
+            this.cB_typeAct.Location = new System.Drawing.Point(138, 58);
+            this.cB_typeAct.Name = "cB_typeAct";
+            this.cB_typeAct.Size = new System.Drawing.Size(121, 21);
+            this.cB_typeAct.TabIndex = 50;
             // 
             // lB_listePart
             // 
             this.lB_listePart.FormattingEnabled = true;
-            this.lB_listePart.Location = new System.Drawing.Point(136, 337);
+            this.lB_listePart.Location = new System.Drawing.Point(138, 306);
             this.lB_listePart.Name = "lB_listePart";
-            this.lB_listePart.Size = new System.Drawing.Size(246, 121);
+            this.lB_listePart.Size = new System.Drawing.Size(246, 95);
             this.lB_listePart.TabIndex = 37;
             // 
             // l_participants
             // 
             this.l_participants.AutoSize = true;
-            this.l_participants.Location = new System.Drawing.Point(50, 337);
+            this.l_participants.Location = new System.Drawing.Point(50, 306);
             this.l_participants.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_participants.Name = "l_participants";
             this.l_participants.Size = new System.Drawing.Size(62, 13);
@@ -258,43 +303,36 @@
             // 
             // tB_MFinAct
             // 
-            this.tB_MFinAct.Location = new System.Drawing.Point(186, 98);
+            this.tB_MFinAct.Location = new System.Drawing.Point(187, 124);
             this.tB_MFinAct.Name = "tB_MFinAct";
             this.tB_MFinAct.Size = new System.Drawing.Size(27, 20);
             this.tB_MFinAct.TabIndex = 35;
             // 
             // tB_HFinAct
             // 
-            this.tB_HFinAct.Location = new System.Drawing.Point(135, 98);
+            this.tB_HFinAct.Location = new System.Drawing.Point(138, 124);
             this.tB_HFinAct.Name = "tB_HFinAct";
             this.tB_HFinAct.Size = new System.Drawing.Size(27, 20);
             this.tB_HFinAct.TabIndex = 34;
             // 
             // tB_MDebAct
             // 
-            this.tB_MDebAct.Location = new System.Drawing.Point(186, 67);
+            this.tB_MDebAct.Location = new System.Drawing.Point(187, 93);
             this.tB_MDebAct.Name = "tB_MDebAct";
             this.tB_MDebAct.Size = new System.Drawing.Size(27, 20);
             this.tB_MDebAct.TabIndex = 33;
             // 
             // tB_HDebAct
             // 
-            this.tB_HDebAct.Location = new System.Drawing.Point(136, 67);
+            this.tB_HDebAct.Location = new System.Drawing.Point(138, 93);
             this.tB_HDebAct.Name = "tB_HDebAct";
             this.tB_HDebAct.Size = new System.Drawing.Size(27, 20);
             this.tB_HDebAct.TabIndex = 32;
             // 
-            // tB_TypeAct
-            // 
-            this.tB_TypeAct.Location = new System.Drawing.Point(136, 24);
-            this.tB_TypeAct.Name = "tB_TypeAct";
-            this.tB_TypeAct.Size = new System.Drawing.Size(100, 20);
-            this.tB_TypeAct.TabIndex = 31;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(170, 104);
+            this.label4.Location = new System.Drawing.Point(169, 127);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 13);
@@ -304,7 +342,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 104);
+            this.label6.Location = new System.Drawing.Point(219, 127);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
@@ -314,7 +352,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(220, 70);
+            this.label5.Location = new System.Drawing.Point(219, 96);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
@@ -324,7 +362,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 70);
+            this.label3.Location = new System.Drawing.Point(169, 96);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
@@ -335,7 +373,7 @@
             // 
             this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tB_xAct.Enabled = false;
-            this.tB_xAct.Location = new System.Drawing.Point(198, 515);
+            this.tB_xAct.Location = new System.Drawing.Point(199, 439);
             this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_xAct.Name = "tB_xAct";
             this.tB_xAct.Size = new System.Drawing.Size(35, 20);
@@ -355,21 +393,23 @@
             // 
             // b_annuler
             // 
-            this.b_annuler.Location = new System.Drawing.Point(94, 627);
+            this.b_annuler.Location = new System.Drawing.Point(42, 582);
             this.b_annuler.Name = "b_annuler";
             this.b_annuler.Size = new System.Drawing.Size(126, 48);
             this.b_annuler.TabIndex = 32;
             this.b_annuler.Text = "ANNULER";
             this.b_annuler.UseVisualStyleBackColor = true;
+            this.b_annuler.Click += new System.EventHandler(this.b_annuler_Click);
             // 
-            // b_valider
+            // b_supprimer
             // 
-            this.b_valider.Location = new System.Drawing.Point(264, 627);
-            this.b_valider.Name = "b_valider";
-            this.b_valider.Size = new System.Drawing.Size(126, 48);
-            this.b_valider.TabIndex = 33;
-            this.b_valider.Text = "VALIDER";
-            this.b_valider.UseVisualStyleBackColor = true;
+            this.b_supprimer.Location = new System.Drawing.Point(326, 582);
+            this.b_supprimer.Name = "b_supprimer";
+            this.b_supprimer.Size = new System.Drawing.Size(126, 48);
+            this.b_supprimer.TabIndex = 33;
+            this.b_supprimer.Text = "SUPPRIMER";
+            this.b_supprimer.UseVisualStyleBackColor = true;
+            this.b_supprimer.Click += new System.EventHandler(this.b_supprimer_Click);
             // 
             // labelNumeroJour
             // 
@@ -383,13 +423,24 @@
             this.labelNumeroJour.Text = "000";
             this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(186, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 48);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "VALIDER";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.b_valider_Click);
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 731);
             this.ControlBox = false;
-            this.Controls.Add(this.b_valider);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.b_supprimer);
             this.Controls.Add(this.b_annuler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxMap);
@@ -439,12 +490,16 @@
         private System.Windows.Forms.TextBox tB_HFinAct;
         private System.Windows.Forms.TextBox tB_MDebAct;
         private System.Windows.Forms.TextBox tB_HDebAct;
-        private System.Windows.Forms.TextBox tB_TypeAct;
         private System.Windows.Forms.Button b_annuler;
-        private System.Windows.Forms.Button b_valider;
+        private System.Windows.Forms.Button b_supprimer;
         private System.Windows.Forms.ListBox lB_listePart;
         private System.Windows.Forms.Label l_participants;
         private System.Windows.Forms.Label labelNumeroJour;
+        private System.Windows.Forms.ComboBox cB_typeAct;
+        private System.Windows.Forms.Label l_cate;
+        private System.Windows.Forms.ComboBox cB_cate;
+        private System.Windows.Forms.Label l_erreurConvert;
+        private System.Windows.Forms.Button button1;
     }
 }
 

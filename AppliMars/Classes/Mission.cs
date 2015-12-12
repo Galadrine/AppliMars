@@ -354,14 +354,13 @@ namespace AppliMars
 
 
                     // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
-                    string iToString = i.ToString();
                     XElement parts = new XElement("Participants");
                     foreach (XElement astro in generalXML.Element("Mission").Element("Astronautes").Elements("Astronaute"))
                     {
                         parts.Add(astro);
                     }
                     var edt5 = _planningXML.Descendants("Jour").First(); // A QUOI CA SERT CA ?
-                    var edt = (from jour in _planningXML.Descendants("Jour") where (string)jour.Attribute("id") == iToString select jour.Element("Activites")).FirstOrDefault();
+                    var edt = (from jour in _planningXML.Descendants("Jour") where (string)jour.Attribute("id") == i.ToString() select jour.Element("Activites")).FirstOrDefault();
                     edt.Add(new XElement("Activite",
                         new XAttribute("idAct",numAct+1),
                         new XElement("NomAct", nomAct),

@@ -43,7 +43,6 @@ namespace AppliMars {
         public Planning(Mission mission) {
 
             string cheminXMLPlanning = mission.monCheminPlanningXML;
-
             m = mission;
             XDocument _planningXML = XDocument.Load(cheminXMLPlanning);
             monTableauJournees = new List<Journee>();

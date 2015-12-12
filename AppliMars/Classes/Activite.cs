@@ -47,7 +47,7 @@ namespace AppliMars {
             set { _posY = value; }
         }
 
-        public bool interieurOuExterieur {
+        public bool enExterieur {
             get { return _exterieur; }
             set { _exterieur = value; }
         }
@@ -127,7 +127,7 @@ namespace AppliMars {
 
         public void initAct(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants) {
             monNom = unNom;
-            interieurOuExterieur = boolExt;
+            enExterieur = boolExt;
             maDescription = uneDesc;
             monHeureDebut = HDebut;
             mesMinutesDebut = MDebut;

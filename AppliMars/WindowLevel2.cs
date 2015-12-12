@@ -88,8 +88,8 @@ namespace AppliMars {
 
         public void refreshPage() {
             monAstronaute = maJournee.maMission.mesAstronautes[monIdAstronaute];
-            labelJour.Text = maJournee.monNumero.ToString();
-            this.Text = maFenetrePrec.maMission.monNomMission + " - Jour " + maJournee.monNumero;
+            labelJour.Text = maJournee.monNumero.ToString("D3");
+            this.Text = maFenetrePrec.maMission.monNomMission + " - Jour " + maJournee.monNumero.ToString("D3");
             insertionActivitesListBox();
             labelNomEmploiDuTemps.Text = maJournee.maMission.mesAstronautes[monIdAstronaute].monNom;
         }
@@ -108,7 +108,7 @@ namespace AppliMars {
 
         private void pictureBoxJourSuivant_Click(object sender, EventArgs e) {
             if (maJournee.monNumero != maFenetrePrec.maMission.monPlanning.monTableauJournees.Count) {
-                maJournee = maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero ];
+                maJournee = maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero];
                 refreshPage();
             }
         }
@@ -116,11 +116,6 @@ namespace AppliMars {
         private void buttonAjoutActivite_Click(object sender, EventArgs e) {
             Button but = sender as Button;
             WindowNewAct winNA = new WindowNewAct(maJournee, this);
-            
-            /*
-            WindowLevel3 win3 = new WindowLevel3(maJournee, this);
-            win3.Show();
-            */
             winNA.Show();
             this.Hide();
         }
@@ -151,7 +146,7 @@ namespace AppliMars {
             }
         }
 
-        private void buttonEDTSuiv_Click(object sender, EventArgs e) {
+        private void pictureBoxEDTSuiv_Click(object sender, EventArgs e) {
             monIdAstronaute++;
             if (monIdAstronaute >= maJournee.maMission.mesAstronautes.Count) {
                 monIdAstronaute=0;
@@ -159,7 +154,7 @@ namespace AppliMars {
             refreshPage();
         }
 
-        private void buttonEDTPrec_Click(object sender, EventArgs e) {
+        private void pictureBoxEDTPrec_Click(object sender, EventArgs e) {
             monIdAstronaute--;
             if (monIdAstronaute < 0) {
                 monIdAstronaute = maJournee.maMission.mesAstronautes.Count-1;

@@ -83,14 +83,14 @@
             this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_descrAct.Multiline = true;
             this.tB_descrAct.Name = "tB_descrAct";
-            this.tB_descrAct.Size = new System.Drawing.Size(247, 146);
+            this.tB_descrAct.Size = new System.Drawing.Size(245, 145);
             this.tB_descrAct.TabIndex = 31;
             this.tB_descrAct.TextChanged += new System.EventHandler(this.tB_descrAct_TextChanged);
             // 
             // l_hFin
             // 
             this.l_hFin.AutoSize = true;
-            this.l_hFin.Location = new System.Drawing.Point(172, 127);
+            this.l_hFin.Location = new System.Drawing.Point(169, 127);
             this.l_hFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_hFin.Name = "l_hFin";
             this.l_hFin.Size = new System.Drawing.Size(13, 13);
@@ -326,11 +326,11 @@
             // 
             // b_creerNvAct
             // 
-            this.b_creerNvAct.Location = new System.Drawing.Point(151, 571);
+            this.b_creerNvAct.Location = new System.Drawing.Point(171, 572);
             this.b_creerNvAct.Name = "b_creerNvAct";
-            this.b_creerNvAct.Size = new System.Drawing.Size(172, 34);
+            this.b_creerNvAct.Size = new System.Drawing.Size(126, 48);
             this.b_creerNvAct.TabIndex = 58;
-            this.b_creerNvAct.Text = "Créer";
+            this.b_creerNvAct.Text = "CRÉER";
             this.b_creerNvAct.UseVisualStyleBackColor = true;
             this.b_creerNvAct.Click += new System.EventHandler(this.b_creerNvAct_Click);
             // 
@@ -387,7 +387,7 @@
             this.groupBox1.Controls.Add(this.tB_descrAct);
             this.groupBox1.Location = new System.Drawing.Point(42, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 474);
+            this.groupBox1.Size = new System.Drawing.Size(410, 480);
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             // 
