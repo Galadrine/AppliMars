@@ -17,6 +17,7 @@ namespace AppliMars {
         private WindowLevel2 win2;
         private Activite act;
         private Journee jour;
+        public TreeNode previousSelectedNode = null;
 
         #endregion
 
@@ -72,7 +73,14 @@ namespace AppliMars {
             pb_maps.Location = new Point(0, 0);
             pb_maps.BackColor = Color.Transparent;
             foreach (Astronaute a in monActivite.mesAstronautes) {
+                int indexLB = 0;
                 lB_listePart.Items.Add(a.monNom);
+                foreach (Astronaute ast in maFenetrePrec.maFenetrePrec.maMission.mesAstronautes) {
+                    if (ast.monNom == a.monNom) {
+                        lB_listePart.SetSelected(indexLB, true);
+                    }
+                    indexLB++;
+                }
             }
 
         }
@@ -93,14 +101,21 @@ namespace AppliMars {
                 treeViewCategories.Nodes.Add(SC.monNom);
                 int j = 0;
                 foreach (Categorie A in SC.maSousCategorie) {
+                    if (A.maSousCategorie.Count == 0) {
+                        
+                    }
                     treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
                     if (A.monNom == monActivite.monNom) {
                         treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];
                     }
                     int k = 0;
                     foreach (Categorie a3 in A.maSousCategorie) {
+                        if (a3.maSousCategorie.Count == 0) {
+
+                        }
                         treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
                         if (a3.monNom == monActivite.monNom) {
+                            previousSelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
                             treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
                         }
                         k++;
@@ -226,7 +241,26 @@ namespace AppliMars {
                 //dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
 
+        }
 
+        private void treeViewCategories_BeforeSelect(object sender, TreeViewCancelEventArgs e) {
+            // On vérifie si le noeud du treeView a des enfants, si c'est le cas, c'est un super-catégorie, donc on ne peut pas la sélectionner
+            if (e.Node.Nodes.Count != 0) {
+                e.Cancel = true;
+            }
+        }
+
+        private void treeViewCategories_AfterSelect(object sender, TreeViewEventArgs e) {
+            if (previousSelectedNode != null) {
+                previousSelectedNode.BackColor = treeViewCategories.BackColor;
+                previousSelectedNode.ForeColor = treeViewCategories.ForeColor;
+            }
+        }
+
+        private void treeViewCategories_Validating(object sender, CancelEventArgs e) {
+            treeViewCategories.SelectedNode.BackColor = SystemColors.Highlight;
+            treeViewCategories.SelectedNode.ForeColor = Color.White;
+            previousSelectedNode = treeViewCategories.SelectedNode;
         }
 
         #endregion

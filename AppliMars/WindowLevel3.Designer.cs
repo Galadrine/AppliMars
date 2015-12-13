@@ -158,7 +158,7 @@
             this.buttonRetourJournee.Location = new System.Drawing.Point(12, 12);
             this.buttonRetourJournee.Name = "buttonRetourJournee";
             this.buttonRetourJournee.Size = new System.Drawing.Size(141, 34);
-            this.buttonRetourJournee.TabIndex = 1;
+            this.buttonRetourJournee.TabIndex = 50;
             this.buttonRetourJournee.Text = "Revenir à la journée";
             this.buttonRetourJournee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRetourJournee.UseVisualStyleBackColor = true;
@@ -423,10 +423,14 @@
             // 
             // treeViewCategories
             // 
+            this.treeViewCategories.HideSelection = false;
             this.treeViewCategories.Location = new System.Drawing.Point(15, 45);
             this.treeViewCategories.Name = "treeViewCategories";
             this.treeViewCategories.Size = new System.Drawing.Size(175, 356);
-            this.treeViewCategories.TabIndex = 62;
+            this.treeViewCategories.TabIndex = 1;
+            this.treeViewCategories.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeViewCategories_BeforeSelect);
+            this.treeViewCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewCategories_AfterSelect);
+            this.treeViewCategories.Validating += new System.ComponentModel.CancelEventHandler(this.treeViewCategories_Validating);
             // 
             // groupBox1
             // 
