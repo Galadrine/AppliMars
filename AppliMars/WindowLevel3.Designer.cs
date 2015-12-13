@@ -59,6 +59,8 @@
             this.b_supprimer = new System.Windows.Forms.Button();
             this.labelNumeroJour = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNomLieu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +118,7 @@
             // 
             this.labelCoordonnees.AutoSize = true;
             this.labelCoordonnees.Enabled = false;
-            this.labelCoordonnees.Location = new System.Drawing.Point(11, 442);
+            this.labelCoordonnees.Location = new System.Drawing.Point(13, 476);
             this.labelCoordonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoordonnees.Name = "labelCoordonnees";
             this.labelCoordonnees.Size = new System.Drawing.Size(99, 13);
@@ -127,7 +129,7 @@
             // 
             this.labelLatitude.AutoSize = true;
             this.labelLatitude.Enabled = false;
-            this.labelLatitude.Location = new System.Drawing.Point(240, 444);
+            this.labelLatitude.Location = new System.Drawing.Point(242, 479);
             this.labelLatitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLatitude.Name = "labelLatitude";
             this.labelLatitude.Size = new System.Drawing.Size(41, 13);
@@ -138,7 +140,7 @@
             // 
             this.labelLongitude.AutoSize = true;
             this.labelLongitude.Enabled = false;
-            this.labelLongitude.Location = new System.Drawing.Point(136, 444);
+            this.labelLongitude.Location = new System.Drawing.Point(138, 479);
             this.labelLongitude.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLongitude.Name = "labelLongitude";
             this.labelLongitude.Size = new System.Drawing.Size(50, 13);
@@ -148,7 +150,7 @@
             // tB_yAct
             // 
             this.tB_yAct.Enabled = false;
-            this.tB_yAct.Location = new System.Drawing.Point(289, 441);
+            this.tB_yAct.Location = new System.Drawing.Point(291, 476);
             this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_yAct.Name = "tB_yAct";
             this.tB_yAct.Size = new System.Drawing.Size(35, 20);
@@ -193,7 +195,7 @@
             // cB_localisation
             // 
             this.cB_localisation.AutoSize = true;
-            this.cB_localisation.Location = new System.Drawing.Point(136, 407);
+            this.cB_localisation.Location = new System.Drawing.Point(138, 411);
             this.cB_localisation.Name = "cB_localisation";
             this.cB_localisation.Size = new System.Drawing.Size(119, 17);
             this.cB_localisation.TabIndex = 30;
@@ -204,7 +206,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 409);
+            this.label2.Location = new System.Drawing.Point(44, 411);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
@@ -232,8 +234,10 @@
             this.groupBox1.Controls.Add(this.label_description_activite);
             this.groupBox1.Controls.Add(this.label_heure_debut);
             this.groupBox1.Controls.Add(this.label_heure_fin);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.labelCoordonnees);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxNomLieu);
             this.groupBox1.Controls.Add(this.tB_xAct);
             this.groupBox1.Controls.Add(this.labelLatitude);
             this.groupBox1.Controls.Add(this.labelLongitude);
@@ -241,7 +245,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(42, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 480);
+            this.groupBox1.Size = new System.Drawing.Size(410, 517);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
@@ -373,7 +377,7 @@
             // 
             this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tB_xAct.Enabled = false;
-            this.tB_xAct.Location = new System.Drawing.Point(199, 439);
+            this.tB_xAct.Location = new System.Drawing.Point(201, 474);
             this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_xAct.Name = "tB_xAct";
             this.tB_xAct.Size = new System.Drawing.Size(35, 20);
@@ -393,7 +397,7 @@
             // 
             // b_annuler
             // 
-            this.b_annuler.Location = new System.Drawing.Point(42, 582);
+            this.b_annuler.Location = new System.Drawing.Point(47, 620);
             this.b_annuler.Name = "b_annuler";
             this.b_annuler.Size = new System.Drawing.Size(126, 48);
             this.b_annuler.TabIndex = 32;
@@ -403,7 +407,7 @@
             // 
             // b_supprimer
             // 
-            this.b_supprimer.Location = new System.Drawing.Point(326, 582);
+            this.b_supprimer.Location = new System.Drawing.Point(331, 620);
             this.b_supprimer.Name = "b_supprimer";
             this.b_supprimer.Size = new System.Drawing.Size(126, 48);
             this.b_supprimer.TabIndex = 33;
@@ -425,13 +429,35 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(186, 582);
+            this.button1.Location = new System.Drawing.Point(191, 620);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 48);
             this.button1.TabIndex = 33;
             this.button1.Text = "VALIDER";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.b_valider_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Location = new System.Drawing.Point(44, 444);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Nom du lieu";
+            // 
+            // textBoxNomLieu
+            // 
+            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxNomLieu.Enabled = false;
+            this.textBoxNomLieu.Location = new System.Drawing.Point(138, 444);
+            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNomLieu.Name = "textBoxNomLieu";
+            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
+            this.textBoxNomLieu.TabIndex = 11;
+            this.textBoxNomLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
             // 
             // WindowLevel3
             // 
@@ -500,6 +526,8 @@
         private System.Windows.Forms.ComboBox cB_cate;
         private System.Windows.Forms.Label l_erreurConvert;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxNomLieu;
     }
 }
 

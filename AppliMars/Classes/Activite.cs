@@ -12,7 +12,7 @@ namespace AppliMars {
 
         public static int _nbActTotal = 0;
         public int _idAct;
-        private int _posX, _posY;
+        private Lieu _lieu;
         private List<Astronaute> _participants;
         private int _heuresDebut;
         private int _minutesDebut;
@@ -37,14 +37,9 @@ namespace AppliMars {
             set { _idAct = value; }
         }
 
-        public int maPosX {
-            get { return _posX; }
-            set { _posX = value; }
-        }
-
-        public int maPosY {
-            get { return _posY; }
-            set { _posY = value; }
+        public Lieu monLieu {
+            get { return _lieu; }
+            set { _lieu = value; }
         }
 
         public bool enExterieur {
@@ -93,24 +88,22 @@ namespace AppliMars {
         #region constructeurs
 
         // Création d'une nouvelle instance d'activité (pas dans au chargement du XML)
-        public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, int posX, int posY) {
+        public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, string nomLieu, int posX, int posY) {
             this.initAct(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants);
-            maPosX = posX;
-            maPosY = posY;
+            monLieu = new Lieu(nomLieu, posX, posY);
             monID = _nbActTotal + 1;
             monNbActionTotal++;
         }
 
 
         public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants)
-            : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, 0, 0) { }
+            : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, "Habitat", 0, 0) { }
 
 
         // Création d'une nouvelle instance d'activité au chargement du XML (avec ID prédéfini)
-        public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, int posX, int posY, int idAct) {
+        public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, string nomLieu, int posX, int posY, int idAct) {
             this.initAct(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants);
-            maPosX = posX;
-            maPosY = posY;
+            monLieu = new Lieu(nomLieu, posX, posY);
             monID = idAct;
             if (_nbActTotal < monID)
                 _nbActTotal = monID;
@@ -118,7 +111,7 @@ namespace AppliMars {
 
 
         public Activite(string unNom, bool boolExt, string uneDesc, int HDebut, int MDebut, int HFin, int MFin, List<Astronaute> participants, int idAct)
-            : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, 0, 0, idAct) { }
+            : this(unNom, boolExt, uneDesc, HDebut, MDebut, HFin, MFin, participants, "Habitat", 0, 0, idAct) { }
 
         #endregion
 

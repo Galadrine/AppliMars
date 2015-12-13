@@ -64,9 +64,6 @@ namespace AppliMars {
                             where (string)activite.Parent.FirstAttribute == numero.ToString()
                             select activite;
             var elements = activites.Elements("Activite");
-            int xd = elements.Count();
-            IEnumerable<XElement> elements2 = activites.Descendants("Activites");
-            int xd2 = elements2.Count();
             maMission = mission;
 
             foreach (XElement a in elements) {
@@ -79,12 +76,10 @@ namespace AppliMars {
                 bool ext = bool.Parse(a.Element("BoolExt").Value);
                 string description = a.Element("DescriptionAct").Value;
 
-
+                
                 List<Astronaute> astro = new List<Astronaute>();
 
                 // récupération de la liste des participants
-
-                // var jours = from jour in _planningXML.Descendants("Planning") select jour;
                 var participants = from astronaute in _planningXML.Descendants("Astronaute")
                                    where (string)astronaute.Parent.Parent.Attribute("idAct") == idAct.ToString()
                                    select astronaute;
@@ -97,10 +92,12 @@ namespace AppliMars {
                     // Ajout de l'astronaute dans la liste des participants à l'activité 
                     astro.Add(new Astronaute(nomP));
                 }
+
                 if (ext == true) {
-                    int posX = int.Parse(a.Element("PosX").Value);
-                    int posY = int.Parse(a.Element("PosY").Value);
-                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, posX, posY));
+                    string nomLieu = a.Descendants("Lieu").Elements("nomLieu").First().Value;
+                    int posX = int.Parse(a.Descendants("Lieu").Elements("posX").First().Value);
+                    int posY = int.Parse(a.Descendants("Lieu").Elements("posY").First().Value);
+                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, nomLieu, posX, posY));
                 } else
                      maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
             }

@@ -10,7 +10,7 @@
   <NbAstronautes>2</NbAstronautes>
   <Astronautes>
     <Astronaute>Bob</Astronaute>
-    <Astronaute>Popeye</Astronaute>
+    <Astronaute>Astrid</Astronaute>
   </Astronautes>
   <Activites>
     <Categorie id="Living">
@@ -66,6 +66,11 @@
         <Nom>Sleeping</Nom>
         <Description />
         <ExtBool>false</ExtBool>
+        <Lieu>
+          <nomLieu>Habitat</nomLieu>
+          <posX>00</posX>
+          <posY>00</posY>
+        </Lieu>
       </Activity>
       <Activity>
         <HDebutAct>07</HDebutAct>
@@ -79,6 +84,11 @@
         <Nom>Eating</Nom>
         <Description />
         <ExtBool>false</ExtBool>
+        <Lieu>
+          <nomLieu>Habitat</nomLieu>
+          <posX>00</posX>
+          <posY>00</posY>
+        </Lieu>
       </Activity>
       <Activity>
         <HDebutAct>23</HDebutAct>
@@ -88,6 +98,11 @@
         <Nom>Sleeping</Nom>
         <Description />
         <ExtBool>false</ExtBool>
+        <Lieu>
+          <nomLieu>Habitat</nomLieu>
+          <posX>00</posX>
+          <posY>00</posY>
+        </Lieu>
       </Activity>
     </Timetable>
   </DefaultDay>

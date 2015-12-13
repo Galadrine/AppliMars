@@ -38,8 +38,10 @@ namespace AppliMars {
 
         #region constructeurs
 
-        public Lieu(string unNom, Double unePosX, Double unePosY) {
-
+        public Lieu(string unNom, int unePosX, int unePosY) {
+            monNom = unNom;
+            maPosX = unePosX;
+            maPosY = unePosY;
         }
 
         #endregion

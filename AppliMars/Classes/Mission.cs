@@ -210,7 +210,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Sleeping"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))),
                         
                     new XElement("Activity",
                         new XElement("HDebutAct", "07"),
@@ -223,7 +227,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Eating"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu", "Habitat"),
+                            new XElement("posX", "00"),
+                            new XElement("posY", "00"))),
 
                         /*
                     new XElement("Activity",
@@ -233,7 +241,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Private"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))),
                     new XElement("Activity",
                         new XElement("HDebutAct", "12"),
                         new XElement("MDebutAct", "00"),
@@ -241,7 +253,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Eating"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))),
                     new XElement("Activity",
                         new XElement("HDebutAct", "14"),
                         new XElement("MDebutAct", "00"),
@@ -249,7 +265,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Private"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))),
                     new XElement("Activity",
                         new XElement("HDebutAct", "19"),
                         new XElement("MDebutAct", "00"),
@@ -257,7 +277,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Eating"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))),
                     new XElement("Activity",
                         new XElement("HDebutAct", "21"),
                         new XElement("MDebutAct", "00"),
@@ -265,7 +289,11 @@ namespace AppliMars
                         new XElement("MFinAct", "00"),
                         new XElement("Nom", "Private"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")),
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))),
                          */
                     new XElement("Activity",
                         new XElement("HDebutAct", "23"),
@@ -274,7 +302,11 @@ namespace AppliMars
                         new XElement("MFinAct", "40"),
                         new XElement("Nom", "Sleeping"),
                         new XElement("Description"),
-                        new XElement("ExtBool", "false")))));
+                        new XElement("ExtBool", "false"),
+                        new XElement("Lieu",
+                            new XElement("nomLieu","Habitat"),
+                            new XElement("posX","00"),
+                            new XElement("posY","00"))))));
                 _generalXML.Save(_cheminGeneralXML);
             #endregion
 
@@ -351,6 +383,10 @@ namespace AppliMars
                     string nomAct = a.Element("Nom").Value;
                     string extBoolAct = a.Element("ExtBool").Value;
                     string descriptionAct = a.Element("Description").Value;
+                    //////////////////////////////////////////////////
+                    string nomLieu = a.Element("Lieu").Descendants("nomLieu").First().Value;
+                    string posX = a.Element("Lieu").Descendants("posX").First().Value;
+                    string posY = a.Element("Lieu").Descendants("posY").First().Value;
 
 
                     // Ajout de l'activité par défaut dans le jour que l'on crée dans le planning
@@ -359,7 +395,6 @@ namespace AppliMars
                     {
                         parts.Add(astro);
                     }
-                    var edt5 = _planningXML.Descendants("Jour").First(); // A QUOI CA SERT CA ?
                     var edt = (from jour in _planningXML.Descendants("Jour") where (string)jour.Attribute("id") == i.ToString() select jour.Element("Activites")).FirstOrDefault();
                     edt.Add(new XElement("Activite",
                         new XAttribute("idAct",numAct+1),
@@ -369,6 +404,10 @@ namespace AppliMars
                         new XElement("HFinAct", heureFinAct),
                         new XElement("MFinAct", minFinAct),
                         new XElement("BoolExt", extBoolAct),
+                        new XElement("Lieu",
+                            new XElement("nomLieu",nomLieu),
+                            new XElement("posX",posX),
+                            new XElement("posY",posY)),
                         new XElement("DescriptionAct", descriptionAct),
                         parts));
 

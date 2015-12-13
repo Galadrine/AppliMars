@@ -147,6 +147,8 @@ namespace AppliMars
                     flag = false;
                 }
 
+                string nomLieuNvAct = textBoxNomLieu.Text;
+
                 // Vérification des chevauchements avec d'autres activités 
                 foreach (Activite a in _jour.maListeActivites) {
                     if (hDebNvAct <= a.monHeureFin) {
@@ -157,7 +159,7 @@ namespace AppliMars
                 }
 
                 // Si tout est ok flag == true, on peut créer la nouvelle activité 
-                _jour.maListeActivites.Add(new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, xNvAct, yNvAct));
+                _jour.maListeActivites.Add(new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, nomLieuNvAct, xNvAct, yNvAct));
             }
             MessageBox.Show("Impossible de créer la nouvelle activité");
         }

@@ -84,8 +84,9 @@ namespace AppliMars {
             tB_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
             tB_HFinAct.Text = monActivite.monHeureFin.ToString();
             tB_MFinAct.Text = monActivite.mesMinutesFin.ToString();
-            tB_xAct.Text = monActivite.maPosX.ToString();
-            tB_yAct.Text = monActivite.maPosY.ToString();
+            textBoxNomLieu.Text = monActivite.monLieu.monNom.ToString();
+            tB_xAct.Text = monActivite.monLieu.maPosX.ToString();
+            tB_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
 
             
@@ -93,22 +94,19 @@ namespace AppliMars {
                 lB_listePart.Items.Add(a.monNom);
             }
 
-            Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
             Graphics graphics = this.pictureBoxMap.CreateGraphics();
-            Point p0 = new Point(0, 0);
-            graphics.DrawImage(imageSource, p0);
 
             // Affichage de la position sur la map
-            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
             Point p;
+            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
             if (monActivite.enExterieur == true) {
-                p = new Point(monActivite.maPosX / 3, monActivite.maPosY / 3);
+                pictureBoxMap.Enabled = true;
+                p = new Point(monActivite.monLieu.maPosX / 3, monActivite.monLieu.maPosY / 3);
                 tB_xAct.Enabled = true;
                 tB_yAct.Enabled = true;
-                pictureBoxMap.Enabled = true;
             } else {
-                p = new Point(70/3, 1000/3);
                 pictureBoxMap.Enabled = true;
+                p = new Point(233, 333);
 
             }
             graphics.DrawImage(maps, p);
@@ -119,6 +117,11 @@ namespace AppliMars {
             "p.X.ToString() + p.Y.ToString()",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
+
+            Graphics agraphics = this.pictureBoxMap.CreateGraphics();
+            Image mapsa = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+            Point pa = new Point(233, 333);
+            agraphics.DrawImage(mapsa, pa);
         }
 
 

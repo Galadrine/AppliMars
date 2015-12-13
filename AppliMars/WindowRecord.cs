@@ -49,7 +49,7 @@ namespace AppliMars {
             _jour = jour;
             this.Text = "Compte-rendu du jour "+(jour.monNumero).ToString();
             labelCompteRendu.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
-
+            tB_CR.Text = _jour.monCompteRendu;
             // Vérifier si le jour est passé ou pas
             if (_jour.monNumero < _jour.maMission.monJourJ)
             {
@@ -70,7 +70,6 @@ namespace AppliMars {
                 int i1 = 1000 - i0;
                 labelCarRest.Text = s1 + i1.ToString() + s2;
             }
-            tB_CR.Text = _jour.monCompteRendu;
             
         }
 

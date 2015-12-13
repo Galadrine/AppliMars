@@ -62,6 +62,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonRetourJournee = new System.Windows.Forms.Button();
             this.labelNumeroJour = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNomLieu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +162,7 @@
             // l_coord
             // 
             this.l_coord.AutoSize = true;
-            this.l_coord.Location = new System.Drawing.Point(12, 442);
+            this.l_coord.Location = new System.Drawing.Point(13, 484);
             this.l_coord.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_coord.Name = "l_coord";
             this.l_coord.Size = new System.Drawing.Size(99, 13);
@@ -181,7 +183,7 @@
             // tB_xAct
             // 
             this.tB_xAct.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tB_xAct.Location = new System.Drawing.Point(199, 439);
+            this.tB_xAct.Location = new System.Drawing.Point(200, 481);
             this.tB_xAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_xAct.Name = "tB_xAct";
             this.tB_xAct.Size = new System.Drawing.Size(35, 20);
@@ -191,7 +193,7 @@
             // l_y
             // 
             this.l_y.AutoSize = true;
-            this.l_y.Location = new System.Drawing.Point(240, 444);
+            this.l_y.Location = new System.Drawing.Point(241, 486);
             this.l_y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_y.Name = "l_y";
             this.l_y.Size = new System.Drawing.Size(41, 13);
@@ -202,7 +204,7 @@
             // l_x
             // 
             this.l_x.AutoSize = true;
-            this.l_x.Location = new System.Drawing.Point(134, 444);
+            this.l_x.Location = new System.Drawing.Point(135, 486);
             this.l_x.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_x.Name = "l_x";
             this.l_x.Size = new System.Drawing.Size(50, 13);
@@ -212,7 +214,7 @@
             // 
             // tB_yAct
             // 
-            this.tB_yAct.Location = new System.Drawing.Point(289, 441);
+            this.tB_yAct.Location = new System.Drawing.Point(290, 483);
             this.tB_yAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_yAct.Name = "tB_yAct";
             this.tB_yAct.Size = new System.Drawing.Size(35, 20);
@@ -326,7 +328,7 @@
             // 
             // b_creerNvAct
             // 
-            this.b_creerNvAct.Location = new System.Drawing.Point(171, 572);
+            this.b_creerNvAct.Location = new System.Drawing.Point(171, 615);
             this.b_creerNvAct.Name = "b_creerNvAct";
             this.b_creerNvAct.Size = new System.Drawing.Size(126, 48);
             this.b_creerNvAct.TabIndex = 58;
@@ -359,6 +361,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBoxNomLieu);
             this.groupBox1.Controls.Add(this.l_cate);
             this.groupBox1.Controls.Add(this.l_typeAct);
             this.groupBox1.Controls.Add(this.l_erreurConvert);
@@ -387,7 +391,7 @@
             this.groupBox1.Controls.Add(this.tB_descrAct);
             this.groupBox1.Location = new System.Drawing.Point(42, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 480);
+            this.groupBox1.Size = new System.Drawing.Size(410, 538);
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             // 
@@ -415,6 +419,27 @@
             this.labelNumeroJour.TabIndex = 63;
             this.labelNumeroJour.Text = "000";
             this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Location = new System.Drawing.Point(48, 448);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Nom du lieu";
+            // 
+            // textBoxNomLieu
+            // 
+            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxNomLieu.Enabled = false;
+            this.textBoxNomLieu.Location = new System.Drawing.Point(142, 448);
+            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNomLieu.Name = "textBoxNomLieu";
+            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
+            this.textBoxNomLieu.TabIndex = 61;
             // 
             // WindowNewAct
             // 
@@ -478,5 +503,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonRetourJournee;
         private System.Windows.Forms.Label labelNumeroJour;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxNomLieu;
     }
 }
