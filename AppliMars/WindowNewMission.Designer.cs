@@ -41,10 +41,10 @@
             this.l_dateDebNvMission = new System.Windows.Forms.Label();
             this.l_nomNvMission = new System.Windows.Forms.Label();
             this.b_creerNvMission = new System.Windows.Forms.Button();
-            this.tB_dureeNvMission = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRetourChoixMission = new System.Windows.Forms.Button();
+            this.cbDureeMission = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(223, 117);
+            this.label6.Location = new System.Drawing.Point(194, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 22;
@@ -154,20 +154,12 @@
             this.b_creerNvMission.UseVisualStyleBackColor = true;
             this.b_creerNvMission.Click += new System.EventHandler(this.b_creerNvMission_Click);
             // 
-            // tB_dureeNvMission
-            // 
-            this.tB_dureeNvMission.Location = new System.Drawing.Point(108, 114);
-            this.tB_dureeNvMission.Name = "tB_dureeNvMission";
-            this.tB_dureeNvMission.Size = new System.Drawing.Size(100, 20);
-            this.tB_dureeNvMission.TabIndex = 26;
-            this.tB_dureeNvMission.TextChanged += new System.EventHandler(this.tB_dureeNvMission_TextChanged);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDureeMission);
             this.groupBox1.Controls.Add(this.l_nomNvMission);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.l_dateDebNvMission);
-            this.groupBox1.Controls.Add(this.tB_dureeNvMission);
             this.groupBox1.Controls.Add(this.lB_ListeAstroNvMission);
             this.groupBox1.Controls.Add(this.b_creerNvMission);
             this.groupBox1.Controls.Add(this.label5);
@@ -204,6 +196,26 @@
             this.buttonRetourChoixMission.UseVisualStyleBackColor = true;
             this.buttonRetourChoixMission.Click += new System.EventHandler(this.buttonRetourChoixMission_Click);
             // 
+            // cbDureeMission
+            // 
+            this.cbDureeMission.FormattingEnabled = true;
+            this.cbDureeMission.Items.AddRange(new object[] {
+            "500",
+            "450",
+            "400",
+            "350",
+            "300",
+            "250",
+            "200",
+            "150",
+            "100",
+            "50"});
+            this.cbDureeMission.Location = new System.Drawing.Point(108, 114);
+            this.cbDureeMission.Name = "cbDureeMission";
+            this.cbDureeMission.Size = new System.Drawing.Size(71, 21);
+            this.cbDureeMission.TabIndex = 27;
+            this.cbDureeMission.Text = "500";
+            // 
             // WindowNewMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,9 +250,9 @@
         private System.Windows.Forms.Label l_dateDebNvMission;
         private System.Windows.Forms.Label l_nomNvMission;
         private System.Windows.Forms.Button b_creerNvMission;
-        private System.Windows.Forms.TextBox tB_dureeNvMission;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonRetourChoixMission;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbDureeMission;
     }
 }

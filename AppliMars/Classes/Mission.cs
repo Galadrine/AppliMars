@@ -153,7 +153,7 @@ namespace AppliMars
                         new XAttribute("id", "Exploration"),
                         new XElement("Activite", "Space suit"),
                         new XElement("Activite", "Vehicle")),
-                    new XElement("Activite", "Briefind"),
+                    new XElement("Activite", "Briefing"),
                     new XElement("Activite", "Debriefing"), 
                     new XElement("Activite", "Inside Experiment"),
                     new XElement("Activite", "Outside experiment")),
@@ -182,10 +182,65 @@ namespace AppliMars
                     new XAttribute("id", "Other"),
                     new XElement("Activite", "Emergency"))));
             _generalXML.Save(_cheminGeneralXML);
+          
+            
+            // Les activités sont créés à la main
+            Categorie Living =  new Categorie("Living");
+            Living.ajoutSousCategorie(new Categorie("Eating"));
+            Living.ajoutSousCategorie(new Categorie("Sleeping"));
+            Living.ajoutSousCategorie(new Categorie("Entertrainment"));
+            Living.ajoutSousCategorie(new Categorie("Private"));
+            Living.ajoutSousCategorie(new Categorie("Health controle"));
+            Living.ajoutSousCategorie(new Categorie("Medical act"));
+            maListeCategories.Add(Living);
+
+            Categorie Science =  new Categorie("Science");
+            Categorie Exploration =  new Categorie("Exploration");
+            Exploration.ajoutSousCategorie(new Categorie("Space suit"));
+            Exploration.ajoutSousCategorie(new Categorie("Vehicle"));
+            Science.ajoutSousCategorie(Exploration);
+            Science.ajoutSousCategorie(new Categorie("Briefing"));
+            Science.ajoutSousCategorie(new Categorie("Debriefing"));
+            Science.ajoutSousCategorie(new Categorie("Inside Experiment"));
+            Science.ajoutSousCategorie(new Categorie("Outside experiment"));
+            maListeCategories.Add(Science);
+
+            Categorie Maintenance =  new Categorie("Maintenance");
+            Maintenance.ajoutSousCategorie(new Categorie("Cleaning"));
+            Maintenance.ajoutSousCategorie(new Categorie("LSS air system"));
+            Maintenance.ajoutSousCategorie(new Categorie("LSS water system"));
+            Maintenance.ajoutSousCategorie(new Categorie("LSS food system"));
+            Maintenance.ajoutSousCategorie(new Categorie("Power systems"));
+            Maintenance.ajoutSousCategorie(new Categorie("Space"));
+            Maintenance.ajoutSousCategorie(new Categorie("Other"));
+            maListeCategories.Add(Maintenance);
+
+            Categorie Communication =  new Categorie("Communication");
+            Maintenance.ajoutSousCategorie(new Categorie("Sending message"));
+            Maintenance.ajoutSousCategorie(new Categorie("Receiving message"));
+           maListeCategories.Add(Communication);
+
+            Categorie Repair =  new Categorie("Repair");
+            Repair.ajoutSousCategorie(new Categorie("LSS"));
+            Repair.ajoutSousCategorie(new Categorie("Power systems"));
+            Repair.ajoutSousCategorie(new Categorie("Communication systems"));
+            Repair.ajoutSousCategorie(new Categorie("Habitat"));
+            Repair.ajoutSousCategorie(new Categorie("Space suit"));
+            Repair.ajoutSousCategorie(new Categorie("Vehicle"));
+            maListeCategories.Add(Repair);
+
+            Categorie Other =  new Categorie("Other");
+            Repair.ajoutSousCategorie(new Categorie("Emergency"));
+            maListeCategories.Add(Other);
+
+            
             #endregion
 
+            // SI on a du temps, on les récupèrera et on les créera dans l'instance directement ici, 
+            // au lieu de faire le pavé au dessus
+
+            /*
             // Création des instances des categories
-            //var categories = from cate in _generalXML.Descendants("Categorie") select cate;
             foreach (XElement cate in _generalXML.Element("Mission").Element("Activites").Elements("Categorie"))
             {
                 string nomNvCate = cate.Attribute("id").ToString();
@@ -197,6 +252,7 @@ namespace AppliMars
                 }
                 _listeCate.Add(new Categorie(nomNvCate, listeActNvCate));
             }
+            */
 
             // Création de la liste des activités par défaut d'une journée dans le XML
 
@@ -333,6 +389,57 @@ namespace AppliMars
                 string nomAstronaute = a.Value;
                 mesAstronautes.Add(new Astronaute(nomAstronaute));
             }
+
+            maListeCategories = new List<Categorie>();
+
+            // Les activités sont créés à la main
+            Categorie Living = new Categorie("Living");
+            Living.ajoutSousCategorie(new Categorie("Eating"));
+            Living.ajoutSousCategorie(new Categorie("Sleeping"));
+            Living.ajoutSousCategorie(new Categorie("Entertrainment"));
+            Living.ajoutSousCategorie(new Categorie("Private"));
+            Living.ajoutSousCategorie(new Categorie("Health controle"));
+            Living.ajoutSousCategorie(new Categorie("Medical act"));
+            maListeCategories.Add(Living);
+
+            Categorie Science = new Categorie("Science");
+            Categorie Exploration = new Categorie("Exploration");
+            Exploration.ajoutSousCategorie(new Categorie("Space suit"));
+            Exploration.ajoutSousCategorie(new Categorie("Vehicle"));
+            Science.ajoutSousCategorie(Exploration);
+            Science.ajoutSousCategorie(new Categorie("Briefing"));
+            Science.ajoutSousCategorie(new Categorie("Debriefing"));
+            Science.ajoutSousCategorie(new Categorie("Inside Experiment"));
+            Science.ajoutSousCategorie(new Categorie("Outside experiment"));
+            maListeCategories.Add(Science);
+
+            Categorie Maintenance = new Categorie("Maintenance");
+            Maintenance.ajoutSousCategorie(new Categorie("Cleaning"));
+            Maintenance.ajoutSousCategorie(new Categorie("LSS air system"));
+            Maintenance.ajoutSousCategorie(new Categorie("LSS water system"));
+            Maintenance.ajoutSousCategorie(new Categorie("LSS food system"));
+            Maintenance.ajoutSousCategorie(new Categorie("Power systems"));
+            Maintenance.ajoutSousCategorie(new Categorie("Space"));
+            Maintenance.ajoutSousCategorie(new Categorie("Other"));
+            maListeCategories.Add(Maintenance);
+
+            Categorie Communication = new Categorie("Communication");
+            Maintenance.ajoutSousCategorie(new Categorie("Sending message"));
+            Maintenance.ajoutSousCategorie(new Categorie("Receiving message"));
+            maListeCategories.Add(Communication);
+
+            Categorie Repair = new Categorie("Repair");
+            Repair.ajoutSousCategorie(new Categorie("LSS"));
+            Repair.ajoutSousCategorie(new Categorie("Power systems"));
+            Repair.ajoutSousCategorie(new Categorie("Communication systems"));
+            Repair.ajoutSousCategorie(new Categorie("Habitat"));
+            Repair.ajoutSousCategorie(new Categorie("Space suit"));
+            Repair.ajoutSousCategorie(new Categorie("Vehicle"));
+            maListeCategories.Add(Repair);
+
+            Categorie Other = new Categorie("Other");
+            Repair.ajoutSousCategorie(new Categorie("Emergency"));
+            maListeCategories.Add(Other);
 
             // MAJ du jour J
             _jourJ = calculJourJ();

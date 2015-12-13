@@ -7,6 +7,8 @@ namespace AppliMars {
 
     public class Categorie {
 
+
+        /*
         #region variables
 
         private string _nomCategorie;
@@ -44,14 +46,57 @@ namespace AppliMars {
 
         #region constructeurs
 
-        public Categorie(string unNom, List<string> listeActivites) 
-        {
+        public Categorie(string unNom, List<string> listeActivites) {
             _nomCategorie = unNom;
             _listeActivite = listeActivites;
         }
 
         #endregion
+        */
 
+
+        
+        #region variables
+
+        private string _nomCategorie;
+        private List<Categorie> _sousCategorie = new List<Categorie>();
+
+        #endregion
+
+
+        #region accesseurs
+
+        public List<Categorie> maSousCategorie {
+            get { return _sousCategorie; }
+            set { _sousCategorie = value; }
+        }
+
+        public string monNom {
+            get { return _nomCategorie; }
+            set { _nomCategorie = value; }
+        }
+
+
+        #endregion
+
+
+        #region constructeurs
+
+        public Categorie(string unNom) {
+            _nomCategorie = unNom;
+        }
+
+        #endregion
+
+
+        #region méthodes
+
+        public void ajoutSousCategorie(Categorie sc) {
+            maSousCategorie.Add(sc);
+        }
+
+        #endregion
+        
 
 
     }

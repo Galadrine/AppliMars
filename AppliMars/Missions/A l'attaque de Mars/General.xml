@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mission>
-  <NomMission>Mars Attack</NomMission>
+  <NomMission>A l'attaque de Mars</NomMission>
   <DateDebut>2015-12-01T00:00:00</DateDebut>
   <Duree>500</Duree>
-  <General>..//..//Missions//Mars Attack/General.xml</General>
-  <Planning>..//..//Missions//Mars Attack/Planning.xml</Planning>
+  <General>..//..//Missions//A l'attaque de Mars/General.xml</General>
+  <Planning>..//..//Missions//A l'attaque de Mars/Planning.xml</Planning>
   <Map />
   <Home />
   <NbAstronautes>2</NbAstronautes>
   <Astronautes>
-    <Astronaute>Bob</Astronaute>
-    <Astronaute>Astrid</Astronaute>
+    <Astronaute>Jefster</Astronaute>
+    <Astronaute>Jack</Astronaute>
   </Astronautes>
   <Activites>
     <Categorie id="Living">
@@ -26,7 +26,7 @@
         <Activite>Space suit</Activite>
         <Activite>Vehicle</Activite>
       </Categorie>
-      <Activite>Briefind</Activite>
+      <Activite>Briefing</Activite>
       <Activite>Debriefing</Activite>
       <Activite>Inside Experiment</Activite>
       <Activite>Outside experiment</Activite>

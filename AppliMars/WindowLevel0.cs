@@ -60,9 +60,7 @@ namespace AppliMars {
 
                 stringListBox = A.Name;
                 listBoxMissions.Items.Add(stringListBox);
-
-                Mission toInsert = new Mission(defautMissionsDir + A.Name + "//General.xml");
-                maListeMissions.Add(toInsert);
+                maListeMissions.Add(new Mission(defautMissionsDir + A.Name + "//General.xml"));
 
             }
             if (subdirs.Length>0) {

@@ -70,9 +70,9 @@
             // 
             // buttonGoToLevel3
             // 
-            this.buttonGoToLevel3.Location = new System.Drawing.Point(102, 271);
+            this.buttonGoToLevel3.Location = new System.Drawing.Point(89, 271);
             this.buttonGoToLevel3.Name = "buttonGoToLevel3";
-            this.buttonGoToLevel3.Size = new System.Drawing.Size(162, 30);
+            this.buttonGoToLevel3.Size = new System.Drawing.Size(176, 40);
             this.buttonGoToLevel3.TabIndex = 8;
             this.buttonGoToLevel3.Text = "Modifier l\'activité sélectionnée";
             this.buttonGoToLevel3.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             // 
             this.labelNomEmploiDuTemps.AutoSize = true;
             this.labelNomEmploiDuTemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(457, 208);
+            this.labelNomEmploiDuTemps.Location = new System.Drawing.Point(460, 208);
             this.labelNomEmploiDuTemps.Name = "labelNomEmploiDuTemps";
             this.labelNomEmploiDuTemps.Size = new System.Drawing.Size(44, 20);
             this.labelNomEmploiDuTemps.TabIndex = 14;
@@ -175,7 +175,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(310, 208);
+            this.label1.Location = new System.Drawing.Point(313, 208);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 20);
             this.label1.TabIndex = 14;

@@ -86,7 +86,7 @@ namespace AppliMars
             // Récupération des données
             string nomMission = tB_nomNvMission.Text;
             DateTime dateDebut = dT_DateDebNvMission.Value.Date;
-            int dureeMission = int.Parse(tB_dureeNvMission.Text);
+            int dureeMission = int.Parse(cbDureeMission.Text);
             List<string> astronautes = maListeAstronautes;
             Mission _mission = new Mission(nomMission, dateDebut, dureeMission, astronautes, cheminPourFichiersXML);
             WindowLevel1 win1 = new WindowLevel1(_mission, maFenetrePrec);
@@ -96,6 +96,7 @@ namespace AppliMars
             win1.Show();
         }
 
+        /*
         private void tB_dureeNvMission_TextChanged(object sender, EventArgs e)
         {
             int dureeNvMission;
@@ -111,6 +112,7 @@ namespace AppliMars
                 tB_dureeNvMission.ForeColor = Color.Black;
             }
         }
+        */
 
         private void buttonRetourChoixMission_Click(object sender, EventArgs e) {
             this.Close();
