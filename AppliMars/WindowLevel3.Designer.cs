@@ -29,10 +29,7 @@
             this.b_annuler = new System.Windows.Forms.Button();
             this.b_supprimer = new System.Windows.Forms.Button();
             this.labelNumeroJour = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pb_maps = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
-            this.buttonRetourJournee = new System.Windows.Forms.Button();
+            this.b_valider = new System.Windows.Forms.Button();
             this.labelLongitude = new System.Windows.Forms.Label();
             this.labelLatitude = new System.Windows.Forms.Label();
             this.textBoxNomLieu = new System.Windows.Forms.TextBox();
@@ -60,11 +57,14 @@
             this.numUpDown_yAct = new System.Windows.Forms.NumericUpDown();
             this.treeViewCategories = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_maps)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
+            this.pb_maps = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
+            this.buttonRetourJournee = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_maps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.SuspendLayout();
             // 
             // l_numJour
@@ -120,49 +120,15 @@
             this.labelNumeroJour.Text = "000";
             this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // b_valider
             // 
-            this.button1.Location = new System.Drawing.Point(252, 534);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 48);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "VALIDER";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.b_valider_Click);
-            // 
-            // pb_maps
-            // 
-            this.pb_maps.BackColor = System.Drawing.Color.Transparent;
-            this.pb_maps.Image = global::AppliMars.Properties.Resources.maps;
-            this.pb_maps.Location = new System.Drawing.Point(864, 116);
-            this.pb_maps.Name = "pb_maps";
-            this.pb_maps.Size = new System.Drawing.Size(20, 34);
-            this.pb_maps.TabIndex = 34;
-            this.pb_maps.TabStop = false;
-            // 
-            // pictureBoxMap
-            // 
-            this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
-            this.pictureBoxMap.Location = new System.Drawing.Point(699, 21);
-            this.pictureBoxMap.Name = "pictureBoxMap";
-            this.pictureBoxMap.Size = new System.Drawing.Size(365, 684);
-            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMap.TabIndex = 29;
-            this.pictureBoxMap.TabStop = false;
-            this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
-            // 
-            // buttonRetourJournee
-            // 
-            this.buttonRetourJournee.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourJournee.Image")));
-            this.buttonRetourJournee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRetourJournee.Location = new System.Drawing.Point(12, 12);
-            this.buttonRetourJournee.Name = "buttonRetourJournee";
-            this.buttonRetourJournee.Size = new System.Drawing.Size(141, 34);
-            this.buttonRetourJournee.TabIndex = 50;
-            this.buttonRetourJournee.Text = "Revenir à la journée";
-            this.buttonRetourJournee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRetourJournee.UseVisualStyleBackColor = true;
-            this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
+            this.b_valider.Location = new System.Drawing.Point(252, 534);
+            this.b_valider.Name = "b_valider";
+            this.b_valider.Size = new System.Drawing.Size(126, 48);
+            this.b_valider.TabIndex = 33;
+            this.b_valider.Text = "VALIDER";
+            this.b_valider.UseVisualStyleBackColor = true;
+            this.b_valider.Click += new System.EventHandler(this.b_valider_Click);
             // 
             // labelLongitude
             // 
@@ -466,6 +432,41 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // pb_maps
+            // 
+            this.pb_maps.BackColor = System.Drawing.Color.Transparent;
+            this.pb_maps.Image = global::AppliMars.Properties.Resources.maps;
+            this.pb_maps.Location = new System.Drawing.Point(904, 174);
+            this.pb_maps.Name = "pb_maps";
+            this.pb_maps.Size = new System.Drawing.Size(20, 34);
+            this.pb_maps.TabIndex = 34;
+            this.pb_maps.TabStop = false;
+            // 
+            // pictureBoxMap
+            // 
+            this.pictureBoxMap.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
+            this.pictureBoxMap.Location = new System.Drawing.Point(699, 21);
+            this.pictureBoxMap.Name = "pictureBoxMap";
+            this.pictureBoxMap.Size = new System.Drawing.Size(365, 684);
+            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMap.TabIndex = 29;
+            this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
+            // 
+            // buttonRetourJournee
+            // 
+            this.buttonRetourJournee.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourJournee.Image")));
+            this.buttonRetourJournee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRetourJournee.Location = new System.Drawing.Point(12, 12);
+            this.buttonRetourJournee.Name = "buttonRetourJournee";
+            this.buttonRetourJournee.Size = new System.Drawing.Size(141, 34);
+            this.buttonRetourJournee.TabIndex = 50;
+            this.buttonRetourJournee.Text = "Revenir à la journée";
+            this.buttonRetourJournee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRetourJournee.UseVisualStyleBackColor = true;
+            this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +474,7 @@
             this.ClientSize = new System.Drawing.Size(1097, 731);
             this.ControlBox = false;
             this.Controls.Add(this.pb_maps);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.b_valider);
             this.Controls.Add(this.b_supprimer);
             this.Controls.Add(this.b_annuler);
             this.Controls.Add(this.groupBox1);
@@ -489,13 +490,13 @@
             this.Name = "WindowLevel3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modification d\'une mission";
-            this.Shown += new System.EventHandler(this.WindowLevel3_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_maps)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
+            this.Load += new System.EventHandler(this.WindowLevel3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_maps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +511,7 @@
         private System.Windows.Forms.Button b_annuler;
         private System.Windows.Forms.Button b_supprimer;
         private System.Windows.Forms.Label labelNumeroJour;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button b_valider;
         private System.Windows.Forms.PictureBox pb_maps;
         private System.Windows.Forms.Label labelLongitude;
         private System.Windows.Forms.Label labelLatitude;

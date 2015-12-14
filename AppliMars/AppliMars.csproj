@@ -47,6 +47,9 @@
     <Compile Include="Classes\Activite.cs" />
     <Compile Include="Classes\Astronaute.cs" />
     <Compile Include="Classes\Categorie.cs" />
+    <Compile Include="Classes\DrawingArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Journee.cs" />
     <Compile Include="Classes\Lieu.cs" />
     <Compile Include="Classes\Map.cs" />

@@ -69,13 +69,21 @@ namespace AppliMars {
             numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
             numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
-            pictureBoxMap.Controls.Add(pb_maps);
-            pb_maps.Location = new Point(0, 0);
-            pb_maps.BackColor = Color.Transparent;
-            foreach (Astronaute a in monActivite.mesAstronautes) {
+            //this.Controls.Add(this.pictureBoxMap);
+            //pictureBoxMap.Controls.AddRange(new Control[]{this.pb_maps});
+            //pictureBoxMap.Controls.Add(pb_maps);
+            //pb_maps.Parent = pictureBoxMap;
+            /*
+            ((Bitmap)this.pb_maps.Image).MakeTransparent(((Bitmap)this.pb_maps.Image).GetPixel(1, 1));
+            this.pb_maps.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pb_maps.BackColor = System.Drawing.Color.Transparent;
+            */
+            //((Bitmap)pb_maps.Image).MakeTransparent(((Bitmap)pb_maps.Image).GetPixel(0, pb_maps.Image.Size.Height - 1));
+
+            foreach (Astronaute a in maFenetrePrec.maFenetrePrec.maMission.mesAstronautes) {
                 int indexLB = 0;
                 lB_listePart.Items.Add(a.monNom);
-                foreach (Astronaute ast in maFenetrePrec.maFenetrePrec.maMission.mesAstronautes) {
+                foreach (Astronaute ast in monActivite.mesAstronautes) {
                     if (ast.monNom == a.monNom) {
                         lB_listePart.SetSelected(indexLB, true);
                     }
@@ -96,6 +104,7 @@ namespace AppliMars {
         }
         
         public void affichage_treeView(){
+
             int i = 0;
             foreach (Categorie SC in maFenetrePrec.maFenetrePrec.maMission.maListeCategories) {
                 treeViewCategories.Nodes.Add(SC.monNom);
@@ -126,6 +135,28 @@ namespace AppliMars {
             }
         }
         
+        public static System.Drawing.Drawing2D.GraphicsPath Transparent(Image im)  
+        {  
+            int x;  
+            int y;  
+            Bitmap bmp = new Bitmap(im);  
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();  
+            Color mask = bmp.GetPixel(0, 0);  
+  
+            for (x = 0; x <= bmp.Width - 1; x++)  
+            {  
+                for (y = 0; y <= bmp.Height - 1; y++)  
+                {  
+                    if (!bmp.GetPixel(x, y).Equals(mask))  
+                    {  
+                        gp.AddRectangle(new Rectangle(x, y, 1, 1));  
+                    }  
+                }  
+            }  
+            bmp.Dispose();  
+            return gp;  
+  
+        }  
         #endregion
 
 
@@ -137,6 +168,14 @@ namespace AppliMars {
         }
 
         private void pictureBoxMap_Click(object sender, EventArgs e) {
+            
+            MouseEventArgs me = (MouseEventArgs)e;
+            Point coordinates = convertionCoordonneesImageVersXML(me.Location);
+            numUpDown_xAct.Text = (coordinates.X * 3).ToString();
+            numUpDown_yAct.Text = (coordinates.Y * 3).ToString();
+            pb_maps.Location = new Point(689 + me.Location.X, 21 - 34 + me.Location.Y);
+            
+            /*
             Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
             Graphics graphics = this.pictureBoxMap.CreateGraphics();
             Point p0 = new Point(0, 0);
@@ -152,10 +191,12 @@ namespace AppliMars {
             Point p = new Point(me.Location.X-10, me.Location.Y-34);
             graphics.DrawImage(maps, p);
 
-
+            */
+            /*
             DialogResult dlgRes = DialogResult.No;
             //dlgRes = MessageBox.Show(numUpDown_xAct.Value.ToString() + " - " + numUpDown_yAct.Value.ToString(), "numUpDown_xAct.Value.ToString() - numUpDown_yAct.Value.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            */
         }
 
         private void TextBoxAbscisse_KeyPress(object sender, KeyPressEventArgs e) {
@@ -191,6 +232,13 @@ namespace AppliMars {
 
             if (dlgRes == DialogResult.Yes) {
                 // SupprimerActivite();
+                string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
+                XDocument doc = XDocument.Load(fileName);
+                var nodes = doc.Element("Planning").Elements("Jour").Where(elem => (string)elem.Attribute("id") == maJournee.monNumero.ToString()).ToList();
+                Console.WriteLine();
+                //foreach (var node in nodes)
+                //    node.Remove();
+
             }
 
         }
@@ -203,44 +251,54 @@ namespace AppliMars {
         private void b_valider_Click(object sender, EventArgs e) {
             string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
             XDocument _generalXML = XDocument.Load(fileName);
-            var edt = (from jour in _generalXML.Descendants("Jour") where (string)jour.Attribute("id") == maJournee.monNumero.ToString() select jour.Element("Activites")).FirstOrDefault();
-            var doc = XDocument.Load(fileName);
-            XElement target = doc
-                .Element("Planning")
-                .Elements("Jour")
-                .Where(elem => (string)elem.Attribute("id") == maJournee.monNumero.ToString())
-                .First();
-            //target.Element("CRJour").Value = tB_CR.Text;
-            doc.Save(fileName);
+            var act = (from activite in _generalXML.Descendants("Activite") where (string)activite.Attribute("idAct") == monActivite.monID.ToString() select activite).FirstOrDefault();
+            var ParticipantsAct = act.Descendants("Participants").First();
+            var lieuAct = act.Descendants("Lieu").First();
+            Journee journeeAModif = maFenetrePrec.maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 1];
+            Activite actAModif = journeeAModif.maListeActivites[journeeAModif.getPosActiviteByIdAct(monActivite.monID)];
+
+            act.Element("NomAct").Value = treeViewCategories.SelectedNode.Text;
+            actAModif.monNom = treeViewCategories.SelectedNode.Text;
+            act.Element("HDebutAct").Value = tB_HDebAct.Text;
+            actAModif.monHeureDebut = int.Parse(tB_HDebAct.Text);
+            act.Element("MDebutAct").Value = tB_MDebAct.Text;
+            actAModif.mesMinutesDebut = int.Parse(tB_MDebAct.Text);
+            act.Element("HFinAct").Value = tB_HFinAct.Text;
+            actAModif.monHeureFin = int.Parse(tB_HFinAct.Text);
+            act.Element("MFinAct").Value = tB_MFinAct.Text;
+            actAModif.mesMinutesFin = int.Parse(tB_MFinAct.Text);
+            act.Element("BoolExt").Value = cB_localisation.Checked.ToString();
+            actAModif.enExterieur = cB_localisation.Checked;
+            act.Element("DescriptionAct").Value = tB_descrAct.Text;
+            actAModif.maDescription = tB_descrAct.Text;
+
+            lieuAct.Element("nomLieu").Value = textBoxNomLieu.Text;
+            actAModif.monLieu.monNom = textBoxNomLieu.Text;
+            lieuAct.Element("posX").Value = numUpDown_xAct.Text;
+            actAModif.monLieu.maPosX = int.Parse(numUpDown_xAct.Text);
+            lieuAct.Element("posY").Value = numUpDown_yAct.Text;
+            actAModif.monLieu.maPosY = int.Parse(numUpDown_yAct.Text);
+
+            ParticipantsAct.RemoveAll();
+
+
+
+            actAModif.mesAstronautes = new List<Astronaute>();
+            foreach (var astro in lB_listePart.SelectedItems) {
+                string astroNom = astro.ToString();
+                ParticipantsAct.Add(new XElement("Astronaute", astroNom));
+                actAModif.mesAstronautes.Add(new Astronaute(astroNom));
+            }
+
+            _generalXML.Save(fileName);
 
             this.Close();
             maFenetrePrec.Show();
+            maFenetrePrec.insertionActivitesListBox();
         }
 
         private void WindowLevel3_Shown(object sender, EventArgs e) {
-            // Affichage de la position sur la map
-            if (monActivite.enExterieur == true) {
-                pictureBoxMap.Enabled = true;
-                textBoxNomLieu.Enabled = true;
-                numUpDown_xAct.Enabled = true;
-                numUpDown_yAct.Enabled = true;
-                Graphics graphics = this.pictureBoxMap.CreateGraphics();
-                Point p = new Point(monActivite.monLieu.maPosX / 3, monActivite.monLieu.maPosY / 3);
-                Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-                graphics.DrawImage(maps, p);
-            } else {
-                pictureBoxMap.Enabled = true;
-                Graphics graphics = this.pictureBoxMap.CreateGraphics();
-                Point p = new Point(463-20+700 / 3, 21-34+1000 / 3);
-                Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-                graphics.DrawImage(maps, p);
-
-                pb_maps.Location = p;
-
-                DialogResult dlgRes = DialogResult.No;
-                //dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
-
+            
         }
 
         private void treeViewCategories_BeforeSelect(object sender, TreeViewCancelEventArgs e) {
@@ -263,7 +321,60 @@ namespace AppliMars {
             previousSelectedNode = treeViewCategories.SelectedNode;
         }
 
+        private void WindowLevel3_Load(object sender, EventArgs e) {
+            /*
+            Point p = new Point(899,40);
+            
+            Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
+            Graphics graphics = this.pictureBoxMap.CreateGraphics();
+            Point p0 = new Point(0, 0);
+            graphics.DrawImage(imageSource, p0);
+
+            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+            graphics.DrawImage(maps, p);
+            this.Invalidate();
+            this.pictureBoxMap.Invalidate();
+            this.pictureBoxMap.Refresh();
+            */
+            
+            // Affichage de la position sur la map
+            if (monActivite.enExterieur == true) {
+                pictureBoxMap.Enabled = true;
+                textBoxNomLieu.Enabled = true;
+                numUpDown_xAct.Enabled = true;
+                numUpDown_yAct.Enabled = true;
+                Graphics graphics = this.pictureBoxMap.CreateGraphics();
+                Point p = new Point(monActivite.monLieu.maPosX / 3, monActivite.monLieu.maPosY / 3);
+                Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+                graphics.DrawImage(maps, p);
+
+                this.Invalidate();
+                this.pictureBoxMap.Invalidate();
+                this.pictureBoxMap.Refresh();
+
+                //pb_maps.Location = new Point(699 + monActivite.monLieu.maPosX / 3, 21 + monActivite.monLieu.maPosY / 3);
+
+            } else {
+                pictureBoxMap.Enabled = true;
+                Graphics graphics = this.pictureBoxMap.CreateGraphics();
+                Point p = new Point(463 - 20 + 700 / 3, 21 - 34 + 1000 / 3);
+                Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
+                graphics.DrawImage(maps, p);
+                pb_maps.Location = p;
+                DialogResult dlgRes = DialogResult.No;
+                //dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                this.Invalidate();
+                this.pictureBoxMap.Invalidate();
+                this.pictureBoxMap.Refresh();
+
+                //pb_maps.Location = new Point(689 + 700 / 3, 21 -34 + 1000 / 3);
+            }
+            
+        }
+
         #endregion
+
 
 
     }

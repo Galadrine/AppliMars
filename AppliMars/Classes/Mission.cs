@@ -490,7 +490,6 @@ namespace AppliMars
                     string nomAct = a.Element("Nom").Value;
                     string extBoolAct = a.Element("ExtBool").Value;
                     string descriptionAct = a.Element("Description").Value;
-                    //////////////////////////////////////////////////
                     string nomLieu = a.Element("Lieu").Descendants("nomLieu").First().Value;
                     string posX = a.Element("Lieu").Descendants("posX").First().Value;
                     string posY = a.Element("Lieu").Descendants("posY").First().Value;

@@ -97,18 +97,27 @@ namespace AppliMars {
                     string nomLieu = a.Descendants("Lieu").Elements("nomLieu").First().Value;
                     int posX = int.Parse(a.Descendants("Lieu").Elements("posX").First().Value);
                     int posY = int.Parse(a.Descendants("Lieu").Elements("posY").First().Value);
-                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, nomLieu, posX, posY));
+                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, nomLieu, posX, posY, idAct));
                 } else
-                     maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro));
+                    maListeActivites.Add(new Activite(nom, ext, description, hDebutAct, mDebutAct, hFinAct, mFinAct, astro, idAct));
             }
         }
 
         #endregion
 
 
-        #region methodes
+        #region méthodes
 
-
+        public int getPosActiviteByIdAct(int id) {
+            int pos = 0;
+            foreach (Activite acti in maListeActivites) {
+                if (acti.monID == id) {
+                    return pos;
+                }
+                pos++;
+            }
+            return pos;
+        }
 
         #endregion
 

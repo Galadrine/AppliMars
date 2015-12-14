@@ -108,6 +108,7 @@ namespace AppliMars {
             target.Element("CRJour").Value = tB_CR.Text;
             doc.Save(fileName);
 
+            maFenetrePrec.maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 1].monCompteRendu = tB_CR.Text; 
             this.Close();
             _win2.Show();
         }
@@ -128,12 +129,7 @@ namespace AppliMars {
 
         }
 
-
-
         #endregion
-
-
-
 
     }
 }
