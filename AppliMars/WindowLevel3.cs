@@ -234,11 +234,20 @@ namespace AppliMars {
                 // SupprimerActivite();
                 string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
                 XDocument doc = XDocument.Load(fileName);
-                var nodes = doc.Element("Planning").Elements("Jour").Where(elem => (string)elem.Attribute("id") == maJournee.monNumero.ToString()).ToList();
+                var act = (from activite in doc.Descendants("Activite") where (string)activite.Attribute("idAct") == monActivite.monID.ToString() select activite).ToList();
                 Console.WriteLine();
-                //foreach (var node in nodes)
-                //    node.Remove();
+                foreach (var node in act)
+                    node.Remove();
+                doc.Save(fileName);
 
+                Journee journeeAModif = maFenetrePrec.maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 1];
+                int indexActAModif = journeeAModif.getPosActiviteByIdAct(monActivite.monID);
+                Activite actAModif = journeeAModif.maListeActivites[indexActAModif];
+                journeeAModif.maListeActivites.Remove(actAModif);
+
+                this.Close();
+                maFenetrePrec.Show();
+                maFenetrePrec.insertionActivitesListBox();
             }
 
         }
