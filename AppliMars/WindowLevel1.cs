@@ -201,7 +201,7 @@ namespace AppliMars {
         }
 
         private void buttonSearch_Click(object sender, EventArgs e) {
-            WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch, comboBoxJourDebut, comboBoxJourFin);
+            WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch.Text, comboBoxJourDebut.Text, comboBoxJourFin.Text);
             win2.Show();
             this.Hide();
         }
