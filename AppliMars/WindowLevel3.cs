@@ -406,16 +406,6 @@ namespace AppliMars {
 
         #endregion
 
-        private void tB_descrAct_KeyPress(object sender, KeyPressEventArgs e) {
-            if (tB_descrAct.TextLength <= 400) {
-                string s1 = "Vous pouvez taper encore ";
-                string s2 = " caractères.";
-                int i0 = tB_descrAct.TextLength;
-                int i1 = 1000 - i0;
-                labelCarRest.Text = s1 + i1.ToString() + s2;
-            }
-        }
-
 
 
     }

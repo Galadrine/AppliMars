@@ -64,7 +64,6 @@ namespace AppliMars {
             maJournee = jour;
             refreshPage();
             monIdAstronaute = 0;
-
         }
 
         #endregion
