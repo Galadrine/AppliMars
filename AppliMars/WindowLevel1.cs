@@ -80,7 +80,7 @@ namespace AppliMars {
             maJournneeCourante = nbJours+1;
 
 
-            for (int i = 1; i < _mission.maDureeMission+1; i++) {
+            for (int i = 0; i < _mission.maDureeMission+1; i++) {
                 // comboBoxJourDebut.Items.Add(_mission._planning._tableauJournees[i]);
                 comboBoxJourDebut.Items.Add(i);
                 comboBoxJourFin.Items.Add(i);
@@ -134,7 +134,11 @@ namespace AppliMars {
                 } else {
                     jour.BackColor = System.Drawing.Color.PaleGreen;
                 }
-
+                if (J.checkJourneeExterieur()) {
+                    Bitmap image1 = (Bitmap)Image.FromFile(@"..//..//Images//astronaut6.png", true);
+                    jour.Image = image1;
+                    jour.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+                }
                 groupBoxCalendrier.Controls.Add(jour);
 
             }

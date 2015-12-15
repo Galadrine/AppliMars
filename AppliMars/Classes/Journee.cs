@@ -119,6 +119,16 @@ namespace AppliMars {
             return pos;
         }
 
+        public bool checkJourneeExterieur() {
+            bool toReturn = false;
+            foreach (Activite act in maListeActivites) {
+                if (act.enExterieur == true) {
+                    return true;
+                }
+            }
+            return toReturn;
+        }
+
         #endregion
 
     }

@@ -69,6 +69,8 @@ namespace AppliMars {
             numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
             numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
+
+
             //this.Controls.Add(this.pictureBoxMap);
             //pictureBoxMap.Controls.AddRange(new Control[]{this.pb_maps});
             //pictureBoxMap.Controls.Add(pb_maps);
@@ -89,6 +91,11 @@ namespace AppliMars {
                     }
                     indexLB++;
                 }
+            }
+
+            if (maJournee.monNumero < maFenetrePrec.maFenetrePrec.maMission.monJourJ) {
+                DisableControls(this);
+                EnableControls(buttonRetourJournee);
             }
 
         }
@@ -156,7 +163,22 @@ namespace AppliMars {
             bmp.Dispose();  
             return gp;  
   
-        }  
+        }
+
+        private void DisableControls(Control con) {
+            foreach (Control c in con.Controls) {
+                DisableControls(c);
+            }
+            con.Enabled = false;
+        }
+
+        private void EnableControls(Control con) {
+            if (con != null) {
+                con.Enabled = true;
+                EnableControls(con.Parent);
+            }
+        }
+        
         #endregion
 
 
@@ -225,7 +247,7 @@ namespace AppliMars {
         private void b_supprimer_Click(object sender, EventArgs e) { // Laisse ça ici, c'est pour savoir comment faire pour plus tard (on sait jamais)
             DialogResult dlgRes = DialogResult.No;
             dlgRes = MessageBox.Show(
-            "Voulez-vous vraiement supprimer cette activité ?",
+            "Voulez-vous vraiment supprimer cette activité ?",
             "Confirmation suppression activité",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
@@ -383,6 +405,16 @@ namespace AppliMars {
         }
 
         #endregion
+
+        private void tB_descrAct_KeyPress(object sender, KeyPressEventArgs e) {
+            if (tB_descrAct.TextLength <= 400) {
+                string s1 = "Vous pouvez taper encore ";
+                string s2 = " caractères.";
+                int i0 = tB_descrAct.TextLength;
+                int i1 = 1000 - i0;
+                labelCarRest.Text = s1 + i1.ToString() + s2;
+            }
+        }
 
 
 

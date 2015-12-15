@@ -265,10 +265,12 @@
             // 
             this.tB_descrAct.Location = new System.Drawing.Point(332, 88);
             this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
+            this.tB_descrAct.MaxLength = 400;
             this.tB_descrAct.Multiline = true;
             this.tB_descrAct.Name = "tB_descrAct";
             this.tB_descrAct.Size = new System.Drawing.Size(245, 145);
             this.tB_descrAct.TabIndex = 2;
+            this.tB_descrAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_descrAct_KeyPress);
             // 
             // cB_localisation
             // 

@@ -60,10 +60,10 @@
             this.l_erreurConvert = new System.Windows.Forms.Label();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonRetourJournee = new System.Windows.Forms.Button();
-            this.labelNumeroJour = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxNomLieu = new System.Windows.Forms.TextBox();
+            this.buttonRetourJournee = new System.Windows.Forms.Button();
+            this.labelNumeroJour = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             // 
             this.tB_descrAct.Location = new System.Drawing.Point(137, 155);
             this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
+            this.tB_descrAct.MaxLength = 400;
             this.tB_descrAct.Multiline = true;
             this.tB_descrAct.Name = "tB_descrAct";
             this.tB_descrAct.Size = new System.Drawing.Size(245, 145);
@@ -395,6 +396,27 @@
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Location = new System.Drawing.Point(48, 448);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Nom du lieu";
+            // 
+            // textBoxNomLieu
+            // 
+            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxNomLieu.Enabled = false;
+            this.textBoxNomLieu.Location = new System.Drawing.Point(142, 448);
+            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNomLieu.Name = "textBoxNomLieu";
+            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
+            this.textBoxNomLieu.TabIndex = 61;
+            // 
             // buttonRetourJournee
             // 
             this.buttonRetourJournee.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourJournee.Image")));
@@ -419,27 +441,6 @@
             this.labelNumeroJour.TabIndex = 63;
             this.labelNumeroJour.Text = "000";
             this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(48, 448);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
-            this.label8.TabIndex = 60;
-            this.label8.Text = "Nom du lieu";
-            // 
-            // textBoxNomLieu
-            // 
-            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxNomLieu.Enabled = false;
-            this.textBoxNomLieu.Location = new System.Drawing.Point(142, 448);
-            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNomLieu.Name = "textBoxNomLieu";
-            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
-            this.textBoxNomLieu.TabIndex = 61;
             // 
             // WindowNewAct
             // 
