@@ -919,41 +919,24 @@
     </Activites>
   </Jour>
   <Jour id="16">
-    <CRJour></CRJour>
+    <CRJour>,gsdlqjbsdkv  c dfxgevsd</CRJour>
     <Activites>
-      <Activite idAct="46">
-        <NomAct>Sleeping</NomAct>
-        <HDebutAct>00</HDebutAct>
-        <MDebutAct>00</MDebutAct>
-        <HFinAct>07</HFinAct>
-        <MFinAct>00</MFinAct>
-        <BoolExt>false</BoolExt>
-        <Lieu>
-          <nomLieu>Habitat</nomLieu>
-          <posX>00</posX>
-          <posY>00</posY>
-        </Lieu>
-        <DescriptionAct></DescriptionAct>
-        <Participants>
-          <Astronaute>Jefster</Astronaute>
-          <Astronaute>Jack</Astronaute>
-        </Participants>
-      </Activite>
       <Activite idAct="47">
         <NomAct>Space suit</NomAct>
         <HDebutAct>7</HDebutAct>
         <MDebutAct>0</MDebutAct>
-        <HFinAct>14</HFinAct>
-        <MFinAct>50</MFinAct>
+        <HFinAct>22</HFinAct>
+        <MFinAct>59</MFinAct>
         <BoolExt>True</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>395</posX>
-          <posY>1000</posY>
+          <posX>-700</posX>
+          <posY>-1053</posY>
         </Lieu>
-        <DescriptionAct>On essaye pour voir si ça marche</DescriptionAct>
+        <DescriptionAct>On essaye pour voir si ça marche. C'est formidaaaaable !</DescriptionAct>
         <Participants>
           <Astronaute>Jefster</Astronaute>
+          <Astronaute>Jack</Astronaute>
         </Participants>
       </Activite>
       <Activite idAct="48">

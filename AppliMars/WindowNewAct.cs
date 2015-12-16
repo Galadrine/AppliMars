@@ -85,11 +85,12 @@ namespace AppliMars
                 int mDebNvAct = int.Parse(cb_MDebAct.Text);
                 int hFinNvAct = int.Parse(cb_HFinAct.Text);
                 int mFinNvAct = int.Parse(cb_MFinAct.Text);
-
+                /*
                 if ( ) {
                     l_erreurHoraires.Visible = true;
                     flag = false;
                 }
+                 * */
                 // Echange si les horaires de début et de fin sont inversés
                 if (hDebNvAct > hFinNvAct) {
                     int tmp = hFinNvAct;
