@@ -79,15 +79,20 @@ namespace AppliMars {
             _mission.monJourJ = nbJours+1;
             maJournneeCourante = nbJours+1;
 
+            //Zone de recherche
+            cB_Acts.Checked = true;
+            cB_CRJours.Checked = true;
+            cB_DescrAct.Checked = true;
+ 
 
             for (int i = 0; i < _mission.maDureeMission+1; i++) {
                 // comboBoxJourDebut.Items.Add(_mission._planning._tableauJournees[i]);
-                comboBoxJourDebut.Items.Add(i);
-                comboBoxJourFin.Items.Add(i);
+                cB_JourDebut.Items.Add(i);
+                cB_JourFin.Items.Add(i);
             }
 
-            comboBoxJourDebut.SelectedIndex = 1;
-            comboBoxJourFin.SelectedIndex = maMission.maDureeMission -1;
+            cB_JourDebut.SelectedIndex = 1;
+            cB_JourFin.SelectedIndex = maMission.maDureeMission -1;
 
             MesBoutons=genererBoutonsJours();
 
@@ -212,7 +217,7 @@ namespace AppliMars {
         }
 
         private void buttonSearch_Click(object sender, EventArgs e) {
-            WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch.Text, comboBoxJourDebut.Text, comboBoxJourFin.Text);
+            WindowResultSearch win2 = new WindowResultSearch(this, textBoxSearch.Text, cB_JourDebut.Text, cB_JourFin.Text,cB_CRJours.Checked,cB_DescrAct.Checked,cB_Acts.Checked);
             win2.Show();
             this.Hide();
         }

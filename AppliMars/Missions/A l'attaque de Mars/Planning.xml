@@ -982,17 +982,17 @@
       </Activite>
       <Activite idAct="50">
         <NomAct>Eating</NomAct>
-        <HDebutAct>07</HDebutAct>
+        <HDebutAct>00</HDebutAct>
         <MDebutAct>00</MDebutAct>
-        <HFinAct>08</HFinAct>
+        <HFinAct>10</HFinAct>
         <MFinAct>00</MFinAct>
-        <BoolExt>false</BoolExt>
+        <BoolExt>False</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>00</posX>
-          <posY>00</posY>
+          <posX>0</posX>
+          <posY>0</posY>
         </Lieu>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>tranks</DescriptionAct>
         <Participants>
           <Astronaute>Jefster</Astronaute>
           <Astronaute>Jack</Astronaute>
@@ -1019,7 +1019,7 @@
     </Activites>
   </Jour>
   <Jour id="18">
-    <CRJour></CRJour>
+    <CRJour>tranks</CRJour>
     <Activites>
       <Activite idAct="52">
         <NomAct>Sleeping</NomAct>

@@ -35,13 +35,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBoxJourFin = new System.Windows.Forms.ComboBox();
-            this.comboBoxJourDebut = new System.Windows.Forms.ComboBox();
+            this.cB_JourFin = new System.Windows.Forms.ComboBox();
+            this.cB_JourDebut = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonRetourChoixMission = new System.Windows.Forms.Button();
+            this.cB_CRJours = new System.Windows.Forms.CheckBox();
+            this.cB_DescrAct = new System.Windows.Forms.CheckBox();
+            this.cB_Acts = new System.Windows.Forms.CheckBox();
             this.groupBoxCalendrier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftArrow)).BeginInit();
@@ -158,34 +161,37 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBoxJourFin);
-            this.groupBox2.Controls.Add(this.comboBoxJourDebut);
+            this.groupBox2.Controls.Add(this.cB_Acts);
+            this.groupBox2.Controls.Add(this.cB_DescrAct);
+            this.groupBox2.Controls.Add(this.cB_CRJours);
+            this.groupBox2.Controls.Add(this.cB_JourFin);
+            this.groupBox2.Controls.Add(this.cB_JourDebut);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBoxSearch);
             this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Location = new System.Drawing.Point(445, 141);
+            this.groupBox2.Location = new System.Drawing.Point(357, 141);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(357, 83);
+            this.groupBox2.Size = new System.Drawing.Size(445, 83);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recherche";
             // 
-            // comboBoxJourFin
+            // cB_JourFin
             // 
-            this.comboBoxJourFin.FormattingEnabled = true;
-            this.comboBoxJourFin.Location = new System.Drawing.Point(185, 45);
-            this.comboBoxJourFin.Name = "comboBoxJourFin";
-            this.comboBoxJourFin.Size = new System.Drawing.Size(49, 21);
-            this.comboBoxJourFin.TabIndex = 3;
+            this.cB_JourFin.FormattingEnabled = true;
+            this.cB_JourFin.Location = new System.Drawing.Point(185, 45);
+            this.cB_JourFin.Name = "cB_JourFin";
+            this.cB_JourFin.Size = new System.Drawing.Size(49, 21);
+            this.cB_JourFin.TabIndex = 3;
             // 
-            // comboBoxJourDebut
+            // cB_JourDebut
             // 
-            this.comboBoxJourDebut.FormattingEnabled = true;
-            this.comboBoxJourDebut.Location = new System.Drawing.Point(107, 45);
-            this.comboBoxJourDebut.Name = "comboBoxJourDebut";
-            this.comboBoxJourDebut.Size = new System.Drawing.Size(49, 21);
-            this.comboBoxJourDebut.TabIndex = 2;
+            this.cB_JourDebut.FormattingEnabled = true;
+            this.cB_JourDebut.Location = new System.Drawing.Point(107, 45);
+            this.cB_JourDebut.Name = "cB_JourDebut";
+            this.cB_JourDebut.Size = new System.Drawing.Size(49, 21);
+            this.cB_JourDebut.TabIndex = 2;
             // 
             // label3
             // 
@@ -214,9 +220,9 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(240, 43);
+            this.buttonSearch.Location = new System.Drawing.Point(353, 19);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(79, 49);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Rechercher";
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -232,6 +238,36 @@
             this.buttonRetourChoixMission.Text = "Revenir au choix de la mission";
             this.buttonRetourChoixMission.UseVisualStyleBackColor = true;
             this.buttonRetourChoixMission.Click += new System.EventHandler(this.buttonRetourChoixMission_Click);
+            // 
+            // cB_CRJours
+            // 
+            this.cB_CRJours.AutoSize = true;
+            this.cB_CRJours.Location = new System.Drawing.Point(255, 14);
+            this.cB_CRJours.Name = "cB_CRJours";
+            this.cB_CRJours.Size = new System.Drawing.Size(69, 17);
+            this.cB_CRJours.TabIndex = 5;
+            this.cB_CRJours.Text = "CR Jours";
+            this.cB_CRJours.UseVisualStyleBackColor = true;
+            // 
+            // cB_DescrAct
+            // 
+            this.cB_DescrAct.AutoSize = true;
+            this.cB_DescrAct.Location = new System.Drawing.Point(255, 33);
+            this.cB_DescrAct.Name = "cB_DescrAct";
+            this.cB_DescrAct.Size = new System.Drawing.Size(81, 17);
+            this.cB_DescrAct.TabIndex = 6;
+            this.cB_DescrAct.Text = "Descr. Acts";
+            this.cB_DescrAct.UseVisualStyleBackColor = true;
+            // 
+            // cB_Acts
+            // 
+            this.cB_Acts.AutoSize = true;
+            this.cB_Acts.Location = new System.Drawing.Point(255, 52);
+            this.cB_Acts.Name = "cB_Acts";
+            this.cB_Acts.Size = new System.Drawing.Size(66, 17);
+            this.cB_Acts.TabIndex = 7;
+            this.cB_Acts.Text = "Activites";
+            this.cB_Acts.UseVisualStyleBackColor = true;
             // 
             // WindowLevel1
             // 
@@ -272,14 +308,17 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.ComboBox comboBoxJourFin;
-        private System.Windows.Forms.ComboBox comboBoxJourDebut;
+        private System.Windows.Forms.ComboBox cB_JourFin;
+        private System.Windows.Forms.ComboBox cB_JourDebut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelMinutes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonRetourChoixMission;
+        private System.Windows.Forms.CheckBox cB_CRJours;
+        private System.Windows.Forms.CheckBox cB_Acts;
+        private System.Windows.Forms.CheckBox cB_DescrAct;
     }
 }
 

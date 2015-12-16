@@ -15,6 +15,7 @@ namespace AppliMars {
         #region variables
 
         private WindowLevel2 win2;
+        private  WindowResultSearch win2bis;
         private Activite act;
         private Journee jour;
         public TreeNode previousSelectedNode = null;
@@ -32,6 +33,11 @@ namespace AppliMars {
         public WindowLevel2 maFenetrePrec {
             get { return win2; }
             set { win2 = value; }
+        }
+        public WindowResultSearch maFenetrePrec2
+        {
+            get { return win2bis; }
+            set { win2bis = value; }
         }
 
         public Journee maJournee {
@@ -69,6 +75,7 @@ namespace AppliMars {
             numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
             numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
+            
             // Verrouillage des cases pour éviter les modfis
             treeViewCategories.Enabled = false;
             cb_HDebAct.Enabled = true;
@@ -107,6 +114,74 @@ namespace AppliMars {
             }
 
             if (maJournee.monNumero < maFenetrePrec.maFenetrePrec.maMission.monJourJ) {
+                DisableControls(this);
+                EnableControls(buttonRetourJournee);
+            }
+
+        }
+        public WindowLevel3(Activite activite, Journee jour, WindowResultSearch win2)
+            : this()
+        {
+            maFenetrePrec2 = win2;
+            monActivite = activite;
+            maJournee = jour;
+            this.Text = maFenetrePrec2.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero.ToString("D3");
+            labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
+            //////////////////Charger le type d'activité
+            affichage_treeView();
+            //cB_typeAct.Text = monActivite.monNom;
+            tB_descrAct.Text = monActivite.maDescription;
+            cb_HDebAct.Text = monActivite.monHeureDebut.ToString();
+            cb_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
+            cb_HFinAct.Text = monActivite.monHeureFin.ToString();
+            cb_MFinAct.Text = monActivite.mesMinutesFin.ToString();
+            tB_nomLieu.Text = monActivite.monLieu.monNom.ToString();
+            numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
+            numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
+            cB_localisation.Checked = monActivite.enExterieur;
+
+            // Verrouillage des cases pour éviter les modfis
+            treeViewCategories.Enabled = false;
+            cb_HDebAct.Enabled = true;
+            cb_MDebAct.Enabled = true;
+            cb_HFinAct.Enabled = true;
+            cb_MFinAct.Enabled = true;
+            tB_descrAct.ReadOnly = true;
+            lB_listePart.Enabled = false;
+            cB_localisation.Enabled = false;
+            tB_nomLieu.ReadOnly = true;
+            pictureBoxMap.Enabled = false;
+            b_valider.Visible = false;
+            b_supprimer.Visible = false;
+
+
+            //this.Controls.Add(this.pictureBoxMap);
+            //pictureBoxMap.Controls.AddRange(new Control[]{this.pb_maps});
+            //pictureBoxMap.Controls.Add(pb_maps);
+            //pb_maps.Parent = pictureBoxMap;
+            /*
+            ((Bitmap)this.pb_maps.Image).MakeTransparent(((Bitmap)this.pb_maps.Image).GetPixel(1, 1));
+            this.pb_maps.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pb_maps.BackColor = System.Drawing.Color.Transparent;
+            */
+            //((Bitmap)pb_maps.Image).MakeTransparent(((Bitmap)pb_maps.Image).GetPixel(0, pb_maps.Image.Size.Height - 1));
+
+            foreach (Astronaute a in maFenetrePrec2.maFenetrePrec.maMission.mesAstronautes)
+            {
+                int indexLB = 0;
+                lB_listePart.Items.Add(a.monNom);
+                foreach (Astronaute ast in monActivite.mesAstronautes)
+                {
+                    if (ast.monNom == a.monNom)
+                    {
+                        lB_listePart.SetSelected(indexLB, true);
+                    }
+                    indexLB++;
+                }
+            }
+
+            if (maJournee.monNumero < maFenetrePrec2.maFenetrePrec.maMission.monJourJ)
+            {
                 DisableControls(this);
                 EnableControls(buttonRetourJournee);
             }
