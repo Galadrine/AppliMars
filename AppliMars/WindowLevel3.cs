@@ -118,12 +118,15 @@ namespace AppliMars {
 
         #region methodes
 
-        public System.Drawing.Point convertionCoordonneesImageVersXML(Point coordinates) 
-        {
+        public System.Drawing.Point convertCoordImgToXML(Point coordinates) {
             return new System.Drawing.Point((coordinates.X * 3) - 700, (coordinates.Y * 3) - 1000);
         }
-        
-        public void affichage_treeView(){
+
+        public System.Drawing.Point convertCoordUpDownToImage(Point coordinates) {
+            return new System.Drawing.Point(699 + (coordinates.X / 3) + 700, 21 + (coordinates.Y / 3) + 1000);
+        }
+
+        public void affichage_treeView() {
 
             int i = 0;
             foreach (Categorie SC in maFenetrePrec.maFenetrePrec.maMission.maListeCategories) {
@@ -155,29 +158,6 @@ namespace AppliMars {
             }
         }
         
-        public static System.Drawing.Drawing2D.GraphicsPath Transparent(Image im)  
-        {  
-            int x;  
-            int y;  
-            Bitmap bmp = new Bitmap(im);  
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();  
-            Color mask = bmp.GetPixel(0, 0);  
-  
-            for (x = 0; x <= bmp.Width - 1; x++)  
-            {  
-                for (y = 0; y <= bmp.Height - 1; y++)  
-                {  
-                    if (!bmp.GetPixel(x, y).Equals(mask))  
-                    {  
-                        gp.AddRectangle(new Rectangle(x, y, 1, 1));  
-                    }  
-                }  
-            }  
-            bmp.Dispose();  
-            return gp;  
-  
-        }
-
         private void DisableControls(Control con) {
             foreach (Control c in con.Controls) {
                 DisableControls(c);
@@ -205,7 +185,7 @@ namespace AppliMars {
         private void pictureBoxMap_Click(object sender, EventArgs e) {
             
             MouseEventArgs me = (MouseEventArgs)e;
-            Point coordinates = convertionCoordonneesImageVersXML(me.Location);
+            Point coordinates = convertCoordImgToXML(me.Location);
             numUpDown_xAct.Text = (coordinates.X * 3).ToString();
             numUpDown_yAct.Text = (coordinates.Y * 3).ToString();
             pb_maps.Location = new Point(689 + me.Location.X, 21 - 34 + me.Location.Y);
@@ -310,8 +290,6 @@ namespace AppliMars {
 
             ParticipantsAct.RemoveAll();
 
-
-
             actAModif.mesAstronautes = new List<Astronaute>();
             foreach (var astro in lB_listePart.SelectedItems) {
                 string astroNom = astro.ToString();
@@ -377,7 +355,7 @@ namespace AppliMars {
                 this.pictureBoxMap.Invalidate();
                 this.pictureBoxMap.Refresh();
 
-                //pb_maps.Location = new Point(699 + monActivite.monLieu.maPosX / 3, 21 + monActivite.monLieu.maPosY / 3);
+                pb_maps.Location = new Point(699 + monActivite.monLieu.maPosX / 3, 21 + monActivite.monLieu.maPosY / 3);
 
             } else {
                 pictureBoxMap.Enabled = true;
@@ -395,11 +373,10 @@ namespace AppliMars {
                 this.pictureBoxMap.Invalidate();
                 this.pictureBoxMap.Refresh();
 
-                //pb_maps.Location = new Point(689 + 700 / 3, 21 -34 + 1000 / 3);
+                pb_maps.Location = new Point(689 + 700 / 3, 21 -34 + 1000 / 3);
             }
             
         }
-
 
         private void b_modifier_Click(object sender, EventArgs e)
         {
@@ -417,6 +394,12 @@ namespace AppliMars {
             b_valider.Visible = true;
             b_supprimer.Visible = true;
         }
+
+        private void numUpDown_ValueChanged(object sender, EventArgs e) {
+            Point p0 = convertCoordUpDownToImage(new Point(int.Parse(numUpDown_xAct.Value.ToString()), int.Parse(numUpDown_yAct.Value.ToString())));
+            pb_maps.Location = new Point(p0.X / 3, p0.Y / 3);
+        }
+
 
         #endregion
 

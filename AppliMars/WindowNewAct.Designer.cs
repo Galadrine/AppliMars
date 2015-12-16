@@ -246,7 +246,7 @@
             // 
             // b_creerNvAct
             // 
-            this.b_creerNvAct.Location = new System.Drawing.Point(171, 615);
+            this.b_creerNvAct.Location = new System.Drawing.Point(297, 628);
             this.b_creerNvAct.Name = "b_creerNvAct";
             this.b_creerNvAct.Size = new System.Drawing.Size(126, 48);
             this.b_creerNvAct.TabIndex = 58;
@@ -383,6 +383,7 @@
             this.cb_MFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MFinAct.TabIndex = 62;
             this.cb_MFinAct.Text = "00";
+            this.cb_MFinAct.SelectedIndexChanged += new System.EventHandler(this.cb_MFinAct_SelectedIndexChanged);
             // 
             // cb_HFinAct
             // 
@@ -444,6 +445,7 @@
             this.cb_HFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_HFinAct.TabIndex = 62;
             this.cb_HFinAct.Text = "10";
+            this.cb_HFinAct.SelectedIndexChanged += new System.EventHandler(this.cb_HFinAct_SelectedIndexChanged);
             // 
             // cb_HDebAct
             // 
@@ -479,6 +481,7 @@
             this.cb_HDebAct.Size = new System.Drawing.Size(51, 21);
             this.cb_HDebAct.TabIndex = 62;
             this.cb_HDebAct.Text = "00";
+            this.cb_HDebAct.SelectedIndexChanged += new System.EventHandler(this.cb_HDebAct_SelectedIndexChanged);
             // 
             // cb_MDebAct
             // 
@@ -495,6 +498,7 @@
             this.cb_MDebAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MDebAct.TabIndex = 62;
             this.cb_MDebAct.Text = "00";
+            this.cb_MDebAct.SelectedIndexChanged += new System.EventHandler(this.cb_MDebAct_SelectedIndexChanged);
             // 
             // label8
             // 

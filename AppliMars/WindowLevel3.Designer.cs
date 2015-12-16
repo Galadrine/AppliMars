@@ -331,6 +331,7 @@
             this.numUpDown_xAct.Name = "numUpDown_xAct";
             this.numUpDown_xAct.Size = new System.Drawing.Size(51, 20);
             this.numUpDown_xAct.TabIndex = 61;
+            this.numUpDown_xAct.ValueChanged += new System.EventHandler(this.numUpDown_ValueChanged);
             // 
             // numUpDown_yAct
             // 
@@ -349,6 +350,7 @@
             this.numUpDown_yAct.Name = "numUpDown_yAct";
             this.numUpDown_yAct.Size = new System.Drawing.Size(51, 20);
             this.numUpDown_yAct.TabIndex = 61;
+            this.numUpDown_yAct.ValueChanged += new System.EventHandler(this.numUpDown_ValueChanged);
             // 
             // treeViewCategories
             // 
