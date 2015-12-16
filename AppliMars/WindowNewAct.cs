@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AppliMars
 {
     public partial class WindowNewAct : Form
     {
+
         #region Variables
 
         private Journee _jour;
@@ -49,7 +51,9 @@ namespace AppliMars
             labelNumeroJour.Text = maJournee.monNumero.ToString();
             l_numJour.Text = _jour.monNumero.ToString("D3");
             // cB_typeAct dépendant de cB_cate
-            lB_listePart.DataSource = _jour.maMission.mesAstronautes;
+            foreach (Astronaute ast in _jour.maMission.mesAstronautes) {
+                lB_listePart.Items.Add(ast.monNom);
+            }
         }
 
         #endregion
@@ -71,6 +75,16 @@ namespace AppliMars
         }
 
         private void b_creerNvAct_Click(object sender, EventArgs e) {
+            string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
+            XDocument _generalXML = XDocument.Load(fileName);
+            var act = (from activites in _generalXML.Descendants("Activites") where (string)activites.Parent.Attribute("id") == maJournee.monNumero.ToString() select activites).FirstOrDefault();
+            Journee journeeAModif = maFenetrePrec.maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 1];
+
+
+
+
+
+
             bool flag = true;
             while (flag == true) {
                 // Récupération de toutes les informations
@@ -85,12 +99,7 @@ namespace AppliMars
                 int mDebNvAct = int.Parse(cb_MDebAct.Text);
                 int hFinNvAct = int.Parse(cb_HFinAct.Text);
                 int mFinNvAct = int.Parse(cb_MFinAct.Text);
-                /*
-                if ( ) {
-                    l_erreurHoraires.Visible = true;
-                    flag = false;
-                }
-                 * */
+
                 // Echange si les horaires de début et de fin sont inversés
                 if (hDebNvAct > hFinNvAct) {
                     int tmp = hFinNvAct;
@@ -104,6 +113,13 @@ namespace AppliMars
                 foreach (string astro in lB_listePart.SelectedItems) {
                     var astroTrouve = from astroPresent in _jour.maMission.mesAstronautes where astroPresent.ToString() == astro.ToString() select astroPresent;
                     partNvAct.Add((Astronaute)astroTrouve);
+                }
+
+                foreach (var astro in lB_listePart.SelectedItems) {
+                    string astroNom = astro.ToString();
+                    /*
+                    ParticipantsAct.Add(new XElement("Astronaute", astroNom));
+                    */ 
                 }
                 int xNvAct, yNvAct;
                 bool flagLoc = int.TryParse(numUpDown_xAct.Text, out xNvAct);
@@ -160,6 +176,50 @@ namespace AppliMars
             previousSelectedNode = treeViewCategories.SelectedNode;
         }
         
+        private void cb_HDebAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
+                b_creerNvAct.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            } else {
+                b_creerNvAct.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            }
+        }
+
+        private void cb_MDebAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HDebAct.Text == cb_HFinAct.Text) {
+                if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+                    b_creerNvAct.Enabled = true;
+                    l_erreurHoraires.Visible = false;
+                } else {
+                    b_creerNvAct.Enabled = false;
+                    l_erreurHoraires.Visible = true;
+                }
+            }
+        }
+
+        private void cb_HFinAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
+                b_creerNvAct.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            } else {
+                b_creerNvAct.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            }
+        }
+
+        private void cb_MFinAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HDebAct.Text == cb_HFinAct.Text) {
+                if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+                    b_creerNvAct.Enabled = true;
+                    l_erreurHoraires.Visible = false;
+                } else {
+                    b_creerNvAct.Enabled = false;
+                    l_erreurHoraires.Visible = true;
+                }
+            }
+        }
+
         #endregion
 
     }

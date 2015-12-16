@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppliMars.Activite">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAwAAgAIAACAAIAEAAgAABEAFAACgAAIAAEAMASICIU=</HashCode>
+      <FileName>Classes\Activite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppliMars.Astronaute">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Astronaute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppliMars.Categorie">
+    <Position X="11.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAgAAAAAAAAAAAAACAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Classes\Categorie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppliMars.Journee">
+    <Position X="9.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAwAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAEABBAABA=</HashCode>
+      <FileName>Classes\Journee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppliMars.Lieu">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABCAAgBAAAAAAAAEAA=</HashCode>
+      <FileName>Classes\Lieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppliMars.Mission">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAACCZAAABAAEAAAAAAAAEAkCEgEAJAiAAAAAOAAIA=</HashCode>
+      <FileName>Classes\Mission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppliMars.Planning">
+    <Position X="5.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAAQAAAAAAAAAIAAAEAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Classes\Planning.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
