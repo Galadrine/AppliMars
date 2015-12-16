@@ -186,6 +186,29 @@ namespace AppliMars {
             }
         }
 
+        private void labelRecherche_TextChanged(object sender, EventArgs e)
+        {
+            string Ma_recherche = labelRecherche.Text;
+            for (int i = 0; i < Activite._nbActTotal; i++)
+            {
+                if (Ma_recherche == maListeRechercheActivit_Nom[i].monNom)
+                {
+                    _listRechercheActivite_Nom.Add(maListeRechercheActivit_Nom[i]);
+                }
+                if (Ma_recherche == maListeRechercheActivit_Description[i].monNom)
+                {
+                    _listRechercheActivite_Nom.Add(maListeRechercheActivit_Description[i]);
+                }
+            }
+            for (int i = 0; i < maListeRechercheJour_CompteRendu.Count; i++)
+            {
+                if (Ma_recherche == maListeRechercheJour_CompteRendu[i].monCompteRendu)
+                {
+                    _listRechercheJour_CompteRendu.Add(maListeRechercheJour_CompteRendu[i]);
+                }
+            }
+
+        }
         private void buttonGoTo_Click(object sender, EventArgs e) {
             if (maJourneeSel != null) {
                 ///////////////////////// Ajouter des constructeurs à WindowLevel2 et WindowLevel3 pour avoir comme fenetrePrec la fenetre de recherche
@@ -202,6 +225,10 @@ namespace AppliMars {
         }
 
         #endregion
+
+        
+
+
 
     }
 }
