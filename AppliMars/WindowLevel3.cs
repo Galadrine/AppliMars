@@ -221,16 +221,6 @@ namespace AppliMars {
             */
         }
 
-        private void TextBoxAbscisse_KeyPress(object sender, KeyPressEventArgs e) {
-            if (!Char.IsDigit(e.KeyChar))
-                e.Handled = true;
-        }
-
-        private void TextBoxOrdonnee_KeyPress(object sender, KeyPressEventArgs e) {
-            if (!Char.IsDigit(e.KeyChar))
-                e.Handled = true;
-        }
-
         private void checkBoxLocalisation_CheckedChanged(object sender, EventArgs e) {
             if (cB_localisation.Checked) {
                 textBoxNomLieu.Enabled = true;
@@ -328,10 +318,6 @@ namespace AppliMars {
             maFenetrePrec.insertionActivitesListBox();
         }
 
-        private void WindowLevel3_Shown(object sender, EventArgs e) {
-            
-        }
-
         private void treeViewCategories_BeforeSelect(object sender, TreeViewCancelEventArgs e) {
             // On vérifie si le noeud du treeView a des enfants, si c'est le cas, c'est un super-catégorie, donc on ne peut pas la sélectionner
             if (e.Node.Nodes.Count != 0) {
@@ -392,8 +378,10 @@ namespace AppliMars {
                 Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
                 graphics.DrawImage(maps, p);
                 pb_maps.Location = p;
+                /*
                 DialogResult dlgRes = DialogResult.No;
-                //dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                */
 
                 this.Invalidate();
                 this.pictureBoxMap.Invalidate();

@@ -16,6 +16,7 @@ namespace AppliMars
 
         private Journee _jour;
         private WindowLevel2 _win2;
+        public TreeNode previousSelectedNode = null;
 
         #endregion
 
@@ -47,78 +48,46 @@ namespace AppliMars
             this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Création d'une activité pour le jour " + maJournee.monNumero;
             labelNumeroJour.Text = maJournee.monNumero.ToString();
             l_numJour.Text = _jour.monNumero.ToString("D3");
-            cB_cate.DataSource = _jour.maMission.maListeCategories;
             // cB_typeAct dépendant de cB_cate
             lB_listePart.DataSource = _jour.maMission.mesAstronautes;
-            if (cB_localisation.Checked == false) {
-                tB_xAct.Text = "0";
-                tB_yAct.Text = "0";
-                tB_xAct.ReadOnly = true;
-                tB_yAct.ReadOnly = true;
-            }
         }
-
-        #endregion
-
-
-        #region méthodes
 
         #endregion
 
 
         #region évènements
 
-        private void cB_cate_SelectedIndexChanged(object sender, EventArgs e) {
-            // TYPE ACT en fonction de CATEGORIE
-
-            //Categorie cateSelected = from cate in _jour.m.maListeCategories where cate.ToString() == cB_cate.SelectedItem select cate;
-            //cB_typeAct.DataSource = cateSelected.maListe;
-        }
-
-        private void tB_descrAct_TextChanged(object sender, EventArgs e) {
-            while (tB_descrAct.Text.Length < 4000) {
-                tB_descrAct.ForeColor = Color.Red;
-            }
-        }
-
         private void cB_localisation_CheckedChanged(object sender, EventArgs e) {
-            if (cB_localisation.Checked == false) {
-                tB_xAct.Enabled = tB_yAct.Enabled = false;
-                tB_xAct.BackColor = tB_yAct.BackColor = Color.LightGray;
-            } else {
-                tB_xAct.Enabled = tB_yAct.Enabled = true;
-                tB_xAct.BackColor = tB_yAct.BackColor = Color.White;
-            }
+            if (cB_localisation.Checked) {
+                textBoxNomLieu.Enabled = true;
+                numUpDown_xAct.Enabled = true;
+                numUpDown_yAct.Enabled = true;
 
+            } else {
+                textBoxNomLieu.Enabled = false;
+                numUpDown_xAct.Enabled = false;
+                numUpDown_yAct.Enabled = false;
+            }
         }
 
         private void b_creerNvAct_Click(object sender, EventArgs e) {
             bool flag = true;
             while (flag == true) {
                 // Récupération de toutes les informations
-                string nomNvAct = cB_typeAct.SelectedText;
+                string nomLieuNvAct = textBoxNomLieu.Text;
                 bool extNvAct = cB_localisation.Checked;
                 string descrNvAct = tB_descrAct.Text;
                 if (descrNvAct.Length > 400) {
                     tB_descrAct.ForeColor = Color.Red;
                     flag = false;
                 }
-                int hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct;
-                bool flagDuree = int.TryParse(tB_HDebAct.Text, out hDebNvAct);
-                flagDuree = int.TryParse(tB_MDebAct.Text, out mDebNvAct);
-                flagDuree = int.TryParse(tB_HFinAct.Text, out hFinNvAct);
-                flagDuree = int.TryParse(tB_MFinAct.Text, out mFinNvAct);
-                // Arrondir à la dizaine les minutes 
-                mDebNvAct = (int)(10 * Math.Round((mDebNvAct / 10) * 1.0));
-                mFinNvAct = (int)(10 * Math.Round((mFinNvAct / 10) * 1.0));
+                int hDebNvAct = int.Parse(cb_HDebAct.Text);
+                int mDebNvAct = int.Parse(cb_MDebAct.Text);
+                int hFinNvAct = int.Parse(cb_HFinAct.Text);
+                int mFinNvAct = int.Parse(cb_MFinAct.Text);
 
-                // Vérifie que l'horaire est contenue dans la journée 
-                if ((hDebNvAct == 24 && mDebNvAct >= 40) || (hFinNvAct == 24 && mFinNvAct >= 40)
-                    || hDebNvAct >= 24 || hFinNvAct >= 24) {
-                    flagDuree = false;
-                }
-                if (flagDuree == false) {
-                    l_erreurConvert.Visible = true;
+                if ( ) {
+                    l_erreurHoraires.Visible = true;
                     flag = false;
                 }
                 // Echange si les horaires de début et de fin sont inversés
@@ -136,18 +105,17 @@ namespace AppliMars
                     partNvAct.Add((Astronaute)astroTrouve);
                 }
                 int xNvAct, yNvAct;
-                bool flagLoc = int.TryParse(tB_xAct.Text, out xNvAct);
-                flagLoc = int.TryParse(tB_yAct.Text, out yNvAct);
+                bool flagLoc = int.TryParse(numUpDown_xAct.Text, out xNvAct);
+                flagLoc = int.TryParse(numUpDown_yAct.Text, out yNvAct);
                 if (xNvAct < -700 || xNvAct > 395)
                     flagLoc = false;
                 if (yNvAct < -1053 || yNvAct > 1000)
                     flagLoc = false;
                 if (flagLoc == false) {
-                    tB_xAct.ForeColor = tB_yAct.ForeColor = Color.Red;
+                    numUpDown_xAct.ForeColor = numUpDown_yAct.ForeColor = Color.Red;
                     flag = false;
                 }
 
-                string nomLieuNvAct = textBoxNomLieu.Text;
 
                 // Vérification des chevauchements avec d'autres activités 
                 foreach (Activite a in _jour.maListeActivites) {
@@ -157,6 +125,8 @@ namespace AppliMars
                         }
                     }
                 }
+
+                string nomNvAct = treeViewCategories.SelectedNode.Text;
 
                 // Si tout est ok flag == true, on peut créer la nouvelle activité 
                 _jour.maListeActivites.Add(new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, nomLieuNvAct, xNvAct, yNvAct));
@@ -168,14 +138,28 @@ namespace AppliMars
             this.Close();
             maFenetrePrec.Show();
         }
-        #endregion
 
+        private void treeViewCategories_BeforeSelect(object sender, TreeViewCancelEventArgs e) {
+            // On vérifie si le noeud du treeView a des enfants, si c'est le cas, c'est un super-catégorie, donc on ne peut pas la sélectionner
+            if (e.Node.Nodes.Count != 0) {
+                e.Cancel = true;
+            }
+        }
 
+        private void treeViewCategories_AfterSelect(object sender, TreeViewEventArgs e) {
+            if (previousSelectedNode != null) {
+                previousSelectedNode.BackColor = treeViewCategories.BackColor;
+                previousSelectedNode.ForeColor = treeViewCategories.ForeColor;
+            }
+        }
 
-
-
-
+        private void treeViewCategories_Validating(object sender, CancelEventArgs e) {
+            treeViewCategories.SelectedNode.BackColor = SystemColors.Highlight;
+            treeViewCategories.SelectedNode.ForeColor = Color.White;
+            previousSelectedNode = treeViewCategories.SelectedNode;
+        }
         
+        #endregion
 
     }
 }
