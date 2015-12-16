@@ -26,7 +26,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel3));
             this.l_numJour = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.b_annuler = new System.Windows.Forms.Button();
             this.b_supprimer = new System.Windows.Forms.Button();
             this.labelNumeroJour = new System.Windows.Forms.Label();
             this.b_valider = new System.Windows.Forms.Button();
@@ -45,10 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tB_descrAct = new System.Windows.Forms.TextBox();
             this.cB_localisation = new System.Windows.Forms.CheckBox();
-            this.tB_HDebAct = new System.Windows.Forms.TextBox();
-            this.tB_MDebAct = new System.Windows.Forms.TextBox();
-            this.tB_HFinAct = new System.Windows.Forms.TextBox();
-            this.tB_MFinAct = new System.Windows.Forms.TextBox();
             this.l_participants = new System.Windows.Forms.Label();
             this.lB_listePart = new System.Windows.Forms.ListBox();
             this.l_cate = new System.Windows.Forms.Label();
@@ -61,7 +56,6 @@
             this.cb_HFinAct = new System.Windows.Forms.ComboBox();
             this.cb_HDebAct = new System.Windows.Forms.ComboBox();
             this.cb_MDebAct = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pb_maps = new System.Windows.Forms.PictureBox();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
@@ -94,16 +88,6 @@
             this.label7.Size = new System.Drawing.Size(139, 25);
             this.label7.TabIndex = 4;
             this.label7.Text = "Activité du jour";
-            // 
-            // b_annuler
-            // 
-            this.b_annuler.Location = new System.Drawing.Point(119, 582);
-            this.b_annuler.Name = "b_annuler";
-            this.b_annuler.Size = new System.Drawing.Size(126, 48);
-            this.b_annuler.TabIndex = 32;
-            this.b_annuler.Text = "ANNULER";
-            this.b_annuler.UseVisualStyleBackColor = true;
-            this.b_annuler.Click += new System.EventHandler(this.b_annuler_Click);
             // 
             // b_supprimer
             // 
@@ -159,15 +143,13 @@
             // 
             // tB_nomLieu
             // 
-
             this.tB_nomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tB_nomLieu.Enabled = false;
-            this.tB_nomLieu.Location = new System.Drawing.Point(332, 377);
+            this.tB_nomLieu.Location = new System.Drawing.Point(339, 415);
             this.tB_nomLieu.Margin = new System.Windows.Forms.Padding(2);
             this.tB_nomLieu.Name = "tB_nomLieu";
             this.tB_nomLieu.Size = new System.Drawing.Size(188, 20);
             this.tB_nomLieu.TabIndex = 11;
-            this.tB_nomLieu.TextChanged += new System.EventHandler(this.tB_nomLieu_TextChanged);
             // 
             // label2
             // 
@@ -232,7 +214,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(367, 70);
+            this.label3.Location = new System.Drawing.Point(388, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
@@ -242,7 +224,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(417, 70);
+            this.label5.Location = new System.Drawing.Point(458, 70);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
@@ -252,7 +234,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(417, 101);
+            this.label6.Location = new System.Drawing.Point(458, 101);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
@@ -262,7 +244,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(367, 101);
+            this.label4.Location = new System.Drawing.Point(388, 101);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 13);
@@ -289,34 +271,6 @@
             this.cB_localisation.Text = "Activité en extérieur";
             this.cB_localisation.UseVisualStyleBackColor = true;
             this.cB_localisation.CheckedChanged += new System.EventHandler(this.checkBoxLocalisation_CheckedChanged);
-            // 
-            // tB_HDebAct
-            // 
-            this.tB_HDebAct.Location = new System.Drawing.Point(336, 67);
-            this.tB_HDebAct.Name = "tB_HDebAct";
-            this.tB_HDebAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_HDebAct.TabIndex = 32;
-            // 
-            // tB_MDebAct
-            // 
-            this.tB_MDebAct.Location = new System.Drawing.Point(385, 67);
-            this.tB_MDebAct.Name = "tB_MDebAct";
-            this.tB_MDebAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_MDebAct.TabIndex = 33;
-            // 
-            // tB_HFinAct
-            // 
-            this.tB_HFinAct.Location = new System.Drawing.Point(336, 98);
-            this.tB_HFinAct.Name = "tB_HFinAct";
-            this.tB_HFinAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_HFinAct.TabIndex = 34;
-            // 
-            // tB_MFinAct
-            // 
-            this.tB_MFinAct.Location = new System.Drawing.Point(385, 98);
-            this.tB_MFinAct.Name = "tB_MFinAct";
-            this.tB_MFinAct.Size = new System.Drawing.Size(27, 20);
-            this.tB_MFinAct.TabIndex = 35;
             // 
             // l_participants
             // 
@@ -352,7 +306,7 @@
             // 
             this.l_erreurConvert.AutoSize = true;
             this.l_erreurConvert.ForeColor = System.Drawing.Color.Red;
-            this.l_erreurConvert.Location = new System.Drawing.Point(465, 83);
+            this.l_erreurConvert.Location = new System.Drawing.Point(490, 80);
             this.l_erreurConvert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_erreurConvert.Name = "l_erreurConvert";
             this.l_erreurConvert.Size = new System.Drawing.Size(117, 13);
@@ -420,10 +374,6 @@
             this.groupBox1.Controls.Add(this.l_cate);
             this.groupBox1.Controls.Add(this.lB_listePart);
             this.groupBox1.Controls.Add(this.l_participants);
-            this.groupBox1.Controls.Add(this.tB_MFinAct);
-            this.groupBox1.Controls.Add(this.tB_HFinAct);
-            this.groupBox1.Controls.Add(this.tB_MDebAct);
-            this.groupBox1.Controls.Add(this.tB_HDebAct);
             this.groupBox1.Controls.Add(this.cB_localisation);
             this.groupBox1.Controls.Add(this.tB_descrAct);
             this.groupBox1.Controls.Add(this.label4);
@@ -431,7 +381,6 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label_description_activite);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label_heure_debut);
             this.groupBox1.Controls.Add(this.label_heure_fin);
             this.groupBox1.Controls.Add(this.label8);
@@ -456,7 +405,7 @@
             "30",
             "40",
             "50"});
-            this.cb_MFinAct.Location = new System.Drawing.Point(528, 96);
+            this.cb_MFinAct.Location = new System.Drawing.Point(404, 101);
             this.cb_MFinAct.Name = "cb_MFinAct";
             this.cb_MFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MFinAct.TabIndex = 63;
@@ -517,7 +466,7 @@
             "22",
             "23",
             "24"});
-            this.cb_HFinAct.Location = new System.Drawing.Point(452, 96);
+            this.cb_HFinAct.Location = new System.Drawing.Point(335, 101);
             this.cb_HFinAct.Name = "cb_HFinAct";
             this.cb_HFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_HFinAct.TabIndex = 64;
@@ -552,7 +501,7 @@
             "22",
             "23",
             "24"});
-            this.cb_HDebAct.Location = new System.Drawing.Point(452, 62);
+            this.cb_HDebAct.Location = new System.Drawing.Point(335, 67);
             this.cb_HDebAct.Name = "cb_HDebAct";
             this.cb_HDebAct.Size = new System.Drawing.Size(51, 21);
             this.cb_HDebAct.TabIndex = 65;
@@ -568,21 +517,11 @@
             "30",
             "40",
             "50"});
-            this.cb_MDebAct.Location = new System.Drawing.Point(528, 62);
+            this.cb_MDebAct.Location = new System.Drawing.Point(404, 67);
             this.cb_MDebAct.Name = "cb_MDebAct";
             this.cb_MDebAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MDebAct.TabIndex = 66;
             this.cb_MDebAct.Text = "00";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nom de l\'activité";
             // 
             // textBox1
             // 
@@ -631,7 +570,7 @@
             // 
             // b_modifier
             // 
-            this.b_modifier.Location = new System.Drawing.Point(531, 534);
+            this.b_modifier.Location = new System.Drawing.Point(89, 582);
             this.b_modifier.Name = "b_modifier";
             this.b_modifier.Size = new System.Drawing.Size(126, 48);
             this.b_modifier.TabIndex = 51;
@@ -649,7 +588,6 @@
             this.Controls.Add(this.pb_maps);
             this.Controls.Add(this.b_valider);
             this.Controls.Add(this.b_supprimer);
-            this.Controls.Add(this.b_annuler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.buttonRetourJournee);
@@ -681,7 +619,6 @@
         private System.Windows.Forms.Button buttonRetourJournee;
         private System.Windows.Forms.PictureBox pictureBoxMap;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button b_annuler;
         private System.Windows.Forms.Button b_supprimer;
         private System.Windows.Forms.Label labelNumeroJour;
         private System.Windows.Forms.Button b_valider;
@@ -701,10 +638,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tB_descrAct;
         private System.Windows.Forms.CheckBox cB_localisation;
-        private System.Windows.Forms.TextBox tB_HDebAct;
-        private System.Windows.Forms.TextBox tB_MDebAct;
-        private System.Windows.Forms.TextBox tB_HFinAct;
-        private System.Windows.Forms.TextBox tB_MFinAct;
         private System.Windows.Forms.Label l_participants;
         private System.Windows.Forms.ListBox lB_listePart;
         private System.Windows.Forms.Label l_cate;
@@ -717,7 +650,6 @@
         private System.Windows.Forms.ComboBox cb_HFinAct;
         private System.Windows.Forms.ComboBox cb_HDebAct;
         private System.Windows.Forms.ComboBox cb_MDebAct;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button b_modifier;
     }

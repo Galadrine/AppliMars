@@ -50,20 +50,18 @@
             this.l_erreurHoraires = new System.Windows.Forms.Label();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numUpDown_yAct = new System.Windows.Forms.NumericUpDown();
+            this.numUpDown_xAct = new System.Windows.Forms.NumericUpDown();
+            this.treeViewCategories = new System.Windows.Forms.TreeView();
+            this.l_cate = new System.Windows.Forms.Label();
+            this.cb_MFinAct = new System.Windows.Forms.ComboBox();
+            this.cb_HFinAct = new System.Windows.Forms.ComboBox();
+            this.cb_HDebAct = new System.Windows.Forms.ComboBox();
+            this.cb_MDebAct = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxNomLieu = new System.Windows.Forms.TextBox();
             this.buttonRetourJournee = new System.Windows.Forms.Button();
             this.labelNumeroJour = new System.Windows.Forms.Label();
-            this.cb_MDebAct = new System.Windows.Forms.ComboBox();
-            this.cb_MFinAct = new System.Windows.Forms.ComboBox();
-            this.cb_HDebAct = new System.Windows.Forms.ComboBox();
-            this.cb_HFinAct = new System.Windows.Forms.ComboBox();
-            this.treeViewCategories = new System.Windows.Forms.TreeView();
-            this.l_cate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numUpDown_yAct = new System.Windows.Forms.NumericUpDown();
-            this.numUpDown_xAct = new System.Windows.Forms.NumericUpDown();
             this.pb_maps = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -282,9 +280,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.numUpDown_yAct);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.numUpDown_xAct);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.treeViewCategories);
             this.groupBox1.Controls.Add(this.l_cate);
             this.groupBox1.Controls.Add(this.cb_MFinAct);
@@ -315,67 +311,62 @@
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             // 
-            // label8
+            // numUpDown_yAct
             // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(244, 417);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
-            this.label8.TabIndex = 60;
-            this.label8.Text = "Nom du lieu";
+            this.numUpDown_yAct.Enabled = false;
+            this.numUpDown_yAct.Location = new System.Drawing.Point(483, 453);
+            this.numUpDown_yAct.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numUpDown_yAct.Minimum = new decimal(new int[] {
+            1053,
+            0,
+            0,
+            -2147483648});
+            this.numUpDown_yAct.Name = "numUpDown_yAct";
+            this.numUpDown_yAct.Size = new System.Drawing.Size(51, 20);
+            this.numUpDown_yAct.TabIndex = 64;
             // 
-            // textBoxNomLieu
+            // numUpDown_xAct
             // 
-            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxNomLieu.Enabled = false;
-            this.textBoxNomLieu.Location = new System.Drawing.Point(338, 417);
-            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNomLieu.Name = "textBoxNomLieu";
-            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
-            this.textBoxNomLieu.TabIndex = 61;
+            this.numUpDown_xAct.Enabled = false;
+            this.numUpDown_xAct.Location = new System.Drawing.Point(381, 453);
+            this.numUpDown_xAct.Maximum = new decimal(new int[] {
+            395,
+            0,
+            0,
+            0});
+            this.numUpDown_xAct.Minimum = new decimal(new int[] {
+            700,
+            0,
+            0,
+            -2147483648});
+            this.numUpDown_xAct.Name = "numUpDown_xAct";
+            this.numUpDown_xAct.Size = new System.Drawing.Size(51, 20);
+            this.numUpDown_xAct.TabIndex = 65;
             // 
-            // buttonRetourJournee
+            // treeViewCategories
             // 
-            this.buttonRetourJournee.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourJournee.Image")));
-            this.buttonRetourJournee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRetourJournee.Location = new System.Drawing.Point(12, 12);
-            this.buttonRetourJournee.Name = "buttonRetourJournee";
-            this.buttonRetourJournee.Size = new System.Drawing.Size(141, 34);
-            this.buttonRetourJournee.TabIndex = 62;
-            this.buttonRetourJournee.Text = "Revenir à la journée";
-            this.buttonRetourJournee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRetourJournee.UseVisualStyleBackColor = true;
-            this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
+            this.treeViewCategories.HideSelection = false;
+            this.treeViewCategories.Location = new System.Drawing.Point(21, 62);
+            this.treeViewCategories.Name = "treeViewCategories";
+            this.treeViewCategories.Size = new System.Drawing.Size(175, 356);
+            this.treeViewCategories.TabIndex = 63;
+            this.treeViewCategories.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeViewCategories_BeforeSelect);
+            this.treeViewCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewCategories_AfterSelect);
+            this.treeViewCategories.Validating += new System.ComponentModel.CancelEventHandler(this.treeViewCategories_Validating);
             // 
-            // labelNumeroJour
+            // l_cate
             // 
-            this.labelNumeroJour.AutoSize = true;
-            this.labelNumeroJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumeroJour.Location = new System.Drawing.Point(307, 21);
-            this.labelNumeroJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelNumeroJour.Name = "labelNumeroJour";
-            this.labelNumeroJour.Size = new System.Drawing.Size(45, 25);
-            this.labelNumeroJour.TabIndex = 63;
-            this.labelNumeroJour.Text = "000";
-            this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cb_MDebAct
-            // 
-            this.cb_MDebAct.FormattingEnabled = true;
-            this.cb_MDebAct.Items.AddRange(new object[] {
-            "00",
-            "10",
-            "20",
-            "30",
-            "40",
-            "50"});
-            this.cb_MDebAct.Location = new System.Drawing.Point(409, 62);
-            this.cb_MDebAct.Name = "cb_MDebAct";
-            this.cb_MDebAct.Size = new System.Drawing.Size(51, 21);
-            this.cb_MDebAct.TabIndex = 62;
-            this.cb_MDebAct.Text = "00";
+            this.l_cate.AutoSize = true;
+            this.l_cate.Location = new System.Drawing.Point(18, 32);
+            this.l_cate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_cate.Name = "l_cate";
+            this.l_cate.Size = new System.Drawing.Size(52, 13);
+            this.l_cate.TabIndex = 64;
+            this.l_cate.Text = "Catégorie";
             // 
             // cb_MFinAct
             // 
@@ -392,41 +383,6 @@
             this.cb_MFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MFinAct.TabIndex = 62;
             this.cb_MFinAct.Text = "00";
-            // 
-            // cb_HDebAct
-            // 
-            this.cb_HDebAct.FormattingEnabled = true;
-            this.cb_HDebAct.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24"});
-            this.cb_HDebAct.Location = new System.Drawing.Point(333, 62);
-            this.cb_HDebAct.Name = "cb_HDebAct";
-            this.cb_HDebAct.Size = new System.Drawing.Size(51, 21);
-            this.cb_HDebAct.TabIndex = 62;
-            this.cb_HDebAct.Text = "00";
             // 
             // cb_HFinAct
             // 
@@ -489,82 +445,102 @@
             this.cb_HFinAct.TabIndex = 62;
             this.cb_HFinAct.Text = "10";
             // 
-            // treeViewCategories
+            // cb_HDebAct
             // 
-            this.treeViewCategories.HideSelection = false;
-            this.treeViewCategories.Location = new System.Drawing.Point(21, 62);
-            this.treeViewCategories.Name = "treeViewCategories";
-            this.treeViewCategories.Size = new System.Drawing.Size(175, 356);
-            this.treeViewCategories.TabIndex = 63;
-            this.treeViewCategories.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeViewCategories_BeforeSelect);
-            this.treeViewCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewCategories_AfterSelect);
-            this.treeViewCategories.Validating += new System.ComponentModel.CancelEventHandler(this.treeViewCategories_Validating);
+            this.cb_HDebAct.FormattingEnabled = true;
+            this.cb_HDebAct.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.cb_HDebAct.Location = new System.Drawing.Point(333, 62);
+            this.cb_HDebAct.Name = "cb_HDebAct";
+            this.cb_HDebAct.Size = new System.Drawing.Size(51, 21);
+            this.cb_HDebAct.TabIndex = 62;
+            this.cb_HDebAct.Text = "00";
             // 
-            // l_cate
+            // cb_MDebAct
             // 
-            this.l_cate.AutoSize = true;
-            this.l_cate.Location = new System.Drawing.Point(18, 32);
-            this.l_cate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.l_cate.Name = "l_cate";
-            this.l_cate.Size = new System.Drawing.Size(52, 13);
-            this.l_cate.TabIndex = 64;
-            this.l_cate.Text = "Catégorie";
+            this.cb_MDebAct.FormattingEnabled = true;
+            this.cb_MDebAct.Items.AddRange(new object[] {
+            "00",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50"});
+            this.cb_MDebAct.Location = new System.Drawing.Point(409, 62);
+            this.cb_MDebAct.Name = "cb_MDebAct";
+            this.cb_MDebAct.Size = new System.Drawing.Size(51, 21);
+            this.cb_MDebAct.TabIndex = 62;
+            this.cb_MDebAct.Text = "00";
             // 
-            // label1
+            // label8
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "Nom de l\'activité";
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Location = new System.Drawing.Point(244, 417);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Nom du lieu";
             // 
-            // textBox1
+            // textBoxNomLieu
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(334, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 66;
+            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxNomLieu.Enabled = false;
+            this.textBoxNomLieu.Location = new System.Drawing.Point(338, 417);
+            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNomLieu.Name = "textBoxNomLieu";
+            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
+            this.textBoxNomLieu.TabIndex = 61;
             // 
-            // numUpDown_yAct
+            // buttonRetourJournee
             // 
-            this.numUpDown_yAct.Enabled = false;
-            this.numUpDown_yAct.Location = new System.Drawing.Point(483, 453);
-            this.numUpDown_yAct.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numUpDown_yAct.Minimum = new decimal(new int[] {
-            1053,
-            0,
-            0,
-            -2147483648});
-            this.numUpDown_yAct.Name = "numUpDown_yAct";
-            this.numUpDown_yAct.Size = new System.Drawing.Size(51, 20);
-            this.numUpDown_yAct.TabIndex = 64;
+            this.buttonRetourJournee.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourJournee.Image")));
+            this.buttonRetourJournee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRetourJournee.Location = new System.Drawing.Point(12, 12);
+            this.buttonRetourJournee.Name = "buttonRetourJournee";
+            this.buttonRetourJournee.Size = new System.Drawing.Size(141, 34);
+            this.buttonRetourJournee.TabIndex = 62;
+            this.buttonRetourJournee.Text = "Revenir à la journée";
+            this.buttonRetourJournee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRetourJournee.UseVisualStyleBackColor = true;
+            this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
             // 
-            // numUpDown_xAct
+            // labelNumeroJour
             // 
-            this.numUpDown_xAct.Enabled = false;
-            this.numUpDown_xAct.Location = new System.Drawing.Point(381, 453);
-            this.numUpDown_xAct.Maximum = new decimal(new int[] {
-            395,
-            0,
-            0,
-            0});
-            this.numUpDown_xAct.Minimum = new decimal(new int[] {
-            700,
-            0,
-            0,
-            -2147483648});
-            this.numUpDown_xAct.Name = "numUpDown_xAct";
-            this.numUpDown_xAct.Size = new System.Drawing.Size(51, 20);
-            this.numUpDown_xAct.TabIndex = 65;
+            this.labelNumeroJour.AutoSize = true;
+            this.labelNumeroJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumeroJour.Location = new System.Drawing.Point(307, 21);
+            this.labelNumeroJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNumeroJour.Name = "labelNumeroJour";
+            this.labelNumeroJour.Size = new System.Drawing.Size(45, 25);
+            this.labelNumeroJour.TabIndex = 63;
+            this.labelNumeroJour.Text = "000";
+            this.labelNumeroJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pb_maps
             // 
@@ -640,8 +616,6 @@
         private System.Windows.Forms.ComboBox cb_HDebAct;
         private System.Windows.Forms.TreeView treeViewCategories;
         private System.Windows.Forms.Label l_cate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.NumericUpDown numUpDown_yAct;
         private System.Windows.Forms.NumericUpDown numUpDown_xAct;
         private System.Windows.Forms.PictureBox pb_maps;

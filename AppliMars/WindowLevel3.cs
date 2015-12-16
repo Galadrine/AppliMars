@@ -61,26 +61,25 @@ namespace AppliMars {
             affichage_treeView();
             //cB_typeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
-            tB_HDebAct.Text = monActivite.monHeureDebut.ToString();
-            tB_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
-            tB_HFinAct.Text = monActivite.monHeureFin.ToString();
-            tB_MFinAct.Text = monActivite.mesMinutesFin.ToString();
+            cb_HDebAct.Text = monActivite.monHeureDebut.ToString();
+            cb_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
+            cb_HFinAct.Text = monActivite.monHeureFin.ToString();
+            cb_MFinAct.Text = monActivite.mesMinutesFin.ToString();
             tB_nomLieu.Text = monActivite.monLieu.monNom.ToString();
             numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
             numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
             // Verrouillage des cases pour éviter les modfis
             treeViewCategories.Enabled = false;
-            tB_HDebAct.ReadOnly = true;
-            tB_MDebAct.ReadOnly = true;
-            tB_HFinAct.ReadOnly = true;
-            tB_MFinAct.ReadOnly = true;
+            cb_HDebAct.Enabled = true;
+            cb_MDebAct.Enabled = true;
+            cb_HFinAct.Enabled = true;
+            cb_MFinAct.Enabled = true;
             tB_descrAct.ReadOnly = true;
             lB_listePart.Enabled = false;
             cB_localisation.Enabled = false;
             tB_nomLieu.ReadOnly = true;
             pictureBoxMap.Enabled = false;
-            b_annuler.Visible = false;
             b_valider.Visible = false;
             b_supprimer.Visible = false;
 
@@ -278,11 +277,6 @@ namespace AppliMars {
 
         }
 
-        private void b_annuler_Click(object sender, EventArgs e) {
-            this.Close();
-            maFenetrePrec.Show();
-        }
-
         private void b_valider_Click(object sender, EventArgs e) {
             string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
             XDocument _generalXML = XDocument.Load(fileName);
@@ -294,14 +288,14 @@ namespace AppliMars {
 
             act.Element("NomAct").Value = treeViewCategories.SelectedNode.Text;
             actAModif.monNom = treeViewCategories.SelectedNode.Text;
-            act.Element("HDebutAct").Value = tB_HDebAct.Text;
-            actAModif.monHeureDebut = int.Parse(tB_HDebAct.Text);
-            act.Element("MDebutAct").Value = tB_MDebAct.Text;
-            actAModif.mesMinutesDebut = int.Parse(tB_MDebAct.Text);
-            act.Element("HFinAct").Value = tB_HFinAct.Text;
-            actAModif.monHeureFin = int.Parse(tB_HFinAct.Text);
-            act.Element("MFinAct").Value = tB_MFinAct.Text;
-            actAModif.mesMinutesFin = int.Parse(tB_MFinAct.Text);
+            act.Element("HDebutAct").Value = cb_HDebAct.Text;
+            actAModif.monHeureDebut = int.Parse(cb_HDebAct.Text);
+            act.Element("MDebutAct").Value = cb_MDebAct.Text;
+            actAModif.mesMinutesDebut = int.Parse(cb_MDebAct.Text);
+            act.Element("HFinAct").Value = cb_HFinAct.Text;
+            actAModif.monHeureFin = int.Parse(cb_HFinAct.Text);
+            act.Element("MFinAct").Value = cb_MFinAct.Text;
+            actAModif.mesMinutesFin = int.Parse(cb_MFinAct.Text);
             act.Element("BoolExt").Value = cB_localisation.Checked.ToString();
             actAModif.enExterieur = cB_localisation.Checked;
             act.Element("DescriptionAct").Value = tB_descrAct.Text;
@@ -406,32 +400,25 @@ namespace AppliMars {
             
         }
 
-        #endregion
 
         private void b_modifier_Click(object sender, EventArgs e)
         {
             // Déverrouillage des cases pour éviter les modfis
             treeViewCategories.Enabled = true;
-            tB_HDebAct.ReadOnly = false;
-            tB_MDebAct.ReadOnly = false;
-            tB_HFinAct.ReadOnly = false;
-            tB_MFinAct.ReadOnly = false;
+            cb_HDebAct.Enabled = false;
+            cb_MDebAct.Enabled = false;
+            cb_HFinAct.Enabled = false;
+            cb_MFinAct.Enabled = false;
             tB_descrAct.ReadOnly = false;
             lB_listePart.Enabled = true;
             cB_localisation.Enabled = true;
             tB_nomLieu.ReadOnly = false;
             pictureBoxMap.Enabled = true;
-            b_annuler.Visible = true;
             b_valider.Visible = true;
             b_supprimer.Visible = true;
         }
 
-        private void tB_nomLieu_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
+        #endregion
 
     }
 }

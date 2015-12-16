@@ -147,6 +147,17 @@ namespace AppliMars {
             return monCalendrier;
         }
 
+        public void updateButtons() {
+            Planning P = maMission.monPlanning;
+            foreach (Journee J in P.monTableauJournees) {
+                if (J.checkJourneeExterieur()) {
+                    Bitmap image1 = (Bitmap)Image.FromFile(@"..//..//Images//astronaut6.png", true);
+                    MesBoutons[J.monNumero - 1].Image = image1;
+                    MesBoutons[J.monNumero - 1].ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+                }
+            }
+        }
+
         public void affichageBoutons(string direction) {
 
             if (direction == "left") {
@@ -212,6 +223,7 @@ namespace AppliMars {
         }
 
         #endregion
+
 
 
     }

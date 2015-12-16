@@ -121,6 +121,7 @@ namespace AppliMars {
 
         private void buttonRetourCalendrier_Click(object sender, EventArgs e) {
             this.Close();
+            maFenetrePrec.updateButtons();
             maFenetrePrec.Show();
         }
 
