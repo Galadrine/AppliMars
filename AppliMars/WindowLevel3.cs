@@ -65,10 +65,24 @@ namespace AppliMars {
             tB_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
             tB_HFinAct.Text = monActivite.monHeureFin.ToString();
             tB_MFinAct.Text = monActivite.mesMinutesFin.ToString();
-            textBoxNomLieu.Text = monActivite.monLieu.monNom.ToString();
+            tB_nomLieu.Text = monActivite.monLieu.monNom.ToString();
             numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
             numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
+            // Verrouillage des cases pour éviter les modfis
+            treeViewCategories.Enabled = false;
+            tB_HDebAct.ReadOnly = true;
+            tB_MDebAct.ReadOnly = true;
+            tB_HFinAct.ReadOnly = true;
+            tB_MFinAct.ReadOnly = true;
+            tB_descrAct.ReadOnly = true;
+            lB_listePart.Enabled = false;
+            cB_localisation.Enabled = false;
+            tB_nomLieu.ReadOnly = true;
+            pictureBoxMap.Enabled = false;
+            b_annuler.Visible = false;
+            b_valider.Visible = false;
+            b_supprimer.Visible = false;
 
 
             //this.Controls.Add(this.pictureBoxMap);
@@ -233,12 +247,12 @@ namespace AppliMars {
 
         private void checkBoxLocalisation_CheckedChanged(object sender, EventArgs e) {
             if (cB_localisation.Checked) {
-                textBoxNomLieu.Enabled = true;
+                tB_nomLieu.Enabled = true;
                 numUpDown_xAct.Enabled = true;
                 numUpDown_yAct.Enabled = true;
 
             } else {
-                textBoxNomLieu.Enabled = false;
+                tB_nomLieu.Enabled = false;
                 numUpDown_xAct.Enabled = false;
                 numUpDown_yAct.Enabled = false;
             }
@@ -303,8 +317,8 @@ namespace AppliMars {
             act.Element("DescriptionAct").Value = tB_descrAct.Text;
             actAModif.maDescription = tB_descrAct.Text;
 
-            lieuAct.Element("nomLieu").Value = textBoxNomLieu.Text;
-            actAModif.monLieu.monNom = textBoxNomLieu.Text;
+            lieuAct.Element("nomLieu").Value = tB_nomLieu.Text;
+            actAModif.monLieu.monNom = tB_nomLieu.Text;
             lieuAct.Element("posX").Value = numUpDown_xAct.Text;
             actAModif.monLieu.maPosX = int.Parse(numUpDown_xAct.Text);
             lieuAct.Element("posY").Value = numUpDown_yAct.Text;
@@ -371,7 +385,7 @@ namespace AppliMars {
             // Affichage de la position sur la map
             if (monActivite.enExterieur == true) {
                 pictureBoxMap.Enabled = true;
-                textBoxNomLieu.Enabled = true;
+                tB_nomLieu.Enabled = true;
                 numUpDown_xAct.Enabled = true;
                 numUpDown_yAct.Enabled = true;
                 Graphics graphics = this.pictureBoxMap.CreateGraphics();
@@ -405,6 +419,29 @@ namespace AppliMars {
         }
 
         #endregion
+
+        private void b_modifier_Click(object sender, EventArgs e)
+        {
+            // Déverrouillage des cases pour éviter les modfis
+            treeViewCategories.Enabled = true;
+            tB_HDebAct.ReadOnly = false;
+            tB_MDebAct.ReadOnly = false;
+            tB_HFinAct.ReadOnly = false;
+            tB_MFinAct.ReadOnly = false;
+            tB_descrAct.ReadOnly = false;
+            lB_listePart.Enabled = true;
+            cB_localisation.Enabled = true;
+            tB_nomLieu.ReadOnly = false;
+            pictureBoxMap.Enabled = true;
+            b_annuler.Visible = true;
+            b_valider.Visible = true;
+            b_supprimer.Visible = true;
+        }
+
+        private void tB_nomLieu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
 
 

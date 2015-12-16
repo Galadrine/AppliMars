@@ -974,14 +974,14 @@
       <Activite idAct="48">
         <NomAct>Sleeping</NomAct>
         <HDebutAct>23</HDebutAct>
-        <MDebutAct>00</MDebutAct>
+        <MDebutAct>0</MDebutAct>
         <HFinAct>24</HFinAct>
         <MFinAct>40</MFinAct>
-        <BoolExt>false</BoolExt>
+        <BoolExt>False</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>00</posX>
-          <posY>00</posY>
+          <posX>-606</posX>
+          <posY>-129</posY>
         </Lieu>
         <DescriptionAct></DescriptionAct>
         <Participants>

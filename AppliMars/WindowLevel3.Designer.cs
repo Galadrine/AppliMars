@@ -32,7 +32,7 @@
             this.b_valider = new System.Windows.Forms.Button();
             this.labelLongitude = new System.Windows.Forms.Label();
             this.labelLatitude = new System.Windows.Forms.Label();
-            this.textBoxNomLieu = new System.Windows.Forms.TextBox();
+            this.tB_nomLieu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelCoordonnees = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@
             this.pb_maps = new System.Windows.Forms.PictureBox();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.buttonRetourJournee = new System.Windows.Forms.Button();
+            this.b_modifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -150,16 +151,17 @@
             this.labelLatitude.TabIndex = 12;
             this.labelLatitude.Text = "latitude";
             // 
-            // textBoxNomLieu
+            // tB_nomLieu
             // 
-            this.textBoxNomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxNomLieu.Enabled = false;
-            this.textBoxNomLieu.Location = new System.Drawing.Point(332, 377);
-            this.textBoxNomLieu.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNomLieu.Name = "textBoxNomLieu";
-            this.textBoxNomLieu.Size = new System.Drawing.Size(188, 20);
-            this.textBoxNomLieu.TabIndex = 11;
-            this.textBoxNomLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
+            this.tB_nomLieu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tB_nomLieu.Enabled = false;
+            this.tB_nomLieu.Location = new System.Drawing.Point(332, 377);
+            this.tB_nomLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.tB_nomLieu.Name = "tB_nomLieu";
+            this.tB_nomLieu.Size = new System.Drawing.Size(188, 20);
+            this.tB_nomLieu.TabIndex = 11;
+            this.tB_nomLieu.TextChanged += new System.EventHandler(this.tB_nomLieu_TextChanged);
+            this.tB_nomLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAbscisse_KeyPress);
             // 
             // label2
             // 
@@ -424,7 +426,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.labelCoordonnees);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxNomLieu);
+            this.groupBox1.Controls.Add(this.tB_nomLieu);
             this.groupBox1.Controls.Add(this.labelLatitude);
             this.groupBox1.Controls.Add(this.labelLongitude);
             this.groupBox1.Location = new System.Drawing.Point(42, 71);
@@ -468,12 +470,23 @@
             this.buttonRetourJournee.UseVisualStyleBackColor = true;
             this.buttonRetourJournee.Click += new System.EventHandler(this.buttonRetourJournee_Click);
             // 
+            // b_modifier
+            // 
+            this.b_modifier.Location = new System.Drawing.Point(531, 534);
+            this.b_modifier.Name = "b_modifier";
+            this.b_modifier.Size = new System.Drawing.Size(126, 48);
+            this.b_modifier.TabIndex = 51;
+            this.b_modifier.Text = "MODIFIER";
+            this.b_modifier.UseVisualStyleBackColor = true;
+            this.b_modifier.Click += new System.EventHandler(this.b_modifier_Click);
+            // 
             // WindowLevel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 731);
             this.ControlBox = false;
+            this.Controls.Add(this.b_modifier);
             this.Controls.Add(this.pb_maps);
             this.Controls.Add(this.b_valider);
             this.Controls.Add(this.b_supprimer);
@@ -516,7 +529,7 @@
         private System.Windows.Forms.PictureBox pb_maps;
         private System.Windows.Forms.Label labelLongitude;
         private System.Windows.Forms.Label labelLatitude;
-        private System.Windows.Forms.TextBox textBoxNomLieu;
+        private System.Windows.Forms.TextBox tB_nomLieu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelCoordonnees;
         private System.Windows.Forms.Label label8;
@@ -541,6 +554,7 @@
         private System.Windows.Forms.NumericUpDown numUpDown_yAct;
         private System.Windows.Forms.TreeView treeViewCategories;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button b_modifier;
     }
 }
 
