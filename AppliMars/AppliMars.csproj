@@ -49,7 +49,6 @@
     <Compile Include="Classes\Categorie.cs" />
     <Compile Include="Classes\Journee.cs" />
     <Compile Include="Classes\Lieu.cs" />
-    <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Mission.cs" />
     <Compile Include="Classes\Planning.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

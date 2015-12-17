@@ -191,13 +191,13 @@ namespace AppliMars {
             if (maJourneeSel != null) {
                 ///////////////////////// Ajouter des constructeurs à WindowLevel2 et WindowLevel3 pour avoir comme fenetrePrec la fenetre de recherche
                 if (monActiviteSel != null) {
-                    //WindowLevel1 win1 = new WindowLevel3(maJourneeSel, this);
-                    //win1.Show();
-                    //this.Hide();
+                    WindowLevel3 win1 = new WindowLevel3(monActiviteSel, maJourneeSel, this);
+                    win1.Show();
+                    this.Hide();
                 } else {
-                    //WindowLevel1 win1 = new WindowLevel3(maJourneeSel, this);
-                    //win1.Show();
-                    //this.Hide();
+                    WindowRecord win1 = new WindowRecord(maJourneeSel, this);
+                    win1.Show();
+                    this.Hide();
                 }
             }
         }

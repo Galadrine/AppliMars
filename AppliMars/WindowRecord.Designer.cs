@@ -29,6 +29,7 @@
             this.labelCompteRendu = new System.Windows.Forms.Label();
             this.buttonRetourJournee = new System.Windows.Forms.Button();
             this.labelCarRest = new System.Windows.Forms.Label();
+            this.b_retourSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tB_CR
@@ -88,12 +89,26 @@
             this.labelCarRest.Text = "Vous pouvez taper encore 1000  caractères";
             this.labelCarRest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // b_retourSearch
+            // 
+            this.b_retourSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_retourSearch.Location = new System.Drawing.Point(12, 24);
+            this.b_retourSearch.Name = "b_retourSearch";
+            this.b_retourSearch.Size = new System.Drawing.Size(141, 34);
+            this.b_retourSearch.TabIndex = 53;
+            this.b_retourSearch.Text = "Revenir à la recherche";
+            this.b_retourSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.b_retourSearch.UseVisualStyleBackColor = true;
+            this.b_retourSearch.Visible = false;
+            this.b_retourSearch.Click += new System.EventHandler(this.b_retourSearch_Click);
+            // 
             // WindowRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 731);
             this.ControlBox = false;
+            this.Controls.Add(this.b_retourSearch);
             this.Controls.Add(this.labelCarRest);
             this.Controls.Add(this.labelCompteRendu);
             this.Controls.Add(this.buttonModifier);
@@ -117,5 +132,6 @@
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Label labelCompteRendu;
         private System.Windows.Forms.Label labelCarRest;
+        private System.Windows.Forms.Button b_retourSearch;
     }
 }
