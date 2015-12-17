@@ -52,11 +52,6 @@
     <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Mission.cs" />
     <Compile Include="Classes\Planning.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="WindowLevel0.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,7 +105,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowLevel0.resx">
       <DependentUpon>WindowLevel0.cs</DependentUpon>
@@ -169,6 +163,7 @@
     <Content Include="Images\news.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
+    <None Include="Images\stars.jpeg" />
     <Content Include="XML\General.xml" />
     <Content Include="XML\Planning.xml">
       <SubType>Designer</SubType>

@@ -58,11 +58,11 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(63, 18);
+            this.labelTitle.Location = new System.Drawing.Point(77, 19);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(369, 39);
+            this.labelTitle.Size = new System.Drawing.Size(335, 39);
             this.labelTitle.TabIndex = 2;
-            this.labelTitle.Text = "SpaceShip Organisator";
+            this.labelTitle.Text = "SpaceShip Schedule";
             // 
             // listBoxMissions
             // 
@@ -86,26 +86,27 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.PapayaWhip;
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.buttonNouvelleMission);
-            this.panel1.Location = new System.Drawing.Point(178, 151);
+            this.panel1.Location = new System.Drawing.Point(173, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 412);
+            this.panel1.Size = new System.Drawing.Size(501, 412);
             this.panel1.TabIndex = 5;
             // 
             // WindowLevel0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 731);
+            this.ClientSize = new System.Drawing.Size(864, 593);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WindowLevel0";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Spaceship Organisator";
+            this.Text = "Spaceship Schedule";
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
