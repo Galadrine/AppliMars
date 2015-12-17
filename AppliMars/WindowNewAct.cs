@@ -101,8 +101,6 @@ namespace AppliMars
 
         private void b_creerNvAct_Click(object sender, EventArgs e) {
 
-
-
             string filePlanningName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
             string fileGeneralName = maFenetrePrec.maFenetrePrec.maMission.monCheminGeneralXML;
             XDocument _planningXML = XDocument.Load(filePlanningName);
@@ -278,5 +276,7 @@ namespace AppliMars
         }
 
         #endregion
+
+
     }
 }

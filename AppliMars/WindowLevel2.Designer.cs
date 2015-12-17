@@ -26,7 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowLevel2));
             this.label26 = new System.Windows.Forms.Label();
             this.labelJour = new System.Windows.Forms.Label();
-            this.buttonGoToLevel3 = new System.Windows.Forms.Button();
+            this.buttonDeleteAct = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonAjoutActivite = new System.Windows.Forms.Button();
             this.buttonCompteRendu = new System.Windows.Forms.Button();
@@ -68,22 +68,22 @@
             this.labelJour.Text = "000";
             this.labelJour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonGoToLevel3
+            // buttonDeleteAct
             // 
-            this.buttonGoToLevel3.Location = new System.Drawing.Point(89, 271);
-            this.buttonGoToLevel3.Name = "buttonGoToLevel3";
-            this.buttonGoToLevel3.Size = new System.Drawing.Size(176, 40);
-            this.buttonGoToLevel3.TabIndex = 8;
-            this.buttonGoToLevel3.Text = "Modifier l\'activité sélectionnée";
-            this.buttonGoToLevel3.UseVisualStyleBackColor = true;
-            this.buttonGoToLevel3.Visible = false;
-            this.buttonGoToLevel3.Click += new System.EventHandler(this.detailActivite);
+            this.buttonDeleteAct.Location = new System.Drawing.Point(634, 271);
+            this.buttonDeleteAct.Name = "buttonDeleteAct";
+            this.buttonDeleteAct.Size = new System.Drawing.Size(162, 34);
+            this.buttonDeleteAct.TabIndex = 8;
+            this.buttonDeleteAct.Text = "Supprimer l\'activité sélectionnée";
+            this.buttonDeleteAct.UseVisualStyleBackColor = true;
+            this.buttonDeleteAct.Visible = false;
+            this.buttonDeleteAct.Click += new System.EventHandler(this.buttonDeleteAct_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonAjoutActivite);
             this.groupBox2.Controls.Add(this.buttonCompteRendu);
-            this.groupBox2.Location = new System.Drawing.Point(628, 70);
+            this.groupBox2.Location = new System.Drawing.Point(22, 271);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(176, 100);
             this.groupBox2.TabIndex = 13;
@@ -223,7 +223,7 @@
             this.Controls.Add(this.pictureBoxJourPrecedent);
             this.Controls.Add(this.pictureBoxJourSuivant);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.buttonGoToLevel3);
+            this.Controls.Add(this.buttonDeleteAct);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listBoxActivites);
             this.Controls.Add(this.label1);
@@ -256,7 +256,7 @@
         private System.Windows.Forms.PictureBox pictureBoxJourPrecedent;
         private System.Windows.Forms.Button buttonRetourCalendrier;
         private System.Windows.Forms.Button buttonCompteRendu;
-        private System.Windows.Forms.Button buttonGoToLevel3;
+        private System.Windows.Forms.Button buttonDeleteAct;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelNomEmploiDuTemps;
         private System.Windows.Forms.ListBox listBoxActivites;

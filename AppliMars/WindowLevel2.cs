@@ -125,13 +125,6 @@ namespace AppliMars {
             maFenetrePrec.Show();
         }
 
-        private void detailActivite(object sender, EventArgs e) {
-            Button but = sender as Button;
-            WindowLevel3 win3 = new WindowLevel3(monactiviteSelectionnee, maJournee, this);
-            win3.Show();
-            this.Hide();
-        }
-
         private void buttonCompteRendu_Click(object sender, EventArgs e) {
             Button but = sender as Button;
             WindowRecord winrec = new WindowRecord(maJournee, this);
@@ -141,8 +134,13 @@ namespace AppliMars {
 
         private void listBoxActivites_SelectedIndexChanged(object sender, EventArgs e) {
             if (listBoxActivites.SelectedIndex >= 0) {
-                buttonGoToLevel3.Visible = true;
+                buttonDeleteAct.Visible = true;
                 monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
+                WindowLevel3 win3 = new WindowLevel3(monactiviteSelectionnee, maJournee, this);
+                win3.Show();
+                this.Hide();
+
+
             }
         }
 
@@ -162,9 +160,12 @@ namespace AppliMars {
             refreshPage();
         }
 
+        private void buttonDeleteAct_Click(object sender, EventArgs e) {
+
+        }
+
 
         #endregion
-
 
 
 

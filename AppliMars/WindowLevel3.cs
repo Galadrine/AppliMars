@@ -219,12 +219,6 @@ namespace AppliMars {
                     int j = 0;
                     foreach (Categorie A in SC.maSousCategorie)
                     {
-                        if (A.maSousCategorie.Count == 0)
-                        {
-
-                        }
-
-
                         treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
                         if (A.monNom == monActivite.monNom)
                         {
@@ -233,10 +227,6 @@ namespace AppliMars {
                         int k = 0;
                         foreach (Categorie a3 in A.maSousCategorie)
                         {
-                            if (a3.maSousCategorie.Count == 0)
-                            {
-
-                            }
                             treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
                             if (a3.monNom == monActivite.monNom)
                             {
@@ -258,12 +248,6 @@ namespace AppliMars {
                     int j = 0;
                     foreach (Categorie A in SC.maSousCategorie)
                     {
-                        if (A.maSousCategorie.Count == 0)
-                        {
-
-                        }
-
-
                         treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
                         if (A.monNom == monActivite.monNom)
                         {
@@ -272,10 +256,6 @@ namespace AppliMars {
                         int k = 0;
                         foreach (Categorie a3 in A.maSousCategorie)
                         {
-                            if (a3.maSousCategorie.Count == 0)
-                            {
-
-                            }
                             treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
                             if (a3.monNom == monActivite.monNom)
                             {
@@ -537,14 +517,13 @@ namespace AppliMars {
             pb_maps.Location = new Point(p0.X, p0.Y);
         }
 
-
-        #endregion
-
         private void b_retourSearch_Click(object sender, EventArgs e)
         {
             this.Close();
             maFenetrePrec2.Show();
         }
 
+        #endregion
+         
     }
 }
