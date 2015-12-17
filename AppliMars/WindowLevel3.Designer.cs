@@ -253,6 +253,7 @@
             // 
             // tB_descrAct
             // 
+            this.tB_descrAct.Enabled = false;
             this.tB_descrAct.Location = new System.Drawing.Point(336, 129);
             this.tB_descrAct.Margin = new System.Windows.Forms.Padding(2);
             this.tB_descrAct.MaxLength = 400;
@@ -285,6 +286,7 @@
             // 
             // lB_listePart
             // 
+            this.lB_listePart.Enabled = false;
             this.lB_listePart.FormattingEnabled = true;
             this.lB_listePart.Location = new System.Drawing.Point(336, 280);
             this.lB_listePart.MultiColumn = true;
@@ -553,6 +555,7 @@
             // pictureBoxMap
             // 
             this.pictureBoxMap.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMap.Enabled = false;
             this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
             this.pictureBoxMap.Location = new System.Drawing.Point(699, 21);
             this.pictureBoxMap.Name = "pictureBoxMap";

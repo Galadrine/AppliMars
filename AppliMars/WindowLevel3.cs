@@ -19,6 +19,7 @@ namespace AppliMars {
         private Activite act;
         private Journee jour;
         public TreeNode previousSelectedNode = null;
+        private bool _enModification = false;
 
         #endregion
 
@@ -34,6 +35,7 @@ namespace AppliMars {
             get { return win2; }
             set { win2 = value; }
         }
+        
         public WindowResultSearch maFenetrePrec2
         {
             get { return win2bis; }
@@ -43,6 +45,11 @@ namespace AppliMars {
         public Journee maJournee {
             get { return jour; }
             set { jour = value; }
+        }
+
+        public bool modifiable {
+            get { return _enModification; }
+            set { _enModification = value; }
         }
 
         #endregion
@@ -61,9 +68,12 @@ namespace AppliMars {
             maFenetrePrec = win2;
             monActivite = activite;
             maJournee = jour;
+            if (maJournee.monNumero < maFenetrePrec.maFenetrePrec.maMission.monJourJ) {
+                DisableControls(this);
+                EnableControls(buttonRetourJournee);
+            }
             this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero.ToString("D3");
             labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
-            //////////////////Charger le type d'activité
             affichage_treeView();
             //cB_typeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
@@ -77,7 +87,8 @@ namespace AppliMars {
             cB_localisation.Checked = monActivite.enExterieur;
             
             // Verrouillage des cases pour éviter les modfis
-            treeViewCategories.Enabled = false;
+
+            //treeViewCategories.Enabled = false;
             cb_HDebAct.Enabled = true;
             cb_MDebAct.Enabled = true;
             cb_HFinAct.Enabled = true;
@@ -116,6 +127,7 @@ namespace AppliMars {
             if (maJournee.monNumero < maFenetrePrec.maFenetrePrec.maMission.monJourJ) {
                 DisableControls(this);
                 EnableControls(buttonRetourJournee);
+                EnableControls(treeViewCategories);
             }
 
         }
@@ -127,9 +139,12 @@ namespace AppliMars {
             maFenetrePrec2 = win2;
             monActivite = activite;
             maJournee = jour;
+            if (maJournee.monNumero < maFenetrePrec2.maFenetrePrec.maMission.monJourJ) {
+                DisableControls(this);
+                EnableControls(buttonRetourJournee);
+            }
             this.Text = maFenetrePrec2.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero.ToString("D3");
             labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
-            //////////////////Charger le type d'activité
             affichage_treeView();
             //cB_typeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
@@ -172,11 +187,6 @@ namespace AppliMars {
                 }
             }
 
-            if (maJournee.monNumero < maFenetrePrec2.maFenetrePrec.maMission.monJourJ)
-            {
-                DisableControls(this);
-                EnableControls(buttonRetourJournee);
-            }
 
         }
 
@@ -374,6 +384,9 @@ namespace AppliMars {
         }
 
         private void treeViewCategories_BeforeSelect(object sender, TreeViewCancelEventArgs e) {
+            if (modifiable == false) {
+                e.Cancel = true;
+            }
             // On vérifie si le noeud du treeView a des enfants, si c'est le cas, c'est un super-catégorie, donc on ne peut pas la sélectionner
             if (e.Node.Nodes.Count != 0) {
                 e.Cancel = true;
@@ -449,19 +462,23 @@ namespace AppliMars {
 
         private void b_modifier_Click(object sender, EventArgs e)
         {
+            modifiable = true;
             // Déverrouillage des cases pour éviter les modfis
-            treeViewCategories.Enabled = true;
             cb_HDebAct.Enabled = true;
             cb_MDebAct.Enabled = true;
             cb_HFinAct.Enabled = true;
             cb_MFinAct.Enabled = true;
-            tB_descrAct.ReadOnly = false;
+            tB_descrAct.Enabled = true;
             lB_listePart.Enabled = true;
             cB_localisation.Enabled = true;
-            tB_nomLieu.ReadOnly = false;
-            pictureBoxMap.Enabled = true;
+            tB_nomLieu.Enabled = true;
             b_valider.Visible = true;
             b_supprimer.Visible = true;
+            if (monActivite.enExterieur == true) {
+                pictureBoxMap.Enabled = true;
+                numUpDown_xAct.Enabled = true;
+                numUpDown_yAct.Enabled = true;
+            }
         }
 
         private void numUpDown_ValueChanged(object sender, EventArgs e) {
