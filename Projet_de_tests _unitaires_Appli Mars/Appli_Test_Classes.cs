@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AppliMars;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
+//using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
@@ -12,7 +12,7 @@ using System.IO;
 namespace Appli_Mars_Tests
 {
     [TestClass]
-    public class Appli_Test
+    public class Appli_Test_Classes
     {
         [TestMethod]
         ///////////////////////////////////// Test Classe Journee ////////////////////////////////
@@ -57,8 +57,8 @@ namespace Appli_Mars_Tests
             List<string> participants = new List<string>();
             participants.Add("Moscet");
             Mission Tests = new Mission("Tests", date, 500, participants, "C:\\Users\\cmoscet\\Documents\\GitHub\\AppliMars\\AppliMars\\Missions\\Tests.Planning.xml");
-
-            //Tests.creaPlanningXML();
+            //XDocument generalXML = new XDocument;
+            //Tests.creaPlanningXML(generalXML);
         }
 
         //////////////////////////////////// Test Classe Categorie ////////////////////////////////
@@ -110,9 +110,9 @@ namespace Appli_Mars_Tests
             participants.Add(Barret);
             participants.Add(Lydie);
             Activite Act = new Activite("Sleeping", false, "Description", 9, 9, 14, 14, participants);
-
-            //System.Drawing.Point p = new System.Drawing.Point(x, y);
-            //Act.convertionCoordonneesXMLVersImage();
+            int x = 200;
+            int y = 200;
+            //Act.convertionCoordonneesXMLVersImage(x,y);
         }
 
 
