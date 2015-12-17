@@ -131,11 +131,16 @@ namespace AppliMars {
             }
 
         }
+        
         // Depuis la recherche
         public WindowLevel3(Activite activite, Journee jour, WindowResultSearch win2)
             : this()
         {
             // Changement du bouton "Revenir à la journée" 
+            buttonRetourJournee.Visible = false;
+            b_retourSearch.Visible = true;
+
+
             maFenetrePrec2 = win2;
             monActivite = activite;
             maJournee = jour;
@@ -206,26 +211,83 @@ namespace AppliMars {
         public void affichage_treeView() {
 
             int i = 0;
-            foreach (Categorie SC in maFenetrePrec.maFenetrePrec.maMission.maListeCategories) {
-                treeViewCategories.Nodes.Add(SC.monNom);
-                int j = 0;
-                foreach (Categorie A in SC.maSousCategorie) {
-                    treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
-                    if (A.monNom == monActivite.monNom) {
-                        treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];
-                    }
-                    int k = 0;
-                    foreach (Categorie a3 in A.maSousCategorie) {
-                        treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
-                        if (a3.monNom == monActivite.monNom) {
-                            previousSelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
-                            treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
+            try
+            {
+                foreach (Categorie SC in maFenetrePrec.maFenetrePrec.maMission.maListeCategories)
+                {
+                    treeViewCategories.Nodes.Add(SC.monNom);
+                    int j = 0;
+                    foreach (Categorie A in SC.maSousCategorie)
+                    {
+                        if (A.maSousCategorie.Count == 0)
+                        {
+
                         }
-                        k++;
+
+
+                        treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
+                        if (A.monNom == monActivite.monNom)
+                        {
+                            treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];
+                        }
+                        int k = 0;
+                        foreach (Categorie a3 in A.maSousCategorie)
+                        {
+                            if (a3.maSousCategorie.Count == 0)
+                            {
+
+                            }
+                            treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
+                            if (a3.monNom == monActivite.monNom)
+                            {
+                                previousSelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
+                                treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
+                            }
+                            k++;
+                        }
+                        j++;
                     }
-                    j++;
+                    i++;
                 }
-                i++;
+            }
+            catch
+            {
+                foreach (Categorie SC in maFenetrePrec2.maFenetrePrec.maMission.maListeCategories)
+                {
+                    treeViewCategories.Nodes.Add(SC.monNom);
+                    int j = 0;
+                    foreach (Categorie A in SC.maSousCategorie)
+                    {
+                        if (A.maSousCategorie.Count == 0)
+                        {
+
+                        }
+
+
+                        treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
+                        if (A.monNom == monActivite.monNom)
+                        {
+                            treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];
+                        }
+                        int k = 0;
+                        foreach (Categorie a3 in A.maSousCategorie)
+                        {
+                            if (a3.maSousCategorie.Count == 0)
+                            {
+
+                            }
+                            treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
+                            if (a3.monNom == monActivite.monNom)
+                            {
+                                previousSelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
+                                treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
+                            }
+                            k++;
+                        }
+                        j++;
+                    }
+                    i++;
+                }
             }
         }
         
@@ -477,6 +539,12 @@ namespace AppliMars {
 
 
         #endregion
+
+        private void b_retourSearch_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            maFenetrePrec2.Show();
+        }
 
     }
 }

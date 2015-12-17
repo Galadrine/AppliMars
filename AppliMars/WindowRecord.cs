@@ -15,6 +15,7 @@ namespace AppliMars {
         #region variables
 
         AppliMars.WindowLevel2 _win2;
+        AppliMars.WindowResultSearch _winS;
         Journee _jour;
         private bool _passee;
 
@@ -73,6 +74,19 @@ namespace AppliMars {
             
         }
 
+        // Depuis la recherche
+        public WindowRecord(Journee jour, AppliMars.WindowResultSearch w2)
+            : this()
+        {
+            _winS = w2;
+            _jour = jour;
+            this.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
+            labelCompteRendu.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
+            tB_CR.Text = _jour.monCompteRendu;
+            tB_CR.ReadOnly = true;
+            b_retourSearch.Visible = true;
+            buttonRetourJournee.Visible = false;
+        }
 
         public WindowRecord() {
             InitializeComponent();
@@ -130,6 +144,12 @@ namespace AppliMars {
         }
 
         #endregion
+
+        private void b_retourSearch_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _winS.Show();
+        }
 
     }
 }

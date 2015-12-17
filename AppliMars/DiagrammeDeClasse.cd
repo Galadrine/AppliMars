@@ -87,7 +87,7 @@
   <Class Name="AppliMars.WindowLevel3">
     <Position X="8.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IRhoQoCQICgWQJQEAACAAMqKiNRAIAAAGDAKAJUKYkA=</HashCode>
+      <HashCode>IRhoQoCQICgWQLQEQACAAMqKiNRAIAAAGDAKAJUKYkA=</HashCode>
       <FileName>WindowLevel3.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -108,7 +108,7 @@
   <Class Name="AppliMars.WindowRecord" Collapsed="true">
     <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAIAAAGAAACAAAESACEkCCAAAAAAAABAIABIAAAA=</HashCode>
+      <HashCode>gBAAAIAAAGAAACAAQESACEkCCAAAAAAAABAIABIAAAA=</HashCode>
       <FileName>WindowRecord.cs</FileName>
     </TypeIdentifier>
   </Class>
