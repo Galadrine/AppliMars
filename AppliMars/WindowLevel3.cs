@@ -119,9 +119,11 @@ namespace AppliMars {
             }
 
         }
+        // Depuis la recherche
         public WindowLevel3(Activite activite, Journee jour, WindowResultSearch win2)
             : this()
         {
+            // Changement du bouton "Revenir à la journée" 
             maFenetrePrec2 = win2;
             monActivite = activite;
             maJournee = jour;
@@ -155,17 +157,7 @@ namespace AppliMars {
             b_supprimer.Visible = false;
 
 
-            //this.Controls.Add(this.pictureBoxMap);
-            //pictureBoxMap.Controls.AddRange(new Control[]{this.pb_maps});
-            //pictureBoxMap.Controls.Add(pb_maps);
-            //pb_maps.Parent = pictureBoxMap;
-            /*
-            ((Bitmap)this.pb_maps.Image).MakeTransparent(((Bitmap)this.pb_maps.Image).GetPixel(1, 1));
-            this.pb_maps.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.pb_maps.BackColor = System.Drawing.Color.Transparent;
-            */
-            //((Bitmap)pb_maps.Image).MakeTransparent(((Bitmap)pb_maps.Image).GetPixel(0, pb_maps.Image.Size.Height - 1));
-
+            
             foreach (Astronaute a in maFenetrePrec2.maFenetrePrec.maMission.mesAstronautes)
             {
                 int indexLB = 0;
