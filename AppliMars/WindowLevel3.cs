@@ -211,6 +211,8 @@ namespace AppliMars {
                     if (A.maSousCategorie.Count == 0) {
                         
                     }
+
+                    
                     treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
                     if (A.monNom == monActivite.monNom) {
                         treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];

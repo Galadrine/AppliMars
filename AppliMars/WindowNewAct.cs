@@ -54,6 +54,9 @@ namespace AppliMars
             foreach (Astronaute ast in _jour.maMission.mesAstronautes) {
                 lB_listePart.Items.Add(ast.monNom);
             }
+
+
+            
         }
 
         #endregion

@@ -136,7 +136,7 @@
     <EmbeddedResource Include="WindowResultSearch.resx">
       <DependentUpon>WindowResultSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="DiagrammeDeClasse.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

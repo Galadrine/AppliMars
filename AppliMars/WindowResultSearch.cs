@@ -186,7 +186,7 @@ namespace AppliMars {
             }
         }
 
-        }
+        
         private void buttonGoTo_Click(object sender, EventArgs e) {
             if (maJourneeSel != null) {
                 ///////////////////////// Ajouter des constructeurs à WindowLevel2 et WindowLevel3 pour avoir comme fenetrePrec la fenetre de recherche
@@ -204,7 +204,6 @@ namespace AppliMars {
 
         #endregion
 
-        
 
 
 

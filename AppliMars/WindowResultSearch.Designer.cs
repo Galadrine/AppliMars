@@ -40,10 +40,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 160);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(97, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 29);
+            this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Résultats de la recherche :";
             // 
@@ -51,10 +50,9 @@
             // 
             this.buttonRetourCalendrier.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourCalendrier.Image")));
             this.buttonRetourCalendrier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRetourCalendrier.Location = new System.Drawing.Point(18, 18);
-            this.buttonRetourCalendrier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRetourCalendrier.Location = new System.Drawing.Point(12, 12);
             this.buttonRetourCalendrier.Name = "buttonRetourCalendrier";
-            this.buttonRetourCalendrier.Size = new System.Drawing.Size(243, 52);
+            this.buttonRetourCalendrier.Size = new System.Drawing.Size(162, 34);
             this.buttonRetourCalendrier.TabIndex = 2;
             this.buttonRetourCalendrier.Text = "Revenir au calendrier";
             this.buttonRetourCalendrier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -65,85 +63,73 @@
             // 
             this.labelRecherche.AutoSize = true;
             this.labelRecherche.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelRecherche.Location = new System.Drawing.Point(452, 168);
-            this.labelRecherche.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRecherche.Location = new System.Drawing.Point(301, 109);
             this.labelRecherche.Name = "labelRecherche";
-            this.labelRecherche.Size = new System.Drawing.Size(117, 20);
+            this.labelRecherche.Size = new System.Drawing.Size(80, 13);
             this.labelRecherche.TabIndex = 3;
             this.labelRecherche.Text = "label recherche";
             this.labelRecherche.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelRecherche.TextChanged += new System.EventHandler(this.labelRecherche_TextChanged);
             // 
             // listBoxNom
             // 
             this.listBoxNom.FormattingEnabled = true;
-            this.listBoxNom.ItemHeight = 20;
-            this.listBoxNom.Location = new System.Drawing.Point(148, 311);
-            this.listBoxNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxNom.Location = new System.Drawing.Point(99, 202);
             this.listBoxNom.Name = "listBoxNom";
-            this.listBoxNom.Size = new System.Drawing.Size(224, 484);
+            this.listBoxNom.Size = new System.Drawing.Size(151, 316);
             this.listBoxNom.TabIndex = 4;
             this.listBoxNom.SelectedIndexChanged += new System.EventHandler(this.listBoxNom_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(495, 269);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(330, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 20);
+            this.label2.Size = new System.Drawing.Size(192, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Résultat dans les descriptions d\'activité";
             // 
             // listBoxDescription
             // 
             this.listBoxDescription.FormattingEnabled = true;
-            this.listBoxDescription.ItemHeight = 20;
-            this.listBoxDescription.Location = new System.Drawing.Point(500, 311);
-            this.listBoxDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxDescription.Location = new System.Drawing.Point(333, 202);
             this.listBoxDescription.Name = "listBoxDescription";
-            this.listBoxDescription.Size = new System.Drawing.Size(224, 484);
+            this.listBoxDescription.Size = new System.Drawing.Size(151, 316);
             this.listBoxDescription.TabIndex = 4;
             this.listBoxDescription.SelectedIndexChanged += new System.EventHandler(this.listBoxDescription_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(861, 269);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(574, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 20);
+            this.label3.Size = new System.Drawing.Size(209, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Résultat dans les compte rendu de journée";
             // 
             // listBoxCompteRendu
             // 
             this.listBoxCompteRendu.FormattingEnabled = true;
-            this.listBoxCompteRendu.ItemHeight = 20;
-            this.listBoxCompteRendu.Location = new System.Drawing.Point(866, 311);
-            this.listBoxCompteRendu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxCompteRendu.Location = new System.Drawing.Point(577, 202);
             this.listBoxCompteRendu.Name = "listBoxCompteRendu";
-            this.listBoxCompteRendu.Size = new System.Drawing.Size(224, 484);
+            this.listBoxCompteRendu.Size = new System.Drawing.Size(151, 316);
             this.listBoxCompteRendu.TabIndex = 4;
             this.listBoxCompteRendu.SelectedIndexChanged += new System.EventHandler(this.listBoxCompteRendu_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(147, 269);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(98, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(255, 20);
+            this.label4.Size = new System.Drawing.Size(172, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Résultat dans le nom d\'une activité";
             // 
             // buttonGoTo
             // 
             this.buttonGoTo.Enabled = false;
-            this.buttonGoTo.Location = new System.Drawing.Point(470, 885);
-            this.buttonGoTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonGoTo.Location = new System.Drawing.Point(313, 575);
             this.buttonGoTo.Name = "buttonGoTo";
-            this.buttonGoTo.Size = new System.Drawing.Size(282, 48);
+            this.buttonGoTo.Size = new System.Drawing.Size(188, 31);
             this.buttonGoTo.TabIndex = 6;
             this.buttonGoTo.Text = "Accéder au jour sélectionné";
             this.buttonGoTo.UseVisualStyleBackColor = true;
@@ -151,9 +137,9 @@
             // 
             // WindowResultSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1296, 1038);
+            this.ClientSize = new System.Drawing.Size(864, 562);
             this.ControlBox = false;
             this.Controls.Add(this.buttonGoTo);
             this.Controls.Add(this.label4);
@@ -165,7 +151,6 @@
             this.Controls.Add(this.labelRecherche);
             this.Controls.Add(this.buttonRetourCalendrier);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "WindowResultSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
