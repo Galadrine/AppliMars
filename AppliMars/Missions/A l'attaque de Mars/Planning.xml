@@ -960,7 +960,7 @@
     </Activites>
   </Jour>
   <Jour id="17">
-    <CRJour>tranks</CRJour>
+    <CRJour>La sortie en extérieur s'est bien passée, faire attention au timing ! Penser au Cleaning du SpaceSuit</CRJour>
     <Activites>
       <Activite idAct="49">
         <NomAct>Sleeping</NomAct>
@@ -1017,6 +1017,23 @@
         </Participants>
       </Activite>
     </Activites>
+    <Activite idAct="3600">
+      <NomAct>Cleaning</NomAct>
+      <HDebutAct>7</HDebutAct>
+      <MDebutAct>10</MDebutAct>
+      <HFinAct>10</HFinAct>
+      <MFinAct>0</MFinAct>
+      <BoolExt>False</BoolExt>
+      <Lieu>
+        <nomLieu>Habitat</nomLieu>
+        <posX>0</posX>
+        <posY>0</posY>
+      </Lieu>
+      <DescriptionAct></DescriptionAct>
+      <Participants>
+        <NomAct>Jefster</NomAct>
+      </Participants>
+    </Activite>
   </Jour>
   <Jour id="18">
     <CRJour>tranks</CRJour>
@@ -1135,6 +1152,21 @@
         </Participants>
       </Activite>
     </Activites>
+    <Activite idAct="3601">
+      <NomAct>Cleaning</NomAct>
+      <HDebutAct>15</HDebutAct>
+      <MDebutAct>0</MDebutAct>
+      <HFinAct>16</HFinAct>
+      <MFinAct>0</MFinAct>
+      <BoolExt>False</BoolExt>
+      <Lieu>
+        <nomLieu>Habitat</nomLieu>
+        <posX>0</posX>
+        <posY>0</posY>
+      </Lieu>
+      <DescriptionAct>Cleaning à fond !!</DescriptionAct>
+      <Participants />
+    </Activite>
   </Jour>
   <Jour id="20">
     <CRJour></CRJour>
@@ -1253,6 +1285,24 @@
         </Participants>
       </Activite>
     </Activites>
+    <Activite idAct="3600">
+      <NomAct>Cleaning</NomAct>
+      <HDebutAct>6</HDebutAct>
+      <MDebutAct>0</MDebutAct>
+      <HFinAct>8</HFinAct>
+      <MFinAct>0</MFinAct>
+      <BoolExt>False</BoolExt>
+      <Lieu>
+        <nomLieu>Habitat</nomLieu>
+        <posX>0</posX>
+        <posY>0</posY>
+      </Lieu>
+      <DescriptionAct>Cleaning à fond !</DescriptionAct>
+      <Participants>
+        <NomAct>Jefster</NomAct>
+        <NomAct>Jack</NomAct>
+      </Participants>
+    </Activite>
   </Jour>
   <Jour id="22">
     <CRJour></CRJour>
