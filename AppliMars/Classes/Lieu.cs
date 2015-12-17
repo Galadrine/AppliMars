@@ -35,6 +35,17 @@ namespace AppliMars {
 
         #endregion
 
+        public Activite Activite
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
 
         #region constructeurs
 
