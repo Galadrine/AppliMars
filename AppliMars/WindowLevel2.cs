@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AppliMars {
     public partial class WindowLevel2 : Form {
@@ -134,12 +135,8 @@ namespace AppliMars {
 
         private void listBoxActivites_SelectedIndexChanged(object sender, EventArgs e) {
             if (listBoxActivites.SelectedIndex >= 0) {
-                buttonDeleteAct.Visible = true;
+                buttonModifAct.Visible = true;
                 monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
-                WindowLevel3 win3 = new WindowLevel3(monactiviteSelectionnee, maJournee, this);
-                win3.Show();
-                this.Hide();
-
 
             }
         }
@@ -161,13 +158,40 @@ namespace AppliMars {
         }
 
         private void buttonDeleteAct_Click(object sender, EventArgs e) {
+            DialogResult dlgRes = DialogResult.No;
+            dlgRes = MessageBox.Show(
+            "Voulez-vous vraiment supprimer cette activité ?",
+            "Confirmation suppression activité",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            if (dlgRes == DialogResult.Yes) {
+                // SupprimerActivite();
+                string fileName = maFenetrePrec.maMission.monCheminPlanningXML;
+                XDocument doc = XDocument.Load(fileName);
+                var act = (from activite in doc.Descendants("Activite") where (string)activite.Attribute("idAct") == monactiviteSelectionnee.monID.ToString() select activite).ToList();
+                Console.WriteLine();
+                foreach (var node in act)
+                    node.Remove();
+                doc.Save(fileName);
+
+                Journee journeeAModif = maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 1];
+                int indexActAModif = journeeAModif.getPosActiviteByIdAct(monactiviteSelectionnee.monID);
+                Activite actAModif = journeeAModif.maListeActivites[indexActAModif];
+                journeeAModif.maListeActivites.Remove(actAModif);
+
+                this.insertionActivitesListBox();
+            }
+        }
+
+        private void buttonModifAct_Click(object sender, EventArgs e) {
+            WindowLevel3 win3 = new WindowLevel3(monactiviteSelectionnee, maJournee, this);
+            win3.Show();
+            this.Hide();
 
         }
 
-
         #endregion
-
-
 
     }
 }
