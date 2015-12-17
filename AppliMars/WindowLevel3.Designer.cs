@@ -546,7 +546,7 @@
             // 
             this.pb_maps.BackColor = System.Drawing.Color.Transparent;
             this.pb_maps.Image = global::AppliMars.Properties.Resources.maps;
-            this.pb_maps.Location = new System.Drawing.Point(904, 174);
+            this.pb_maps.Location = new System.Drawing.Point(921, 315);
             this.pb_maps.Name = "pb_maps";
             this.pb_maps.Size = new System.Drawing.Size(20, 34);
             this.pb_maps.TabIndex = 34;

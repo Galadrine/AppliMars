@@ -210,20 +210,12 @@ namespace AppliMars {
                 treeViewCategories.Nodes.Add(SC.monNom);
                 int j = 0;
                 foreach (Categorie A in SC.maSousCategorie) {
-                    if (A.maSousCategorie.Count == 0) {
-                        
-                    }
-
-                    
                     treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
                     if (A.monNom == monActivite.monNom) {
                         treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];
                     }
                     int k = 0;
                     foreach (Categorie a3 in A.maSousCategorie) {
-                        if (a3.maSousCategorie.Count == 0) {
-
-                        }
                         treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
                         if (a3.monNom == monActivite.monNom) {
                             previousSelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
@@ -384,9 +376,6 @@ namespace AppliMars {
         }
 
         private void treeViewCategories_BeforeSelect(object sender, TreeViewCancelEventArgs e) {
-            if (modifiable == false) {
-                e.Cancel = true;
-            }
             // On vérifie si le noeud du treeView a des enfants, si c'est le cas, c'est un super-catégorie, donc on ne peut pas la sélectionner
             if (e.Node.Nodes.Count != 0) {
                 e.Cancel = true;

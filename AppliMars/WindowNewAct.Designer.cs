@@ -212,6 +212,7 @@
             this.lB_listePart.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lB_listePart.Size = new System.Drawing.Size(246, 95);
             this.lB_listePart.TabIndex = 55;
+            this.lB_listePart.SelectedIndexChanged += new System.EventHandler(this.lB_listePart_SelectedIndexChanged);
             // 
             // l_participants
             // 
@@ -246,6 +247,7 @@
             // 
             // b_creerNvAct
             // 
+            this.b_creerNvAct.Enabled = false;
             this.b_creerNvAct.Location = new System.Drawing.Point(297, 628);
             this.b_creerNvAct.Name = "b_creerNvAct";
             this.b_creerNvAct.Size = new System.Drawing.Size(126, 48);
@@ -549,7 +551,7 @@
             // 
             this.pb_maps.BackColor = System.Drawing.Color.Transparent;
             this.pb_maps.Image = global::AppliMars.Properties.Resources.maps;
-            this.pb_maps.Location = new System.Drawing.Point(866, 207);
+            this.pb_maps.Location = new System.Drawing.Point(921, 319);
             this.pb_maps.Name = "pb_maps";
             this.pb_maps.Size = new System.Drawing.Size(20, 34);
             this.pb_maps.TabIndex = 67;

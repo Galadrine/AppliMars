@@ -107,7 +107,7 @@ namespace AppliMars {
             if (_nbActTotal < monID)
                 _nbActTotal = monID;
             if (idAct > monNbActionTotal) {
-                monNbActionTotal = idAct;
+                monNbActionTotal = idAct+1;
             }
         }
 
