@@ -275,7 +275,6 @@
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMap.TabIndex = 60;
             this.pictureBoxMap.TabStop = false;
-            this.pictureBoxMap.Visible = false;
             // 
             // groupBox1
             // 

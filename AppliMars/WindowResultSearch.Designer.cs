@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 104);
+            this.label1.Location = new System.Drawing.Point(86, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.labelRecherche.AutoSize = true;
             this.labelRecherche.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelRecherche.Location = new System.Drawing.Point(301, 109);
+            this.labelRecherche.Location = new System.Drawing.Point(290, 68);
             this.labelRecherche.Name = "labelRecherche";
             this.labelRecherche.Size = new System.Drawing.Size(80, 13);
             this.labelRecherche.TabIndex = 3;
@@ -73,7 +73,7 @@
             // listBoxNom
             // 
             this.listBoxNom.FormattingEnabled = true;
-            this.listBoxNom.Location = new System.Drawing.Point(99, 202);
+            this.listBoxNom.Location = new System.Drawing.Point(88, 161);
             this.listBoxNom.Name = "listBoxNom";
             this.listBoxNom.Size = new System.Drawing.Size(151, 316);
             this.listBoxNom.TabIndex = 4;
@@ -82,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 175);
+            this.label2.Location = new System.Drawing.Point(319, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 13);
             this.label2.TabIndex = 5;
@@ -91,7 +91,7 @@
             // listBoxDescription
             // 
             this.listBoxDescription.FormattingEnabled = true;
-            this.listBoxDescription.Location = new System.Drawing.Point(333, 202);
+            this.listBoxDescription.Location = new System.Drawing.Point(322, 161);
             this.listBoxDescription.Name = "listBoxDescription";
             this.listBoxDescription.Size = new System.Drawing.Size(151, 316);
             this.listBoxDescription.TabIndex = 4;
@@ -100,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(574, 175);
+            this.label3.Location = new System.Drawing.Point(563, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(209, 13);
             this.label3.TabIndex = 5;
@@ -109,7 +109,7 @@
             // listBoxCompteRendu
             // 
             this.listBoxCompteRendu.FormattingEnabled = true;
-            this.listBoxCompteRendu.Location = new System.Drawing.Point(577, 202);
+            this.listBoxCompteRendu.Location = new System.Drawing.Point(566, 161);
             this.listBoxCompteRendu.Name = "listBoxCompteRendu";
             this.listBoxCompteRendu.Size = new System.Drawing.Size(151, 316);
             this.listBoxCompteRendu.TabIndex = 4;
@@ -118,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(98, 175);
+            this.label4.Location = new System.Drawing.Point(87, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(172, 13);
             this.label4.TabIndex = 5;
@@ -127,7 +127,7 @@
             // buttonGoTo
             // 
             this.buttonGoTo.Enabled = false;
-            this.buttonGoTo.Location = new System.Drawing.Point(313, 575);
+            this.buttonGoTo.Location = new System.Drawing.Point(302, 502);
             this.buttonGoTo.Name = "buttonGoTo";
             this.buttonGoTo.Size = new System.Drawing.Size(188, 31);
             this.buttonGoTo.TabIndex = 6;

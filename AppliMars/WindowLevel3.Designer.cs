@@ -264,6 +264,7 @@
             // cB_localisation
             // 
             this.cB_localisation.AutoSize = true;
+            this.cB_localisation.Enabled = false;
             this.cB_localisation.Location = new System.Drawing.Point(336, 385);
             this.cB_localisation.Name = "cB_localisation";
             this.cB_localisation.Size = new System.Drawing.Size(119, 17);
@@ -399,6 +400,7 @@
             // 
             // cb_MFinAct
             // 
+            this.cb_MFinAct.Enabled = false;
             this.cb_MFinAct.FormattingEnabled = true;
             this.cb_MFinAct.Items.AddRange(new object[] {
             "00",
@@ -441,6 +443,7 @@
             "22",
             "23",
             "24"});
+            this.cb_HFinAct.Enabled = false;
             this.cb_HFinAct.FormattingEnabled = true;
             this.cb_HFinAct.Items.AddRange(new object[] {
             "00",
@@ -476,6 +479,7 @@
             // 
             // cb_HDebAct
             // 
+            this.cb_HDebAct.Enabled = false;
             this.cb_HDebAct.FormattingEnabled = true;
             this.cb_HDebAct.Items.AddRange(new object[] {
             "00",
@@ -511,6 +515,7 @@
             // 
             // cb_MDebAct
             // 
+            this.cb_MDebAct.Enabled = false;
             this.cb_MDebAct.FormattingEnabled = true;
             this.cb_MDebAct.Items.AddRange(new object[] {
             "00",

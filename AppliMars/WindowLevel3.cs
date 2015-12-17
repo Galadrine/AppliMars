@@ -198,7 +198,7 @@ namespace AppliMars {
         }
 
         public System.Drawing.Point convertCoordUpDownToImage(Point coordinates) {
-            return new System.Drawing.Point(699 + (coordinates.X / 3) + 700, 21 + (coordinates.Y / 3) + 1000);
+            return new System.Drawing.Point(699 + (coordinates.X + 700 / 3), 21 + (coordinates.Y +1000 / 3) );
         }
 
         public void affichage_treeView() {
@@ -459,10 +459,10 @@ namespace AppliMars {
         {
             // Déverrouillage des cases pour éviter les modfis
             treeViewCategories.Enabled = true;
-            cb_HDebAct.Enabled = false;
-            cb_MDebAct.Enabled = false;
-            cb_HFinAct.Enabled = false;
-            cb_MFinAct.Enabled = false;
+            cb_HDebAct.Enabled = true;
+            cb_MDebAct.Enabled = true;
+            cb_HFinAct.Enabled = true;
+            cb_MFinAct.Enabled = true;
             tB_descrAct.ReadOnly = false;
             lB_listePart.Enabled = true;
             cB_localisation.Enabled = true;
@@ -474,7 +474,7 @@ namespace AppliMars {
 
         private void numUpDown_ValueChanged(object sender, EventArgs e) {
             Point p0 = convertCoordUpDownToImage(new Point(int.Parse(numUpDown_xAct.Value.ToString()), int.Parse(numUpDown_yAct.Value.ToString())));
-            pb_maps.Location = new Point(p0.X / 3, p0.Y / 3);
+            pb_maps.Location = new Point(p0.X, p0.Y);
         }
 
 
