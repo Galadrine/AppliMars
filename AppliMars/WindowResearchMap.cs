@@ -16,6 +16,7 @@ namespace AppliMars {
         private WindowLevel1 _win1;
         private List<Button> _listBut;
         private List<Activite> _listAct;
+        private List<int> _litJour;
         private int _nbActExtTrouve;
         private Activite _actSelectionnee;
         public TreeNode previousSelectedNode = null;
@@ -56,6 +57,11 @@ namespace AppliMars {
             set { _previousSelectedNode = value; }
         }
 
+        public List<int> maListeJours {
+            get { return _litJour; }
+            set { _litJour = value; }
+        }
+        
         #endregion
 
 
@@ -70,6 +76,8 @@ namespace AppliMars {
             maFenetrePrec = w1;
             _listBut = new List<Button>();
             maListeActivite = new List<Activite>();
+            maListeActivite = new List<Activite>();
+            maListeJours = new List<int>();
             monNbActExtTrouve = 0;
             for (int i = 0; i < maFenetrePrec.maMission.maDureeMission + 1; i++) {
                 cB_JourDebut.Items.Add(i);
@@ -100,14 +108,13 @@ namespace AppliMars {
                     if (act.enExterieur == true) {
                         Button btnImg = new Button();
                         btnImg.Text = "";
-                        btnImg.Width = 16;
-                        btnImg.Height = 16;
+                        btnImg.Width = 22;
+                        btnImg.Height = 22;
                         btnImg.Visible = true;
                         btnImg.Enabled = true;
                         btnImg.Location = new System.Drawing.Point(686 + -8 + 700/3 + act.monLieu.maPosX / 3, 25 - 8 + 1000/3 + act.monLieu.maPosY / 3);
                         //btnImg.Location = new System.Drawing.Point(480,25);
                         btnImg.Click += new System.EventHandler(img_click);
-                        btnImg.BackColor = System.Drawing.Color.PaleGreen;
                         Bitmap image = (Bitmap)Image.FromFile(@"..//..//Images//vehiculePasse.png", true);
                         btnImg.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
                         if (jour.monNumero < maFenetrePrec.maMission.monJourJ) { // activités passées
@@ -130,10 +137,11 @@ namespace AppliMars {
                         btnImg.Image = image;
                         btnImg.BringToFront();
                         btnImg.Name = monNbActExtTrouve.ToString();
-                        //panel1.Controls.Add(jour);
                         maListeBouttons.Add(btnImg);
                         maListeActivite.Add(act);
+                        maListeJours.Add(jour.monNumero);
                         monNbActExtTrouve++;
+                        this.Controls.Add(btnImg);
                     }
                 }
             }
@@ -142,12 +150,12 @@ namespace AppliMars {
                 but.Enabled = true;
                 but.BringToFront();
             }
-
-            Console.WriteLine();
-
         }
 
-        public void affichage_treeView() {            
+        public void affichage_treeView() {
+
+            treeViewCategories.Nodes.Clear();
+
             int i = 0;
             foreach (Categorie SC in maFenetrePrec.maMission.maListeCategories) {
                 treeViewCategories.Nodes.Add(SC.monNom);
@@ -190,7 +198,7 @@ namespace AppliMars {
             var button = (Button)sender;
             int numAct = int.Parse(button.Name);
 
-            monActSel = maListeActivite[numAct -1];
+            monActSel = maListeActivite[numAct];
 
             affichage_treeView();
             tB_descrAct.Text = monActSel.maDescription;
@@ -199,6 +207,7 @@ namespace AppliMars {
             cb_HFinAct.Text = monActSel.monHeureFin.ToString();
             cb_MFinAct.Text = monActSel.mesMinutesFin.ToString();
             tB_nomLieu.Text = monActSel.monLieu.monNom.ToString();
+            labelNumJour.Text = maListeJours[numAct].ToString();
             numUpDown_xAct.Text = monActSel.monLieu.maPosX.ToString();
             numUpDown_yAct.Text = monActSel.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActSel.enExterieur;
@@ -215,11 +224,11 @@ namespace AppliMars {
             }
         }
 
-        #endregion
-
         private void WindowResearchMap_Load(object sender, EventArgs e) {
             updateImagesMap(1, 500);
         }
+
+        #endregion
 
     }
 }
