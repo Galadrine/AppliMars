@@ -152,7 +152,7 @@ namespace AppliMars {
             return monCalendrier;
         }
 
-        public void updateButtons() {
+        public void updateImageButtons() {
             Planning P = maMission.monPlanning;
             foreach (Journee J in P.monTableauJournees) {
                 if (J.checkJourneeExterieur()) {

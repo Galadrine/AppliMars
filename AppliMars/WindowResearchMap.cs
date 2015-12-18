@@ -18,7 +18,9 @@ namespace AppliMars {
         private List<Activite> _listAct;
         private int _nbActExtTrouve;
         private Activite _actSelectionnee;
-
+        public TreeNode previousSelectedNode = null;
+        private TreeNode _previousSelectedNode = null;
+        
         #endregion
 
 
@@ -49,6 +51,11 @@ namespace AppliMars {
             set { _actSelectionnee = value; }
         }
 
+        public TreeNode myPreviousNode {
+            get { return _previousSelectedNode; }
+            set { _previousSelectedNode = value; }
+        }
+
         #endregion
 
 
@@ -72,8 +79,6 @@ namespace AppliMars {
             cB_JourDebut.SelectedIndex = 1;
             cB_JourFin.SelectedIndex = maFenetrePrec.maMission.maDureeMission - 1;
 
-            updateImagesMap(1, 500);
-
         }
 
         #endregion
@@ -89,16 +94,18 @@ namespace AppliMars {
 
             for (int i = debut; i < fin; i++) {
                 
-            Journee jour = maFenetrePrec.maMission.monPlanning.monTableauJournees[i-1];
+                Journee jour = maFenetrePrec.maMission.monPlanning.monTableauJournees[i-1];
 
                 foreach (Activite act in jour.maListeActivites) {
                     if (act.enExterieur == true) {
                         Button btnImg = new Button();
+                        btnImg.Text = "";
                         btnImg.Width = 16;
+                        btnImg.Height = 16;
                         btnImg.Visible = true;
                         btnImg.Enabled = true;
-                        btnImg.Height = 16;
-                        btnImg.Location = new Point(692 + -8 + act.monLieu.maPosX / 3, 25 - 8 + act.monLieu.maPosY / 3);
+                        btnImg.Location = new System.Drawing.Point(686 + -8 + 700/3 + act.monLieu.maPosX / 3, 25 - 8 + 1000/3 + act.monLieu.maPosY / 3);
+                        //btnImg.Location = new System.Drawing.Point(480,25);
                         btnImg.Click += new System.EventHandler(img_click);
                         btnImg.BackColor = System.Drawing.Color.PaleGreen;
                         Bitmap image = (Bitmap)Image.FromFile(@"..//..//Images//vehiculePasse.png", true);
@@ -123,30 +130,38 @@ namespace AppliMars {
                         btnImg.Image = image;
                         btnImg.BringToFront();
                         btnImg.Name = monNbActExtTrouve.ToString();
+                        //panel1.Controls.Add(jour);
                         maListeBouttons.Add(btnImg);
                         maListeActivite.Add(act);
                         monNbActExtTrouve++;
                     }
                 }
             }
+
+            foreach (Button but in maListeBouttons) {
+                but.Visible = true;
+                but.Enabled = true;
+                but.BringToFront();
+            }
+
+            Console.WriteLine();
+
         }
 
-        public void affichage_treeView() {
-            /////////////Finir
-            /*
+        public void affichage_treeView() {            
             int i = 0;
             foreach (Categorie SC in maFenetrePrec.maMission.maListeCategories) {
                 treeViewCategories.Nodes.Add(SC.monNom);
                 int j = 0;
                 foreach (Categorie A in SC.maSousCategorie) {
                     treeViewCategories.Nodes[i].Nodes.Add(A.monNom);
-                    if (A.monNom == monActivite.monNom) {
+                    if (A.monNom == monActSel.monNom) {
                         treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j];
                     }
                     int k = 0;
                     foreach (Categorie a3 in A.maSousCategorie) {
                         treeViewCategories.Nodes[i].Nodes[j].Nodes.Add(a3.monNom);
-                        if (a3.monNom == monActivite.monNom) {
+                        if (a3.monNom == monActSel.monNom) {
                             previousSelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
                             treeViewCategories.SelectedNode = treeViewCategories.Nodes[i].Nodes[j].Nodes[k];
                         }
@@ -155,11 +170,9 @@ namespace AppliMars {
                     j++;
                 }
                 i++;
-            }*/
-
+            }
         }
         
-
         #endregion
 
 
@@ -175,43 +188,39 @@ namespace AppliMars {
         }
 
         private void img_click(object sender, EventArgs e) {
-            ////////////Finir cet évènement
-            ////////////Ajouter l'affichage du treeView
-            /*
             var button = (Button)sender;
+            int numAct = int.Parse(button.Name);
 
-            string name = button.Name;
-            
-            monActivite = activite;
-            maJournee = jour;
-
+            monActSel = maListeActivite[numAct -1];
 
             affichage_treeView();
-            //cB_typeAct.Text = monActivite.monNom;
-            tB_descrAct.Text = monActivite.maDescription;
-            cb_HDebAct.Text = monActivite.monHeureDebut.ToString();
-            cb_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
-            cb_HFinAct.Text = monActivite.monHeureFin.ToString();
-            cb_MFinAct.Text = monActivite.mesMinutesFin.ToString();
-            tB_nomLieu.Text = monActivite.monLieu.monNom.ToString();
-            numUpDown_xAct.Text = monActivite.monLieu.maPosX.ToString();
-            numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
-            cB_localisation.Checked = monActivite.enExterieur;
+            tB_descrAct.Text = monActSel.maDescription;
+            cb_HDebAct.Text = monActSel.monHeureDebut.ToString();
+            cb_MDebAct.Text = monActSel.mesMinutesDebut.ToString();
+            cb_HFinAct.Text = monActSel.monHeureFin.ToString();
+            cb_MFinAct.Text = monActSel.mesMinutesFin.ToString();
+            tB_nomLieu.Text = monActSel.monLieu.monNom.ToString();
+            numUpDown_xAct.Text = monActSel.monLieu.maPosX.ToString();
+            numUpDown_yAct.Text = monActSel.monLieu.maPosY.ToString();
+            cB_localisation.Checked = monActSel.enExterieur;
 
             foreach (Astronaute a in maFenetrePrec.maMission.mesAstronautes) {
                 int indexLB = 0;
                 lB_listePart.Items.Add(a.monNom);
-                foreach (Astronaute ast in monActivite.mesAstronautes) {
+                foreach (Astronaute ast in monActSel.mesAstronautes) {
                     if (ast.monNom == a.monNom) {
                         lB_listePart.SetSelected(indexLB, true);
                     }
                     indexLB++;
                 }
             }
-            */
         }
 
         #endregion
+
+        private void WindowResearchMap_Load(object sender, EventArgs e) {
+            updateImagesMap(1, 500);
+        }
 
     }
 }
