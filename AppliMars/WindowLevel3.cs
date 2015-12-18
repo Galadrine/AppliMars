@@ -89,10 +89,10 @@ namespace AppliMars {
             // Verrouillage des cases pour éviter les modfis
 
             //treeViewCategories.Enabled = false;
-            cb_HDebAct.Enabled = true;
-            cb_MDebAct.Enabled = true;
-            cb_HFinAct.Enabled = true;
-            cb_MFinAct.Enabled = true;
+            cb_HDebAct.Enabled = false;
+            cb_MDebAct.Enabled = false;
+            cb_HFinAct.Enabled = false;
+            cb_MFinAct.Enabled = false;
             tB_descrAct.ReadOnly = true;
             lB_listePart.Enabled = false;
             cB_localisation.Enabled = false;

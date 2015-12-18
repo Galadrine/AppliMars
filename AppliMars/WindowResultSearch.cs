@@ -85,10 +85,9 @@ namespace AppliMars {
 
             int indexOccNom, indexOccDescription, indexOccCompteRendu;
 
+            for (int i = int.Parse(debutRecherche); i <= int.Parse(finRecherche); i++) {
 
-            /////////////// Ajouter les dates de début et de fin
-
-            foreach (Journee jour in maFenetrePrec.maMission.monPlanning.monTableauJournees) {
+                Journee jour = maFenetrePrec.maMission.monPlanning.monTableauJournees[i-1];
 
                 indexOccCompteRendu = jour.monCompteRendu.IndexOf(aRechercher);
                 if (CRJours == true)

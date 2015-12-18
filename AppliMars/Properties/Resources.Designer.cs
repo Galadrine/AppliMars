@@ -73,6 +73,46 @@ namespace AppliMars.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap astroFutur {
+            get {
+                object obj = ResourceManager.GetObject("astroFutur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap astroPasse {
+            get {
+                object obj = ResourceManager.GetObject("astroPasse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap expeFutur {
+            get {
+                object obj = ResourceManager.GetObject("expeFutur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap expePasse {
+            get {
+                object obj = ResourceManager.GetObject("expePasse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maps {
             get {
                 object obj = ResourceManager.GetObject("maps", resourceCulture);
@@ -96,6 +136,26 @@ namespace AppliMars.Properties {
         internal static System.Drawing.Bitmap nanediValles3 {
             get {
                 object obj = ResourceManager.GetObject("nanediValles3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vehiculeFutur {
+            get {
+                object obj = ResourceManager.GetObject("vehiculeFutur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vehiculePasse {
+            get {
+                object obj = ResourceManager.GetObject("vehiculePasse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1081,16 +1081,16 @@
     <CRJour></CRJour>
     <Activites>
       <Activite idAct="55">
-        <NomAct>Sleeping</NomAct>
+        <NomAct>Vehicle</NomAct>
         <HDebutAct>00</HDebutAct>
         <MDebutAct>00</MDebutAct>
         <HFinAct>07</HFinAct>
         <MFinAct>00</MFinAct>
-        <BoolExt>false</BoolExt>
+        <BoolExt>true</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>00</posX>
-          <posY>00</posY>
+          <posX>100</posX>
+          <posY>100</posY>
         </Lieu>
         <DescriptionAct></DescriptionAct>
         <Participants>
@@ -1098,22 +1098,40 @@
           <Astronaute>Jack</Astronaute>
         </Participants>
       </Activite>
-      <Activite idAct="3600">
-        <NomAct>Communication</NomAct>
-        <HDebutAct>9</HDebutAct>
-        <MDebutAct>0</MDebutAct>
-        <HFinAct>16</HFinAct>
-        <MFinAct>0</MFinAct>
-        <BoolExt>False</BoolExt>
+      <Activite idAct="56">
+        <NomAct>Space suit</NomAct>
+        <HDebutAct>07</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>08</HFinAct>
+        <MFinAct>00</MFinAct>
+        <BoolExt>true</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>0</posX>
-          <posY>0</posY>
+          <posX>-100</posX>
+          <posY>-100</posY>
         </Lieu>
-        <DescriptionAct>azerdfg</DescriptionAct>
+        <DescriptionAct></DescriptionAct>
         <Participants>
-          <NomAct>Jefster</NomAct>
-          <NomAct>Jack</NomAct>
+          <Astronaute>Jefster</Astronaute>
+          <Astronaute>Jack</Astronaute>
+        </Participants>
+      </Activite>
+      <Activite idAct="57">
+        <NomAct>Outside experiment</NomAct>
+        <HDebutAct>23</HDebutAct>
+        <MDebutAct>00</MDebutAct>
+        <HFinAct>24</HFinAct>
+        <MFinAct>40</MFinAct>
+        <BoolExt>true</BoolExt>
+        <Lieu>
+          <nomLieu>Habitat</nomLieu>
+          <posX>100</posX>
+          <posY>-100</posY>
+        </Lieu>
+        <DescriptionAct></DescriptionAct>
+        <Participants>
+          <Astronaute>Jefster</Astronaute>
+          <Astronaute>Jack</Astronaute>
         </Participants>
       </Activite>
     </Activites>

@@ -52,6 +52,9 @@
     <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Mission.cs" />
     <Compile Include="Classes\Planning.cs" />
+    <Compile Include="Classes\TranspCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +104,12 @@
     <Compile Include="WindowRecord.Designer.cs">
       <DependentUpon>WindowRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowResearchMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowResearchMap.Designer.cs">
+      <DependentUpon>WindowResearchMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowResultSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +142,9 @@
     <EmbeddedResource Include="WindowRecord.resx">
       <DependentUpon>WindowRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WindowResearchMap.resx">
+      <DependentUpon>WindowResearchMap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WindowResultSearch.resx">
       <DependentUpon>WindowResultSearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,11 +168,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\add.png" />
+    <Content Include="Images\astroFutur.png" />
     <Content Include="Images\astronaut24.png" />
     <Content Include="Images\astronaut32.png" />
+    <Content Include="Images\astroPasse.png" />
     <Content Include="Images\calendar.png" />
     <Content Include="Images\calendar0.png" />
     <Content Include="Images\day.png" />
+    <Content Include="Images\expeFutur.png" />
+    <Content Include="Images\expePasse.png" />
     <Content Include="Images\grille.png" />
     <Content Include="Images\left.png" />
     <Content Include="Images\maps.png" />
@@ -169,6 +185,8 @@
     <Content Include="Images\news.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\space.ico" />
+    <Content Include="Images\vehiculeFutur.png" />
+    <Content Include="Images\vehiculePasse.png" />
     <Content Include="XML\General.xml" />
     <Content Include="XML\Planning.xml">
       <SubType>Designer</SubType>

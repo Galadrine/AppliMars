@@ -25,8 +25,6 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowResearchMap));
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
-            this.buttonRetourCalendrier = new System.Windows.Forms.Button();
             this.cB_JourFin = new System.Windows.Forms.ComboBox();
             this.cB_JourDebut = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +40,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cb_MFinAct = new System.Windows.Forms.ComboBox();
             this.treeViewCategories = new System.Windows.Forms.TreeView();
@@ -69,13 +73,8 @@
             this.tB_nomLieu = new System.Windows.Forms.TextBox();
             this.labelLatitude = new System.Windows.Forms.Label();
             this.labelLongitude = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
+            this.buttonRetourCalendrier = new System.Windows.Forms.Button();
+            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -83,12 +82,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -101,31 +101,6 @@
             this.label7.Size = new System.Drawing.Size(201, 25);
             this.label7.TabIndex = 30;
             this.label7.Text = "Recherche sur la map";
-            // 
-            // pictureBoxMap
-            // 
-            this.pictureBoxMap.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMap.Enabled = false;
-            this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
-            this.pictureBoxMap.Location = new System.Drawing.Point(692, 25);
-            this.pictureBoxMap.Name = "pictureBoxMap";
-            this.pictureBoxMap.Size = new System.Drawing.Size(365, 684);
-            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMap.TabIndex = 31;
-            this.pictureBoxMap.TabStop = false;
-            // 
-            // buttonRetourCalendrier
-            // 
-            this.buttonRetourCalendrier.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourCalendrier.Image")));
-            this.buttonRetourCalendrier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRetourCalendrier.Location = new System.Drawing.Point(12, 12);
-            this.buttonRetourCalendrier.Name = "buttonRetourCalendrier";
-            this.buttonRetourCalendrier.Size = new System.Drawing.Size(162, 34);
-            this.buttonRetourCalendrier.TabIndex = 32;
-            this.buttonRetourCalendrier.Text = "Revenir au calendrier";
-            this.buttonRetourCalendrier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRetourCalendrier.UseVisualStyleBackColor = true;
-            this.buttonRetourCalendrier.Click += new System.EventHandler(this.buttonRetourCalendrier_Click);
             // 
             // cB_JourFin
             // 
@@ -170,6 +145,7 @@
             this.buttonResearch.Text = "Rechercher";
             this.buttonResearch.UseVisualStyleBackColor = true;
             this.buttonResearch.Visible = false;
+            this.buttonResearch.Click += new System.EventHandler(this.buttonResearch_Click);
             // 
             // groupBox1
             // 
@@ -183,6 +159,7 @@
             this.groupBox1.Size = new System.Drawing.Size(212, 143);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Effectuer une recherche";
             // 
             // groupBox2
             // 
@@ -213,7 +190,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(41, 86);
+            this.label13.Location = new System.Drawing.Point(43, 88);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(118, 13);
             this.label13.TabIndex = 1;
@@ -222,7 +199,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(41, 53);
+            this.label12.Location = new System.Drawing.Point(43, 55);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(117, 13);
             this.label12.TabIndex = 1;
@@ -231,7 +208,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(41, 20);
+            this.label11.Location = new System.Drawing.Point(43, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(133, 13);
             this.label11.TabIndex = 1;
@@ -239,25 +216,28 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(6, 81);
+            this.pictureBox3.Image = global::AppliMars.Properties.Resources.expePasse;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 86);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 27);
+            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 48);
+            this.pictureBox1.Image = global::AppliMars.Properties.Resources.vehiculePasse;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 27);
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox2.Image = global::AppliMars.Properties.Resources.astroPasse;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 23);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -275,6 +255,60 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Activités futures";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(41, 86);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(118, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Expérience en extérieur";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::AppliMars.Properties.Resources.astroFutur;
+            this.pictureBox4.Location = new System.Drawing.Point(11, 24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(42, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(117, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Exploration en véhicule";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::AppliMars.Properties.Resources.vehiculeFutur;
+            this.pictureBox5.Location = new System.Drawing.Point(11, 53);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(41, 26);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(133, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Exploration en scaphandre";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::AppliMars.Properties.Resources.expeFutur;
+            this.pictureBox6.Location = new System.Drawing.Point(11, 84);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
             // 
             // groupBox3
             // 
@@ -680,56 +714,30 @@
             this.labelLongitude.TabIndex = 13;
             this.labelLongitude.Text = "longitude";
             // 
-            // pictureBox4
+            // buttonRetourCalendrier
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(26, 27);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.buttonRetourCalendrier.Image = ((System.Drawing.Image)(resources.GetObject("buttonRetourCalendrier.Image")));
+            this.buttonRetourCalendrier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRetourCalendrier.Location = new System.Drawing.Point(12, 12);
+            this.buttonRetourCalendrier.Name = "buttonRetourCalendrier";
+            this.buttonRetourCalendrier.Size = new System.Drawing.Size(162, 34);
+            this.buttonRetourCalendrier.TabIndex = 32;
+            this.buttonRetourCalendrier.Text = "Revenir au calendrier";
+            this.buttonRetourCalendrier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRetourCalendrier.UseVisualStyleBackColor = true;
+            this.buttonRetourCalendrier.Click += new System.EventHandler(this.buttonRetourCalendrier_Click);
             // 
-            // pictureBox5
+            // pictureBoxMap
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(6, 52);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(26, 27);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(6, 85);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(26, 27);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(41, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 13);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Exploration en scaphandre";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(41, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Exploration en véhicule";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(41, 90);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(118, 13);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Expérience en extérieur";
+            this.pictureBoxMap.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMap.Enabled = false;
+            this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
+            this.pictureBoxMap.Location = new System.Drawing.Point(692, 25);
+            this.pictureBoxMap.Name = "pictureBoxMap";
+            this.pictureBoxMap.Size = new System.Drawing.Size(365, 684);
+            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMap.TabIndex = 31;
+            this.pictureBoxMap.TabStop = false;
             // 
             // WindowResearchMap
             // 
@@ -747,7 +755,6 @@
             this.Name = "WindowResearchMap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recherche sur la map";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -758,13 +765,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

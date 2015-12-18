@@ -118,6 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonRetourCalendrier.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPtJREFUSEvV
+        lW0RwjAMhicBB1hAAhImAQlIwAE4AAdIACdIAAeQpzS7HP1Yr+1+8N493Jqledc2G0NCF+H6vSzSSSB/
+        5UYFenu2bjSvbP5OuBk2gp1wF+z9X3L51J5u2qTYdYq5/CCwuAHL4tA46NHHchyEvUD+2scsQQDOwlF4
+        mlgOzX+YmBIEeuN+WB771xNqTgbsY29Rs8rAvjc0A7K9z3uBqg10IlAY6RjYHlRtQEtqMTV4CRprNihV
+        1KDk6ZpWoEFI7W9JDooa0CFMAtshCh1SkoOiBj0VNdAg8DRIx9C8RYsb/OcZ0MN8x/Vb0gtqUtv9a9kl
+        dmQYP5+HLizxk6tTAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBoxMap.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEBLAEsAAD/7gAOQWRvYmUAZAAAAAAB/+EShkV4aWYAAE1NACoAAAAIAAwBAAAD
@@ -1016,16 +1026,6 @@
         b+y5d9o2+tJmZ3TKKmjgEB7pBDn6e3vHDHfyEW3EDnjc0MsBBDAdAf3fUj3rQZ9l1+y7N/fmZ/k/m71m
         3/ad59bx0iY2wUFNhhfBe72vBhzGkw4DiP8AviXrtndrzESJn91DH80I4k7vDZ81H3be27d/a5/6tJT/
         AP/Z
-</value>
-  </data>
-  <data name="buttonRetourCalendrier.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPtJREFUSEvV
-        lW0RwjAMhicBB1hAAhImAQlIwAE4AAdIACdIAAeQpzS7HP1Yr+1+8N493Jqledc2G0NCF+H6vSzSSSB/
-        5UYFenu2bjSvbP5OuBk2gp1wF+z9X3L51J5u2qTYdYq5/CCwuAHL4tA46NHHchyEvUD+2scsQQDOwlF4
-        mlgOzX+YmBIEeuN+WB771xNqTgbsY29Rs8rAvjc0A7K9z3uBqg10IlAY6RjYHlRtQEtqMTV4CRprNihV
-        1KDk6ZpWoEFI7W9JDooa0CFMAtshCh1SkoOiBj0VNdAg8DRIx9C8RYsb/OcZ0MN8x/Vb0gtqUtv9a9kl
-        dmQYP5+HLizxk6tTAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

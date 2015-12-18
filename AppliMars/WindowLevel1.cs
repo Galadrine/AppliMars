@@ -85,14 +85,14 @@ namespace AppliMars {
             cB_DescrAct.Checked = true;
  
 
-            for (int i = 0; i < _mission.maDureeMission+1; i++) {
+            for (int i = 0; i <= _mission.maDureeMission+1; i++) {
                 // comboBoxJourDebut.Items.Add(_mission._planning._tableauJournees[i]);
                 cB_JourDebut.Items.Add(i);
                 cB_JourFin.Items.Add(i);
             }
 
             cB_JourDebut.SelectedIndex = 1;
-            cB_JourFin.SelectedIndex = maMission.maDureeMission -1;
+            cB_JourFin.SelectedIndex = maMission.maDureeMission-1;
 
             MesBoutons=genererBoutonsJours();
 
