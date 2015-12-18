@@ -235,6 +235,15 @@ namespace AppliMars {
 
         #endregion
 
+        private void buttonSearch_Click_1(object sender, EventArgs e)
+        {
+            string jourDebut = cB_JourDebut.SelectedItem.ToString();
+            string jourFin = cB_JourFin.SelectedItem.ToString();
+            WindowResultSearch win = new WindowResultSearch(this, textBoxSearch.Text, jourDebut, jourFin, cB_CRJours.Checked, cB_DescrAct.Checked, cB_Acts.Checked);
+            win.Show();
+            this.Hide();
+        }
+
 
     }
 }

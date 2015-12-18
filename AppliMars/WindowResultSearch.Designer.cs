@@ -127,11 +127,11 @@
             // buttonGoTo
             // 
             this.buttonGoTo.Enabled = false;
-            this.buttonGoTo.Location = new System.Drawing.Point(302, 502);
+            this.buttonGoTo.Location = new System.Drawing.Point(306, 489);
             this.buttonGoTo.Name = "buttonGoTo";
-            this.buttonGoTo.Size = new System.Drawing.Size(188, 31);
+            this.buttonGoTo.Size = new System.Drawing.Size(188, 43);
             this.buttonGoTo.TabIndex = 6;
-            this.buttonGoTo.Text = "Accéder au jour sélectionné";
+            this.buttonGoTo.Text = "Accéder à l\'élément sélectionné";
             this.buttonGoTo.UseVisualStyleBackColor = true;
             this.buttonGoTo.Click += new System.EventHandler(this.buttonGoTo_Click);
             // 

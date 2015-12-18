@@ -1078,7 +1078,7 @@
     </Activites>
   </Jour>
   <Jour id="19">
-    <CRJour></CRJour>
+    <CRJour>Penser au Cleaning des SpaceSuit ! :)</CRJour>
     <Activites>
       <Activite idAct="55">
         <NomAct>Vehicle</NomAct>
@@ -1191,6 +1191,23 @@
         <Participants>
           <Astronaute>Jefster</Astronaute>
           <Astronaute>Jack</Astronaute>
+        </Participants>
+      </Activite>
+      <Activite idAct="3600">
+        <NomAct>Cleaning</NomAct>
+        <HDebutAct>14</HDebutAct>
+        <MDebutAct>0</MDebutAct>
+        <HFinAct>20</HFinAct>
+        <MFinAct>0</MFinAct>
+        <BoolExt>False</BoolExt>
+        <Lieu>
+          <nomLieu>Habitat</nomLieu>
+          <posX>0</posX>
+          <posY>0</posY>
+        </Lieu>
+        <DescriptionAct>Cleaning à fond !!</DescriptionAct>
+        <Participants>
+          <NomAct>Jefster</NomAct>
         </Participants>
       </Activite>
     </Activites>

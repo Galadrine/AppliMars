@@ -129,6 +129,7 @@ namespace AppliMars {
                     }
                 }
             }
+            Console.Write("");
         }
 
         public void affichage_treeView() {

@@ -101,7 +101,7 @@ namespace AppliMars {
                 }
                 else
                 {
-                    listBoxCompteRendu.Items.Add("NA");
+                    listBoxCompteRendu.Enabled = false;
                 }
 
                 foreach (Activite act in jour.maListeActivites) {
@@ -111,7 +111,7 @@ namespace AppliMars {
                     {
                         if (indexOccNom != -1)
                         {
-                            string stringActivite = "Jour " + jour.monNumero;
+                            string stringActivite = "Act " + act._idAct + " (Jour " + jour.monNumero + ")";
                             listBoxNom.Items.Add(stringActivite);
                             maListeRechercheActivit_Nom.Add(act);
                             maListeRechercheJour_Nom.Add(jour);
@@ -119,14 +119,14 @@ namespace AppliMars {
                     }
                     else
                     {
-                        listBoxNom.Items.Add("NA");
+                        listBoxNom.Enabled = false;
                     }
 
                     if(DescrAct == true)
                     {
                         if (indexOccDescription != -1)
                         {
-                            string stringActivite = "Jour " + jour.monNumero;
+                            string stringActivite = "Act " + act._idAct + " (Jour " + jour.monNumero + ")";
                             listBoxDescription.Items.Add(stringActivite);
                             maListeRechercheActivit_Description.Add(act);
                             maListeRechercheJour_Description.Add(jour);
@@ -135,7 +135,7 @@ namespace AppliMars {
                     }
                     else
                     {
-                        listBoxDescription.Items.Add("NA");
+                        listBoxDescription.Enabled = false;
                     }
                 }
             }

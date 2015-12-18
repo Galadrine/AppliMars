@@ -163,7 +163,7 @@ namespace AppliMars {
             cB_localisation.Checked = monActivite.enExterieur;
 
             // Verrouillage des cases pour éviter les modfis
-            treeViewCategories.Enabled = false;
+            //treeViewCategories.Enabled = false;
             cb_HDebAct.Enabled = true;
             cb_MDebAct.Enabled = true;
             cb_HFinAct.Enabled = true;
