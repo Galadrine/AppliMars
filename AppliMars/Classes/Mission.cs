@@ -98,7 +98,6 @@ namespace AppliMars
             monNomMission = nomMission;
             maDateDebut = dateDebut;
             maDureeMission = dureeMission;
-            //maDateFin = _dateDebut.AddDays(_dureeMission);
             monJourJ = 1;
             maListeCategories = new List<Categorie>();
             // Création du dossier 
@@ -239,21 +238,6 @@ namespace AppliMars
             // SI on a du temps, on les récupèrera et on les créera dans l'instance directement ici, 
             // au lieu de faire le pavé au dessus
 
-            /*
-            // Création des instances des categories
-            foreach (XElement cate in _generalXML.Element("Mission").Element("Activites").Elements("Categorie"))
-            {
-                string nomNvCate = cate.Attribute("id").ToString();
-                List<string> listeActNvCate = new List<string>();
-                // Récupération des activités de cette catégorie
-                foreach (XElement actCate in cate.Descendants("Activite"))
-                {
-                    listeActNvCate.Add(actCate.ToString());
-                }
-                _listeCate.Add(new Categorie(nomNvCate, listeActNvCate));
-            }
-            */
-
             // Création de la liste des activités par défaut d'une journée dans le XML
 
             #region DefaultDay
@@ -288,8 +272,6 @@ namespace AppliMars
                             new XElement("nomLieu", "Habitat"),
                             new XElement("posX", "00"),
                             new XElement("posY", "00"))),
-
-                        /*
                     new XElement("Activity",
                         new XElement("HDebutAct", "08"),
                         new XElement("MDebutAct", "00"),
@@ -350,7 +332,6 @@ namespace AppliMars
                             new XElement("nomLieu","Habitat"),
                             new XElement("posX","00"),
                             new XElement("posY","00"))),
-                         */
                     new XElement("Activity",
                         new XElement("HDebutAct", "23"),
                         new XElement("MDebutAct", "00"),

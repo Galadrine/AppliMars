@@ -57,18 +57,15 @@ namespace AppliMars {
 
         public WindowLevel1(Mission miss, WindowLevel0 winzero) {
             InitializeComponent();
-
             maFenetrePrec = winzero;
             maMission = miss;
             this.Text = maMission.monNomMission;
             DateTime now = DateTime.Now;
-
-            TimeSpan diff = now - _mission.maDateDebut;
+            TimeSpan diff = now - maMission.maDateDebut;
             Double totalMin = diff.TotalMinutes;
 
             int nbJours = (int)(totalMin / 1480);
             double minRestantes = (totalMin - (nbJours * 1480));
-
             int hActuelle = (int)(minRestantes / 60);
             int minActuelle = (int)(minRestantes - (hActuelle * 60));
 
@@ -76,17 +73,15 @@ namespace AppliMars {
             labelHeures.Text = hActuelle.ToString();
             labelMinutes.Text = minActuelle.ToString();
 
-            _mission.monJourJ = nbJours+1;
-            maJournneeCourante = nbJours+1;
+            maMission.monJourJ = nbJours;
+            maJournneeCourante = nbJours;
 
             //Zone de recherche
             cB_Acts.Checked = true;
             cB_CRJours.Checked = true;
             cB_DescrAct.Checked = true;
- 
 
             for (int i = 0; i <= _mission.maDureeMission+1; i++) {
-                // comboBoxJourDebut.Items.Add(_mission._planning._tableauJournees[i]);
                 cB_JourDebut.Items.Add(i);
                 cB_JourFin.Items.Add(i);
             }
@@ -114,7 +109,6 @@ namespace AppliMars {
 
             Planning P = maMission.monPlanning;
             List<Button> monCalendrier = new List<Button>();
-
             int date = 1, page, ligne, rang;
 
             foreach (Journee J in P.monTableauJournees) {
@@ -132,9 +126,9 @@ namespace AppliMars {
                 jour.Click += new System.EventHandler(journee_Click);
                 monCalendrier.Add(jour);
                 date++;
-                if (date < _mission.monJourJ) {
+                if (date <= _mission.monJourJ) {
                     jour.BackColor = System.Drawing.Color.Silver;
-                } else if (date == _mission.monJourJ) {
+                } else if (date == (_mission.monJourJ+1)) {
                     jour.BackColor = System.Drawing.Color.LightBlue;
                 } else {
                     jour.BackColor = System.Drawing.Color.PaleGreen;
@@ -233,8 +227,6 @@ namespace AppliMars {
             this.Hide();
         }
 
-        #endregion
-
         private void buttonSearch_Click_1(object sender, EventArgs e)
         {
             string jourDebut = cB_JourDebut.SelectedItem.ToString();
@@ -244,6 +236,7 @@ namespace AppliMars {
             this.Hide();
         }
 
+        #endregion
 
     }
 }
