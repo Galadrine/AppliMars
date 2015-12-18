@@ -158,13 +158,13 @@ namespace AppliMars {
                 int result4 = compareHours(h2, h4);
 
                 if (result1 < 0 && result3 > 0 && result2 < 0 && result4 > 0) {
-                    return "L'activité à insérer est comprise entre les horaires de l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle empiète.";
+                    return "L'activité à insérer est comprise entre les horaires de l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle chevauche.";
                 } else {
                     if (result1 < 0 && result3 > 0) {
-                        return "Le début de l'activité à insérer empiète sur l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle empiète.";
+                        return "Le début de l'activité à insérer chevauche l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle chevauche.";
                     }
                     if (result2 < 0 && result4 > 0) {
-                        return "Laf in de l'activité à insérer empiète sur l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle empiète.";
+                        return "Laf in de l'activité à insérer chevauche l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle chevauche.";
                     }
                 }
             }

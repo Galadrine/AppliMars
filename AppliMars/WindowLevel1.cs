@@ -227,8 +227,13 @@ namespace AppliMars {
             maFenetrePrec.Show();
         }
 
-        #endregion
+        private void buttonResearchMap_Click(object sender, EventArgs e) {
+            WindowResearchMap win = new WindowResearchMap(this);
+            win.Show();
+            this.Hide();
+        }
 
+        #endregion
 
 
     }
