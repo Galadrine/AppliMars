@@ -81,6 +81,7 @@ namespace AppliMars
             }
         }
         
+
         #endregion
 
 
@@ -91,11 +92,13 @@ namespace AppliMars
                 textBoxNomLieu.Enabled = true;
                 numUpDown_xAct.Enabled = true;
                 numUpDown_yAct.Enabled = true;
+                pictureBoxMap.Enabled = true;
 
             } else {
                 textBoxNomLieu.Enabled = false;
                 numUpDown_xAct.Enabled = false;
                 numUpDown_yAct.Enabled = false;
+                pictureBoxMap.Enabled = false;
             }
         }
 
@@ -109,8 +112,17 @@ namespace AppliMars
             var act = (from activites in _planningXML.Descendants("Activites") where (string)activites.Parent.Attribute("id") == maJournee.monNumero.ToString() select activites).FirstOrDefault();
             Journee journeeAModif = maFenetrePrec.maFenetrePrec.maMission.monPlanning.monTableauJournees[maJournee.monNumero - 1];
 
-            bool flag = true;
-            while (flag == true) {
+
+            int hDebNvAct = int.Parse(cb_HDebAct.Text);
+            int mDebNvAct = int.Parse(cb_MDebAct.Text);
+            int hFinNvAct = int.Parse(cb_HFinAct.Text);
+            int mFinNvAct = int.Parse(cb_MFinAct.Text);
+
+            string checkChevauchement = journeeAModif.checkChevauchement(hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct);
+
+            if (checkChevauchement == "") {
+                Activite activit;
+
                 // Récupération de toutes les informations
                 int xNvAct, yNvAct;
                 string nomLieuNvAct;
@@ -127,12 +139,7 @@ namespace AppliMars
                 string descrNvAct = tB_descrAct.Text;
                 if (descrNvAct.Length > 400) {
                     tB_descrAct.ForeColor = Color.Red;
-                    flag = false;
                 }
-                int hDebNvAct = int.Parse(cb_HDebAct.Text);
-                int mDebNvAct = int.Parse(cb_MDebAct.Text);
-                int hFinNvAct = int.Parse(cb_HFinAct.Text);
-                int mFinNvAct = int.Parse(cb_MFinAct.Text);
 
                 // Echange si les horaires de début et de fin sont inversés
                 if (hDebNvAct > hFinNvAct) {
@@ -153,24 +160,15 @@ namespace AppliMars
                 }
 
 
-                // Vérification des chevauchements avec d'autres activités 
-                foreach (Activite a in _jour.maListeActivites) {
-                    if (hDebNvAct <= a.monHeureFin) {
-                        if (hFinNvAct >= a.monHeureDebut) {
-                            flag = false;
-                        }
-                    }
-                }
-
                 string nomNvAct = treeViewCategories.SelectedNode.Text;
 
                 // Si tout est ok flag == true, on peut créer la nouvelle activité 
-                Activite activit = new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, nomLieuNvAct, xNvAct, yNvAct);
+                activit = new Activite(nomNvAct, extNvAct, descrNvAct, hDebNvAct, mDebNvAct, hFinNvAct, mFinNvAct, partNvAct, nomLieuNvAct, xNvAct, yNvAct);
 
                  _jour.maListeActivites.Add(activit);
 
 
-                jourSel.Add(new XElement("Activite",
+                 act.Add(new XElement("Activite",
                     new XAttribute("idAct", activit.monID.ToString()),
                     new XElement("NomAct", activit.monNom.ToString()),
                     new XElement("HDebutAct", activit.monHeureDebut.ToString()),
@@ -192,6 +190,9 @@ namespace AppliMars
                 maFenetrePrec.Show();
                 maFenetrePrec.insertionActivitesListBox();
 
+            } else { // Il y a des chevauchements entre les activités
+                MessageBox.Show(checkChevauchement,
+                    "Insertion impossible");
             }
         }
 
@@ -225,18 +226,11 @@ namespace AppliMars
         }
         
         private void cb_HDebAct_SelectedIndexChanged(object sender, EventArgs e) {
-            if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
-                b_creerNvAct.Enabled = true;
-                l_erreurHoraires.Visible = false;
-            } else {
+            if (cb_HDebAct.Text == "24" && cb_MDebAct.Text == "50") {
                 b_creerNvAct.Enabled = false;
                 l_erreurHoraires.Visible = true;
-            }
-        }
-
-        private void cb_MDebAct_SelectedIndexChanged(object sender, EventArgs e) {
-            if (cb_HDebAct.Text == cb_HFinAct.Text) {
-                if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+            } else {
+                if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
                     b_creerNvAct.Enabled = true;
                     l_erreurHoraires.Visible = false;
                 } else {
@@ -246,24 +240,51 @@ namespace AppliMars
             }
         }
 
-        private void cb_HFinAct_SelectedIndexChanged(object sender, EventArgs e) {
-            if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
-                b_creerNvAct.Enabled = true;
-                l_erreurHoraires.Visible = false;
-            } else {
+        private void cb_MDebAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HDebAct.Text == "24" && cb_MDebAct.Text == "50") {
                 b_creerNvAct.Enabled = false;
                 l_erreurHoraires.Visible = true;
+            } else {
+                if (cb_HDebAct.Text == cb_HFinAct.Text) {
+                    if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+                        b_creerNvAct.Enabled = true;
+                        l_erreurHoraires.Visible = false;
+                    } else {
+                        b_creerNvAct.Enabled = false;
+                        l_erreurHoraires.Visible = true;
+                    }
+                }
             }
         }
 
-        private void cb_MFinAct_SelectedIndexChanged(object sender, EventArgs e) {
-            if (cb_HDebAct.Text == cb_HFinAct.Text) {
-                if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+        private void cb_HFinAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HFinAct.Text == "24" && cb_MFinAct.Text == "50") {
+                    b_creerNvAct.Enabled = false;
+                    l_erreurHoraires.Visible = true;
+            } else {
+                if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
                     b_creerNvAct.Enabled = true;
                     l_erreurHoraires.Visible = false;
                 } else {
                     b_creerNvAct.Enabled = false;
                     l_erreurHoraires.Visible = true;
+                }
+            }
+        }
+
+        private void cb_MFinAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HFinAct.Text == "24" && cb_MFinAct.Text == "50") {
+                    b_creerNvAct.Enabled = false;
+                    l_erreurHoraires.Visible = true;
+            } else {
+                if (cb_HDebAct.Text == cb_HFinAct.Text) {
+                    if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+                        b_creerNvAct.Enabled = true;
+                        l_erreurHoraires.Visible = false;
+                    } else {
+                        b_creerNvAct.Enabled = false;
+                        l_erreurHoraires.Visible = true;
+                    }
                 }
             }
         }
@@ -273,6 +294,14 @@ namespace AppliMars
             if (sel >= 0 && treeViewCategories.SelectedNode!=null) {
                 b_creerNvAct.Enabled = true;
             }
+        }
+
+        private void pictureBoxMap_Click(object sender, EventArgs e) {
+            MouseEventArgs me = (MouseEventArgs)e;
+            Point coordinates = new System.Drawing.Point((me.Location.X * 3) - 700, (me.Location.Y * 3) - 1000);
+            numUpDown_xAct.Text = (coordinates.X * 3).ToString();
+            numUpDown_yAct.Text = (coordinates.Y * 3).ToString();
+            pb_maps.Location = new Point(689 + me.Location.X, 21 - 34 + me.Location.Y);
         }
 
         #endregion

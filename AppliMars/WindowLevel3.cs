@@ -523,6 +523,78 @@ namespace AppliMars {
             maFenetrePrec2.Show();
         }
 
+        private void cb_HDebAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
+                b_valider.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            } else {
+                b_valider.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            }
+            if (cb_HDebAct.Text == "24" && cb_MDebAct.Text == "50") {
+                b_valider.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            } else {
+                b_valider.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            }
+        }
+
+        private void cb_MDebAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HDebAct.Text == cb_HFinAct.Text) {
+                if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+                    b_valider.Enabled = true;
+                    l_erreurHoraires.Visible = false;
+                } else {
+                    b_valider.Enabled = false;
+                    l_erreurHoraires.Visible = true;
+                }
+            }
+            if (cb_HDebAct.Text == "24" && cb_MDebAct.Text == "50") {
+                b_valider.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            } else {
+                b_valider.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            }
+        }
+
+        private void cb_HFinAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (int.Parse(cb_HDebAct.Text) < int.Parse(cb_HFinAct.Text)) {
+                b_valider.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            } else {
+                b_valider.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            }
+            if (cb_HFinAct.Text == "24" && cb_MFinAct.Text == "50") {
+                b_valider.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            } else {
+                b_valider.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            }
+        }
+
+        private void cb_MFinAct_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cb_HDebAct.Text == cb_HFinAct.Text) {
+                if (int.Parse(cb_MDebAct.Text) < int.Parse(cb_MFinAct.Text)) {
+                    b_valider.Enabled = true;
+                    l_erreurHoraires.Visible = false;
+                } else {
+                    b_valider.Enabled = false;
+                    l_erreurHoraires.Visible = true;
+                }
+            }
+            if (cb_HFinAct.Text == "24" && cb_MFinAct.Text == "50") {
+                b_valider.Enabled = false;
+                l_erreurHoraires.Visible = true;
+            } else {
+                b_valider.Enabled = true;
+                l_erreurHoraires.Visible = false;
+            }
+        }
+
         #endregion
          
     }

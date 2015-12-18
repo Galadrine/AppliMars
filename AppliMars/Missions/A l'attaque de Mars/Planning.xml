@@ -960,7 +960,7 @@
     </Activites>
   </Jour>
   <Jour id="17">
-    <CRJour>La sortie en extérieur s'est bien passée, faire attention au timing ! Penser au Cleaning du SpaceSuit</CRJour>
+    <CRJour>tranks</CRJour>
     <Activites>
       <Activite idAct="49">
         <NomAct>Sleeping</NomAct>
@@ -1017,23 +1017,6 @@
         </Participants>
       </Activite>
     </Activites>
-    <Activite idAct="3600">
-      <NomAct>Cleaning</NomAct>
-      <HDebutAct>7</HDebutAct>
-      <MDebutAct>10</MDebutAct>
-      <HFinAct>10</HFinAct>
-      <MFinAct>0</MFinAct>
-      <BoolExt>False</BoolExt>
-      <Lieu>
-        <nomLieu>Habitat</nomLieu>
-        <posX>0</posX>
-        <posY>0</posY>
-      </Lieu>
-      <DescriptionAct></DescriptionAct>
-      <Participants>
-        <NomAct>Jefster</NomAct>
-      </Participants>
-    </Activite>
   </Jour>
   <Jour id="18">
     <CRJour>tranks</CRJour>
@@ -1115,58 +1098,25 @@
           <Astronaute>Jack</Astronaute>
         </Participants>
       </Activite>
-      <Activite idAct="56">
-        <NomAct>Eating</NomAct>
-        <HDebutAct>07</HDebutAct>
-        <MDebutAct>00</MDebutAct>
-        <HFinAct>08</HFinAct>
-        <MFinAct>00</MFinAct>
-        <BoolExt>false</BoolExt>
+      <Activite idAct="3600">
+        <NomAct>Communication</NomAct>
+        <HDebutAct>9</HDebutAct>
+        <MDebutAct>0</MDebutAct>
+        <HFinAct>16</HFinAct>
+        <MFinAct>0</MFinAct>
+        <BoolExt>False</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>00</posX>
-          <posY>00</posY>
+          <posX>0</posX>
+          <posY>0</posY>
         </Lieu>
-        <DescriptionAct></DescriptionAct>
+        <DescriptionAct>azerdfg</DescriptionAct>
         <Participants>
-          <Astronaute>Jefster</Astronaute>
-          <Astronaute>Jack</Astronaute>
-        </Participants>
-      </Activite>
-      <Activite idAct="57">
-        <NomAct>Sleeping</NomAct>
-        <HDebutAct>23</HDebutAct>
-        <MDebutAct>00</MDebutAct>
-        <HFinAct>24</HFinAct>
-        <MFinAct>40</MFinAct>
-        <BoolExt>false</BoolExt>
-        <Lieu>
-          <nomLieu>Habitat</nomLieu>
-          <posX>00</posX>
-          <posY>00</posY>
-        </Lieu>
-        <DescriptionAct></DescriptionAct>
-        <Participants>
-          <Astronaute>Jefster</Astronaute>
-          <Astronaute>Jack</Astronaute>
+          <NomAct>Jefster</NomAct>
+          <NomAct>Jack</NomAct>
         </Participants>
       </Activite>
     </Activites>
-    <Activite idAct="3601">
-      <NomAct>Cleaning</NomAct>
-      <HDebutAct>15</HDebutAct>
-      <MDebutAct>0</MDebutAct>
-      <HFinAct>16</HFinAct>
-      <MFinAct>0</MFinAct>
-      <BoolExt>False</BoolExt>
-      <Lieu>
-        <nomLieu>Habitat</nomLieu>
-        <posX>0</posX>
-        <posY>0</posY>
-      </Lieu>
-      <DescriptionAct>Cleaning à fond !!</DescriptionAct>
-      <Participants />
-    </Activite>
   </Jour>
   <Jour id="20">
     <CRJour></CRJour>
@@ -1285,24 +1235,6 @@
         </Participants>
       </Activite>
     </Activites>
-    <Activite idAct="3600">
-      <NomAct>Cleaning</NomAct>
-      <HDebutAct>6</HDebutAct>
-      <MDebutAct>0</MDebutAct>
-      <HFinAct>8</HFinAct>
-      <MFinAct>0</MFinAct>
-      <BoolExt>False</BoolExt>
-      <Lieu>
-        <nomLieu>Habitat</nomLieu>
-        <posX>0</posX>
-        <posY>0</posY>
-      </Lieu>
-      <DescriptionAct>Cleaning à fond !</DescriptionAct>
-      <Participants>
-        <NomAct>Jefster</NomAct>
-        <NomAct>Jack</NomAct>
-      </Participants>
-    </Activite>
   </Jour>
   <Jour id="22">
     <CRJour></CRJour>

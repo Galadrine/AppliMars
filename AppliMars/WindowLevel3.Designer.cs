@@ -47,15 +47,16 @@
             this.l_participants = new System.Windows.Forms.Label();
             this.lB_listePart = new System.Windows.Forms.ListBox();
             this.l_cate = new System.Windows.Forms.Label();
-            this.l_erreurConvert = new System.Windows.Forms.Label();
             this.numUpDown_xAct = new System.Windows.Forms.NumericUpDown();
             this.numUpDown_yAct = new System.Windows.Forms.NumericUpDown();
             this.treeViewCategories = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.l_erreurHoraires = new System.Windows.Forms.Label();
             this.cb_MFinAct = new System.Windows.Forms.ComboBox();
             this.cb_HFinAct = new System.Windows.Forms.ComboBox();
             this.cb_HDebAct = new System.Windows.Forms.ComboBox();
             this.cb_MDebAct = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pb_maps = new System.Windows.Forms.PictureBox();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
@@ -155,7 +156,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(242, 385);
+            this.label2.Location = new System.Drawing.Point(252, 382);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
@@ -165,7 +166,7 @@
             // labelCoordonnees
             // 
             this.labelCoordonnees.AutoSize = true;
-            this.labelCoordonnees.Location = new System.Drawing.Point(211, 450);
+            this.labelCoordonnees.Location = new System.Drawing.Point(221, 447);
             this.labelCoordonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoordonnees.Name = "labelCoordonnees";
             this.labelCoordonnees.Size = new System.Drawing.Size(99, 13);
@@ -175,7 +176,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(242, 418);
+            this.label8.Location = new System.Drawing.Point(252, 415);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
@@ -185,7 +186,7 @@
             // label_heure_fin
             // 
             this.label_heure_fin.AutoSize = true;
-            this.label_heure_fin.Location = new System.Drawing.Point(289, 101);
+            this.label_heure_fin.Location = new System.Drawing.Point(299, 98);
             this.label_heure_fin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_heure_fin.Name = "label_heure_fin";
             this.label_heure_fin.Size = new System.Drawing.Size(21, 13);
@@ -195,7 +196,7 @@
             // label_heure_debut
             // 
             this.label_heure_debut.AutoSize = true;
-            this.label_heure_debut.Location = new System.Drawing.Point(274, 70);
+            this.label_heure_debut.Location = new System.Drawing.Point(284, 67);
             this.label_heure_debut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_heure_debut.Name = "label_heure_debut";
             this.label_heure_debut.Size = new System.Drawing.Size(36, 13);
@@ -205,7 +206,7 @@
             // label_description_activite
             // 
             this.label_description_activite.AutoSize = true;
-            this.label_description_activite.Location = new System.Drawing.Point(250, 129);
+            this.label_description_activite.Location = new System.Drawing.Point(260, 126);
             this.label_description_activite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_description_activite.Name = "label_description_activite";
             this.label_description_activite.Size = new System.Drawing.Size(60, 13);
@@ -278,7 +279,7 @@
             // l_participants
             // 
             this.l_participants.AutoSize = true;
-            this.l_participants.Location = new System.Drawing.Point(248, 280);
+            this.l_participants.Location = new System.Drawing.Point(258, 277);
             this.l_participants.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l_participants.Name = "l_participants";
             this.l_participants.Size = new System.Drawing.Size(62, 13);
@@ -305,18 +306,6 @@
             this.l_cate.Size = new System.Drawing.Size(52, 13);
             this.l_cate.TabIndex = 51;
             this.l_cate.Text = "Catégorie";
-            // 
-            // l_erreurConvert
-            // 
-            this.l_erreurConvert.AutoSize = true;
-            this.l_erreurConvert.ForeColor = System.Drawing.Color.Red;
-            this.l_erreurConvert.Location = new System.Drawing.Point(490, 80);
-            this.l_erreurConvert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.l_erreurConvert.Name = "l_erreurConvert";
-            this.l_erreurConvert.Size = new System.Drawing.Size(117, 13);
-            this.l_erreurConvert.TabIndex = 60;
-            this.l_erreurConvert.Text = "Conversion impossible !";
-            this.l_erreurConvert.Visible = false;
             // 
             // numUpDown_xAct
             // 
@@ -369,6 +358,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.l_erreurHoraires);
             this.groupBox1.Controls.Add(this.cb_MFinAct);
             this.groupBox1.Controls.Add(this.treeViewCategories);
             this.groupBox1.Controls.Add(this.cb_HFinAct);
@@ -376,7 +366,6 @@
             this.groupBox1.Controls.Add(this.cb_HDebAct);
             this.groupBox1.Controls.Add(this.cb_MDebAct);
             this.groupBox1.Controls.Add(this.numUpDown_xAct);
-            this.groupBox1.Controls.Add(this.l_erreurConvert);
             this.groupBox1.Controls.Add(this.l_cate);
             this.groupBox1.Controls.Add(this.lB_listePart);
             this.groupBox1.Controls.Add(this.l_participants);
@@ -386,6 +375,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label_description_activite);
             this.groupBox1.Controls.Add(this.label_heure_debut);
             this.groupBox1.Controls.Add(this.label_heure_fin);
@@ -400,6 +390,18 @@
             this.groupBox1.Size = new System.Drawing.Size(618, 488);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
+            // 
+            // l_erreurHoraires
+            // 
+            this.l_erreurHoraires.AutoSize = true;
+            this.l_erreurHoraires.ForeColor = System.Drawing.Color.Red;
+            this.l_erreurHoraires.Location = new System.Drawing.Point(485, 88);
+            this.l_erreurHoraires.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.l_erreurHoraires.Name = "l_erreurHoraires";
+            this.l_erreurHoraires.Size = new System.Drawing.Size(96, 13);
+            this.l_erreurHoraires.TabIndex = 67;
+            this.l_erreurHoraires.Text = "Horaires invalides !";
+            this.l_erreurHoraires.Visible = false;
             // 
             // cb_MFinAct
             // 
@@ -417,6 +419,7 @@
             this.cb_MFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MFinAct.TabIndex = 63;
             this.cb_MFinAct.Text = "00";
+            this.cb_MFinAct.SelectedIndexChanged += new System.EventHandler(this.cb_MFinAct_SelectedIndexChanged);
             // 
             // cb_HFinAct
             // 
@@ -479,6 +482,7 @@
             this.cb_HFinAct.Size = new System.Drawing.Size(51, 21);
             this.cb_HFinAct.TabIndex = 64;
             this.cb_HFinAct.Text = "10";
+            this.cb_HFinAct.SelectedIndexChanged += new System.EventHandler(this.cb_HFinAct_SelectedIndexChanged);
             // 
             // cb_HDebAct
             // 
@@ -515,6 +519,7 @@
             this.cb_HDebAct.Size = new System.Drawing.Size(51, 21);
             this.cb_HDebAct.TabIndex = 65;
             this.cb_HDebAct.Text = "00";
+            this.cb_HDebAct.SelectedIndexChanged += new System.EventHandler(this.cb_HDebAct_SelectedIndexChanged);
             // 
             // cb_MDebAct
             // 
@@ -532,6 +537,17 @@
             this.cb_MDebAct.Size = new System.Drawing.Size(51, 21);
             this.cb_MDebAct.TabIndex = 66;
             this.cb_MDebAct.Text = "00";
+            this.cb_MDebAct.SelectedIndexChanged += new System.EventHandler(this.cb_MDebAct_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(213, 139);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "(Max : 400 caractères)";
             // 
             // textBox1
             // 
@@ -666,7 +682,6 @@
         private System.Windows.Forms.Label l_participants;
         private System.Windows.Forms.ListBox lB_listePart;
         private System.Windows.Forms.Label l_cate;
-        private System.Windows.Forms.Label l_erreurConvert;
         private System.Windows.Forms.NumericUpDown numUpDown_xAct;
         private System.Windows.Forms.NumericUpDown numUpDown_yAct;
         private System.Windows.Forms.TreeView treeViewCategories;
@@ -678,6 +693,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button b_modifier;
         private System.Windows.Forms.Button b_retourSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label l_erreurHoraires;
     }
 }
 

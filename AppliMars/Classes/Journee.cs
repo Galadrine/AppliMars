@@ -129,6 +129,50 @@ namespace AppliMars {
             return toReturn;
         }
 
+        /// <summary>
+        /// Si hAComparer:mAComparer est inférieur à h:m on revoie -1
+        /// Si hAComparer:mAComparer est égal à h:m on revoie 0
+        /// Si hAComparer:mAComparer est supérieur à h:m on revoie 1
+        /// </summary>
+        public int compareHours(int dureeAComparer, int duree) {
+            if (dureeAComparer<duree) {
+                return -1;
+            } else if (dureeAComparer == duree) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+
+        public string checkChevauchement(int hDeb, int mDeb, int hFin, int mFin) {
+            string toReturn = "";
+            foreach (Activite act in maListeActivites) {
+                int 
+                    h1 = act.monHeureDebut * 60 + act.mesMinutesDebut,
+                    h2 = act.monHeureFin * 60 + act.mesMinutesFin,
+                    h3 = hDeb * 60 + mDeb,
+                    h4 = hFin * 60 + mFin;
+                int result1 = compareHours(h1, h3);
+                int result2 = compareHours(h1, h4);
+                int result3 = compareHours(h2, h3);
+                int result4 = compareHours(h2, h4);
+
+                if (result1 < 0 && result3 > 0 && result2 < 0 && result4 > 0) {
+                    return "L'activité à insérer est comprise entre les horaires de l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle empiète.";
+                } else {
+                    if (result1 < 0 && result3 > 0) {
+                        return "Le début de l'activité à insérer empiète sur l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle empiète.";
+                    }
+                    if (result2 < 0 && result4 > 0) {
+                        return "Laf in de l'activité à insérer empiète sur l'activité '" + act.monNom + "' de ce jour. Veuillez modifier les horaires de l'activité ou supprimer l'activité sur laquelle elle empiète.";
+                    }
+                }
+            }
+
+
+            return toReturn;
+        }
+
         #endregion
 
     }

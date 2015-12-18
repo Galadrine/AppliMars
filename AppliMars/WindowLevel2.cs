@@ -74,16 +74,23 @@ namespace AppliMars {
 
         public void insertionActivitesListBox() {
             listBoxActivites.Items.Clear();
-            string stringActivite;
+
+            List<string> activitesAstronauteEnCours = new List<string>();
 
             foreach (Activite A in maJournee.maListeActivites) {
                 foreach (Astronaute Astro in A.mesAstronautes) {
                     if (Astro.monNom == monAstronaute.monNom) {
-                        stringActivite = A.getDetailsActivites();
-                        listBoxActivites.Items.Add(stringActivite);
+                        activitesAstronauteEnCours.Add(A.getDetailsActivites());
                     }
                 }
             }
+
+            activitesAstronauteEnCours = activitesAstronauteEnCours.OrderBy(q => q).ToList();
+
+            foreach (string item in activitesAstronauteEnCours) {
+                listBoxActivites.Items.Add(item);
+            }
+
         }
 
         public void refreshPage() {
@@ -136,8 +143,9 @@ namespace AppliMars {
         private void listBoxActivites_SelectedIndexChanged(object sender, EventArgs e) {
             if (listBoxActivites.SelectedIndex >= 0) {
                 buttonModifAct.Visible = true;
+                buttonDelete.Visible = true;
+                groupBox1.Visible = true;
                 monactiviteSelectionnee = maJournee.maListeActivites[listBoxActivites.SelectedIndex];
-
             }
         }
 

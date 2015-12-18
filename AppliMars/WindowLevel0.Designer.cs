@@ -86,7 +86,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PapayaWhip;
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.buttonNouvelleMission);

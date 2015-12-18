@@ -270,6 +270,7 @@
             // 
             // pictureBoxMap
             // 
+            this.pictureBoxMap.Enabled = false;
             this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
             this.pictureBoxMap.Location = new System.Drawing.Point(699, 21);
             this.pictureBoxMap.Name = "pictureBoxMap";
@@ -277,6 +278,7 @@
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMap.TabIndex = 60;
             this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
             // 
             // groupBox1
             // 

@@ -39,7 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBoxRightArrow = new System.Windows.Forms.PictureBox();
             this.pictureBoxLeftArrow = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJourSuivant)).BeginInit();
@@ -217,27 +217,28 @@
             this.pictureBoxLeftArrow.TabStop = false;
             this.pictureBoxLeftArrow.Click += new System.EventHandler(this.pictureBoxJourPrecedent_Click);
             // 
-            // button1
+            // buttonDelete
             // 
-            this.button1.Location = new System.Drawing.Point(6, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Supprimer l\'activité sélectionnée";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.buttonDeleteAct_Click);
+            this.buttonDelete.Location = new System.Drawing.Point(6, 59);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(182, 34);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "Supprimer l\'activité sélectionnée";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDeleteAct_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonModifAct);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonDelete);
             this.groupBox1.Location = new System.Drawing.Point(604, 271);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(194, 100);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions sur l\'activité sélectionnée";
+            this.groupBox1.Visible = false;
             // 
             // WindowLevel2
             // 
@@ -290,7 +291,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBoxRightArrow;
         private System.Windows.Forms.PictureBox pictureBoxLeftArrow;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

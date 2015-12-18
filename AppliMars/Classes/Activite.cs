@@ -145,6 +145,7 @@ namespace AppliMars {
             return monHeureDebut.ToString("D2") + "h" + mesMinutesDebut.ToString("D2") + " - " + monHeureFin.ToString("D2") + "h" + mesMinutesFin.ToString("D2") + " : " + monNom;
         }
 
+
         #endregion
 
 
