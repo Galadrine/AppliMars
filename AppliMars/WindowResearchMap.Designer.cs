@@ -63,7 +63,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label_description_activite = new System.Windows.Forms.Label();
             this.label_heure_debut = new System.Windows.Forms.Label();
             this.label_heure_fin = new System.Windows.Forms.Label();
@@ -75,6 +74,7 @@
             this.labelLongitude = new System.Windows.Forms.Label();
             this.buttonRetourCalendrier = new System.Windows.Forms.Button();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -89,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -144,7 +145,6 @@
             this.buttonResearch.TabIndex = 37;
             this.buttonResearch.Text = "Rechercher";
             this.buttonResearch.UseVisualStyleBackColor = true;
-            this.buttonResearch.Visible = false;
             this.buttonResearch.Click += new System.EventHandler(this.buttonResearch_Click);
             // 
             // groupBox1
@@ -328,7 +328,6 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label_description_activite);
             this.groupBox3.Controls.Add(this.label_heure_debut);
             this.groupBox3.Controls.Add(this.label_heure_fin);
@@ -614,16 +613,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "h";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(213, 139);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "(Max : 400 caractères)";
-            // 
             // label_description_activite
             // 
             this.label_description_activite.AutoSize = true;
@@ -732,12 +721,20 @@
             this.pictureBoxMap.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMap.Enabled = false;
             this.pictureBoxMap.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMap.Image")));
-            this.pictureBoxMap.Location = new System.Drawing.Point(692, 25);
+            this.pictureBoxMap.Location = new System.Drawing.Point(0, -2);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(365, 684);
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMap.TabIndex = 31;
             this.pictureBoxMap.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBoxMap);
+            this.panel1.Location = new System.Drawing.Point(686, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(367, 683);
+            this.panel1.TabIndex = 40;
             // 
             // WindowResearchMap
             // 
@@ -745,16 +742,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 731);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonRetourCalendrier);
-            this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.label7);
             this.MaximizeBox = false;
             this.Name = "WindowResearchMap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recherche sur la map";
+            this.Load += new System.EventHandler(this.WindowResearchMap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -773,6 +771,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_yAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_xAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -807,7 +806,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label_description_activite;
         private System.Windows.Forms.Label label_heure_debut;
         private System.Windows.Forms.Label label_heure_fin;
@@ -831,5 +829,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Panel panel1;
     }
 }

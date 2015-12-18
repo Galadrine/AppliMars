@@ -810,11 +810,11 @@
         <MDebutAct>0</MDebutAct>
         <HFinAct>7</HFinAct>
         <MFinAct>0</MFinAct>
-        <BoolExt>True</BoolExt>
+        <BoolExt>false</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>-700</posX>
-          <posY>933</posY>
+          <posX>0</posX>
+          <posY>0</posY>
         </Lieu>
         <DescriptionAct>dzaerdzrzfzqesrf</DescriptionAct>
         <Participants>
@@ -930,8 +930,8 @@
         <BoolExt>True</BoolExt>
         <Lieu>
           <nomLieu>Habitat</nomLieu>
-          <posX>-700</posX>
-          <posY>-1053</posY>
+          <posX>250</posX>
+          <posY>250</posY>
         </Lieu>
         <DescriptionAct>On essaye pour voir si ça marche. C'est formidaaaaable !</DescriptionAct>
         <Participants>

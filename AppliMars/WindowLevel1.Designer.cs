@@ -187,7 +187,7 @@
             // buttonResearchMap
             // 
             this.buttonResearchMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonResearchMap.Location = new System.Drawing.Point(20, 50);
+            this.buttonResearchMap.Location = new System.Drawing.Point(24, 50);
             this.buttonResearchMap.Name = "buttonResearchMap";
             this.buttonResearchMap.Size = new System.Drawing.Size(147, 44);
             this.buttonResearchMap.TabIndex = 6;
