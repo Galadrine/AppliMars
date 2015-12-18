@@ -137,10 +137,6 @@ namespace AppliMars {
                     }
                 }
             }
-<<<<<<< HEAD
-            Console.Write("");
-=======
-
             foreach (Button but in maListeBouttons) {
                 but.Visible = true;
                 but.Enabled = true;
@@ -149,7 +145,6 @@ namespace AppliMars {
 
             Console.WriteLine();
 
->>>>>>> origin/master
         }
 
         public void affichage_treeView() {            
