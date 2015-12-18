@@ -197,7 +197,7 @@ namespace AppliMars {
         private void img_click(object sender, EventArgs e) {
             var button = (Button)sender;
             int numAct = int.Parse(button.Name);
-
+            tB_descrAct.Clear();
             monActSel = maListeActivite[numAct];
 
             affichage_treeView();

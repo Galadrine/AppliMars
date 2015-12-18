@@ -75,7 +75,6 @@ namespace AppliMars {
             this.Text = maFenetrePrec.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero.ToString("D3");
             labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
             affichage_treeView();
-            //cB_typeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
             cb_HDebAct.Text = monActivite.monHeureDebut.ToString();
             cb_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
@@ -87,8 +86,6 @@ namespace AppliMars {
             cB_localisation.Checked = monActivite.enExterieur;
             
             // Verrouillage des cases pour éviter les modfis
-
-            //treeViewCategories.Enabled = false;
             cb_HDebAct.Enabled = false;
             cb_MDebAct.Enabled = false;
             cb_HFinAct.Enabled = false;
@@ -100,18 +97,6 @@ namespace AppliMars {
             pictureBoxMap.Enabled = false;
             b_valider.Visible = false;
             b_supprimer.Visible = false;
-
-
-            //this.Controls.Add(this.pictureBoxMap);
-            //pictureBoxMap.Controls.AddRange(new Control[]{this.pb_maps});
-            //pictureBoxMap.Controls.Add(pb_maps);
-            //pb_maps.Parent = pictureBoxMap;
-            /*
-            ((Bitmap)this.pb_maps.Image).MakeTransparent(((Bitmap)this.pb_maps.Image).GetPixel(1, 1));
-            this.pb_maps.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.pb_maps.BackColor = System.Drawing.Color.Transparent;
-            */
-            //((Bitmap)pb_maps.Image).MakeTransparent(((Bitmap)pb_maps.Image).GetPixel(0, pb_maps.Image.Size.Height - 1));
 
             foreach (Astronaute a in maFenetrePrec.maFenetrePrec.maMission.mesAstronautes) {
                 int indexLB = 0;
@@ -151,7 +136,6 @@ namespace AppliMars {
             this.Text = maFenetrePrec2.maFenetrePrec.maMission.monNomMission + " - Activité du jour " + maJournee.monNumero.ToString("D3");
             labelNumeroJour.Text = maJournee.monNumero.ToString("D3");
             affichage_treeView();
-            //cB_typeAct.Text = monActivite.monNom;
             tB_descrAct.Text = monActivite.maDescription;
             cb_HDebAct.Text = monActivite.monHeureDebut.ToString();
             cb_MDebAct.Text = monActivite.mesMinutesDebut.ToString();
@@ -162,8 +146,6 @@ namespace AppliMars {
             numUpDown_yAct.Text = monActivite.monLieu.maPosY.ToString();
             cB_localisation.Checked = monActivite.enExterieur;
 
-            // Verrouillage des cases pour éviter les modfis
-            //treeViewCategories.Enabled = false;
             cb_HDebAct.Enabled = true;
             cb_MDebAct.Enabled = true;
             cb_HFinAct.Enabled = true;
@@ -175,8 +157,6 @@ namespace AppliMars {
             pictureBoxMap.Enabled = false;
             b_valider.Visible = false;
             b_supprimer.Visible = false;
-
-
             
             foreach (Astronaute a in maFenetrePrec2.maFenetrePrec.maMission.mesAstronautes)
             {
@@ -191,7 +171,6 @@ namespace AppliMars {
                     indexLB++;
                 }
             }
-
 
         }
 
@@ -209,7 +188,6 @@ namespace AppliMars {
         }
 
         public void affichage_treeView() {
-
             int i = 0;
             try
             {
@@ -296,35 +274,11 @@ namespace AppliMars {
         }
 
         private void pictureBoxMap_Click(object sender, EventArgs e) {
-            
             MouseEventArgs me = (MouseEventArgs)e;
             Point coordinates = convertCoordImgToXML(me.Location);
             numUpDown_xAct.Text = (coordinates.X * 3).ToString();
             numUpDown_yAct.Text = (coordinates.Y * 3).ToString();
             pb_maps.Location = new Point(689 + me.Location.X, 21 - 34 + me.Location.Y);
-            
-            /*
-            Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
-            Graphics graphics = this.pictureBoxMap.CreateGraphics();
-            Point p0 = new Point(0, 0);
-            graphics.DrawImage(imageSource, p0);
-
-            MouseEventArgs me = (MouseEventArgs)e;
-            Point coordinates = convertionCoordonneesImageVersXML(me.Location);
-
-            numUpDown_xAct.Text = (coordinates.X * 3).ToString();
-            numUpDown_yAct.Text = (coordinates.Y * 3).ToString();
-
-            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-            Point p = new Point(me.Location.X-10, me.Location.Y-34);
-            graphics.DrawImage(maps, p);
-
-            */
-            /*
-            DialogResult dlgRes = DialogResult.No;
-            //dlgRes = MessageBox.Show(numUpDown_xAct.Value.ToString() + " - " + numUpDown_yAct.Value.ToString(), "numUpDown_xAct.Value.ToString() - numUpDown_yAct.Value.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            */
         }
 
         private void checkBoxLocalisation_CheckedChanged(object sender, EventArgs e) {
@@ -438,55 +392,13 @@ namespace AppliMars {
         }
 
         private void WindowLevel3_Load(object sender, EventArgs e) {
-            /*
-            Point p = new Point(899,40);
-            
-            Image imageSource = (Image)(new Bitmap(Image.FromFile("..//..//Images//nanediValles3.jpg")));
-            Graphics graphics = this.pictureBoxMap.CreateGraphics();
-            Point p0 = new Point(0, 0);
-            graphics.DrawImage(imageSource, p0);
-
-            Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-            graphics.DrawImage(maps, p);
-            this.Invalidate();
-            this.pictureBoxMap.Invalidate();
-            this.pictureBoxMap.Refresh();
-            */
             
             // Affichage de la position sur la map
             if (monActivite.enExterieur == true) {
-                pictureBoxMap.Enabled = true;
-                tB_nomLieu.Enabled = true;
-                numUpDown_xAct.Enabled = true;
-                numUpDown_yAct.Enabled = true;
-                Graphics graphics = this.pictureBoxMap.CreateGraphics();
-                Point p = new Point(monActivite.monLieu.maPosX / 3, monActivite.monLieu.maPosY / 3);
-                Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-                graphics.DrawImage(maps, p);
-
-                this.Invalidate();
-                this.pictureBoxMap.Invalidate();
-                this.pictureBoxMap.Refresh();
-
-                pb_maps.Location = new Point(699 + monActivite.monLieu.maPosX / 3, 21 + monActivite.monLieu.maPosY / 3);
+                pb_maps.Location = new Point(699 +(( monActivite.monLieu.maPosX +700 )/ 3) - 10, 21 + ((monActivite.monLieu.maPosY +1000)/ 3) - 34);
 
             } else {
-                pictureBoxMap.Enabled = true;
-                Graphics graphics = this.pictureBoxMap.CreateGraphics();
-                Point p = new Point(463 - 20 + 700 / 3, 21 - 34 + 1000 / 3);
-                Image maps = (Image)(new Bitmap(Image.FromFile("..//..//Images//maps.png")));
-                graphics.DrawImage(maps, p);
-                pb_maps.Location = p;
-                /*
-                DialogResult dlgRes = DialogResult.No;
-                dlgRes = MessageBox.Show(p.X.ToString() + " - " + p.Y.ToString(), "p.X.ToString() + p.Y.ToString()", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                */
-
-                this.Invalidate();
-                this.pictureBoxMap.Invalidate();
-                this.pictureBoxMap.Refresh();
-
-                pb_maps.Location = new Point(689 + 700 / 3, 21 -34 + 1000 / 3);
+                pb_maps.Location = new Point(689 + (700 / 3), 21 -34 + (1000 / 3));
             }
             
         }
@@ -513,8 +425,7 @@ namespace AppliMars {
         }
 
         private void numUpDown_ValueChanged(object sender, EventArgs e) {
-            Point p0 = convertCoordUpDownToImage(new Point(int.Parse(numUpDown_xAct.Value.ToString()), int.Parse(numUpDown_yAct.Value.ToString())));
-            pb_maps.Location = new Point(p0.X, p0.Y);
+            pb_maps.Location = new Point(689 + (((int)numUpDown_xAct.Value + 700) / 3), 21 -34 + (((int)numUpDown_yAct.Value + 1000) / 3));
         }
 
         private void b_retourSearch_Click(object sender, EventArgs e)

@@ -41,7 +41,6 @@
             this.tB_CR.Name = "tB_CR";
             this.tB_CR.Size = new System.Drawing.Size(728, 338);
             this.tB_CR.TabIndex = 3;
-            this.tB_CR.TextChanged += new System.EventHandler(this.textBoxCompteRendu_TextChanged);
             this.tB_CR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCompteRendu_KeyPress);
             // 
             // buttonModifier

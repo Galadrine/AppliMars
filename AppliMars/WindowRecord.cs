@@ -48,6 +48,7 @@ namespace AppliMars {
             : this() {
             _win2 = w2;
             _jour = jour;
+            tB_CR.Clear();
             this.Text = "Compte-rendu du jour "+(jour.monNumero).ToString();
             labelCompteRendu.Text = "Compte-rendu du jour " + (jour.monNumero).ToString();
             tB_CR.Text = _jour.monCompteRendu;
@@ -112,6 +113,7 @@ namespace AppliMars {
 
         private void buttonModifier_Click(object sender, EventArgs e) 
         {
+            _jour.monCompteRendu = tB_CR.Text;
             string fileName = maFenetrePrec.maFenetrePrec.maMission.monCheminPlanningXML;
             var doc = XDocument.Load(fileName);
             XElement target = doc
@@ -138,18 +140,13 @@ namespace AppliMars {
 
         }
 
-        private void textBoxCompteRendu_TextChanged(object sender, EventArgs e) {
-            _jour.monCompteRendu = tB_CR.Text;
-
-        }
-
-        #endregion
-
         private void b_retourSearch_Click(object sender, EventArgs e)
         {
             this.Close();
             _winS.Show();
         }
+
+        #endregion
 
     }
 }
