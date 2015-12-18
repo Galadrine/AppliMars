@@ -100,23 +100,6 @@ namespace Appli_Mars_Tests
             Act.getDetailsActivites();
         }
 
-        public void Test_Activite_convertionCoordonneesXML()
-        {
-            Astronaute Moscet = new Astronaute("Moscet");
-            Astronaute Barret = new Astronaute("Barret");
-            Astronaute Lydie = new Astronaute("Lydie");
-            List<Astronaute> participants = new List<Astronaute>();
-            participants.Add(Moscet);
-            participants.Add(Barret);
-            participants.Add(Lydie);
-            Activite Act = new Activite("Sleeping", false, "Description", 9, 9, 14, 14, participants);
-            int x = 200;
-            int y = 200;
-            //Act.convertionCoordonneesXMLVersImage(x,y);
-        }
-
-
-
 
     }
 }

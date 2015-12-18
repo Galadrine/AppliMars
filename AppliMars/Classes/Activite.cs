@@ -137,10 +137,6 @@ namespace AppliMars {
 
         }
 
-        public System.Drawing.Point convertionCoordonneesXMLVersImage(int posX, int posY) {
-            return new System.Drawing.Point((posX / 3) - 700, (posY / 3) - 1000);
-        }
-
         public string getDetailsActivites() {
             return monHeureDebut.ToString("D2") + "h" + mesMinutesDebut.ToString("D2") + " - " + monHeureFin.ToString("D2") + "h" + mesMinutesFin.ToString("D2") + " : " + monNom;
         }
