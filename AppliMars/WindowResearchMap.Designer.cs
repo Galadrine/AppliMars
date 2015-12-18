@@ -145,7 +145,6 @@
             this.buttonResearch.TabIndex = 37;
             this.buttonResearch.Text = "Rechercher";
             this.buttonResearch.UseVisualStyleBackColor = true;
-            this.buttonResearch.Visible = false;
             this.buttonResearch.Click += new System.EventHandler(this.buttonResearch_Click);
             // 
             // groupBox1
