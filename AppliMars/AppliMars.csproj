@@ -49,12 +49,8 @@
     <Compile Include="Classes\Categorie.cs" />
     <Compile Include="Classes\Journee.cs" />
     <Compile Include="Classes\Lieu.cs" />
-    <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Mission.cs" />
     <Compile Include="Classes\Planning.cs" />
-    <Compile Include="Classes\TranspCtrl.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,7 +144,7 @@
     <EmbeddedResource Include="WindowResultSearch.resx">
       <DependentUpon>WindowResultSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DiagrammeDeClasse.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

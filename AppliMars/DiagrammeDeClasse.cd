@@ -1,42 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AppliMars.Activite">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="9.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAwAAgAIAACAAIAEAAgAABEAFAACgAAIAAEAMASICIU=</HashCode>
+      <HashCode>AAQAAgAIAACAAIAEAAgAABEAFAACgAAIAAEAMASICIU=</HashCode>
       <FileName>Classes\Activite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AppliMars.Astronaute">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="9" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Astronaute.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AppliMars.Categorie">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="4.5" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAIAAgAAAAAAAAAAAAACAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Classes\Categorie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AppliMars.Journee">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AQAEwAIAQAAAAAAAAAAAACAAAAAAAAAAAAAEABBAABA=</HashCode>
       <FileName>Classes\Journee.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="AppliMars.Lieu">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAABCAAgBAAAAAAAAEAA=</HashCode>
+      <FileName>Classes\Lieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="AppliMars.Mission">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="0.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>CAAACCZAAABAAEAAAAAAAAEAkCEgEAJAiAAAAAOAAIA=</HashCode>
       <FileName>Classes\Mission.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AppliMars.Planning">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQAQAAAAAQAAAAAAAAAIAAAEAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Classes\Planning.cs</FileName>
